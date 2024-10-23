@@ -11,7 +11,12 @@ public class InputReader : ScriptableObject, IPlayerActions
     public Vector2 InputVector { get; private set; }
 
     public event Action<Vector2> OnMoveEvent;
-    public event Action<EventType> OnClick;
+    public event Action OnJumpEvent;
+    public event Action OnDashEvent;
+    public event Action OnAttackEvent;
+    public event Action OnSkill1Event;
+    public event Action OnSkill2Event;
+    public event Action OnSpecialSkillEvent;
 
     private Controls _playerControls;
     private void OnEnable()
@@ -26,20 +31,20 @@ public class InputReader : ScriptableObject, IPlayerActions
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnClick?.Invoke(EventType.Attack);
+            OnAttackEvent?.Invoke();
 
     }
 
     public void OnDash(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnClick?.Invoke(EventType.Dash);
+            OnDashEvent?.Invoke();
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnClick.Invoke(EventType.Jump);
+            OnJumpEvent.Invoke();
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -51,28 +56,18 @@ public class InputReader : ScriptableObject, IPlayerActions
     public void OnSkill1(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnClick?.Invoke(EventType.Skill1);
+            OnSkill1Event?.Invoke();
     }
 
     public void OnSkill2(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnClick?.Invoke(EventType.Skill2);
+            OnSkill2Event?.Invoke();
     }
 
     public void OnSpecialSkill(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnClick?.Invoke(EventType.SpecialSkill);
+            OnSpecialSkillEvent?.Invoke();
     }
-}
-
-public enum EventType
-{
-    Attack,
-    Dash,
-    Jump,
-    Skill1,
-    Skill2,
-    SpecialSkill
 }

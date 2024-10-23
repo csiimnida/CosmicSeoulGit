@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
             State state = Activator.CreateInstance(t, new object[] { this }) as State;
             StateEnum.Add(stateType, state);
         }
+        TransitionState(PlayerStateType.Idle);
     }
 
     public void TransitionState(PlayerStateType newState)

@@ -8,9 +8,12 @@ public class Player : MonoBehaviour
 
     private Dictionary<PlayerStateType, State> StateEnum = new Dictionary<PlayerStateType, State>();
     private PlayerStateType currentState;
+    
+    public AnimationChange AnimCompo {get ; private set;}
 
-    private void Awake()
-    {
+    private void Awake(){
+        AnimCompo = GetComponentInChildren<AnimationChange>();
+        
         foreach (PlayerStateType stateType in Enum.GetValues(typeof(PlayerStateType)))
         {
             string enumName = stateType.ToString();

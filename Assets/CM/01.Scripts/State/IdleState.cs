@@ -12,7 +12,6 @@ public class IdleState : State
 
     protected override void EnterState()
     {
-        // 애니메이션 교체
         _player.TransitionState(PlayerStateType.Move);
     }
 }

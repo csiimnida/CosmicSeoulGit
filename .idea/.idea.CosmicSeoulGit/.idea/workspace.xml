@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c9bc466-03bd-49a7-8966-8a873a1721ba" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/JumpState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/JumpState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/MoveState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/MoveState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CM/08.SO/PlayerData.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CM/08.SO/PlayerData.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CosmicSeoulGit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CosmicSeoulGit/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CM/01.Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CM/01.Scripts/Player/PlayerDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/Player/PlayerDataSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/IdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/MoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/MoveState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/State.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
@@ -35,18 +28,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "CM",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CM&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.47f1\Editor\Unity.exe" />
@@ -95,6 +88,7 @@
       <updated>1729525176392</updated>
       <workItem from="1729525178040" duration="6000" />
       <workItem from="1729701048583" duration="1070000" />
+      <workItem from="1729727626784" duration="1030000" />
     </task>
     <servers />
   </component>

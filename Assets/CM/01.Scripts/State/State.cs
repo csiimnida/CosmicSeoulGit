@@ -81,8 +81,12 @@ public enum PlayerStateType
     Move,
     Jump,
     Dash,
-    Attack,
+    Attack1,
+    Attack2,
+    EvAttack,
     Skill1,
     Skill2,
+    EvSkill1,
+    EvSkill2,
     SpecialSkill
 }

@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 15397065}
   - component: {fileID: 15397066}
   - component: {fileID: 15397067}
+  - component: {fileID: 15397068}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -228,6 +229,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &15397068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15397064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b58646b32c984b91bfbc9ca5eb24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +601,7 @@ GameObject:
   - component: {fileID: 1511188988}
   - component: {fileID: 1511188989}
   - component: {fileID: 1511188990}
+  - component: {fileID: 1511188991}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -684,6 +698,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1511188991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511188987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2875afef26c44224b9bcceffa0e0bb0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InputCompo: {fileID: 11400000, guid: 082ac83584cd1d841a9010f5c48deed1, type: 2}
 --- !u!1 &1717059876
 GameObject:
   m_ObjectHideFlags: 0

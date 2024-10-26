@@ -4,8 +4,8 @@ using UnityEngine;
 public class Enermy : MonoBehaviour
 {
 
-    
-    private Dictionary<EnermyStateType, EmermyState> StateEnum = new Dictionary<EnermyStateType, EmermyState>();
+    public GameObject Player;
+    private Dictionary<EnermyStateType, EnermyState> StateEnum = new Dictionary<EnermyStateType, EnermyState>();
     private EnermyStateType currentState;
     public EnermyDataSO DataSo;
     public AnimationChange AnimCompo {get ; private set;}
@@ -24,7 +24,7 @@ public class Enermy : MonoBehaviour
         {
             string enumName = stateType.ToString();
             Type t = Type.GetType($"Enermy{enumName}State");
-            EmermyState state = Activator.CreateInstance(t, new object[] { this }) as EmermyState;
+            EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
             StateEnum.Add(stateType, state);
         }
         TransitionState(EnermyStateType.Idle);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnermyIdleState : EmermyState
+public class EnermyIdleState : EnermyState
 {
     public EnermyIdleState(Enermy enermy) : base(enermy)
     {
@@ -15,7 +15,11 @@ public class EnermyIdleState : EmermyState
     }
 
     public override void UpdateState(){
-        /*if(Mathf.Abs(_emermy.InputCompo.InputVector.x) > 0)
-            _emermy.TransitionState(PlayerStateType.Move);*/
+        
+        
+        if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,LayerMask.GetMask("Player")))
+        {
+            _emermy.TransitionState(EnermyStateType.Move);
+        }
     }
 }

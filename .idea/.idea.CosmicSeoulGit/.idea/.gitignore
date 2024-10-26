@@ -2,6 +2,7 @@
 /shelf/
 /workspace.xml
 # Rider에서 무시된 파일
+/workspace.xml
 /modules.xml
 /projectSettingsUpdater.xml
 /.idea.CosmicSeoulGit.iml

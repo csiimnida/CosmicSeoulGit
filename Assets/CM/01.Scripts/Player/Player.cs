@@ -5,20 +5,25 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [field: SerializeField] public InputReader InputCompo;
-
-    private Dictionary<PlayerStateType, PlayerState> StateEnum = new Dictionary<PlayerStateType, PlayerState>();
-    private PlayerStateType currentState;
+    [field: SerializeField] public PlayerDataSO PlayerData;
     
     public AnimationChange AnimCompo {get ; private set;}
     public PlayerRotation RotCompo {get ; private set;}
     public Rigidbody2D RbCompo {get ; private set;}
     public Collider2D ColCompo {get ; private set;}
 
+    public GroundChecker GroundChecker {get ; private set;}
+
+    private Dictionary<PlayerStateType, PlayerState> StateEnum = new Dictionary<PlayerStateType, PlayerState>();
+    private PlayerStateType currentState;
+
+
     private void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RotCompo = GetComponentInChildren<PlayerRotation>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
+        GroundChecker = GetComponentInChildren<GroundChecker>();
         
         foreach (PlayerStateType stateType in Enum.GetValues(typeof(PlayerStateType)))
         {
@@ -45,7 +50,6 @@ public class Player : MonoBehaviour
     private void Update()
     {
         StateEnum[currentState].UpdateState();
-        Debug.Log(InputCompo.InputVector);
     }
 
     private void FixedUpdate()

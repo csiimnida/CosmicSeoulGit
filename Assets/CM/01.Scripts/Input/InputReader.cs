@@ -16,7 +16,6 @@ public class InputReader : ScriptableObject, IPlayerActions
     public event Action OnAttackEvent;
     public event Action OnSkill1Event;
     public event Action OnSkill2Event;
-    public event Action OnSpecialSkillEvent;
 
     private Controls _playerControls;
     private void OnEnable()
@@ -63,11 +62,5 @@ public class InputReader : ScriptableObject, IPlayerActions
     {
         if (context.performed)
             OnSkill2Event?.Invoke();
-    }
-
-    public void OnSpecialSkill(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-            OnSpecialSkillEvent?.Invoke();
     }
 }

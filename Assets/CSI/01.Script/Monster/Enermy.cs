@@ -4,7 +4,8 @@ using UnityEngine;
 public class Enermy : MonoBehaviour
 {
 
-    private Dictionary<EnermyStateType, PlayerState> StateEnum = new Dictionary<EnermyStateType, PlayerState>();
+    /*
+    private Dictionary<EnermyStateType, EmermyState> StateEnum = new Dictionary<EnermyStateType, EmermyState>();
     private EnermyStateType currentState;
     
     public AnimationChange AnimCompo {get ; private set;}
@@ -22,7 +23,7 @@ public class Enermy : MonoBehaviour
         {
             string enumName = stateType.ToString();
             Type t = Type.GetType($"{enumName}State");
-            PlayerState state = Activator.CreateInstance(t, new object[] { this }) as PlayerState;
+            EmermyState state = Activator.CreateInstance(t, new object[] { this }) as EmermyState;
             StateEnum.Add(stateType, state);
         }
         TransitionState(EnermyStateType.Idle);
@@ -45,22 +46,7 @@ public class Enermy : MonoBehaviour
     private void FixedUpdate()
     {
         StateEnum[currentState].FixedUpdateState();
-    }
+    }*/
 }
 
 
-public enum EnermyStateType
-{
-    Idle,
-    Move,
-    Jump,
-    Dash,
-    Attack1,
-    Attack2,
-    EvAttack,
-    Skill1,
-    Skill2,
-    EvSkill1,
-    EvSkill2,
-    SpecialSkill
-}

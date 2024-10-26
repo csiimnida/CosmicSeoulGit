@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7c9bc466-03bd-49a7-8966-8a873a1721ba" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CosmicSeoulGit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CosmicSeoulGit/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CSI/01.Script/Monster/SO/EnermyDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CSI/01.Script/Monster/SO/EnermyDataSO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CM/01.Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/MoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/MoveState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CM/01.Scripts/State/State.cs" afterDir="false" />
@@ -28,6 +29,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "CSI",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
+    <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.47f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\UNITY\Git\CosmicSeoul\CosmicSeoulGit -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\UNITY\Git\CosmicSeoul\CosmicSeoulGit" />
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -51,6 +69,8 @@
     </configuration>
     <configuration name="Unity 시작" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.47f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath D:\UNITY\Git\CosmicSeoul\CosmicSeoulGit -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\UNITY\Git\CosmicSeoul\CosmicSeoulGit" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\user\CosmicSeoulGit -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\user\CosmicSeoulGit" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -87,6 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729525176392</updated>
       <workItem from="1729525178040" duration="6000" />
+      <workItem from="1729727711929" duration="2262000" />
       <workItem from="1729701048583" duration="1070000" />
       <workItem from="1729727626784" duration="1030000" />
     </task>

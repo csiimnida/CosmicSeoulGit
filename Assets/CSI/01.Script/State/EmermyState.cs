@@ -5,22 +5,15 @@ using UnityEngine;
 public class EmermyState : MonoBehaviour
 {
     
-    /*
-    protected EmermyState _emermy;
+    protected Enermy _emermy;
 
-    public EmermyState(EmermyState player){
-        _emermy = player;
+    public EmermyState(Enermy enermy){
+        _emermy = enermy;
     }
 
 
     public void Enter(){
-        _emermy.InputCompo.OnJumpEvent += HandleJumpPressed;
-        _emermy.InputCompo.OnDashEvent += HandleDashPressed;
-        _emermy.InputCompo.OnAttackEvent += HandleAttackPressed;
-        _emermy.InputCompo.OnSkill1Event += HandleSkill1Pressed;
-        _emermy.InputCompo.OnSkill2Event += HandleSkill2Pressed;
-        _emermy.InputCompo.OnSpecialSkillEvent += HandleSpecialSkillPressed;
-        _emermy.InputCompo.OnMoveEvent += HandleMovement;
+
         EnterState();
     }
 
@@ -31,13 +24,7 @@ public class EmermyState : MonoBehaviour
 
     public void Exit()
     {
-        _emermy.InputCompo.OnDashEvent -= HandleDashPressed;
-        _emermy.InputCompo.OnJumpEvent -= HandleJumpPressed;
-        _emermy.InputCompo.OnAttackEvent -= HandleAttackPressed;
-        _emermy.InputCompo.OnSkill1Event -= HandleSkill1Pressed;
-        _emermy.InputCompo.OnSkill2Event -= HandleSkill2Pressed;
-        _emermy.InputCompo.OnSpecialSkillEvent -= HandleSpecialSkillPressed;
-        _emermy.InputCompo.OnMoveEvent -= HandleMovement;
+
         ExtiState();
     }
 
@@ -76,20 +63,12 @@ public class EmermyState : MonoBehaviour
 
     protected virtual void HandleMovement(Vector2 vector){
         
-    }*/
+    }
 }
 public enum EnermyStateType
 {
     Idle,
     Move,
-    Jump,
-    Dash,
     Attack1,
-    Attack2,
-    EvAttack,
-    Skill1,
-    Skill2,
-    EvSkill1,
-    EvSkill2,
-    SpecialSkill
+    Die,
 }

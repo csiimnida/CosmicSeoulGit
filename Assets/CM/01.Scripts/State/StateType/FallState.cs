@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class FallState : PlayerState
 {
     public FallState(Player player) : base(player)
@@ -16,7 +18,11 @@ public class FallState : PlayerState
         if (_player.GroundChecker.IsGround)
         {
             _player.TransitionState(PlayerStateType.Idle);
-            _player.InputCompo.OnMoveEvent += _player.RotCompo.FaceDirection;
         }
+    }
+
+    protected override void ExtiState()
+    {
+        _player.InputCompo.OnMoveEvent += _player.RotCompo.FaceDirection;
     }
 }

@@ -16,6 +16,7 @@ public abstract class PlayerState
         _player.InputCompo.OnSkill1Event += HandleSkill1Pressed;
         _player.InputCompo.OnSkill2Event += HandleSkill2Pressed;
         _player.InputCompo.OnMoveEvent += HandleMovement;
+        _player.InputCompo.OnBlockEvent += HandleBlockPressed;
         EnterState();
     }
 
@@ -32,6 +33,7 @@ public abstract class PlayerState
         _player.InputCompo.OnSkill1Event -= HandleSkill1Pressed;
         _player.InputCompo.OnSkill2Event -= HandleSkill2Pressed;
         _player.InputCompo.OnMoveEvent -= HandleMovement;
+        _player.InputCompo.OnBlockEvent -= HandleBlockPressed;
         ExtiState();
     }
 
@@ -70,6 +72,11 @@ public abstract class PlayerState
 
     protected virtual void HandleMovement(Vector2 vector){
         
+    }
+
+    protected virtual void HandleBlockPressed()
+    {
+
     }
 }
 

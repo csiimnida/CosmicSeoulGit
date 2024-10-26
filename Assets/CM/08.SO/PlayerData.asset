@@ -16,3 +16,6 @@ MonoBehaviour:
   Hp: 100
   SwordAttackTime: 1
   MoveSpeed: 5
+  JumpPower: 6
+  RollPower: 5
+  IsGround: 0

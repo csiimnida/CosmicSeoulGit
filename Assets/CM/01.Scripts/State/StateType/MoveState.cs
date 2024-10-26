@@ -34,4 +34,9 @@ public class MoveState : PlayerState
     {
         _player.TransitionState(PlayerStateType.Roll);
     }
+
+    protected override void HandleBlockPressed()
+    {
+        _player.TransitionState(PlayerStateType.Block);
+    }
 }

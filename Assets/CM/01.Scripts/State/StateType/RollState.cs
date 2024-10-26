@@ -13,11 +13,15 @@ public class RollState : PlayerState
     {
         _player.AnimCompo.PlayAnimaiton(AnimationType.Roll);
         _player.RbCompo.AddForce(new Vector2(_player.transform.localScale.x * _player.PlayerData.RollPower, 0), ForceMode2D.Impulse);
+        _player.ColCompo.enabled = false;
     }
 
     public override void UpdateState()
     {
-        if (_player.AnimCompo._animator.GetCurrentAnimatorStateInfo(0).IsName("Roll") && _player.AnimCompo._animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        if (_player.AnimCompo._animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        {
             _player.TransitionState(PlayerStateType.Idle);
+            _player.ColCompo.enabled = true;
+        }
     }
 }

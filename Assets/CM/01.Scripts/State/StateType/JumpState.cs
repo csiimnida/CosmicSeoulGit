@@ -23,8 +23,12 @@ public class JumpState : PlayerState
     {
         if (_player.RbCompo.velocity.y < 0)
         {
-            _player.InputCompo.OnMoveEvent += _player.RotCompo.FaceDirection;
             _player.TransitionState(PlayerStateType.Fall);
         }
+    }
+
+    protected override void ExtiState()
+    {
+        _player.InputCompo.OnMoveEvent += _player.RotCompo.FaceDirection;
     }
 }

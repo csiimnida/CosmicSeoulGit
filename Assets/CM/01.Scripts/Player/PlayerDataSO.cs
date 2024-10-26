@@ -12,6 +12,9 @@ public class PlayerDataSO : ScriptableObject
     public float JumpPower = 4f;
     public float RollPower = 5f;
 
+    public float BlockingTime = 2f;
+    public float currentTime = 0f;
+
 
     public bool IsGround;
 }

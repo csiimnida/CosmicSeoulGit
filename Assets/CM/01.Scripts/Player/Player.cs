@@ -8,9 +8,18 @@ public class Player : MonoBehaviour
 
     private Dictionary<PlayerStateType, State> StateEnum = new Dictionary<PlayerStateType, State>();
     private PlayerStateType currentState;
+    
+    public AnimationChange AnimCompo {get ; private set;}
+    public PlayerRotation RotCompo {get ; private set;}
+    public Rigidbody2D RbCompo {get ; private set;}
+    public Collider2D ColCompo {get ; private set;}
 
-    private void Awake()
-    {
+    private void Awake(){
+        AnimCompo = GetComponentInChildren<AnimationChange>();
+        RotCompo = GetComponentInChildren<PlayerRotation>();
+        RbCompo= GetComponent<Rigidbody2D>();
+        ColCompo = GetComponent<Collider2D>();
+        
         foreach (PlayerStateType stateType in Enum.GetValues(typeof(PlayerStateType)))
         {
             string enumName = stateType.ToString();
@@ -19,6 +28,11 @@ public class Player : MonoBehaviour
             StateEnum.Add(stateType, state);
         }
         TransitionState(PlayerStateType.Idle);
+    }
+
+    private void Start()
+    {
+        InputCompo.OnMoveEvent += RotCompo.FaceDirection;
     }
 
     public void TransitionState(PlayerStateType newState)
@@ -31,6 +45,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         StateEnum[currentState].UpdateState();
+        Debug.Log(InputCompo.InputVector);
     }
 
     private void FixedUpdate()

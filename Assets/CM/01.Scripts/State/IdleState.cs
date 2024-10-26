@@ -4,7 +4,7 @@ using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class IdleState : State
+public class IdleState : PlayerState
 {
     public IdleState(Player player) : base(player)
     {

@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public abstract class State
+public abstract class PlayerState
 {
     protected Player _player;
 
-    public State(Player player){
+    public PlayerState(Player player){
         _player = player;
     }
 

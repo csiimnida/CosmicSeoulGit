@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     [field: SerializeField] public InputReader InputCompo;
 
-    private Dictionary<PlayerStateType, State> StateEnum = new Dictionary<PlayerStateType, State>();
+    private Dictionary<PlayerStateType, PlayerState> StateEnum = new Dictionary<PlayerStateType, PlayerState>();
     private PlayerStateType currentState;
     
     public AnimationChange AnimCompo {get ; private set;}
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         {
             string enumName = stateType.ToString();
             Type t = Type.GetType($"{enumName}State");
-            State state = Activator.CreateInstance(t, new object[] { this }) as State;
+            PlayerState state = Activator.CreateInstance(t, new object[] { this }) as PlayerState;
             StateEnum.Add(stateType, state);
         }
         TransitionState(PlayerStateType.Idle);

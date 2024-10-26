@@ -5,12 +5,12 @@ using UnityEngine.Events;
 
 public class AnimationChange : MonoBehaviour
 {
-    private Animator _animator;
+    public Animator Animator;
     public UnityEvent OnAnimationAction;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
+        Animator = GetComponent<Animator>();
     }
 
     public void PlayAnimaiton(AnimationType animationType) 
@@ -21,7 +21,7 @@ public class AnimationChange : MonoBehaviour
                 Play("Idle");
                 break;
             case AnimationType.Move:
-                Play("Run");
+                Play("Move");
                 break;
             case AnimationType.Jump:
                 Play("Jump");
@@ -29,11 +29,11 @@ public class AnimationChange : MonoBehaviour
             case AnimationType.Fall:
                 Play("Fall");
                 break;
-            case AnimationType.Dash:
-                Play("Dash");
+            case AnimationType.Roll:
+                Play("Roll");
                 break;
-            case AnimationType.Die:
-                Play("Die");
+            case AnimationType.Death:
+                Play("Death");
                 break;
             case AnimationType.Attack1:
                 Play("Attack1");
@@ -41,20 +41,17 @@ public class AnimationChange : MonoBehaviour
             case AnimationType.Attack2:
                 Play("Attack2");
                 break;
-            case AnimationType.EvAttack:
-                Play("EvAttack");
-                break;
             case AnimationType.Skill1:
                 Play("Skill1");
                 break;
             case AnimationType.Skill2:
                 Play("Skill2");
                 break;
-            case AnimationType.EvSkill1:
-                Play("EvSkill1");
+            case AnimationType.Block:
+                Play("Block");
                 break;
-            case AnimationType.EvSkill2:
-                Play("EvSkill2");
+            case AnimationType.BlockImpact:
+                Play("BlockImpact");
                 break;
             default:
                 break;
@@ -63,16 +60,16 @@ public class AnimationChange : MonoBehaviour
 
     internal void StopAnimation()
     {
-        _animator.enabled = false;
+        Animator.enabled = false;
     }
     internal void StartAnimation()
     {
-        _animator.enabled = true;
+        Animator.enabled = true;
     }
 
     public void Play(string name)
     {
-        _animator.Play(name);
+        Animator.Play(name);
     }
 
     public void InvokeAnimationAction()
@@ -84,16 +81,16 @@ public class AnimationChange : MonoBehaviour
 public enum AnimationType
 {
     Idle,
-    Dash,
-    Die,
-    Attack1,
-    Attack2,
-    EvAttack,
     Move,
     Jump,
     Fall,
+    Roll,
+    Hurt,
+    Death,
+    Attack1,
+    Attack2,
     Skill1,
     Skill2,
-    EvSkill1,
-    EvSkill2
+    Block,
+    BlockImpact
 }

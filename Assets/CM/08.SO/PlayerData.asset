@@ -15,7 +15,9 @@ MonoBehaviour:
   Damage: 10
   Hp: 100
   SwordAttackTime: 1
-  GunAttackTime: 1.25
-  MoveSpeed: 1
-  VariationalErosion: 0
-  OntTimeUpVariationalErosion: 5
+  MoveSpeed: 5
+  JumpPower: 6
+  RollPower: 5
+  BlockingTime: 0.5
+  currentTime: 1.0031754
+  IsGround: 0

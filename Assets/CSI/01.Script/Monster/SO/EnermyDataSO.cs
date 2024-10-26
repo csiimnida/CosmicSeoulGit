@@ -15,17 +15,17 @@ public class EnermyDataSO : ScriptableObject
     /// <summary>
     /// 적이 공격당 입힐 수 있는 피해량입니다.
     /// </summary>
-    public float AttackPower = 10;
+    public float AttackPower = 1;
 
 
     /// <summary>
     /// 적의 최대 생명력을 나타냅니다.
     /// </summary>
-    public float MaxHp = 100;
+    public float MaxHp = 50;
 
     /// <summary>
     /// 적의 공격 속도를 나타냅니다.
-    /// </summary>
+    /// </summary>  
     public float AttackSpeed = 3;
 
     /// <summary>

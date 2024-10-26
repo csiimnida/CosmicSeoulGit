@@ -5,12 +5,12 @@ using UnityEngine.Events;
 
 public class AnimationChange : MonoBehaviour
 {
-    public Animator _animator;
+    public Animator Animator;
     public UnityEvent OnAnimationAction;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
+        Animator = GetComponent<Animator>();
     }
 
     public void PlayAnimaiton(AnimationType animationType) 
@@ -60,16 +60,16 @@ public class AnimationChange : MonoBehaviour
 
     internal void StopAnimation()
     {
-        _animator.enabled = false;
+        Animator.enabled = false;
     }
     internal void StartAnimation()
     {
-        _animator.enabled = true;
+        Animator.enabled = true;
     }
 
     public void Play(string name)
     {
-        _animator.Play(name);
+        Animator.Play(name);
     }
 
     public void InvokeAnimationAction()

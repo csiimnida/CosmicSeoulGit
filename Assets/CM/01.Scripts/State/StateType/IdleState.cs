@@ -39,4 +39,9 @@ public class IdleState : PlayerState
     {
         _player.TransitionState(PlayerStateType.Block);
     }
+
+    protected override void HandleAttackPressed()
+    {
+        _player.TransitionState(PlayerStateType.Attack1);
+    }
 }

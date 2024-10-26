@@ -18,7 +18,7 @@ public class RollState : PlayerState
 
     public override void UpdateState()
     {
-        if (_player.AnimCompo._animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        if (_player.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             _player.TransitionState(PlayerStateType.Idle);
             _player.ColCompo.enabled = true;

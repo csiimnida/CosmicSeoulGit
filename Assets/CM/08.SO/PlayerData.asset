@@ -18,6 +18,6 @@ MonoBehaviour:
   MoveSpeed: 5
   JumpPower: 6
   RollPower: 5
-  BlockingTime: 1
-  currentTime: 0
+  BlockingTime: 0.5
+  currentTime: 1.0031754
   IsGround: 0

@@ -15,7 +15,7 @@ public class Attack1State : PlayerState
 
     public override void UpdateState()
     {
-        if (_player.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.5f)
+        if (_player.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.7f)
             _player.TransitionState(PlayerStateType.Idle);
     }
 

@@ -10,7 +10,6 @@ public class FallState : PlayerState
     protected override void EnterState()
     {
         _player.AnimCompo.PlayAnimaiton(AnimationType.Fall);
-        _player.InputCompo.OnMoveEvent -= _player.RotCompo.FaceDirection;
     }
 
     public override void UpdateState()
@@ -21,8 +20,7 @@ public class FallState : PlayerState
         }
     }
 
-    protected override void ExtiState()
-    {
-        _player.InputCompo.OnMoveEvent += _player.RotCompo.FaceDirection;
+    protected override void HandleMovement(Vector2 vector){
+        _player.RbCompo.velocity = new Vector2(_player.InputCompo.InputVector.x * _player.PlayerData.MoveSpeed, _player.RbCompo.velocity.y);
     }
 }

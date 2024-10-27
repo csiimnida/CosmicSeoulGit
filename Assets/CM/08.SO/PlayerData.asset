@@ -20,4 +20,5 @@ MonoBehaviour:
   RollPower: 5
   BlockingTime: 0.5
   currentTime: 1.0031754
+  AttackForwardDistance: 3
   IsGround: 0

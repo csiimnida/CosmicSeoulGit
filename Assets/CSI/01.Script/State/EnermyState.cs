@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class EmermyState : MonoBehaviour
+public class EnermyState : MonoBehaviour
 {
     
     protected Enermy _emermy;
 
-    public EmermyState(Enermy enermy){
+    public EnermyState(Enermy enermy){
         _emermy = enermy;
     }
 

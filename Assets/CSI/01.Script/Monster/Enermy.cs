@@ -12,6 +12,11 @@ public class Enermy : MonoBehaviour
     public PlayerRotation RotCompo {get ; private set;}
     public Rigidbody2D RbCompo {get ; private set;}
     public Collider2D ColCompo {get ; private set;}
+
+    public SpriteRenderer sprite;
+
+    public float NowHp;
+    private float MaxHp;
     
 
     private void Awake(){
@@ -19,6 +24,10 @@ public class Enermy : MonoBehaviour
         RotCompo = GetComponentInChildren<PlayerRotation>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
+
+        MaxHp = DataSo.MaxHp;
+        NowHp = MaxHp;
         
         foreach (EnermyStateType stateType in Enum.GetValues(typeof(EnermyStateType)))
         {
@@ -41,6 +50,7 @@ public class Enermy : MonoBehaviour
 
     private void Update()
     {
+        
         StateEnum[currentState].UpdateState();
     }
 

@@ -30,6 +30,11 @@ public class Attack1State : PlayerState
         _player.TransitionState(PlayerStateType.Roll);
     }
 
+    protected override void HandleBlockPressed()
+    {
+        _player.TransitionState(PlayerStateType.Block);
+    }
+
     protected override void ExtiState()
     {
         _player.InputCompo.OnMoveEvent += _player.RotCompo.FaceDirection;

@@ -25,12 +25,14 @@ public class Attack2State : PlayerState
 
     protected override void HandleRollPressed()
     {
-        _player.TransitionState(PlayerStateType.Roll);
+        if(_player.PlayerData.CanRool)
+            _player.TransitionState(PlayerStateType.Roll);
     }
 
     protected override void HandleBlockPressed()
     {
-        _player.TransitionState(PlayerStateType.Block);
+        if(_player.PlayerData.CanBlock)
+            _player.TransitionState(PlayerStateType.Block);
     }
 
     protected override void ExtiState()

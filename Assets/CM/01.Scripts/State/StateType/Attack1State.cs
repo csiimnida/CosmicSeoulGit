@@ -8,14 +8,14 @@ public class Attack1State : PlayerState
     }
     protected override void EnterState()
     {
-        _player.InputCompo.OnMoveEvent -= _player.RotCompo.FaceDirection;
         _player.AnimCompo.PlayAnimaiton(AnimationType.Attack1);
+        _player.InputCompo.OnMoveEvent -= _player.RotCompo.FaceDirection;
         _player.RbCompo.velocity = Vector2.zero;
     }
 
     public override void UpdateState()
     {
-        if (_player.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.7f)
+        if (_player.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") && _player.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.7f)
             _player.TransitionState(PlayerStateType.Idle);
     }
 
@@ -27,12 +27,14 @@ public class Attack1State : PlayerState
 
     protected override void HandleRollPressed()
     {
-        _player.TransitionState(PlayerStateType.Roll);
+        if(_player.PlayerData.CanRool)
+            _player.TransitionState(PlayerStateType.Roll);
     }
 
     protected override void HandleBlockPressed()
     {
-        _player.TransitionState(PlayerStateType.Block);
+        if(_player.PlayerData.CanBlock)
+            _player.TransitionState(PlayerStateType.Block);
     }
 
     protected override void ExtiState()

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class Player : MonoBehaviour
     private Dictionary<PlayerStateType, PlayerState> StateEnum = new Dictionary<PlayerStateType, PlayerState>();
     private PlayerStateType currentState;
 
+    private float NowHP;
+
 
     private void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
@@ -24,6 +27,8 @@ public class Player : MonoBehaviour
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
         GroundChecker = GetComponentInChildren<GroundChecker>();
+
+        NowHP = PlayerData.Hp;
         
         foreach (PlayerStateType stateType in Enum.GetValues(typeof(PlayerStateType)))
         {
@@ -56,4 +61,10 @@ public class Player : MonoBehaviour
     {
         StateEnum[currentState].FixedUpdateState();
     }
+
+    public void Damage(float damage){
+        NowHP -= damage;
+        TransitionState(PlayerStateType.Hurt);
+    }
+    
 }

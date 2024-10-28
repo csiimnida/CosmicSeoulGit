@@ -15,7 +15,7 @@ public class IdleState : PlayerState
 
     public override void UpdateState()
     {
-        if (Mathf.Abs(_player.InputCompo.InputVector.x) > 0)
+        if (Mathf.Abs(_player.RbCompo.velocity.x) > 0  || Mathf.Abs(_player.InputCompo.InputVector.x) > 0)
             _player.TransitionState(PlayerStateType.Move);
         if (_player.GroundChecker.IsGround == false)
             _player.TransitionState(PlayerStateType.Fall);
@@ -32,12 +32,14 @@ public class IdleState : PlayerState
     }
     protected override void HandleRollPressed()
     {
-        _player.TransitionState(PlayerStateType.Roll);
+        if(_player.PlayerData.CanRool)
+            _player.TransitionState(PlayerStateType.Roll);
     }
 
     protected override void HandleBlockPressed()
     {
-        _player.TransitionState(PlayerStateType.Block);
+        if(_player.PlayerData.CanBlock)
+            _player.TransitionState(PlayerStateType.Block);
     }
 
     protected override void HandleAttackPressed()
@@ -46,10 +48,12 @@ public class IdleState : PlayerState
     }
 
     protected override void HandleSkill1Pressed(){
-        _player.TransitionState(PlayerStateType.Skill1);
+        if(_player.PlayerData.CanSkill1)
+            _player.TransitionState(PlayerStateType.Skill1);
     }
 
     protected override void HandleSkill2Pressed(){
-        _player.TransitionState(PlayerStateType.Skill2);
+        if(_player.PlayerData.CanSkill2)
+            _player.TransitionState(PlayerStateType.Skill2);
     }
 }

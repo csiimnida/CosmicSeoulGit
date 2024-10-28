@@ -13,12 +13,25 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   Damage: 10
+  Skill1Multiple: 4
+  Skill2Multiple: 3
   Hp: 100
   SwordAttackTime: 1
   MoveSpeed: 5
   JumpPower: 6
   RollPower: 5
+  RollCooltime: 5
+  BlockCooltime: 5
+  Skill1Cooltime: 6
+  Skill2Cooltime: 4
   BlockingTime: 0.5
-  currentTime: 1.0031754
-  AttackForwardDistance: 3
+  currentTime: 0
+  AttackForwardDistance: 2
   IsGround: 0
+  IsAttack1Hit: 0
+  IsAttack2Hit: 0
+  IsSkill1Hit: 0
+  CanRool: 1
+  CanBlock: 1
+  CanSkill1: 1
+  CanSkill2: 1

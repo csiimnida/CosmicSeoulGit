@@ -12,7 +12,7 @@ public class RollState : PlayerState
     protected override void EnterState()
     {
         _player.AnimCompo.PlayAnimaiton(AnimationType.Roll);
-        _player.RbCompo.AddForce(new Vector2(_player.transform.localScale.x * _player.PlayerData.RollPower, 0), ForceMode2D.Impulse);
+        _player.RbCompo.AddForce(new Vector2(Mathf.Sign(_player.transform.localScale.x) * _player.PlayerData.RollPower, 0), ForceMode2D.Impulse);
         _player.ColCompo.enabled = false;
     }
 

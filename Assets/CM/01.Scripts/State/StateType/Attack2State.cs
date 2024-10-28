@@ -14,6 +14,7 @@ public class Attack2State : PlayerState
         _player.InputCompo.OnMoveEvent -= _player.RotCompo.FaceDirection;
         _player.AnimCompo.PlayAnimaiton(AnimationType.Attack2);
         _player.RbCompo.velocity = Vector2.zero;
+        _player.RbCompo.AddForce(new Vector2(Mathf.Sign(_player.transform.localScale.x) * _player.PlayerData.AttackForwardDistance, 0), ForceMode2D.Impulse);
     }
 
     public override void UpdateState()
@@ -25,6 +26,11 @@ public class Attack2State : PlayerState
     protected override void HandleRollPressed()
     {
         _player.TransitionState(PlayerStateType.Roll);
+    }
+
+    protected override void HandleBlockPressed()
+    {
+        _player.TransitionState(PlayerStateType.Block);
     }
 
     protected override void ExtiState()

@@ -34,7 +34,6 @@ public class MoveState : PlayerState
     {
         _player.TransitionState(PlayerStateType.Roll);
     }
-
     protected override void HandleBlockPressed()
     {
         _player.TransitionState(PlayerStateType.Block);
@@ -43,5 +42,12 @@ public class MoveState : PlayerState
     {
         _player.TransitionState(PlayerStateType.Attack1);
     }
+    
+    protected override void HandleSkill1Pressed(){
+        _player.TransitionState(PlayerStateType.Skill1);
+    }
 
+    protected override void HandleSkill2Pressed(){
+        _player.TransitionState(PlayerStateType.Skill2);
+    }
 }

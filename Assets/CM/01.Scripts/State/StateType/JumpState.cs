@@ -15,8 +15,6 @@ public class JumpState : PlayerState
         }
         else
             _player.TransitionState(PlayerStateType.Idle);
-
-        _player.InputCompo.OnMoveEvent -= _player.RotCompo.FaceDirection;
     }
 
     public override void UpdateState()
@@ -27,8 +25,8 @@ public class JumpState : PlayerState
         }
     }
 
-    protected override void ExtiState()
+    protected override void HandleMovement(Vector2 vector)
     {
-        _player.InputCompo.OnMoveEvent += _player.RotCompo.FaceDirection;
+        _player.RbCompo.velocity = new Vector2(_player.InputCompo.InputVector.x * _player.PlayerData.MoveSpeed, _player.RbCompo.velocity.y);
     }
 }

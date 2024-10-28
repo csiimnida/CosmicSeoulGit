@@ -44,4 +44,12 @@ public class IdleState : PlayerState
     {
         _player.TransitionState(PlayerStateType.Attack1);
     }
+
+    protected override void HandleSkill1Pressed(){
+        _player.TransitionState(PlayerStateType.Skill1);
+    }
+
+    protected override void HandleSkill2Pressed(){
+        _player.TransitionState(PlayerStateType.Skill2);
+    }
 }

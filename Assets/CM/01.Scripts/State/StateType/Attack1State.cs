@@ -15,7 +15,7 @@ public class Attack1State : PlayerState
 
     public override void UpdateState()
     {
-        if (_player.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.5f)
+        if (_player.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.7f)
             _player.TransitionState(PlayerStateType.Idle);
     }
 
@@ -28,6 +28,11 @@ public class Attack1State : PlayerState
     protected override void HandleRollPressed()
     {
         _player.TransitionState(PlayerStateType.Roll);
+    }
+
+    protected override void HandleBlockPressed()
+    {
+        _player.TransitionState(PlayerStateType.Block);
     }
 
     protected override void ExtiState()

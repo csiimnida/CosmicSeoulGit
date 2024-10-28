@@ -15,6 +15,7 @@ public class PlayerDataSO : ScriptableObject
     public float BlockingTime = 2f;
     public float currentTime = 0f;
 
+    public float AttackForwardDistance;
 
     public bool IsGround;
 }

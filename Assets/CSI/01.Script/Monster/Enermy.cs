@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class Enermy : MonoBehaviour
@@ -19,6 +20,9 @@ public class Enermy : MonoBehaviour
 
     public float NowHp;
     private float MaxHp;
+
+    private Material NomallMaterial;
+    public Material HitMaterial;
     
 
     private void Awake(){
@@ -28,6 +32,7 @@ public class Enermy : MonoBehaviour
         ColCompo = GetComponent<Collider2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         transform.localScale = DataSo.Size;
+        NomallMaterial = sprite.material;
 
         MaxHp = DataSo.MaxHp;
         NowHp = MaxHp;
@@ -80,6 +85,7 @@ public class Enermy : MonoBehaviour
     
     public void Damage(float damage){
         NowHp -= damage;
+        StartCoroutine(Do_Hit_Effect());
         CombitTimer = 0;
         if (!Combit)
         {
@@ -89,6 +95,14 @@ public class Enermy : MonoBehaviour
         if(NowHp <= 0)
             TransitionState(EnermyStateType.Die);
     }
+
+    private IEnumerator Do_Hit_Effect()
+    {
+        sprite.material = HitMaterial;
+        yield return new WaitForSeconds(0.1f);
+        sprite.material = NomallMaterial;
+    }
+
 }
 
 

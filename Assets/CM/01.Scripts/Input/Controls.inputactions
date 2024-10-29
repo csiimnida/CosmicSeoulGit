@@ -60,22 +60,13 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SpecialSkill",
+                    "name": "Block",
                     "type": "Button",
-                    "id": "c24b7ae0-9f69-40b4-9bee-b7bb786a0466",
+                    "id": "7bdefdb3-c8ae-4a76-8c34-c4ece39f1e98",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Mouse",
-                    "type": "Value",
-                    "id": "1f9d6607-79dd-4c1a-959f-20dea7c4b3dd",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -169,23 +160,12 @@
                 },
                 {
                     "name": "",
-                    "id": "a0489a92-896d-48f3-928b-a95a48613bfb",
-                    "path": "<Keyboard>/r",
+                    "id": "6118eed7-7fd1-49a8-8b4f-ec3c254e0806",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyMouse",
-                    "action": "SpecialSkill",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ff21fced-fa80-4989-903c-82b518f8a849",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyMouse",
-                    "action": "Mouse",
+                    "groups": "",
+                    "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

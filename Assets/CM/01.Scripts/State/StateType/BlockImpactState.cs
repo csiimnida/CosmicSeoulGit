@@ -11,7 +11,7 @@ public class BlockImpactState : PlayerState
 
     protected override void EnterState(){
         _player.AnimCompo.PlayAnimaiton(AnimationType.BlockImpact);
-        _player.RbCompo.AddForce(new Vector2(_player.transform.localScale.x * _player.PlayerData.AttackForwardDistance, _player.RbCompo.velocity.y), ForceMode2D.Impulse);
+        _player.RbCompo.AddForce(new Vector2(-_player.transform.localScale.x * _player.PlayerData.AttackForwardDistance, _player.RbCompo.velocity.y), ForceMode2D.Impulse);
     }
 
     public override void UpdateState(){

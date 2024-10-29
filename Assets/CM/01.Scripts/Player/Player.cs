@@ -65,11 +65,15 @@ public class Player : MonoBehaviour
 
     public void Damage(float damage){
         NowHP -= damage;
-        if(currentState == PlayerStateType.Block)
+
+        if (currentState == PlayerStateType.Block)
+        {
+            NowHP += damage;
             TransitionState(PlayerStateType.BlockImpact);
+        }
         else if(NowHP > 0)
             TransitionState(PlayerStateType.Hurt);
-        else
+        else if(NowHP <= 0)
             TransitionState(PlayerStateType.Death);
     }
     

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CloneGenerner : MonoBehaviour
@@ -9,7 +7,10 @@ public class CloneGenerner : MonoBehaviour
     public void SpawnEye()
     {
         EyeBall eye = PoolManager.Instance.Pop("Eye") as EyeBall;
+        eye.transform.rotation = target.parent.rotation;
         eye.transform.position = target.position;
-        eye.transform.localScale = target.parent.localScale;
+        eye.Rotate();
     }
+
+    
 }

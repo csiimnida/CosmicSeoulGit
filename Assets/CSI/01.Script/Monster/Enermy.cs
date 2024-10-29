@@ -10,7 +10,7 @@ public class Enermy : MonoBehaviour
     public EnermyDataSO DataSo;
     public AnimationChange AnimCompo {get ; private set;}
     public PlayerRotation RotCompo {get ; private set;}
-    public Rigidbody2D RbCompo {get ; private set;}
+    public Rigidbody2D RbCompo {get ; set;}
     public Collider2D ColCompo {get ; private set;}
 
     public SpriteRenderer sprite;
@@ -25,6 +25,7 @@ public class Enermy : MonoBehaviour
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        transform.localScale = DataSo.Size;
 
         MaxHp = DataSo.MaxHp;
         NowHp = MaxHp;

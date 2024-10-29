@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b54f668273c4e054d8bff66b54a19ff9, type: 3}
   m_Name: Bullet
   m_EditorClassIdentifier: 
-  poolName: 
+  poolName: Bullet
   prefab: {fileID: 5751509276564036331, guid: 8839c92dd54e38442a1199cd141a3edf, type: 3}
-  count: 10
+  count: 2

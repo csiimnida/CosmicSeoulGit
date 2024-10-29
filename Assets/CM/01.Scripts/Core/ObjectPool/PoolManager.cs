@@ -34,6 +34,7 @@ public class PoolManager : MonoSingleton<PoolManager>
         if (_pools.ContainsKey(itemName))
         {
             IPoolable item = _pools[itemName].Pop();
+            
             item.ResetItem();
             return item;
         }

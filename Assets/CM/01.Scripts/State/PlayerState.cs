@@ -11,12 +11,12 @@ public abstract class PlayerState
 
     public void Enter(){
         _player.InputCompo.OnJumpEvent += HandleJumpPressed;
-        _player.InputCompo.OnDashEvent += HandleDashPressed;
+        _player.InputCompo.OnDashEvent += HandleRollPressed;
         _player.InputCompo.OnAttackEvent += HandleAttackPressed;
         _player.InputCompo.OnSkill1Event += HandleSkill1Pressed;
         _player.InputCompo.OnSkill2Event += HandleSkill2Pressed;
-        _player.InputCompo.OnSpecialSkillEvent += HandleSpecialSkillPressed;
         _player.InputCompo.OnMoveEvent += HandleMovement;
+        _player.InputCompo.OnBlockEvent += HandleBlockPressed;
         EnterState();
     }
 
@@ -28,12 +28,12 @@ public abstract class PlayerState
     public void Exit()
     {
         _player.InputCompo.OnJumpEvent -= HandleJumpPressed;
-        _player.InputCompo.OnDashEvent -= HandleDashPressed;
+        _player.InputCompo.OnDashEvent -= HandleRollPressed;
         _player.InputCompo.OnAttackEvent -= HandleAttackPressed;
         _player.InputCompo.OnSkill1Event -= HandleSkill1Pressed;
         _player.InputCompo.OnSkill2Event -= HandleSkill2Pressed;
-        _player.InputCompo.OnSpecialSkillEvent -= HandleSpecialSkillPressed;
         _player.InputCompo.OnMoveEvent -= HandleMovement;
+        _player.InputCompo.OnBlockEvent -= HandleBlockPressed;
         ExtiState();
     }
 
@@ -55,7 +55,7 @@ public abstract class PlayerState
     protected virtual void HandleJumpPressed(){
         
     }
-    protected virtual void HandleDashPressed(){
+    protected virtual void HandleRollPressed(){
         
     }
     protected virtual void HandleAttackPressed(){
@@ -73,6 +73,11 @@ public abstract class PlayerState
     protected virtual void HandleMovement(Vector2 vector){
         
     }
+
+    protected virtual void HandleBlockPressed()
+    {
+
+    }
 }
 
 public enum PlayerStateType
@@ -80,13 +85,14 @@ public enum PlayerStateType
     Idle,
     Move,
     Jump,
-    Dash,
+    Fall,
+    Roll,
+    Hurt,
+    Death,
     Attack1,
     Attack2,
-    EvAttack,
     Skill1,
     Skill2,
-    EvSkill1,
-    EvSkill2,
-    SpecialSkill
+    Block,
+    BlockImpact
 }

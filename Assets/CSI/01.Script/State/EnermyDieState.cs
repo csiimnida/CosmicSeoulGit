@@ -1,17 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class EnermyDieState : MonoBehaviour
+public class EnermyDieState : EnermyState
 {
-    // Start is called before the first frame update
-    void Start()
+    public EnermyDieState(Enermy enermy) : base(enermy)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void EnterState()
+    {
+        
+    }
+    public override void UpdateState()
     {
         
     }

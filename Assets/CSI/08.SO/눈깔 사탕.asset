@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
   m_Name: "\uB208\uAE54 \uC0AC\uD0D5"
   m_EditorClassIdentifier: 
-  Size: {x: 1, y: 1}
-  AttackPower: 1
+  Size: {x: 1.5, y: 1.5}
+  AttackPower: 5
   MaxHp: 55
   AttackSpeed: 3
-  MoveSpeed: 3
+  MoveSpeed: 2
   Perception_range: 10
   Attack_range: 5
   Anchor_Enermy: 0

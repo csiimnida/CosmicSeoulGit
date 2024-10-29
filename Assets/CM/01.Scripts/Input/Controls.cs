@@ -82,9 +82,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SpecialSkill"",
+                    ""name"": ""Block"",
                     ""type"": ""Button"",
-                    ""id"": ""c24b7ae0-9f69-40b4-9bee-b7bb786a0466"",
+                    ""id"": ""7bdefdb3-c8ae-4a76-8c34-c4ece39f1e98"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -182,12 +182,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a0489a92-896d-48f3-928b-a95a48613bfb"",
-                    ""path"": ""<Keyboard>/r"",
+                    ""id"": ""6118eed7-7fd1-49a8-8b4f-ec3c254e0806"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyMouse"",
-                    ""action"": ""SpecialSkill"",
+                    ""groups"": """",
+                    ""action"": ""Block"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -210,7 +210,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Skill1 = m_Player.FindAction("Skill1", throwIfNotFound: true);
         m_Player_Skill2 = m_Player.FindAction("Skill2", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
-        m_Player_SpecialSkill = m_Player.FindAction("SpecialSkill", throwIfNotFound: true);
+        m_Player_Block = m_Player.FindAction("Block", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -278,7 +278,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Skill1;
     private readonly InputAction m_Player_Skill2;
     private readonly InputAction m_Player_Attack;
-    private readonly InputAction m_Player_SpecialSkill;
+    private readonly InputAction m_Player_Block;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -289,7 +289,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Skill1 => m_Wrapper.m_Player_Skill1;
         public InputAction @Skill2 => m_Wrapper.m_Player_Skill2;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
-        public InputAction @SpecialSkill => m_Wrapper.m_Player_SpecialSkill;
+        public InputAction @Block => m_Wrapper.m_Player_Block;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -317,9 +317,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
-            @SpecialSkill.started += instance.OnSpecialSkill;
-            @SpecialSkill.performed += instance.OnSpecialSkill;
-            @SpecialSkill.canceled += instance.OnSpecialSkill;
+            @Block.started += instance.OnBlock;
+            @Block.performed += instance.OnBlock;
+            @Block.canceled += instance.OnBlock;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -342,9 +342,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
-            @SpecialSkill.started -= instance.OnSpecialSkill;
-            @SpecialSkill.performed -= instance.OnSpecialSkill;
-            @SpecialSkill.canceled -= instance.OnSpecialSkill;
+            @Block.started -= instance.OnBlock;
+            @Block.performed -= instance.OnBlock;
+            @Block.canceled -= instance.OnBlock;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -379,6 +379,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnSkill1(InputAction.CallbackContext context);
         void OnSkill2(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
-        void OnSpecialSkill(InputAction.CallbackContext context);
+        void OnBlock(InputAction.CallbackContext context);
     }
 }

@@ -1,17 +1,28 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class Enermy : MonoBehaviour
 {
 
-    
-    private Dictionary<EnermyStateType, EmermyState> StateEnum = new Dictionary<EnermyStateType, EmermyState>();
+    public GameObject Player;
+    private Dictionary<EnermyStateType, EnermyState> StateEnum = new Dictionary<EnermyStateType, EnermyState>();
     private EnermyStateType currentState;
     public EnermyDataSO DataSo;
     public AnimationChange AnimCompo {get ; private set;}
     public PlayerRotation RotCompo {get ; private set;}
-    public Rigidbody2D RbCompo {get ; private set;}
+    public Rigidbody2D RbCompo {get ; set;}
     public Collider2D ColCompo {get ; private set;}
+    public bool Combit { get; set; }
+    public float CombitTimer;
+
+    public SpriteRenderer sprite;
+
+    public float NowHp;
+    private float MaxHp;
+
+    private Material NomallMaterial;
+    public Material HitMaterial;
     
 
     private void Awake(){
@@ -19,12 +30,18 @@ public class Enermy : MonoBehaviour
         RotCompo = GetComponentInChildren<PlayerRotation>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        transform.localScale = DataSo.Size;
+        NomallMaterial = sprite.material;
+
+        MaxHp = DataSo.MaxHp;
+        NowHp = MaxHp;
         
         foreach (EnermyStateType stateType in Enum.GetValues(typeof(EnermyStateType)))
         {
             string enumName = stateType.ToString();
             Type t = Type.GetType($"Enermy{enumName}State");
-            EmermyState state = Activator.CreateInstance(t, new object[] { this }) as EmermyState;
+            EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
             StateEnum.Add(stateType, state);
         }
         TransitionState(EnermyStateType.Idle);
@@ -41,6 +58,12 @@ public class Enermy : MonoBehaviour
 
     private void Update()
     {
+
+        CombitTimer += Time.deltaTime;
+        if (CombitTimer >= 10)
+        {
+            Combit = false;
+        }
         StateEnum[currentState].UpdateState();
     }
 
@@ -55,9 +78,28 @@ public class Enermy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position,DataSo.Perception_range);//감지 범위
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
-        
-
     }
+    
+    public void Damage(float damage){
+        NowHp -= damage;
+        StartCoroutine(Do_Hit_Effect());
+        CombitTimer = 0;
+        if (!Combit)
+        {
+            Combit = true;
+            TransitionState(EnermyStateType.Move);
+        }
+        if(NowHp <= 0)
+            TransitionState(EnermyStateType.Die);
+    }
+
+    private IEnumerator Do_Hit_Effect()
+    {
+        sprite.material = HitMaterial;
+        yield return new WaitForSeconds(0.1f);
+        sprite.material = NomallMaterial;
+    }
+
 }
 
 

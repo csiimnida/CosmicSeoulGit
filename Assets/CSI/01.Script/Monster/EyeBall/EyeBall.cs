@@ -14,15 +14,33 @@ public class EyeBall : MonoBehaviour, IPoolable
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+
+    private void OnEnable()
     {
-        rigidbody2D.velocity = (Mathf.Approximately(transform.localScale.x, 1) ? Vector2.right : Vector2.left) * 2;
+
     }
 
     public string PoolName => _poolName;
     public GameObject ObjectPrefab => gameObject;
     public void ResetItem()
     {
+        print("생성 Item");
+        print(gameObject.name);
         
+
+    }
+
+    public void Rotate()
+    {
+        rigidbody2D.velocity = ((Mathf.Approximately(transform.eulerAngles.y, 180)) ? Vector2.left : Vector2.right) * 2;
+
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("Player"))
+        {
+            PoolManager.Instance.Push(this);
+        }
     }
 }

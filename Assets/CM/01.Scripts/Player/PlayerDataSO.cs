@@ -41,4 +41,6 @@ public class PlayerDataSO : ScriptableObject
     public bool CanBlock = true;
     public bool CanSkill1 = true;
     public bool CanSkill2 = true;
+
+    public bool IsFlip = false;
 }

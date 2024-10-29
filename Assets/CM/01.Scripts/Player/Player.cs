@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         InputCompo.OnMoveEvent += RotCompo.FaceDirection;
+        PlayerData.IsFlip = false;
     }
 
     public void TransitionState(PlayerStateType newState)
@@ -64,7 +65,12 @@ public class Player : MonoBehaviour
 
     public void Damage(float damage){
         NowHP -= damage;
-        TransitionState(PlayerStateType.Hurt);
+        if(currentState == PlayerStateType.Block)
+            TransitionState(PlayerStateType.BlockImpact);
+        else if(NowHP > 0)
+            TransitionState(PlayerStateType.Hurt);
+        else
+            TransitionState(PlayerStateType.Death);
     }
     
 }

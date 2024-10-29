@@ -20,27 +20,15 @@ public class HitChecker : MonoBehaviour{
     private Collider2D Skill1Collider;
 
     public void CheckAttack1(){
-        Attack1Collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
-        if (Attack1Collider != null)
-        {
-            _player.PlayerData.IsAttack1Hit = true;
-        }
+        _player.PlayerData.IsAttack1Hit = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
     }
     
     public void CheckAttack2(){
-        Attack2Collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
-        if (Attack2Collider != null)
-        {
-            _player.PlayerData.IsAttack2Hit = true;
-        }
+        _player.PlayerData.IsAttack2Hit = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
     }
     
     public void CheckSkill1(){
-        Skill1Collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
-        if (Skill1Collider != null)
-        {
-            _player.PlayerData.IsSkill1Hit = true;
-        }
+        _player.PlayerData.IsSkill1Hit = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
     }
 
     private void OnDrawGizmos(){

@@ -20,14 +20,18 @@ public class Bullet : MonoBehaviour, IPoolable
 
     private void Start(){
         if(_playerData.IsFlip)
-            _rigidbody2D.AddForce(transform.right * speed, ForceMode2D.Impulse);
-        else
             _rigidbody2D.AddForce(transform.right * -speed, ForceMode2D.Impulse);
+        else
+            _rigidbody2D.AddForce(transform.right * speed, ForceMode2D.Impulse);
     }
 
     public GameObject ObjectPrefab => gameObject;
 
     public void ResetItem(){
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D other){
+        //other.GetComponent<Enermy>().
     }
 }

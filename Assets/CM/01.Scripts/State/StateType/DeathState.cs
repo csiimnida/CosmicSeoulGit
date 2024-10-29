@@ -11,7 +11,7 @@ public class DeathState : PlayerState
 
     protected override void EnterState(){
         _player.InputCompo.OnMoveEvent -= _player.RotCompo.FaceDirection;
-        _player.TransitionState(PlayerStateType.Death);
+        _player.AnimCompo.PlayAnimaiton(AnimationType.Death);
         _player.RbCompo.velocity = new Vector2(0,_player.RbCompo.velocity.y);
     }
 

@@ -46,8 +46,7 @@ public class Player : MonoBehaviour
         PlayerData.IsFlip = false;
     }
 
-    public void TransitionState(PlayerStateType newState)
-    {
+    public void TransitionState(PlayerStateType newState){
         StateEnum[currentState].Exit();
         currentState = newState;
         StateEnum[currentState].Enter();

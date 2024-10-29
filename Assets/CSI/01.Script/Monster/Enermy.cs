@@ -58,10 +58,7 @@ public class Enermy : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Damage(0);
-        }
+
         CombitTimer += Time.deltaTime;
         if (CombitTimer >= 10)
         {

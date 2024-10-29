@@ -20,15 +20,39 @@ public class HitChecker : MonoBehaviour{
     private Collider2D Skill1Collider;
 
     public void CheckAttack1(){
-        _player.PlayerData.IsAttack1Hit = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
+        Collider2D collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
+        if (collider != null)
+        {
+            Enermy enemy = collider.GetComponent<Enermy>();
+            if (enemy != null)
+            {
+                enemy.Damage(_player.PlayerData.Damage);
+            }
+        }
     }
     
     public void CheckAttack2(){
-        _player.PlayerData.IsAttack2Hit = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
+        Collider2D collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
+        if (collider != null)
+        {
+            Enermy enemy = collider.GetComponent<Enermy>();
+            if (enemy != null)
+            {
+                enemy.Damage(_player.PlayerData.Damage);
+            }
+        }
     }
     
     public void CheckSkill1(){
-        _player.PlayerData.IsSkill1Hit = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
+        Collider2D collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
+        if (collider != null)
+        {
+            Enermy enemy = collider.GetComponent<Enermy>();
+            if (enemy != null)
+            {
+                enemy.Damage(_player.PlayerData.Damage * _player.PlayerData.Skill1Multiple);
+            }
+        }
     }
 
     private void OnDrawGizmos(){

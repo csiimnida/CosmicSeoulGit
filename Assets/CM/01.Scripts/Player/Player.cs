@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     private PlayerStateType currentState;
 
     private float NowHP;
+    
+    public event Action OnDeath;
 
 
     private void Awake(){
@@ -75,5 +77,12 @@ public class Player : MonoBehaviour
         else if(NowHP <= 0)
             TransitionState(PlayerStateType.Death);
     }
-    
+
+    public void OnDeathEventInvoke(){
+        OnDeath?.Invoke();
+    }
+
+    private void OnDestroy(){
+        StateEnum[currentState].Exit();
+    }
 }

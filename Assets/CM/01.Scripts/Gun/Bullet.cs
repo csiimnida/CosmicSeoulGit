@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour, IPoolable
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    private void Start(){
+    private void OnEnable(){
         if(_playerData.IsFlip)
             _rigidbody2D.AddForce(transform.right * -speed, ForceMode2D.Impulse);
         else
@@ -32,6 +32,11 @@ public class Bullet : MonoBehaviour, IPoolable
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        //other.GetComponent<Enermy>().
+        Enermy enemy = other.GetComponent<Enermy>();
+        if (enemy != null)
+        {
+            enemy.Damage(_playerData.Damage * _playerData.Skill2Multiple);
+        }
+        PoolManager.Instance.Push(this);
     }
 }

@@ -7,8 +7,8 @@ public class PlayerDataSO : ScriptableObject
 {
     [Header("Float")]
     public float Damage = 10f;
-    public float Skill1Multiple = 4f;
-    public float Skill2Multiple = 3f;
+    public float Skill1Multiple = 2.5f;
+    public float Skill2Multiple = 2f;
     public float Hp = 100f;
     public float SwordAttackTime = 1f;
     public float MoveSpeed = 1f;
@@ -32,10 +32,6 @@ public class PlayerDataSO : ScriptableObject
 
     [Header("Bool")]
     public bool IsGround;
-
-    public bool IsAttack1Hit;
-    public bool IsAttack2Hit;
-    public bool IsSkill1Hit;
 
     public bool CanRool = true;
     public bool CanBlock = true;

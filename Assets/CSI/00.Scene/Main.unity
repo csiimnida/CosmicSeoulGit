@@ -708,6 +708,7 @@ MonoBehaviour:
   CombitTimer: 0
   sprite: {fileID: 0}
   NowHp: 0
+  HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
 --- !u!1 &1030589739
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37b58646b32c984b91bfbc9ca5eb24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 0}
 --- !u!114 &1030589744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,7 +905,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1149,9 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7ed415648779d4595422c00c194e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dispersion: 20
   firePoint: {fileID: 2137359242}
-  AmmoCount: 5
 --- !u!114 &1737566300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,6 +1180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37b58646b32c984b91bfbc9ca5eb24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 0}
 --- !u!95 &1737566302
 Animator:
   serializedVersion: 5

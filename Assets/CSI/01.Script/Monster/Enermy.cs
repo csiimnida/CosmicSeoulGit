@@ -6,8 +6,8 @@ public class Enermy : MonoBehaviour
 {
 
     public Player player;
-    private Dictionary<EnermyStateType, EnermyState> StateEnum = new Dictionary<EnermyStateType, EnermyState>();
-    public EnermyStateType currentState;
+    private Dictionary<CandyEyeEnermyStateType, EnermyState> StateEnum = new Dictionary<CandyEyeEnermyStateType, EnermyState>();
+    public CandyEyeEnermyStateType currentState;
     public EnermyDataSO DataSo;
     public AnimationChange AnimCompo {get ; private set;}
     public PlayerRotation RotCompo {get ; private set;}
@@ -37,14 +37,14 @@ public class Enermy : MonoBehaviour
         MaxHp = DataSo.MaxHp;
         NowHp = MaxHp;
         
-        foreach (EnermyStateType stateType in Enum.GetValues(typeof(EnermyStateType)))
+        foreach (CandyEyeEnermyStateType stateType in Enum.GetValues(typeof(CandyEyeEnermyStateType)))
         {
             string enumName = stateType.ToString();
             Type t = Type.GetType($"Enermy{enumName}State");
             EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
             StateEnum.Add(stateType, state);
         }
-        TransitionState(EnermyStateType.Idle);
+        TransitionState(CandyEyeEnermyStateType.Idle);
     }
 
     protected virtual void Start(){
@@ -52,7 +52,7 @@ public class Enermy : MonoBehaviour
     }
 
 
-    public void TransitionState(EnermyStateType newState)
+    public void TransitionState(CandyEyeEnermyStateType newState)
     {
         StateEnum[currentState].Exit();
         currentState = newState;
@@ -91,13 +91,13 @@ public class Enermy : MonoBehaviour
         if (!Combit)
         {
             Combit = true;
-            TransitionState(EnermyStateType.Move);
+            TransitionState(CandyEyeEnermyStateType.Move);
         }
 
         if (NowHp <= 0)
         {
             print("죽음");
-            TransitionState(EnermyStateType.Die);
+            TransitionState(CandyEyeEnermyStateType.Die);
         }
     }
 

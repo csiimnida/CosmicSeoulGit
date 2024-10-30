@@ -12,3 +12,10 @@ public class CandyEye : Enermy
         base.Start();
     }
 }
+public enum CandyEyeEnermyStateType
+{
+    Idle,
+    Move,
+    Attack1,
+    Die,
+}

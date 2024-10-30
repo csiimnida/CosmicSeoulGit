@@ -22,11 +22,11 @@ public class Candy_Eye_EnermyMoveState : EnermyState
         
         if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")))
         {
-            _emermy.TransitionState(EnermyStateType.Attack1);
+            _emermy.TransitionState(CandyEyeEnermyStateType.Attack1);
         }
         if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,LayerMask.GetMask("Player")) && !_emermy.Combit)
         {
-            _emermy.TransitionState(EnermyStateType.Idle);
+            _emermy.TransitionState(CandyEyeEnermyStateType.Idle);
         }
     }
 

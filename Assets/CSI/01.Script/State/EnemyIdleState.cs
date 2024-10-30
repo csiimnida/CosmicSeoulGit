@@ -7,12 +7,15 @@ public class EnermyIdleState : EnermyState
 {
     public EnermyIdleState(Enermy enermy) : base(enermy)
     {
-    
+        _emermy.AnimCompo.PlayAnimaiton(AnimationType.Idle);
+
     }
 
     protected override void EnterState()
     {
+        Debug.Log("Idle실행");
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Idle);
+
     }
 
     public override void UpdateState(){

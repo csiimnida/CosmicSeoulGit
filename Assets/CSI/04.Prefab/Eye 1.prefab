@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 150772468798885260}
   - component: {fileID: 9083466217456004845}
   - component: {fileID: 4262508673823229195}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eye 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37869fc0d64386f478c65a640360fae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  player: {fileID: 0}
   currentState: 0
   DataSo: {fileID: 11400000, guid: 4ea3ca07ec6d69c4da486beaca764f16, type: 2}
   CombitTimer: 0

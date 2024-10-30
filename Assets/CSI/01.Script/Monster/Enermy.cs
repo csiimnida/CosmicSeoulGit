@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enermy : MonoBehaviour
 {
 
-    public GameObject Player;
+    public Player player;
     private Dictionary<EnermyStateType, EnermyState> StateEnum = new Dictionary<EnermyStateType, EnermyState>();
     public EnermyStateType currentState;
     public EnermyDataSO DataSo;
@@ -47,6 +47,9 @@ public class Enermy : MonoBehaviour
         TransitionState(EnermyStateType.Idle);
     }
 
+    private void Start(){
+        player = GameManager.Instance.Player;
+    }
 
 
     public void TransitionState(EnermyStateType newState)

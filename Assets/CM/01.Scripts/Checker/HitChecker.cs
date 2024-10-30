@@ -20,26 +20,38 @@ public class HitChecker : MonoBehaviour{
     private Collider2D Skill1Collider;
 
     public void CheckAttack1(){
-        Attack1Collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
-        if (Attack1Collider != null)
+        Collider2D collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
+        if (collider != null)
         {
-            _player.PlayerData.IsAttack1Hit = true;
+            Enermy enemy = collider.GetComponent<Enermy>();
+            if (enemy != null)
+            {
+                enemy.Damage(_player.PlayerData.Damage);
+            }
         }
     }
     
     public void CheckAttack2(){
-        Attack2Collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
-        if (Attack2Collider != null)
+        Collider2D collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
+        if (collider != null)
         {
-            _player.PlayerData.IsAttack2Hit = true;
+            Enermy enemy = collider.GetComponent<Enermy>();
+            if (enemy != null)
+            {
+                enemy.Damage(_player.PlayerData.Damage);
+            }
         }
     }
     
     public void CheckSkill1(){
-        Skill1Collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
-        if (Skill1Collider != null)
+        Collider2D collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
+        if (collider != null)
         {
-            _player.PlayerData.IsSkill1Hit = true;
+            Enermy enemy = collider.GetComponent<Enermy>();
+            if (enemy != null)
+            {
+                enemy.Damage(_player.PlayerData.Damage * _player.PlayerData.Skill1Multiple);
+            }
         }
     }
 

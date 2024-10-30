@@ -53,6 +53,9 @@ public class AnimationChange : MonoBehaviour
             case AnimationType.BlockImpact:
                 Play("BlockImpact");
                 break;
+            case AnimationType.Hurt:
+                Play("Hurt");
+                break;
             default:
                 break;
         }

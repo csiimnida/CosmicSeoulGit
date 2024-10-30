@@ -23,7 +23,7 @@ public class EnermyMoveState : EnermyState
         {
             _emermy.TransitionState(EnermyStateType.Attack1);
         }
-        if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,LayerMask.GetMask("Player")))
+        if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,LayerMask.GetMask("Player")) && !_emermy.Combit)
         {
             _emermy.TransitionState(EnermyStateType.Idle);
         }

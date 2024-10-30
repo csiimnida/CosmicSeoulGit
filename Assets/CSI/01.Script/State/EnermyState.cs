@@ -1,9 +1,9 @@
 
 using UnityEngine;
 
-public class EnermyState : MonoBehaviour
+public class EnermyState
 {
-    
+
     protected Enermy _emermy;
 
     public EnermyState(Enermy enermy){

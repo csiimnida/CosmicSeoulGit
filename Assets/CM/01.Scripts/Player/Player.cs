@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     private PlayerStateType currentState;
 
     private float NowHP;
+    
+    public event Action OnDeath;
 
 
     private void Awake(){
@@ -43,10 +45,10 @@ public class Player : MonoBehaviour
     private void Start()
     {
         InputCompo.OnMoveEvent += RotCompo.FaceDirection;
+        PlayerData.IsFlip = false;
     }
 
-    public void TransitionState(PlayerStateType newState)
-    {
+    public void TransitionState(PlayerStateType newState){
         StateEnum[currentState].Exit();
         currentState = newState;
         StateEnum[currentState].Enter();
@@ -64,7 +66,23 @@ public class Player : MonoBehaviour
 
     public void Damage(float damage){
         NowHP -= damage;
-        TransitionState(PlayerStateType.Hurt);
+
+        if (currentState == PlayerStateType.Block)
+        {
+            NowHP += damage;
+            TransitionState(PlayerStateType.BlockImpact);
+        }
+        else if(NowHP > 0)
+            TransitionState(PlayerStateType.Hurt);
+        else if(NowHP <= 0)
+            TransitionState(PlayerStateType.Death);
     }
-    
+
+    public void OnDeathEventInvoke(){
+        OnDeath?.Invoke();
+    }
+
+    private void OnDestroy(){
+        StateEnum[currentState].Exit();
+    }
 }

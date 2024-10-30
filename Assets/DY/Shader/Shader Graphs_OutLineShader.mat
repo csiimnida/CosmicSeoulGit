@@ -41,9 +41,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _OutLineThinks: 0.67
+    - _OutLineThinks: 0.51
     m_Colors:
-    - _Color: {r: 0.7484276, g: 0, b: 0, a: 0}
+    - _Color: {r: 2.6993403, g: 0.3697637, b: 0.21221173, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4095679077022269834
 MonoBehaviour:

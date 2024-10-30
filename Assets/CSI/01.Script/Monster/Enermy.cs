@@ -7,7 +7,7 @@ public class Enermy : MonoBehaviour
 
     public GameObject Player;
     private Dictionary<EnermyStateType, EnermyState> StateEnum = new Dictionary<EnermyStateType, EnermyState>();
-    private EnermyStateType currentState;
+    public EnermyStateType currentState;
     public EnermyDataSO DataSo;
     public AnimationChange AnimCompo {get ; private set;}
     public PlayerRotation RotCompo {get ; private set;}
@@ -59,6 +59,7 @@ public class Enermy : MonoBehaviour
     private void Update()
     {
 
+
         CombitTimer += Time.deltaTime;
         if (CombitTimer >= 10)
         {
@@ -89,8 +90,12 @@ public class Enermy : MonoBehaviour
             Combit = true;
             TransitionState(EnermyStateType.Move);
         }
-        if(NowHp <= 0)
+
+        if (NowHp <= 0)
+        {
+            print("죽음");
             TransitionState(EnermyStateType.Die);
+        }
     }
 
     private IEnumerator Do_Hit_Effect()

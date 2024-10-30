@@ -19,9 +19,9 @@ public class Enermy : MonoBehaviour
     public SpriteRenderer sprite;
 
     public float NowHp;
-    private float MaxHp;
+    protected float MaxHp;
 
-    private Material NomallMaterial;
+    protected Material NomallMaterial;
     public Material HitMaterial;
     
 
@@ -84,29 +84,7 @@ public class Enermy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
     }
     
-    public void Damage(float damage){
-        NowHp -= damage;
-        StartCoroutine(Do_Hit_Effect());
-        CombitTimer = 0;
-        if (!Combit)
-        {
-            Combit = true;
-            TransitionState(EnermyStateType.Move);
-        }
 
-        if (NowHp <= 0)
-        {
-            print("죽음");
-            TransitionState(EnermyStateType.Die);
-        }
-    }
-
-    private IEnumerator Do_Hit_Effect()
-    {
-        sprite.material = HitMaterial;
-        yield return new WaitForSeconds(0.1f);
-        sprite.material = NomallMaterial;
-    }
 
 }
 

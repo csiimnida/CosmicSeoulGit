@@ -25,7 +25,7 @@ public class Enermy : MonoBehaviour
     public Material HitMaterial;
     
 
-    private void Awake(){
+    protected virtual void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RotCompo = GetComponentInChildren<PlayerRotation>();
         RbCompo= GetComponent<Rigidbody2D>();
@@ -47,7 +47,7 @@ public class Enermy : MonoBehaviour
         TransitionState(EnermyStateType.Idle);
     }
 
-    private void Start(){
+    protected virtual void Start(){
         player = GameManager.Instance.Player;
     }
 

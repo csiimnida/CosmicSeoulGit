@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class EnermyState
+public abstract class EnermyState
 {
 
     protected Enermy _emermy;

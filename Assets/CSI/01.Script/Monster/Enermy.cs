@@ -6,13 +6,13 @@ public class Enermy : MonoBehaviour
 {
 
     public Player player;
-    private Dictionary<EnermyStateType, EnermyState> StateEnum = new Dictionary<EnermyStateType, EnermyState>();
+    protected Dictionary<EnermyStateType, EnermyState> StateEnum = new Dictionary<EnermyStateType, EnermyState>();
     public EnermyStateType currentState;
     public EnermyDataSO DataSo;
-    public AnimationChange AnimCompo {get ; private set;}
-    public PlayerRotation RotCompo {get ; private set;}
+    public AnimationChange AnimCompo {get ; set;}
+    public PlayerRotation RotCompo {get ; set;}
     public Rigidbody2D RbCompo {get ; set;}
-    public Collider2D ColCompo {get ; private set;}
+    public Collider2D ColCompo {get ;  set;}
     public bool Combit { get; set; }
     public float CombitTimer;
 
@@ -26,25 +26,7 @@ public class Enermy : MonoBehaviour
     
 
     protected virtual void Awake(){
-        AnimCompo = GetComponentInChildren<AnimationChange>();
-        RotCompo = GetComponentInChildren<PlayerRotation>();
-        RbCompo= GetComponent<Rigidbody2D>();
-        ColCompo = GetComponent<Collider2D>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
-        transform.localScale = DataSo.Size;
-        NomallMaterial = sprite.material;
 
-        MaxHp = DataSo.MaxHp;
-        NowHp = MaxHp;
-        
-        foreach (EnermyStateType stateType in Enum.GetValues(typeof(EnermyStateType)))
-        {
-            string enumName = stateType.ToString();
-            Type t = Type.GetType($"Enermy{enumName}State");
-            EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
-            StateEnum.Add(stateType, state);
-        }
-        TransitionState(EnermyStateType.Idle);
     }
 
     protected virtual void Start(){

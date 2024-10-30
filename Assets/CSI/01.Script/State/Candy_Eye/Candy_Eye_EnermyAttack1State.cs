@@ -1,14 +1,15 @@
 using UnityEngine;
 
 
-public class EnermyAttack1State : EnermyState
+public class Candy_Eye_EnermyAttack1State : EnermyState
 {
-    public EnermyAttack1State(Enermy enermy) : base(enermy)
+    public Candy_Eye_EnermyAttack1State(Enermy enermy) : base(enermy)
     {
         
     }
     protected override void EnterState()
     {
+        _emermy.RbCompo.velocity = Vector2.zero;
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Attack1);
     }
 

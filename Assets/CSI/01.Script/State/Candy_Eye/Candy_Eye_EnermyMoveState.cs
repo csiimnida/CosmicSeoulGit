@@ -1,9 +1,9 @@
 using UnityEngine;
 
 
-public class EnermyMoveState : EnermyState
+public class Candy_Eye_EnermyMoveState : EnermyState
 {
-    public EnermyMoveState(Enermy enermy) : base(enermy)
+    public Candy_Eye_EnermyMoveState(Enermy enermy) : base(enermy)
     {
         
     }
@@ -14,11 +14,12 @@ public class EnermyMoveState : EnermyState
 
     public override void UpdateState()
     {
+        float positionX = _emermy.player.transform.position.normalized.x - _emermy.transform.position.normalized.x;
+        _emermy.RbCompo.velocity = (new Vector2((positionX)*_emermy.DataSo.MoveSpeed,0));
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
         
-        float positionX = _emermy.player.transform.position.normalized.x - _emermy.transform.position.normalized.x;
         
-        _emermy.RbCompo.velocity = (new Vector2((positionX)*_emermy.DataSo.MoveSpeed,0));
+        
         if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")))
         {
             _emermy.TransitionState(EnermyStateType.Attack1);

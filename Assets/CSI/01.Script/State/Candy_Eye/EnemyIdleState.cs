@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
 
-public class EnermyIdleState : EnermyState
+public class Candy_Eye_EnermyIdleState : EnermyState
 {
-    public EnermyIdleState(Enermy enermy) : base(enermy)
+    public Candy_Eye_EnermyIdleState(Enermy enermy) : base(enermy)
     {
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Idle);
 

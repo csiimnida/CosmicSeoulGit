@@ -45,7 +45,7 @@ public class StartUI : MonoBehaviour
 
     private void OnBeginningButtonClicked(ClickEvent evt)
     {
-        SceneManager.LoadScene("JHGame");
+        SceneManager.LoadScene("CM");
     }
 
     private void OnXButtonClicked(ClickEvent evt)

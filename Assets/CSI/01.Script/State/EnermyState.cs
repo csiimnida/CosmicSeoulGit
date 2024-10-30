@@ -64,10 +64,3 @@ public abstract class EnermyState
         
     }
 }
-public enum EnermyStateType
-{
-    Idle,
-    Move,
-    Attack1,
-    Die,
-}

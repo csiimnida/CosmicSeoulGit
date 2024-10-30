@@ -55,3 +55,10 @@ public class CandyEye : Enermy
         sprite.material = NomallMaterial;
     }
 }
+public enum CandyEyeEnermyStateType
+{
+    Idle,
+    Move,
+    Attack1,
+    Die,
+}

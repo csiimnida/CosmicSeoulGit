@@ -34,7 +34,7 @@ public class Enermy : MonoBehaviour
     }
 
 
-    public void TransitionState(EnermyStateType newState)
+    public void TransitionState(CandyEyeEnermyStateType newState)
     {
         StateEnum[currentState].Exit();
         currentState = newState;

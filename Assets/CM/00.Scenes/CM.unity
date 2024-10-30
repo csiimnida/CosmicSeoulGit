@@ -1639,10 +1639,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eye 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6370706941467426924, guid: c9a0ae9f5579c89498ed9698bf7086e6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1854,7 +1850,6 @@ GameObject:
   - component: {fileID: 1881769880}
   - component: {fileID: 1881769881}
   - component: {fileID: 1881769882}
-  - component: {fileID: 1881769884}
   m_Layer: 8
   m_Name: WoodGuardian
   m_TagString: Untagged
@@ -1871,7 +1866,7 @@ Transform:
   m_GameObject: {fileID: 1881769879}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.65, y: -1.53, z: 0}
+  m_LocalPosition: {x: -15.01, y: -1.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1950,25 +1945,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.084203, y: 2.7500272}
   m_EdgeRadius: 0
---- !u!114 &1881769884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881769879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37869fc0d64386f478c65a640360fae4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  currentState: 0
-  DataSo: {fileID: 11400000, guid: 456d3139202fa29489ec12701ede660a, type: 2}
-  CombitTimer: 0
-  sprite: {fileID: 0}
-  NowHp: 0
-  HitMaterial: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

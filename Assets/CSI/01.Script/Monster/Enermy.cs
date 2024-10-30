@@ -6,8 +6,8 @@ public class Enermy : MonoBehaviour
 {
 
     public Player player;
-    protected Dictionary<EnermyStateType, EnermyState> StateEnum = new Dictionary<EnermyStateType, EnermyState>();
-    public EnermyStateType currentState;
+    protected Dictionary<CandyEyeEnermyStateType, EnermyState> StateEnum = new Dictionary<CandyEyeEnermyStateType, EnermyState>();
+    public CandyEyeEnermyStateType currentState;
     public EnermyDataSO DataSo;
     public AnimationChange AnimCompo {get ; set;}
     public PlayerRotation RotCompo {get ; set;}
@@ -65,9 +65,12 @@ public class Enermy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
     }
-    
 
+    protected virtual void Damage_call(float damage){
+        
+    }
 
+    public void Damage(float damage) => Damage_call(damage);
 }
 
 

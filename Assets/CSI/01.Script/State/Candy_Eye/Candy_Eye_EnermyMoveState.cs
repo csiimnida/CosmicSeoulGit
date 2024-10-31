@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Candy_Eye_EnermyMoveState : EnermyState
 {
-    public Candy_Eye_EnermyMoveState(Enermy enermy) : base(enermy)
+    public Candy_Eye_EnermyMoveState(Enemy enemy) : base(enemy)
     {
         
     }

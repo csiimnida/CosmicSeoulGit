@@ -4,10 +4,10 @@ using UnityEngine;
 public abstract class EnermyState
 {
 
-    protected Enermy _emermy;
+    protected Enemy _emermy;
 
-    public EnermyState(Enermy enermy){
-        _emermy = enermy;
+    public EnermyState(Enemy enemy){
+        _emermy = enemy;
     }
 
 

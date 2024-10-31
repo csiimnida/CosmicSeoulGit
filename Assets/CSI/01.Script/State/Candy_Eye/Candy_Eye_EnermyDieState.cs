@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Candy_Eye_EnermyDieState : EnermyState
 {
-    public Candy_Eye_EnermyDieState(Enermy enermy) : base(enermy)
+    public Candy_Eye_EnermyDieState(Enemy enemy) : base(enemy)
     {
     }
 

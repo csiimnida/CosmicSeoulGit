@@ -3,7 +3,7 @@ using System.Collections;
 
 using UnityEngine;
 
-public class CandyEye : Enermy
+public class CandyEye : Enemy
 {
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();

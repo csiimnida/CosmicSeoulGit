@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour, IPoolable
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        Enermy enemy = other.GetComponent<Enermy>();
+        Enemy enemy = other.GetComponent<Enemy>();
         if (enemy != null)
         {
             enemy.Damage(_playerData.Damage * _playerData.Skill2Multiple);

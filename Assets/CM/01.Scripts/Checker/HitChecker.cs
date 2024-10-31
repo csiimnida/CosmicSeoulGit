@@ -23,7 +23,7 @@ public class HitChecker : MonoBehaviour{
         Collider2D collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
         if (collider != null)
         {
-            Enermy enemy = collider.GetComponent<Enermy>();
+            Enemy enemy = collider.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.Damage(_player.PlayerData.Damage);
@@ -35,7 +35,7 @@ public class HitChecker : MonoBehaviour{
         Collider2D collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
         if (collider != null)
         {
-            Enermy enemy = collider.GetComponent<Enermy>();
+            Enemy enemy = collider.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.Damage(_player.PlayerData.Damage);
@@ -47,7 +47,7 @@ public class HitChecker : MonoBehaviour{
         Collider2D collider = Physics2D.OverlapBox(Attack1Transform.position, Attack1Size,0, LayerMask.GetMask("Enemy"));
         if (collider != null)
         {
-            Enermy enemy = collider.GetComponent<Enermy>();
+            Enemy enemy = collider.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.Damage(_player.PlayerData.Damage * _player.PlayerData.Skill1Multiple);

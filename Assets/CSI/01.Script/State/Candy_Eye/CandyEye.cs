@@ -62,5 +62,13 @@ public class CandyEye : Enemy
         yield return new WaitForSeconds(0.1f);
         sprite.material = NomallMaterial;
     }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position,DataSo.Perception_range);//감지 범위
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
+    }
 }
 

@@ -55,13 +55,7 @@ public class Enemy : MonoBehaviour
         StateEnum[currentState].FixedUpdateState();
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position,DataSo.Perception_range);//감지 범위
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
-    }
+    
 
     protected virtual void Damage_call(float damage){
         

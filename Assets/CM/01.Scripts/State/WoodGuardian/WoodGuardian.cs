@@ -1,10 +1,11 @@
 using System.Collections;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodGuardian : Enemy
-{
+public class WoodGuardian : Enemy{
+    [field:SerializeField] public Vector2 Attack1Size{ get;private set;}
+    [field:SerializeField] public Vector2 Attack2Size{ get;private set; }
+
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
@@ -26,7 +27,7 @@ public class WoodGuardian : Enemy
             }
             catch (Exception e)
             {
-                Debug.LogError($"{stateType.ToString()}를 찾을수 없습니다");
+                Debug.Log($"{stateType.ToString()}를 찾을수 없습니다");
             }
         }
         TransitionState(EnemyStateType.Idle);
@@ -43,13 +44,14 @@ public class WoodGuardian : Enemy
         if (!Combit)
         {
             Combit = true;
-            TransitionState(EnemyStateType.Move);
+            if(currentState == EnemyStateType.Idle)
+                TransitionState(EnemyStateType.Move);
         }
 
         if (NowHp <= 0)
         {
             print("죽음");
-            TransitionState(EnemyStateType.Die);
+            TransitionState(EnemyStateType.Dead);
         }
     }
     private IEnumerator Do_Hit_Effect()
@@ -58,4 +60,16 @@ public class WoodGuardian : Enemy
         yield return new WaitForSeconds(0.1f);
         sprite.material = NomallMaterial;
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position,DataSo.Perception_range);//감지 범위
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(transform.position, Attack1Size);// 어택1 범위
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position, Attack2Size);//어택2 범위
+    }
+    
 }

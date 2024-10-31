@@ -27,7 +27,7 @@ public class CandyEye : Enemy
             }
             catch (Exception e)
             {
-                Debug.LogError($"{stateType.ToString()}를 찾을수 없습니다");
+                Debug.Log($"{stateType.ToString()}를 찾을수 없습니다");
             }
         }
         TransitionState(EnemyStateType.Idle);

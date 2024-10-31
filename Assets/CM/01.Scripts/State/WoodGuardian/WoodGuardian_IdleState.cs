@@ -2,17 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodGuardian_IdleState : MonoBehaviour
+public class WoodGuardian_IdleState : EnermyState
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public WoodGuardian_IdleState(Enemy enemy) : base(enemy){
     }
 }

@@ -3,9 +3,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodGaurdian : Enemy
+public class WoodGuardian : Enemy
 {
-    private Dictionary<WoodGuardianStateType, EnermyState> StateEnum = new Dictionary<WoodGuardianStateType, EnermyState>();
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
@@ -18,10 +17,17 @@ public class WoodGaurdian : Enemy
         
         foreach (EnemyStateType stateType in Enum.GetValues(typeof(EnemyStateType)))
         {
-            string enumName = stateType.ToString();
-            Type t = Type.GetType($"WoodGuardian_{enumName}State");
-            EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
-            StateEnum.Add(stateType, state);
+            try
+            {
+                string enumName = stateType.ToString();
+                Type t = Type.GetType($"WoodGuardian_{enumName}State");
+                EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
+                StateEnum.Add(stateType, state);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"{stateType.ToString()}를 찾을수 없습니다");
+            }
         }
         TransitionState(EnemyStateType.Idle);
     }

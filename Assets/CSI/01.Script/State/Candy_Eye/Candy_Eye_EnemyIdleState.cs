@@ -14,6 +14,7 @@ public class Candy_Eye_EnermyIdleState : EnermyState
     protected override void EnterState()
     {
         Debug.Log("Idle실행");
+        _emermy.RbCompo.velocity = Vector2.zero;
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Idle);
 
     }

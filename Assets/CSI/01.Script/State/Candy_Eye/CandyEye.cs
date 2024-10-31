@@ -7,7 +7,6 @@ public class CandyEye : Enermy
 {
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
-        RotCompo = GetComponentInChildren<PlayerRotation>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
@@ -38,7 +37,10 @@ public class CandyEye : Enermy
         if (!Combit)
         {
             Combit = true;
-            TransitionState(CandyEyeEnermyStateType.Move);
+            if(currentState == CandyEyeEnermyStateType.Attack1)
+                TransitionState(CandyEyeEnermyStateType.Attack1);
+            else
+                TransitionState(CandyEyeEnermyStateType.Move);
         }
 
         if (NowHp <= 0)

@@ -9,6 +9,7 @@ public class Candy_Eye_EnermyAttack1State : EnermyState
     }
     protected override void EnterState()
     {
+        Debug.Log("Attack State Entered");
         _emermy.RbCompo.velocity = Vector2.zero;
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Attack1);
     }

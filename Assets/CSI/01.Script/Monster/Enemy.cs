@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     public CandyEyeEnermyStateType currentState;
     public EnermyDataSO DataSo;
     public AnimationChange AnimCompo {get ; set;}
-    public PlayerRotation RotCompo {get ; set;}
     public Rigidbody2D RbCompo {get ; set;}
     public Collider2D ColCompo {get ;  set;}
     public bool Combit { get; set; }

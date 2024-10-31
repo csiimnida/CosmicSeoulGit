@@ -1,9 +1,11 @@
 using System.Collections;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodGaurdian : Enermy
+public class WoodGaurdian : Enemy
 {
+    private Dictionary<WoodGuardianStateType, EnermyState> StateEnum = new Dictionary<WoodGuardianStateType, EnermyState>();
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
@@ -21,7 +23,7 @@ public class WoodGaurdian : Enermy
             EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
             StateEnum.Add(stateType, state);
         }
-        TransitionState(CandyEyeEnermyStateType.Idle);
+        TransitionState(WoodGuardianStateType.Idle);
     }
 
     protected override void Start(){

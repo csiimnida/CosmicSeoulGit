@@ -42,8 +42,6 @@ public class Enermy : MonoBehaviour
 
     private void Update()
     {
-
-
         CombitTimer += Time.deltaTime;
         if (CombitTimer >= 10)
         {

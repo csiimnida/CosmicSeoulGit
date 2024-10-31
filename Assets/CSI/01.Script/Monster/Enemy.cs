@@ -42,8 +42,6 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-
-
         CombitTimer += Time.deltaTime;
         if (CombitTimer >= 10)
         {

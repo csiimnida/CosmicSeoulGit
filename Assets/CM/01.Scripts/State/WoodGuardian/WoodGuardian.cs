@@ -44,8 +44,11 @@ public class WoodGuardian : Enemy{
         if (!Combit)
         {
             Combit = true;
-            if(currentState == EnemyStateType.Idle)
+            if(currentState == EnemyStateType.Attack1||currentState == EnemyStateType.Attack2||currentState == EnemyStateType.Attack3)
+                return;
+            else
                 TransitionState(EnemyStateType.Move);
+
         }
 
         if (NowHp <= 0)

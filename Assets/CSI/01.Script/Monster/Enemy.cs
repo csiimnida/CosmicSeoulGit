@@ -72,6 +72,5 @@ public enum EnemyStateType
     Attack2,
     Attack3,
     Dead,
-
-    Die,
+    Spawn
 }

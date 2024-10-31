@@ -15,6 +15,7 @@ public class WoodGuardian_Attack2State : EnermyState
         if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2")
             && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
+            
             _emermy.TransitionState(EnemyStateType.Idle);
         }
     }

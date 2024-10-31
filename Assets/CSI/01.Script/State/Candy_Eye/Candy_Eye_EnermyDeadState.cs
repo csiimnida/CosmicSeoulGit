@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Candy_Eye_EnermyDieState : EnermyState
+public class Candy_Eye_EnermyDeadState : EnermyState
 {
-    public Candy_Eye_EnermyDieState(Enemy enemy) : base(enemy)
+    public Candy_Eye_EnermyDeadState(Enemy enemy) : base(enemy)
     {
     }
 

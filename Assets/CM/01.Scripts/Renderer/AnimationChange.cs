@@ -59,6 +59,9 @@ public class AnimationChange : MonoBehaviour
             case AnimationType.Hurt:
                 Play("Hurt");
                 break;
+            case AnimationType.Spawn:
+                Play("Spawn");
+                break;
             default:
                 break;
         }
@@ -99,5 +102,6 @@ public enum AnimationType
     Skill1,
     Skill2,
     Block,
-    BlockImpact
+    BlockImpact,
+    Spawn
 }

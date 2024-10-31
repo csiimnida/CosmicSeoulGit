@@ -85,4 +85,8 @@ public class Player : MonoBehaviour
     private void OnDestroy(){
         StateEnum[currentState].Exit();
     }
+
+    public float GetHP(){
+        return NowHP;
+    }
 }

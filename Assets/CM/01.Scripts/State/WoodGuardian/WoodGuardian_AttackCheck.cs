@@ -12,23 +12,23 @@ public class WoodGuardian_AttackCheck : MonoBehaviour{
     }
 
     public void Attack1Checker(){
-        Collider2D collider =
-            Physics2D.OverlapBox(transform.position, _woodGuardian.Attack1Size, _layerMask);
-        if (collider != null && collider.CompareTag("Player"))
+        Collider2D[] colliders =
+            Physics2D.OverlapBoxAll(transform.position, _woodGuardian.Attack1Size, _layerMask);
+        foreach (var collider in colliders)
         {
             Player player = collider.GetComponent<Player>();
-            if (player != null)
+            if(player != null)
                 player.Damage(_woodGuardian.DataSo.AttackPower);
         }
     }
 
     public void Attack2Checker(){
-        Collider2D collider =
-            Physics2D.OverlapBox(transform.position, _woodGuardian.Attack2Size, _layerMask);
-        if (collider != null && collider.CompareTag("Player"))
+        Collider2D[] colliders =
+            Physics2D.OverlapBoxAll(transform.position, _woodGuardian.Attack2Size, _layerMask);
+        foreach (var collider in colliders)
         {
             Player player = collider.GetComponent<Player>();
-            if (player != null)
+            if(player != null)
                 player.Damage(_woodGuardian.DataSo.AttackPower);
         }
     }

@@ -12,6 +12,9 @@ public class Bullet : MonoBehaviour, IPoolable
     
     private Rigidbody2D _rigidbody2D;
     [SerializeField] private float speed = 5f;
+    [SerializeField] private float DeadTime = 2f;
+
+    private float curTime = 0f;
     public string PoolName => _poolName;
 
     private void Awake(){
@@ -38,5 +41,14 @@ public class Bullet : MonoBehaviour, IPoolable
             enemy.Damage(_playerData.Damage * _playerData.Skill2Multiple);
         }
         PoolManager.Instance.Push(this);
+    }
+
+    private void Update(){
+        curTime += Time.deltaTime;
+        if (curTime >= DeadTime)
+        {
+            curTime = 0;
+            PoolManager.Instance.Push(this);
+        }
     }
 }

@@ -25,8 +25,7 @@ public class EyeBall : MonoBehaviour, IPoolable
     public GameObject ObjectPrefab => gameObject;
     public void ResetItem()
     {
-        print("생성 Item");
-        print(gameObject.name);
+
         
 
     }

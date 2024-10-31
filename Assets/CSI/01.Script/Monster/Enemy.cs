@@ -6,8 +6,8 @@ public class Enemy : MonoBehaviour
 {
 
     public Player player;
-    protected Dictionary<CandyEyeEnermyStateType, EnermyState> StateEnum = new Dictionary<CandyEyeEnermyStateType, EnermyState>();
-    public CandyEyeEnermyStateType currentState;
+    protected Dictionary<EnemyStateType, EnermyState> StateEnum = new Dictionary<EnemyStateType, EnermyState>();
+    public EnemyStateType currentState;
     public EnermyDataSO DataSo;
     public AnimationChange AnimCompo {get ; set;}
     public Rigidbody2D RbCompo {get ; set;}
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    public void TransitionState(CandyEyeEnermyStateType newState)
+    public void TransitionState(EnemyStateType newState)
     {
         StateEnum[currentState].Exit();
         currentState = newState;
@@ -72,4 +72,14 @@ public class Enemy : MonoBehaviour
     public void Damage(float damage) => Damage_call(damage);
 }
 
+public enum EnemyStateType
+{
+    Idle,
+    Move,
+    Attack1,
+    Attack2,
+    Attack3,
+    Dead,
 
+    Die,
+}

@@ -14,14 +14,14 @@ public class WoodGaurdian : Enermy
         MaxHp = DataSo.MaxHp;
         NowHp = MaxHp;
         
-        foreach (WoodGuardianStateType stateType in Enum.GetValues(typeof(WoodGuardianStateType)))
+        foreach (EnemyStateType stateType in Enum.GetValues(typeof(EnemyStateType)))
         {
             string enumName = stateType.ToString();
             Type t = Type.GetType($"WoodGuardian_{enumName}State");
             EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
             StateEnum.Add(stateType, state);
         }
-        TransitionState(CandyEyeEnermyStateType.Idle);
+        TransitionState(EnemyStateType.Idle);
     }
 
     protected override void Start(){
@@ -35,13 +35,13 @@ public class WoodGaurdian : Enermy
         if (!Combit)
         {
             Combit = true;
-            TransitionState(CandyEyeEnermyStateType.Move);
+            TransitionState(EnemyStateType.Move);
         }
 
         if (NowHp <= 0)
         {
             print("죽음");
-            TransitionState(CandyEyeEnermyStateType.Die);
+            TransitionState(EnemyStateType.Die);
         }
     }
     private IEnumerator Do_Hit_Effect()
@@ -50,13 +50,4 @@ public class WoodGaurdian : Enermy
         yield return new WaitForSeconds(0.1f);
         sprite.material = NomallMaterial;
     }
-}
-public enum WoodGuardianStateType
-{
-    Idle,
-    Move,
-    Attack1,
-    Attack2,
-    Attack3,
-    Dead,
 }

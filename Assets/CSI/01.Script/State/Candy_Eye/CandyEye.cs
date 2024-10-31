@@ -16,14 +16,21 @@ public class CandyEye : Enemy
         MaxHp = DataSo.MaxHp;
         NowHp = MaxHp;
         
-        foreach (CandyEyeEnermyStateType stateType in Enum.GetValues(typeof(CandyEyeEnermyStateType)))
+        foreach (EnemyStateType stateType in Enum.GetValues(typeof(EnemyStateType)))
         {
-            string enumName = stateType.ToString();
-            Type t = Type.GetType($"Candy_Eye_Enermy{enumName}State");
-            EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
-            StateEnum.Add(stateType, state);
+            try
+            {
+                string enumName = stateType.ToString();
+                Type t = Type.GetType($"Candy_Eye_Enermy{enumName}State");
+                EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
+                StateEnum.Add(stateType, state);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"{stateType.ToString()}를 찾을수 없습니다");
+            }
         }
-        TransitionState(CandyEyeEnermyStateType.Idle);
+        TransitionState(EnemyStateType.Idle);
     }
 
     protected override void Start(){
@@ -37,16 +44,16 @@ public class CandyEye : Enemy
         if (!Combit)
         {
             Combit = true;
-            if(currentState == CandyEyeEnermyStateType.Attack1)
-                TransitionState(CandyEyeEnermyStateType.Attack1);
+            if(currentState == EnemyStateType.Attack1)
+                TransitionState(EnemyStateType.Attack1);
             else
-                TransitionState(CandyEyeEnermyStateType.Move);
+                TransitionState(EnemyStateType.Move);
         }
 
         if (NowHp <= 0)
         {
             print("죽음");
-            TransitionState(CandyEyeEnermyStateType.Die);
+            TransitionState(EnemyStateType.Die);
         }
     }
     private IEnumerator Do_Hit_Effect()
@@ -56,10 +63,4 @@ public class CandyEye : Enemy
         sprite.material = NomallMaterial;
     }
 }
-public enum CandyEyeEnermyStateType
-{
-    Idle,
-    Move,
-    Attack1,
-    Die,
-}
+

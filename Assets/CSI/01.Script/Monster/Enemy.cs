@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Enermy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
 
     public Player player;

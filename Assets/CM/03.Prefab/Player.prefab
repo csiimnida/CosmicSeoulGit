@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3102753995560075684}
   - component: {fileID: 8312987147208594985}
-  - component: {fileID: 8723108242867822430}
   m_Layer: 0
   m_Name: GroundChecker
   m_TagString: Untagged
@@ -82,51 +81,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <IsGround>k__BackingField: 0
---- !u!61 &8723108242867822430
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343039695660215667}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0944829, y: 0.14467132}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8604784, y: 0.32189727}
-  m_EdgeRadius: 0
 --- !u!1 &1423938369332530750
 GameObject:
   m_ObjectHideFlags: 0

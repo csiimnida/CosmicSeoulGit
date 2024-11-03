@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
 
     public float NowHp;
     protected float MaxHp;
+    public float SpawnRange = 5f;
 
     protected Material NomallMaterial;
     public Material HitMaterial;

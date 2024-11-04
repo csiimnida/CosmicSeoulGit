@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CloneGenerner : MonoBehaviour
+public class CloneEyeGenerner : MonoBehaviour
 {
     public Transform target;
 

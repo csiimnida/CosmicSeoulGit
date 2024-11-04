@@ -2,9 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+
 
 public class Soul : Enemy
 {
+    
+    private bool FirstAttack;
+
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
@@ -16,12 +21,14 @@ public class Soul : Enemy
         MaxHp = DataSo.MaxHp;
         NowHp = MaxHp;
         
+        
+        
         foreach (EnemyStateType stateType in Enum.GetValues(typeof(EnemyStateType)))
         {
             try
             {
                 string enumName = stateType.ToString();
-                Type t = Type.GetType($"Candy_Eye_Enermy{enumName}State");
+                Type t = Type.GetType($"Soul_Ghost_Enemy{enumName}State");
                 EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
                 StateEnum.Add(stateType, state);
             }
@@ -38,6 +45,13 @@ public class Soul : Enemy
     }
 
     protected override void Damage_call(float damage){
+        if (!FirstAttack)
+        {
+            FirstAttack = true;
+            sprite.DOFade(0.1f, 0.5f).SetEase(Ease.OutCubic);
+            TransitionState(EnemyStateType.Avoid);
+            return;
+        }
         NowHp -= damage;
         StartCoroutine(Do_Hit_Effect());
         CombitTimer = 0;

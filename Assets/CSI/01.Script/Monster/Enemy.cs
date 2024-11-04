@@ -69,6 +69,7 @@ public enum EnemyStateType
 {
     Idle,
     Move,
+    Avoid,
     Attack1,
     Attack2,
     Attack3,

@@ -9,7 +9,7 @@ public class Soul_Ghost_EnemyMoveState : EnermyState
     }
 
     protected override void EnterState(){
-        _emermy.AnimCompo.PlayAnimaiton(AnimationType.Move);
+        _emermy.AnimCompo.PlayAnimaiton(AnimationType.Move); 
     }
 
     public override void UpdateState()

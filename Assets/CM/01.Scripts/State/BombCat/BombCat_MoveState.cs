@@ -19,7 +19,7 @@ public class BombCat_MoveState : EnermyState
         
         
         
-        if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")))
+        if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")) && !_emermy.player.ColCompo.isTrigger)
         {
             _emermy.TransitionState(EnemyStateType.Dead);
         }

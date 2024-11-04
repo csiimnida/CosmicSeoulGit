@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 4253548835211533743}
   - component: {fileID: 6784809492488331434}
   - component: {fileID: 3663586667326012793}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BombCat_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}

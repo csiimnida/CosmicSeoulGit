@@ -15,7 +15,7 @@ public class BombCheck : MonoBehaviour{
         foreach (var collider in colliders)
         {
             Player player = collider.GetComponent<Player>();
-            if (player != null)
+            if (player != null && !player.ColCompo.isTrigger)
             {
                 player.Damage(_cat.DataSo.AttackPower);
                 Debug.Log("데미지 입힘");

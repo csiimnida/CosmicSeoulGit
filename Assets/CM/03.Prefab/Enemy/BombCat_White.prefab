@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8490387432663844998}
   - component: {fileID: 8113667680398355032}
   - component: {fileID: 98056328771272611}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BombCat_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}

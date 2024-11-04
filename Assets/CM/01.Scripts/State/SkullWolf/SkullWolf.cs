@@ -4,7 +4,7 @@ using System;
 
 public class SkullWolf : Enemy
 {
-    [field:SerializeField] public Vector2 Attack1Size{ get;private set;}
+    [field:SerializeField] public Vector2 Attack1Size{ get; private set;}
 
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();

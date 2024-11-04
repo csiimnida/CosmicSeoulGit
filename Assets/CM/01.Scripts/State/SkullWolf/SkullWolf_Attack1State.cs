@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class SkullWolf_Attack1State : EnermyState
@@ -11,7 +12,17 @@ public class SkullWolf_Attack1State : EnermyState
     {
         _emermy.RbCompo.velocity = Vector2.zero;
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Attack1);
-        _emermy.RbCompo.AddForce(Vector2.left * 3f, ForceMode2D.Impulse);
+        bool isFlip;
+        if (_emermy.transform.localRotation.y == 0)
+        {
+            isFlip = true;
+        }
+        else
+        {
+            isFlip = false;
+        }
+        Vector2 dir = isFlip == true ? Vector2.left : Vector2.right;
+        _emermy.RbCompo.AddForce(dir * 3f, ForceMode2D.Impulse);
     }
 
     public override void UpdateState()

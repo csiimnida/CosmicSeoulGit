@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkullWolf_DeadState : MonoBehaviour
+public class SkullWolf_DeadState : EnermyState
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public SkullWolf_DeadState(Enemy enemy) : base(enemy){
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    
+    protected override void EnterState(){
+        _emermy.AnimCompo.PlayAnimaiton(AnimationType.Death);
+        _emermy.ColCompo.enabled = false;
+        _emermy.RbCompo.bodyType = RigidbodyType2D.Static;
     }
 }

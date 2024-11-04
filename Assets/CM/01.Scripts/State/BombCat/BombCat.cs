@@ -1,18 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class BombCat : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
+public class BombCat : Enemy{
+    [SerializeField] private float AttackRange;
+
+    public float explotionRange;
+    protected void Awake(){
+        AnimCompo = GetComponentInChildren<AnimationChange>();
+        RbCompo= GetComponent<Rigidbody2D>();
+        ColCompo = GetComponent<Collider2D>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
         
+        MaxHp = DataSo.MaxHp;
+        NowHp = MaxHp;
+        
+        foreach (EnemyStateType stateType in Enum.GetValues(typeof(EnemyStateType)))
+        {
+            try
+            {
+                string enumName = stateType.ToString();
+                Type t = Type.GetType($"BombCat_{enumName}State");
+                EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
+                StateEnum.Add(stateType, state);
+            }
+            catch (Exception e)
+            {
+                Debug.Log($"{stateType.ToString()}를 찾을수 없습니다");
+            }
+        }
+        TransitionState(EnemyStateType.Idle);
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Start(){
+        base.Start();
+    }
+
+    protected override void Damage_call(float damage){
+        NowHp -= damage;
+        CombitTimer = 0;
+        if (NowHp <= 0)
+        {
+            print("죽음");
+            TransitionState(EnemyStateType.Dead);
+        }
+    }
+    private void OnDrawGizmos()
     {
-        
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position,DataSo.Perception_range);//감지 범위
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
     }
 }

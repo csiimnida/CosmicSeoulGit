@@ -17,7 +17,7 @@ public class SkeletonTrapAttackCheck : MonoBehaviour
         foreach (var collider in colliders)
         {
             Player player = collider.GetComponent<Player>();
-            if(player != null)
+            if(player != null && !player.ColCompo.isTrigger)
                 player.Damage(_skeletonTrap.DataSo.AttackPower);
         }
     }

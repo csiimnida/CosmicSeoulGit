@@ -13,7 +13,7 @@ public class RollState : PlayerState{
         if(_player.InputCompo.InputVector.x != 0)
             _player.transform.localScale = new Vector3(_player.InputCompo.InputVector.x,_player.transform.localScale.y,_player.transform.localScale.z);
         _player.RbCompo.AddForce(
-            new Vector2(_player.InputCompo.InputVector.x * _player.PlayerData.RollPower, 0),
+            new Vector2(_player.transform.localScale.x * _player.PlayerData.RollPower, 0),
             ForceMode2D.Impulse);
         curGravityScale = _player.RbCompo.gravityScale;
         _player.RbCompo.gravityScale = 0;

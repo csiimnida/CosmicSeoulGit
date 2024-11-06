@@ -6,6 +6,9 @@ public class WoodGuardian : Enemy{
     [field:SerializeField] public Vector2 Attack1Size{ get;private set;}
     [field:SerializeField] public Vector2 Attack2Size{ get;private set; }
 
+    public Transform attack1Pos;
+    public Transform attack2Pos;
+
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
@@ -70,9 +73,9 @@ public class WoodGuardian : Enemy{
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position, Attack1Size);// 어택1 범위
+        Gizmos.DrawWireCube(attack1Pos.position, Attack1Size);// 어택1 범위
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, Attack2Size);//어택2 범위
+        Gizmos.DrawWireCube(attack2Pos.position, Attack2Size);//어택2 범위
     }
     
 }

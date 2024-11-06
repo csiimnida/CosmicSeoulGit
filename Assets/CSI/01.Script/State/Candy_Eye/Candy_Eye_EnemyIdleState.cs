@@ -7,6 +7,7 @@ public class Candy_Eye_EnermyIdleState : EnermyState
 {
     public Candy_Eye_EnermyIdleState(Enemy enemy) : base(enemy)
     {
+        
     }
 
     protected override void EnterState()
@@ -16,7 +17,7 @@ public class Candy_Eye_EnermyIdleState : EnermyState
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Idle);
 
     }
-
+    
     public override void UpdateState(){
         
         

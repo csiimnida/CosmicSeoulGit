@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 
     public Player player;
     protected Dictionary<EnemyStateType, EnermyState> StateEnum = new Dictionary<EnemyStateType, EnermyState>();
-    public EnemyStateType currentState;
+    protected EnemyStateType currentState;
     public EnermyDataSO DataSo;
     public AnimationChange AnimCompo {get ; set;}
     public Rigidbody2D RbCompo {get ; set;}
@@ -17,8 +17,9 @@ public class Enemy : MonoBehaviour
 
     public SpriteRenderer sprite;
 
-    public float NowHp;
+    protected float NowHp;
     protected float MaxHp;
+    public float SpawnRange = 5f;
 
     protected Material NomallMaterial;
     public Material HitMaterial;
@@ -68,10 +69,10 @@ public enum EnemyStateType
 {
     Idle,
     Move,
+    Avoid,
     Attack1,
     Attack2,
     Attack3,
     Dead,
-
-    Die,
+    Spawn
 }

@@ -53,7 +53,7 @@ public class CandyEye : Enemy
         if (NowHp <= 0)
         {
             print("죽음");
-            TransitionState(EnemyStateType.Die);
+            TransitionState(EnemyStateType.Dead);
         }
     }
     private IEnumerator Do_Hit_Effect()

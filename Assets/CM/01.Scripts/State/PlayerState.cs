@@ -87,7 +87,6 @@ public enum PlayerStateType
     Jump,
     Fall,
     Roll,
-    Hurt,
     Death,
     Attack1,
     Attack2,

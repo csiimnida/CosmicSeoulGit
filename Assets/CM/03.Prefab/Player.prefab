@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd710ecf1d6225d44a1d7a59bbd56e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 0}
+  Animator: {fileID: 6034008980972310880}
   OnAnimationAction:
     m_PersistentCalls:
       m_Calls: []

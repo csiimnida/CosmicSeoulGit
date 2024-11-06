@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public PlayerRotation RotCompo {get ; private set;}
     public Rigidbody2D RbCompo {get ; private set;}
     public Collider2D ColCompo {get ; private set;}
+    
+    public SpriteRenderer SpriteCompo {get ; private set;}
 
     public GroundChecker GroundChecker {get ; private set;}
 
@@ -19,6 +21,9 @@ public class Player : MonoBehaviour
     private PlayerStateType currentState;
 
     private float NowHP;
+
+    private Material NormalMat;
+    [SerializeField] private Material HitMat;
     
     public event Action OnDeath;
 
@@ -29,6 +34,7 @@ public class Player : MonoBehaviour
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
         GroundChecker = GetComponentInChildren<GroundChecker>();
+        SpriteCompo = GetComponentInChildren<SpriteRenderer>();
 
         NowHP = PlayerData.Hp;
         
@@ -46,6 +52,7 @@ public class Player : MonoBehaviour
     {
         InputCompo.OnMoveEvent += RotCompo.FaceDirection;
         PlayerData.IsFlip = false;
+        NormalMat = SpriteCompo.material;
     }
 
     public void TransitionState(PlayerStateType newState){
@@ -72,10 +79,17 @@ public class Player : MonoBehaviour
             NowHP += damage;
             TransitionState(PlayerStateType.BlockImpact);
         }
-        else if(NowHP > 0)
-            TransitionState(PlayerStateType.Hurt);
+        else if (NowHP > 0)
+            StartCoroutine(Do_Hit_Effect());
         else if(NowHP <= 0)
             TransitionState(PlayerStateType.Death);
+    }
+    
+    private IEnumerator Do_Hit_Effect()
+    {
+        SpriteCompo.material = HitMat;
+        yield return new WaitForSeconds(0.1f);
+        SpriteCompo.material = NormalMat;
     }
 
     public void OnDeathEventInvoke(){
@@ -84,5 +98,9 @@ public class Player : MonoBehaviour
 
     private void OnDestroy(){
         StateEnum[currentState].Exit();
+    }
+
+    public float GetHP(){
+        return NowHP;
     }
 }

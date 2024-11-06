@@ -1,13 +1,13 @@
 
 using UnityEngine;
 
-public class EnermyState
+public abstract class EnermyState
 {
 
-    protected Enermy _emermy;
+    protected Enemy _emermy;
 
-    public EnermyState(Enermy enermy){
-        _emermy = enermy;
+    public EnermyState(Enemy enemy){
+        _emermy = enemy;
     }
 
 
@@ -63,11 +63,4 @@ public class EnermyState
     protected virtual void HandleMovement(Vector2 vector){
         
     }
-}
-public enum EnermyStateType
-{
-    Idle,
-    Move,
-    Attack1,
-    Die,
 }

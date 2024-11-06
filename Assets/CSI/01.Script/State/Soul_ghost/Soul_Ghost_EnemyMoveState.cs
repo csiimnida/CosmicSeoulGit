@@ -16,7 +16,6 @@ public class Soul_Ghost_EnemyMoveState : EnermyState
     {
         float positionX = (_emermy.player.transform.position- _emermy.transform.position).normalized.x;
         _emermy.RbCompo.velocity = (new Vector2((positionX)*_emermy.DataSo.MoveSpeed,0));
-        Debug.Log(new Vector2((positionX)*_emermy.DataSo.MoveSpeed * Time.deltaTime,0));
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
         
         

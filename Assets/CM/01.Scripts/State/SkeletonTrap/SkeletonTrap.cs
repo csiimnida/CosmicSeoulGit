@@ -8,6 +8,8 @@ public class SkeletonTrap : Enemy
     [field:SerializeField] public Vector2 Attack1Size{ get;private set;}
     private int SpawnCount = 0;
 
+    public Transform attack1Pos;
+
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
@@ -73,7 +75,7 @@ public class SkeletonTrap : Enemy
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position, Attack1Size);// 어택1 범위
+        Gizmos.DrawWireCube(attack1Pos.position, Attack1Size);// 어택1 범위
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position,SpawnRange);
     }

@@ -8,6 +8,9 @@ public class BloodWorm : Enemy
     [field:SerializeField] public Vector2 Attack1Size{ get;private set;}
     [field:SerializeField] public Vector2 Attack2Size{ get;private set; }
 
+    public Transform Attack1Pos;
+    public Transform Attack2Pos;
+
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
@@ -72,8 +75,8 @@ public class BloodWorm : Enemy
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position, Attack1Size);// 어택1 범위
+        Gizmos.DrawWireCube(Attack1Pos.position, Attack1Size);// 어택1 범위
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, Attack2Size);//어택2 범위
+        Gizmos.DrawWireCube(Attack2Pos.position, Attack2Size);//어택2 범위
     }
 }

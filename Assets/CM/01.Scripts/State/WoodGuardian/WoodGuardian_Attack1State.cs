@@ -16,6 +16,15 @@ public class WoodGuardian_Attack1State : EnermyState
 
     public override void UpdateState()
     {
+        if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") &&
+            _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        {
+            _emermy.nextState = EnemyStateType.Attack2;
+            _emermy.CoolDowning = true;
+            _emermy.CoolTimeNowTimer = 0;
+            _emermy.TransitionState(EnemyStateType.Idle);
+            return;
+        }
         if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")) 
             && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") 
             && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
@@ -32,7 +41,7 @@ public class WoodGuardian_Attack1State : EnermyState
         }
         else if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")) 
             && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") 
-            && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.4f)
+            && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             _emermy.TransitionState(EnemyStateType.Attack2);
         }

@@ -16,7 +16,7 @@ MonoBehaviour:
   AttackPower: 30
   MaxHp: 1
   AttackSpeed: 3
-  MoveSpeed: 6
+  MoveSpeed: 3
   Perception_range: 8.85
   Attack_range: 0.5
   Anchor_Enermy: 0

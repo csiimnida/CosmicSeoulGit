@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BloodWorm_Attack1State : EnermyState
+public class BloodDemon_Attack1State : EnermyState
 {
-    public BloodWorm_Attack1State(Enemy enemy) : base(enemy){
+    public BloodDemon_Attack1State(Enemy enemy) : base(enemy){
     }
     
     protected override void EnterState()

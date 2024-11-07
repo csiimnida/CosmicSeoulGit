@@ -23,8 +23,9 @@ public class WoodGuardian_IdleState : EnermyState
         {
             if (!_emermy.CoolDowning)
             {
-                _emermy.TransitionState(EnemyStateType.Attack1);
+                //_emermy.TransitionState(EnemyStateType.Attack1);
 
+                _emermy.TransitionState(_emermy.nextState);
             }
         }
         if(!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")))
@@ -35,6 +36,15 @@ public class WoodGuardian_IdleState : EnermyState
                 _emermy.CoolDowning = false;
                 _emermy.CoolTimeNowTimer = 0;
             }
+        }
+
+        if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,
+                LayerMask.GetMask("Player")))//완전히 나갔을때
+        {
+            _emermy.CoolDowning = false;
+            _emermy.CoolTimeNowTimer = 0;
+            _emermy.nextState = EnemyStateType.Idle;
+            _emermy.TransitionState(EnemyStateType.Idle);
         }
     }
 }

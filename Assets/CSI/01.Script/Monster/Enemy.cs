@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public Player player;
     protected Dictionary<EnemyStateType, EnermyState> StateEnum = new Dictionary<EnemyStateType, EnermyState>();
-    protected EnemyStateType currentState;
+    public EnemyStateType currentState{ get; private set; }
     protected EnemyStateType previousState{ get; set; }
     public EnemyStateType nextState{ get; set; }
     public EnermyDataSO DataSo;

@@ -45,21 +45,13 @@ public class BloodWorm : Enemy
     protected override void Damage_call(float damage){
         NowHp -= damage;
         StartCoroutine(Do_Hit_Effect());
-        CombitTimer = 0;
-        if (!Combit)
-        {
-            Combit = true;
-            if(currentState == EnemyStateType.Attack1||currentState == EnemyStateType.Attack2||currentState == EnemyStateType.Attack3)
-                return;
-            else
-                TransitionState(EnemyStateType.Move);
-
-        }
-
         if (NowHp <= 0)
         {
             print("죽음");
             TransitionState(EnemyStateType.Dead);
+            sprite.material = NomallMaterial;
+            Destroy(this);
+            return;
         }
     }
     private IEnumerator Do_Hit_Effect()

@@ -12,7 +12,8 @@ public class SkullWolf_IdleState : EnermyState
         _emermy.RbCompo.velocity = Vector2.zero;
     }
 
-    public override void UpdateState(){
+    public override void UpdateState()
+    {
         
         if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,
                 LayerMask.GetMask("Player")))

@@ -12,17 +12,6 @@ public class SkullWolf_Attack1State : EnermyState
     {
         _emermy.RbCompo.velocity = Vector2.zero;
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Attack1);
-        bool isFlip;
-        if (_emermy.transform.localRotation.y == 0)
-        {
-            isFlip = true;
-        }
-        else
-        {
-            isFlip = false;
-        }
-        Vector2 dir = isFlip == true ? Vector2.left : Vector2.right;
-        _emermy.RbCompo.AddForce(dir * 3f, ForceMode2D.Impulse);
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x < _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
     }
 

@@ -56,6 +56,9 @@ public class BloodHand : Enemy
         {
             print("죽음");
             TransitionState(EnemyStateType.Dead);
+            sprite.material = NomallMaterial;
+            Destroy(this);
+            return;
         }
     }
     private IEnumerator Do_Hit_Effect()

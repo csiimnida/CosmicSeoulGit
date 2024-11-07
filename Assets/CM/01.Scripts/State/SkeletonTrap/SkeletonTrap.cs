@@ -6,7 +6,6 @@ using System;
 public class SkeletonTrap : Enemy
 {
     [field:SerializeField] public Vector2 Attack1Size{ get;private set;}
-    private int SpawnCount = 0;
 
     public Transform attack1Pos;
 
@@ -34,6 +33,7 @@ public class SkeletonTrap : Enemy
                 Debug.Log($"{stateType.ToString()}를 찾을수 없습니다");
             }
         }
+        TransitionState(EnemyStateType.Empty);
     }
 
     protected override void Start(){
@@ -78,13 +78,5 @@ public class SkeletonTrap : Enemy
         Gizmos.DrawWireCube(attack1Pos.position, Attack1Size);// 어택1 범위
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position,SpawnRange);
-    }
-
-    private void LateUpdate(){
-        if (Physics2D.OverlapCircle(transform.position, SpawnRange, LayerMask.GetMask("Player")) && SpawnCount == 0)
-        {
-            TransitionState(EnemyStateType.Spawn);
-            SpawnCount++;
-        }
     }
 }

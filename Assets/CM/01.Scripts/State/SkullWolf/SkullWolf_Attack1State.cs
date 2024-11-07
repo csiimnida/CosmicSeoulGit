@@ -28,6 +28,15 @@ public class SkullWolf_Attack1State : EnermyState
 
     public override void UpdateState()
     {
+        if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") &&
+            _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        {
+            _emermy.nextState = EnemyStateType.Attack1;
+            _emermy.CoolDowning = true;
+            _emermy.CoolTimeNowTimer = 0;
+            _emermy.TransitionState(EnemyStateType.Idle);
+            return;
+        }
         if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") 
             && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {

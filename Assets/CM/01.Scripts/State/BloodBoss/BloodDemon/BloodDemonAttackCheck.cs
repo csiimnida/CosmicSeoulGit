@@ -32,7 +32,7 @@ public class BloodDemonAttackCheck : MonoBehaviour
             {
                 player.Damage(_bloodDemon.DataSo.AttackPower);
                 float positionX = (_bloodDemon.transform.position - _bloodDemon.player.transform.position).normalized.x;
-                player.RbCompo.AddForce(new Vector2(positionX * 30f, 0), ForceMode2D.Impulse);
+                player.RbCompo.AddForce(new Vector2(positionX * 10f, 0), ForceMode2D.Impulse);
             }
         }
     }

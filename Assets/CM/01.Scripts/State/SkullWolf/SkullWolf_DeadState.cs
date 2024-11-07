@@ -8,8 +8,8 @@ public class SkullWolf_DeadState : EnermyState
     }
     
     protected override void EnterState(){
-        _emermy.AnimCompo.PlayAnimaiton(AnimationType.Death);
         _emermy.ColCompo.enabled = false;
+        _emermy.AnimCompo.PlayAnimaiton(AnimationType.Death);
         _emermy.RbCompo.bodyType = RigidbodyType2D.Static;
     }
 }

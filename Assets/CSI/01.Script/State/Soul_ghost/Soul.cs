@@ -44,6 +44,7 @@ public class Soul : Enemy
         base.Start();
     }
 
+    
     protected override void Damage_call(float damage){
         if (!FirstAttack)
         {
@@ -55,6 +56,13 @@ public class Soul : Enemy
         NowHp -= damage;
         StartCoroutine(Do_Hit_Effect());
         CombitTimer = 0;
+
+        if (NowHp <= 0)
+        {
+            print("죽음");
+            TransitionState(EnemyStateType.Dead);
+        }
+        if(CoolDowning) return;
         if (!Combit)
         {
             Combit = true;
@@ -62,12 +70,6 @@ public class Soul : Enemy
                 TransitionState(EnemyStateType.Attack1);
             else
                 TransitionState(EnemyStateType.Move);
-        }
-
-        if (NowHp <= 0)
-        {
-            print("죽음");
-            TransitionState(EnemyStateType.Dead);
         }
     }
     private IEnumerator Do_Hit_Effect()

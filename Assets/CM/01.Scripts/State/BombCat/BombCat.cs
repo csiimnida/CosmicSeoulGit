@@ -44,6 +44,9 @@ public class BombCat : Enemy{
         {
             print("죽음");
             TransitionState(EnemyStateType.Dead);
+            sprite.material = NomallMaterial;
+            Destroy(this);
+            return;
         }
     }
     private void OnDrawGizmos()

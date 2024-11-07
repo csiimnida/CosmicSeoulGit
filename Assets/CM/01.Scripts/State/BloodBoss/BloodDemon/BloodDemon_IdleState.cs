@@ -13,6 +13,7 @@ public class BloodDemon_IdleState : EnermyState
     }
 
     public override void UpdateState(){
+
         if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,
                 LayerMask.GetMask("Player")))
         {
@@ -21,12 +22,9 @@ public class BloodDemon_IdleState : EnermyState
                 _emermy.TransitionState(_emermy.nextState);
             }
         }
-
-        if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,
-                LayerMask.GetMask("Player")))
+        if(!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")))
         {
-            if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,
-                    LayerMask.GetMask("Player")))
+            if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,LayerMask.GetMask("Player")))
             {
                 _emermy.TransitionState(EnemyStateType.Move);
                 _emermy.CoolDowning = false;
@@ -35,7 +33,7 @@ public class BloodDemon_IdleState : EnermyState
         }
 
         if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,
-                LayerMask.GetMask("Player"))) //완전히 나갔을때
+                LayerMask.GetMask("Player")))//완전히 나갔을때
         {
             _emermy.CoolDowning = false;
             _emermy.CoolTimeNowTimer = 0;

@@ -25,7 +25,7 @@ public class BloodDemon : Enemy
             try
             {
                 string enumName = stateType.ToString();
-                Type t = Type.GetType($"BloodWorm_{enumName}State");
+                Type t = Type.GetType($"BloodDemon_{enumName}State");
                 EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
                 StateEnum.Add(stateType, state);
             }

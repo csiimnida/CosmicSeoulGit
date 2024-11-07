@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodGuardian_IdleState : EnermyState
+public class BlueSlime_IdleState : EnermyState
 {
-    public WoodGuardian_IdleState(Enemy enemy) : base(enemy){
+    public BlueSlime_IdleState(Enemy enemy) : base(enemy){
     }
-
+    
     protected override void EnterState(){
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Idle);
         _emermy.RbCompo.velocity = Vector2.zero;
     }
 
-    public override void UpdateState(){
-
+    public override void UpdateState()
+    {
+        
         if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,
                 LayerMask.GetMask("Player")))
         {
             if (!_emermy.CoolDowning)
             {
+                //_emermy.TransitionState(EnemyStateType.Attack1);
+
                 _emermy.TransitionState(_emermy.nextState);
             }
         }

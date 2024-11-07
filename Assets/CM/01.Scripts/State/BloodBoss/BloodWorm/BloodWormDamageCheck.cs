@@ -5,7 +5,6 @@ using UnityEngine;
 public class BloodWormDamageCheck : MonoBehaviour
 {
     private BloodWorm _bloodWorm;
-    [SerializeField] private Transform _parentObject;
     [SerializeField] private LayerMask _layerMask;
 
     private void Start(){

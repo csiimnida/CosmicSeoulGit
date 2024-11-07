@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BloodDemon_Attack2State : EnermyState
@@ -8,6 +6,7 @@ public class BloodDemon_Attack2State : EnermyState
     }
     
     protected override void EnterState(){
+        _emermy.RbCompo.velocity = Vector2.zero;
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Attack2);
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
     }
@@ -25,7 +24,6 @@ public class BloodDemon_Attack2State : EnermyState
         if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2")
             && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
-            
             _emermy.TransitionState(EnemyStateType.Idle);
         }
     }

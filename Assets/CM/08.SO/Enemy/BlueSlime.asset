@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
-  m_Name: BloodWorm
+  m_Name: BlueSlime
   m_EditorClassIdentifier: 
   Size: {x: 1, y: 1}
-  AttackPower: 30
-  MaxHp: 400
-  AttackSpeed: 2
-  MoveSpeed: 10
-  Perception_range: 14.54
-  Attack_range: 3.61
+  AttackPower: 10
+  MaxHp: 30
+  AttackSpeed: 1.5
+  MoveSpeed: 4
+  Perception_range: 6.4
+  Attack_range: 0.35
   Anchor_Enermy: 0

@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 324868041
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1213870185, guid: 2826cf4ec75c37242bcd8ade8f4fa9fc, type: 3}
+  m_Sprite: {fileID: 60654809, guid: 3a290111ba81167438ae84fd7047fe5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9, y: 5.9375}
+  m_Size: {x: 9, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -300,8 +300,8 @@ MonoBehaviour:
   CoolDowning: 0
   SpawnRange: 5
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
-  <Attack1Size>k__BackingField: {x: 5.75, y: 5.31}
-  <Attack2Size>k__BackingField: {x: 5.85, y: 4.13}
+  <Attack1Size>k__BackingField: {x: 6.03, y: 5.31}
+  <Attack2Size>k__BackingField: {x: 5.64, y: 4.13}
   Attack1Pos: {fileID: 5029254726511613296}
   Attack2Pos: {fileID: 6195322336120433997}
 --- !u!1 &7527550196284858733

@@ -27,12 +27,15 @@ public class BloodDemonAttackCheck : MonoBehaviour
             Physics2D.OverlapBoxAll(_bloodDemon.Attack2Pos.position, _bloodDemon.Attack2Size, _layerMask);
         foreach (var collider in colliders)
         {
+            print(collider.gameObject.name);
             Player player = collider.GetComponent<Player>();
             if (player != null && !player.ColCompo.isTrigger)
             {
                 player.Damage(_bloodDemon.DataSo.AttackPower);
-                float positionX = (_bloodDemon.transform.position - _bloodDemon.player.transform.position).normalized.x;
-                player.RbCompo.AddForce(new Vector2(positionX * 10f, 0), ForceMode2D.Impulse);
+                if (_bloodDemon.transform.position.x - _bloodDemon.player.transform.position.x >= -2 && _bloodDemon.transform.position.x - _bloodDemon.player.transform.position.x <= 2)  return;
+                
+                float positionX = _bloodDemon.transform.position.x - _bloodDemon.player.transform.position.x > 0 ? -2 : 2;
+                player.transform.position = new Vector2(_bloodDemon.transform.position.x + positionX, player.transform.position.y);
             }
         }
     }

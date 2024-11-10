@@ -13,7 +13,7 @@ public class SkeletonTrapAttackCheck : MonoBehaviour
 
     public void Attack1Checker(){
         Collider2D[] colliders =
-            Physics2D.OverlapBoxAll(transform.position, _skeletonTrap.Attack1Size, _layerMask);
+            Physics2D.OverlapBoxAll(_skeletonTrap.attack1Pos.position, _skeletonTrap.Attack1Size, _layerMask);
         foreach (var collider in colliders)
         {
             Player player = collider.GetComponent<Player>();

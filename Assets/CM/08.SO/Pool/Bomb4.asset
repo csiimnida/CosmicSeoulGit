@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bomb4
   m_EditorClassIdentifier: 
   poolName: Bomb4
-  prefab: {fileID: 9165445282282395892, guid: 6810d30c76b97c5419479c20ff150eb5, type: 3}
+  prefab: {fileID: 9165445282282395892, guid: 51b5aabbf6e7ee04981fed79d3cc40e3, type: 3}
   count: 2

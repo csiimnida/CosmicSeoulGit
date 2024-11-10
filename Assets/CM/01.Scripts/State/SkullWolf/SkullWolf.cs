@@ -6,6 +6,8 @@ public class SkullWolf : Enemy
 {
     [field:SerializeField] public Vector2 Attack1Size{ get; private set;}
 
+    public Transform attack1Pos;
+
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
@@ -40,21 +42,13 @@ public class SkullWolf : Enemy
     protected override void Damage_call(float damage){
         NowHp -= damage;
         StartCoroutine(Do_Hit_Effect());
-        CombitTimer = 0;
-        if (!Combit)
-        {
-            Combit = true;
-            if(currentState == EnemyStateType.Attack1 || currentState == EnemyStateType.Attack2 || currentState == EnemyStateType.Attack3)
-                return;
-            else
-                TransitionState(EnemyStateType.Move);
-
-        }
-
         if (NowHp <= 0)
         {
             print("죽음");
             TransitionState(EnemyStateType.Dead);
+            sprite.material = NomallMaterial;
+            Destroy(this);
+            return;
         }
     }
     private IEnumerator Do_Hit_Effect()
@@ -70,7 +64,7 @@ public class SkullWolf : Enemy
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position, Attack1Size);// 어택1 범위
+        Gizmos.DrawWireCube(attack1Pos.position, Attack1Size);// 어택1 범위
     }
     
 }

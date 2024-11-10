@@ -15,25 +15,25 @@ MonoBehaviour:
   Damage: 10
   Skill1Multiple: 4
   Skill2Multiple: 1.5
-  Hp: 100
+  Hp: 10000
   SwordAttackTime: 1
-  MoveSpeed: 5
-  JumpPower: 6
+  MoveSpeed: 6
+  JumpPower: 12
   RollPower: 5
   RollCooltime: 5
   BlockCooltime: 5
   Skill1Cooltime: 6
   Skill2Cooltime: 4
   BlockingTime: 0.35
-  currentTime: 0.064384
+  currentTime: 0.3525935
   AttackForwardDistance: 2
-  CurrentRoolTime: 4.6953626
-  CurrentBlockTime: 9.329161
-  CurrentSkill1Time: 2.6582584
-  CurrentSkill2Time: 5.3701177
+  CurrentRoolTime: 5.625869
+  CurrentBlockTime: 806.735
+  CurrentSkill1Time: 513.5296
+  CurrentSkill2Time: 458.55063
   IsGround: 0
-  CanRool: 0
+  CanRool: 1
   CanBlock: 1
-  CanSkill1: 0
+  CanSkill1: 1
   CanSkill2: 1
   IsFlip: 0

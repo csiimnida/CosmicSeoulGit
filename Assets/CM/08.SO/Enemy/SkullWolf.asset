@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SkullWolf
   m_EditorClassIdentifier: 
   Size: {x: 1, y: 1}
-  AttackPower: 10
+  AttackPower: 5
   MaxHp: 50
-  AttackSpeed: 3
+  AttackSpeed: 0.5
   MoveSpeed: 5
   Perception_range: 6.9
   Attack_range: 0.97

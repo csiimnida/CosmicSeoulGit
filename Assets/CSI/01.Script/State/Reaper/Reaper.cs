@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class Reaper : Enemy
 {
-    
 
+    public Transform AttackCenter;
+    public Vector2 AttackSize;
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
@@ -75,5 +76,7 @@ public class Reaper : Enemy
         Gizmos.DrawWireSphere(transform.position,DataSo.Perception_range);//감지 범위
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(AttackCenter.position,AttackSize);
     }
 }

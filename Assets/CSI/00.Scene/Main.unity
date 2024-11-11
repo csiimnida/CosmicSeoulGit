@@ -179,6 +179,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74a0944bbf62c5d498bc548a95795215, type: 3}
+--- !u!1 &44264497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 44264498}
+  m_Layer: 8
+  m_Name: AttackCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &44264498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44264497}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.709, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 456515373}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &235461229 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5875467951631713595, guid: 74a0944bbf62c5d498bc548a95795215, type: 3}
@@ -228,6 +259,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1903916710}
+  - {fileID: 44264498}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &456515374
@@ -243,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  currentState: 0
   DataSo: {fileID: 11400000, guid: 96b241ff0ea35ca428e8a51a4cd9d15c, type: 2}
   CombitTimer: 0
   CoolTimeMaxTimer: 0
@@ -251,6 +284,8 @@ MonoBehaviour:
   CoolDowning: 0
   SpawnRange: 5
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
+  AttackCenter: {fileID: 44264498}
+  AttackSize: {x: 2.5, y: 6.26}
 --- !u!50 &456515375
 Rigidbody2D:
   serializedVersion: 4

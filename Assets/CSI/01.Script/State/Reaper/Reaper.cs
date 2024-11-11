@@ -26,7 +26,7 @@ public class Reaper : Enemy
             try
             {
                 string enumName = stateType.ToString();
-                Type t = Type.GetType($"Soul_Ghost_Enemy{enumName}State");
+                Type t = Type.GetType($"Reaper_Enemy{enumName}State");
                 EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
                 StateEnum.Add(stateType, state);
             }
@@ -57,8 +57,9 @@ public class Reaper : Enemy
 
         if (NowHp <= 0)
         {
-            print("죽음");
             TransitionState(EnemyStateType.Dead);
+            sprite.material = NomallMaterial;
+            Destroy(this);
         }
     }
     private IEnumerator Do_Hit_Effect()

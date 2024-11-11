@@ -61,6 +61,8 @@ public class Soul : Enemy
         {
             print("죽음");
             TransitionState(EnemyStateType.Dead);
+            sprite.material = NomallMaterial;
+            Destroy(this);
         }
         if(CoolDowning) return;
         if (!Combit)

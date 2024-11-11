@@ -93,5 +93,6 @@ public enum EnemyStateType
     Attack2,
     Attack3,
     Dead,
-    Spawn
+    Spawn,
+    Teleport //사신적
 }

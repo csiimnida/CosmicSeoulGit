@@ -62,6 +62,12 @@ public class AnimationChange : MonoBehaviour
             case AnimationType.Spawn:
                 Play("Spawn");
                 break;
+            case AnimationType.TelleportStart:
+                Play("TelleportStart");
+                break;
+            case AnimationType.TelleportEnd:
+                Play("TelleportEnd");
+                break;
             default:
                 break;
         }
@@ -103,5 +109,7 @@ public enum AnimationType
     Skill2,
     Block,
     BlockImpact,
-    Spawn
+    Spawn,
+    TelleportStart,
+    TelleportEnd
 }

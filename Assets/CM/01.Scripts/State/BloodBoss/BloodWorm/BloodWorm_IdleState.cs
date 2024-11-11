@@ -5,13 +5,13 @@ using UnityEngine;
 public class BloodWorm_IdleState : EnermyState
 {
     public BloodWorm_IdleState(Enemy enemy) : base(enemy){
+        _emermy.nextState = EnemyStateType.Attack1;
     }
     
     
     protected override void EnterState(){
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Idle);
         _emermy.RbCompo.velocity = Vector2.zero;
-        _emermy.nextState = EnemyStateType.Attack1;
     }
 
     public override void UpdateState(){

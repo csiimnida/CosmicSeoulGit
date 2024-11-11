@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9599c3997d67c42b7e2c1472287b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shakePower: {x: 3, y: 0}
-  _duration: 0.7
+  _shakePower: {x: 0.2, y: 1}
+  _duration: 0.4
 --- !u!1 &4887367888692595309
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ImpulseDefinition:
     m_ImpulseChannel: 1
-    m_ImpulseShape: 4
+    m_ImpulseShape: 3
     m_CustomImpulseShape:
       serializedVersion: 2
       m_Curve: []

@@ -43,6 +43,5 @@ public class Soul_Ghost_EnemyAttack1State : EnermyState
 
     protected override void ExtiState()
     {
-        //_emermy.nextState = EnemyStateType.Attack2;
     }
 }

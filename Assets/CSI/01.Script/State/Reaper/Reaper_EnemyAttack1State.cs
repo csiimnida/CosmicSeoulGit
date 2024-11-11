@@ -17,10 +17,14 @@ public class Reaper_EnemyAttack1State : EnermyState
     public override void UpdateState()
     {
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
-        if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1")
-            && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") &&
+            _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
-            Debug.Log("공격 다함");
+            _emermy.nextState = EnemyStateType.Attack2;
+            _emermy.CoolDowning = true;
+            _emermy.CoolTimeNowTimer = _emermy.CoolTimeMaxTimer;
+            _emermy.TransitionState(EnemyStateType.Idle);
+            return;
         }
         if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")))
         {

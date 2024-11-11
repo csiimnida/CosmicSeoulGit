@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Size: {x: 1, y: 1}
   AttackPower: 30
-  MaxHp: 400
+  MaxHp: 1
   AttackSpeed: 2
   MoveSpeed: 10
   Perception_range: 14.54

@@ -11,6 +11,7 @@ public class BloodWorm_IdleState : EnermyState
     protected override void EnterState(){
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Idle);
         _emermy.RbCompo.velocity = Vector2.zero;
+        _emermy.nextState = EnemyStateType.Attack1;
     }
 
     public override void UpdateState(){

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 378116904649470625}
   - component: {fileID: 6407671175007714627}
   - component: {fileID: 45704696187354146}
+  - component: {fileID: 1470850344285162871}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -139,6 +140,20 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1470850344285162871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2193696468252897196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9599c3997d67c42b7e2c1472287b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakePower: {x: 0.2, y: 1}
+  _duration: 0.4
 --- !u!1 &4887367888692595309
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +197,7 @@ GameObject:
   - component: {fileID: 1150784382495177161}
   - component: {fileID: 5852941959704988131}
   - component: {fileID: 8306727066314370193}
+  - component: {fileID: 6111122098531772566}
   m_Layer: 8
   m_Name: BloodDemon
   m_TagString: Untagged
@@ -292,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  currentState: 0
   DataSo: {fileID: 11400000, guid: cbb4c4eb65625f547b51c2d50e8c22ab, type: 2}
   CombitTimer: 0
   CoolTimeMaxTimer: 0
@@ -304,6 +321,59 @@ MonoBehaviour:
   <Attack2Size>k__BackingField: {x: 5.64, y: 4.13}
   Attack1Pos: {fileID: 5029254726511613296}
   Attack2Pos: {fileID: 6195322336120433997}
+--- !u!114 &6111122098531772566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7320167827167892759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 3
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 1, y: -1, z: 1}
 --- !u!1 &7527550196284858733
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class Reaper : Enemy
 {
-    
 
+    public Transform AttackCenter;
+    public Vector2 AttackSize;
     protected void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
@@ -26,7 +27,7 @@ public class Reaper : Enemy
             try
             {
                 string enumName = stateType.ToString();
-                Type t = Type.GetType($"Soul_Ghost_Enemy{enumName}State");
+                Type t = Type.GetType($"Reaper_Enemy{enumName}State");
                 EnermyState state = Activator.CreateInstance(t, new object[] { this }) as EnermyState;
                 StateEnum.Add(stateType, state);
             }
@@ -57,8 +58,9 @@ public class Reaper : Enemy
 
         if (NowHp <= 0)
         {
-            print("죽음");
             TransitionState(EnemyStateType.Dead);
+            sprite.material = NomallMaterial;
+            Destroy(this);
         }
     }
     private IEnumerator Do_Hit_Effect()
@@ -74,5 +76,7 @@ public class Reaper : Enemy
         Gizmos.DrawWireSphere(transform.position,DataSo.Perception_range);//감지 범위
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,DataSo.Attack_range);//공격 범위
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(AttackCenter.position,AttackSize);
     }
 }

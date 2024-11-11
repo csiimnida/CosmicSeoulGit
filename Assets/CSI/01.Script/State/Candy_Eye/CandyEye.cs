@@ -54,6 +54,8 @@ public class CandyEye : Enemy
         {
             print("죽음");
             TransitionState(EnemyStateType.Dead);
+            sprite.material = NomallMaterial;
+            Destroy(this);
         }
     }
     private IEnumerator Do_Hit_Effect()

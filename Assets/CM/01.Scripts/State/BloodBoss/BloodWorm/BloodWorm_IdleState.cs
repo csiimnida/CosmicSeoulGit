@@ -5,6 +5,7 @@ using UnityEngine;
 public class BloodWorm_IdleState : EnermyState
 {
     public BloodWorm_IdleState(Enemy enemy) : base(enemy){
+        _emermy.nextState = EnemyStateType.Attack1;
     }
     
     

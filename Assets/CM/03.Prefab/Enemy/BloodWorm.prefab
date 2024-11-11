@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4508187932409999445}
   - component: {fileID: 8155208425850246980}
   - component: {fileID: 5789218790886637334}
+  - component: {fileID: 5760956035768469312}
   m_Layer: 8
   m_Name: BloodWorm
   m_TagString: Untagged
@@ -125,14 +126,105 @@ MonoBehaviour:
   currentState: 0
   DataSo: {fileID: 11400000, guid: 96bbb889009d2e840848c105b386f329, type: 2}
   CombitTimer: 0
+  CoolTimeMaxTimer: 0
+  CoolTimeNowTimer: 0
   sprite: {fileID: 0}
-  NowHp: 0
+  CoolDowning: 0
   SpawnRange: 5
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
   <Attack1Size>k__BackingField: {x: 5.19, y: 3.4}
   <Attack2Size>k__BackingField: {x: 7.57, y: 4.27}
   Attack1Pos: {fileID: 3519120537537094747}
   Attack2Pos: {fileID: 4611068000950926002}
+--- !u!114 &5760956035768469312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554891849520134237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 3
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.27124023
+        inSlope: -0.304826
+        outSlope: -0.304826
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.37916666
+      - serializedVersion: 3
+        time: 0.14752887
+        value: 0.9504872
+        inSlope: 0.9902921
+        outSlope: 0.9902921
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.78408283
+        value: 0.9963463
+        inSlope: -0.8364546
+        outSlope: -0.8364546
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.2688675
+        inSlope: -3.3692493
+        outSlope: -3.3692493
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1 &3253309515038432874
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +300,7 @@ GameObject:
   - component: {fileID: 2543907637324127232}
   - component: {fileID: 4154050928388201183}
   - component: {fileID: 2324218130835843975}
+  - component: {fileID: 5537041926866146167}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -331,7 +424,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9a994cd63f01a49b37daefbb9a9877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parentObject: {fileID: 2930645412174355615}
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &5537041926866146167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481550040873531337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9599c3997d67c42b7e2c1472287b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakePower: {x: 0, y: 2}
+  _duration: 0.6

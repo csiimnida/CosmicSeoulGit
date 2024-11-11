@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public Player player;
     protected Dictionary<EnemyStateType, EnermyState> StateEnum = new Dictionary<EnemyStateType, EnermyState>();
-    protected EnemyStateType currentState;
+    public EnemyStateType currentState;
     protected EnemyStateType previousState{ get; set; }
     public EnemyStateType nextState{ get; set; }
     public EnermyDataSO DataSo;
@@ -94,5 +94,6 @@ public enum EnemyStateType
     Attack3,
     Dead,
     Spawn,
-    Teleport //사신적
+    Teleport,
+    Empty
 }

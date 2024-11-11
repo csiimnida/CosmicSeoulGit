@@ -404,8 +404,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 1, y: 1, z: 0}
-  m_AmplitudeGain: 1
-  m_FrequencyGain: 1
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
   mNoiseOffsets: {x: 599.1015, y: -307.24252, z: -828.1288}
 --- !u!1 &394062994
 GameObject:
@@ -1013,6 +1013,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1470850344285162871, guid: d3e12063ccd0eed459421dba5b8570d6, type: 3}
+      propertyPath: _duration
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470850344285162871, guid: d3e12063ccd0eed459421dba5b8570d6, type: 3}
+      propertyPath: _shakePower.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470850344285162871, guid: d3e12063ccd0eed459421dba5b8570d6, type: 3}
+      propertyPath: _shakePower.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5682592527704059409, guid: d3e12063ccd0eed459421dba5b8570d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -48.813408
@@ -1052,6 +1064,10 @@ PrefabInstance:
     - target: {fileID: 5682592527704059409, guid: d3e12063ccd0eed459421dba5b8570d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111122098531772566, guid: d3e12063ccd0eed459421dba5b8570d6, type: 3}
+      propertyPath: m_ImpulseDefinition.m_ImpulseShape
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7320167827167892759, guid: d3e12063ccd0eed459421dba5b8570d6, type: 3}
       propertyPath: m_Name
@@ -1188,6 +1204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  currentState: 0
   DataSo: {fileID: 11400000, guid: cfb017caf77cc934a83b984729797da7, type: 2}
   CombitTimer: 0
   CoolTimeMaxTimer: 0

@@ -15,8 +15,8 @@ MonoBehaviour:
   Size: {x: 1, y: 1}
   AttackPower: 20
   MaxHp: 50
-  AttackSpeed: 5
+  AttackSpeed: 1.5
   MoveSpeed: 10
   Perception_range: 0
-  Attack_range: 1.83
+  Attack_range: 1.07
   Anchor_Enermy: 0

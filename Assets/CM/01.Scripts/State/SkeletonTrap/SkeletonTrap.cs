@@ -6,7 +6,6 @@ using System;
 public class SkeletonTrap : Enemy
 {
     [field:SerializeField] public Vector2 Attack1Size{ get;private set;}
-    private int SpawnCount = 0;
 
     public Transform attack1Pos;
 
@@ -34,6 +33,7 @@ public class SkeletonTrap : Enemy
                 Debug.Log($"{stateType.ToString()}를 찾을수 없습니다");
             }
         }
+        TransitionState(EnemyStateType.Empty);
     }
 
     protected override void Start(){
@@ -45,21 +45,13 @@ public class SkeletonTrap : Enemy
     protected override void Damage_call(float damage){
         NowHp -= damage;
         StartCoroutine(Do_Hit_Effect());
-        CombitTimer = 0;
-        if (!Combit)
-        {
-            Combit = true;
-            if(currentState == EnemyStateType.Attack1||currentState == EnemyStateType.Attack2||currentState == EnemyStateType.Attack3)
-                return;
-            else
-                TransitionState(EnemyStateType.Move);
-
-        }
-
         if (NowHp <= 0)
         {
             print("죽음");
             TransitionState(EnemyStateType.Dead);
+            sprite.material = NomallMaterial;
+            Destroy(this);
+            return;
         }
     }
     private IEnumerator Do_Hit_Effect()
@@ -78,13 +70,5 @@ public class SkeletonTrap : Enemy
         Gizmos.DrawWireCube(attack1Pos.position, Attack1Size);// 어택1 범위
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position,SpawnRange);
-    }
-
-    private void LateUpdate(){
-        if (Physics2D.OverlapCircle(transform.position, SpawnRange, LayerMask.GetMask("Player")) && SpawnCount == 0)
-        {
-            TransitionState(EnemyStateType.Spawn);
-            SpawnCount++;
-        }
     }
 }

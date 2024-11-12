@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 989507419587594157}
   - component: {fileID: 2897072825026011773}
   - component: {fileID: 5048344795768613147}
+  - component: {fileID: 200189020044023913}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -173,6 +174,20 @@ MonoBehaviour:
     m_Bits: 128
   _bombName: Bomb3
   _explosionPositon: {fileID: 8060162591312408061}
+--- !u!114 &200189020044023913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225611249780920948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9599c3997d67c42b7e2c1472287b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakePower: {x: 0.1, y: 0.9}
+  _duration: 0.3
 --- !u!1 &7697838646714413102
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +200,7 @@ GameObject:
   - component: {fileID: 4253548835211533743}
   - component: {fileID: 6784809492488331434}
   - component: {fileID: 3663586667326012793}
+  - component: {fileID: 2243148926640857549}
   m_Layer: 8
   m_Name: BombCat_Black
   m_TagString: Untagged
@@ -225,8 +241,10 @@ MonoBehaviour:
   currentState: 0
   DataSo: {fileID: 11400000, guid: eca09878b2dd69a48b26430cc52cea05, type: 2}
   CombitTimer: 0
+  CoolTimeMaxTimer: 0
+  CoolTimeNowTimer: 0
   sprite: {fileID: 0}
-  NowHp: 0
+  CoolDowning: 0
   SpawnRange: 5
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
   AttackRange: 0
@@ -303,3 +321,56 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.68465704, y: 0.5796834}
   m_EdgeRadius: 0
+--- !u!114 &2243148926640857549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7697838646714413102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}

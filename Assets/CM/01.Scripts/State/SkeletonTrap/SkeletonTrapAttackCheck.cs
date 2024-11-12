@@ -18,7 +18,7 @@ public class SkeletonTrapAttackCheck : MonoBehaviour
         {
             Player player = collider.GetComponent<Player>();
             if(player != null && !player.ColCompo.isTrigger)
-                player.Damage(_skeletonTrap.DataSo.AttackPower);
+                player.Damage(_skeletonTrap.DataSo,_skeletonTrap.DataSo.AttackPower);
         }
     }
 }

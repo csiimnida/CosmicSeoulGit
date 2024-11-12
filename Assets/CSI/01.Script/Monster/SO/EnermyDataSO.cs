@@ -42,7 +42,10 @@ public class EnermyDataSO : ScriptableObject
     /// 적의 공격 범위를 나타냅니다.
     /// </summary>
     public float Attack_range = 5;
-    
+
+
+    public Vector2 CameraShakePower;
+    public float CameraShakeDuration;
     
     /// <summary>
     ///고정형: 이동 기능이 존재하지 않는다.

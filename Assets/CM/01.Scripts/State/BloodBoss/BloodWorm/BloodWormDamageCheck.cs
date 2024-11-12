@@ -18,7 +18,7 @@ public class BloodWormDamageCheck : MonoBehaviour
         {
             Player player = collider.GetComponent<Player>();
             if(player != null && !player.ColCompo.isTrigger)
-                player.Damage(_bloodWorm.DataSo.AttackPower);
+                player.Damage(_bloodWorm.DataSo,_bloodWorm.DataSo.AttackPower);
         }
     }
 
@@ -29,7 +29,7 @@ public class BloodWormDamageCheck : MonoBehaviour
         {
             Player player = collider.GetComponent<Player>();
             if(player != null && !player.ColCompo.isTrigger)
-                player.Damage(_bloodWorm.DataSo.AttackPower);
+                player.Damage(_bloodWorm.DataSo,_bloodWorm.DataSo.AttackPower);
         }
     }
 }

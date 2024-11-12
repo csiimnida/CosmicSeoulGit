@@ -36,9 +36,17 @@ public class Bullet : MonoBehaviour, IPoolable
 
     private void OnTriggerEnter2D(Collider2D other){
         Enemy enemy = other.GetComponent<Enemy>();
-        if (enemy != null && enemy.currentState != EnemyStateType.Dead)
+        try
         {
-            enemy.Damage(_playerData.Damage * _playerData.Skill2Multiple);
+            if (enemy.currentState != EnemyStateType.Dead)
+            {
+                enemy.Damage(_playerData.Damage * _playerData.Skill2Multiple);
+            }
+        }
+        catch(Exception e)
+        {
+            Debug.Log(e);
+            return;
         }
         PoolManager.Instance.Push(this);
     }

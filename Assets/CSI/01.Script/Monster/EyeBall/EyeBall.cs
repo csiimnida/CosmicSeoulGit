@@ -6,7 +6,7 @@ using UnityEngine;
 public class EyeBall : MonoBehaviour, IPoolable
 {
     [SerializeField] private string _poolName;
-    public float Damage;
+    public EnermyDataSO enermyData;
     
     private Rigidbody2D rigidbody2D;
 
@@ -40,7 +40,7 @@ public class EyeBall : MonoBehaviour, IPoolable
     {
         if (other.transform.CompareTag("Player"))
         {
-            //other.GetComponent<Player>().Damage(Damage);
+            other.GetComponent<Player>().Damage(enermyData,enermyData.AttackPower);
             PoolManager.Instance.Push(this);
         }
     }

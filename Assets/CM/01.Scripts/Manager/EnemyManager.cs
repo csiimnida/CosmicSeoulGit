@@ -8,10 +8,13 @@ public class EnemyManager : MonoSingleton<EnemyManager>{
     [SerializeField] private GameObject BloodBoss2PagePrefab;
     [SerializeField] private ParticleSystem BloodParticle;
     [SerializeField] private float waitTime = 3f;
+    
 
     public void Start2Page(){
         StartCoroutine(CreateBloodBoss2Page());
     }
+
+
 
     private IEnumerator CreateBloodBoss2Page(){
         Instantiate(BloodParticle, BloodBoss1Page.position, Quaternion.identity);

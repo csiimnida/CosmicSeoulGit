@@ -19,4 +19,6 @@ MonoBehaviour:
   MoveSpeed: 5
   Perception_range: 6.9
   Attack_range: 0.97
+  CameraShakePower: {x: 0.1, y: 0.2}
+  CameraShakeDuration: 0.1
   Anchor_Enermy: 0

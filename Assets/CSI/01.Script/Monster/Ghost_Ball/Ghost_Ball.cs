@@ -39,7 +39,7 @@ public class Ghost_Ball : MonoBehaviour, IPoolable
     {
         if (other.transform.CompareTag("Player"))
         {
-            other.GetComponent<Player>().Damage(Damage);
+            //other.GetComponent<Player>().Damage(Damage);
             PoolManager.Instance.Push(this);
         }
     }

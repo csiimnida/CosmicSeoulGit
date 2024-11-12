@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9599c3997d67c42b7e2c1472287b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shakePower: {x: 0.1, y: 0.7}
+  _shakePower: {x: 0.1, y: 0.15}
   _duration: 0.3
 --- !u!1 &8010028377810979966
 GameObject:

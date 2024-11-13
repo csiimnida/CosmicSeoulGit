@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1160176939
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -46,6 +49,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4271680357
+    locked: 0
+  - name: Frontground
+    uniqueID: 2468879015
     locked: 0
   - name: Effect
     uniqueID: 569683363

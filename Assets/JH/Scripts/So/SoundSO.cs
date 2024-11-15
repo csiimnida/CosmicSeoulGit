@@ -16,7 +16,7 @@ public class SoundSO : ScriptableObject
     public enum SoundTypes
     {
         BGM,
-        ClickSFX,
-        NormalSFX,
+        SFX,
+        
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-
+using UnityEngine.SceneManagement;
 public class SoundManager : MonoBehaviour
 {
     
@@ -16,21 +16,52 @@ public class SoundManager : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        if (bgmSource != null)
-        {
-            bgmSource.loop = true;
-            PlayBGM(bgmSource.clip);
-        }
+        
 
         foreach (SoundSO item in Sounds.SoundSOs)
         {
             print(item.SoundName);
             _dictionary.Add(item.SoundName, item);
         }
-        
-        
+        PlaySound("StartBGM");
+
+
+    }
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    void OnDisable()
+    {
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "JHStart")//<=Start
+        {
+            bgmSource.clip = null;
+        }
+
+        if(scene.name=="JHGame")//<=Ingame
+        {
+            PlaySound("IngameBGM");
+
+        }
+        else if(scene.name=="JHDead")
+        {
+            PlaySound("IngameDeadBGM");
+        }
+
+
+
+
+
+
+    }
     public void PlaySound(string soundName)
     {
         try
@@ -44,6 +75,7 @@ public class SoundManager : MonoBehaviour
         catch (Exception e)
         {
             Debug.LogError($"Sound {soundName} not found,, ERROR CODE: {e}");
+            return;
         }
         
         if (_dictionary[soundName].SoundType == "SFX")

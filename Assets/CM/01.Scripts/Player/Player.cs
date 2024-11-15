@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
 
     private Dictionary<PlayerStateType, PlayerState> StateEnum = new Dictionary<PlayerStateType, PlayerState>();
     private PlayerStateType currentState;
+    
+    private CinemachineImpulseSource impulseSource;
 
     private float NowHP;
 
@@ -35,15 +38,24 @@ public class Player : MonoBehaviour
         ColCompo = GetComponent<Collider2D>();
         GroundChecker = GetComponentInChildren<GroundChecker>();
         SpriteCompo = GetComponentInChildren<SpriteRenderer>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
 
         NowHP = PlayerData.Hp;
         
         foreach (PlayerStateType stateType in Enum.GetValues(typeof(PlayerStateType)))
         {
-            string enumName = stateType.ToString();
-            Type t = Type.GetType($"{enumName}State");
-            PlayerState state = Activator.CreateInstance(t, new object[] { this }) as PlayerState;
-            StateEnum.Add(stateType, state);
+            try
+            {
+                string enumName = stateType.ToString();
+                Type t = Type.GetType($"{enumName}State");
+                PlayerState state = Activator.CreateInstance(t, new object[] { this }) as PlayerState;
+                StateEnum.Add(stateType, state);
+
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
         }
         TransitionState(PlayerStateType.Idle);
     }
@@ -70,19 +82,27 @@ public class Player : MonoBehaviour
     {
         StateEnum[currentState].FixedUpdateState();
     }
-
-    public void Damage(float damage){
-        NowHP -= damage;
-
+    
+    public void Damage(EnermyDataSO data, float damage){
+        
         if (currentState == PlayerStateType.Block)
         {
             NowHP += damage;
             TransitionState(PlayerStateType.BlockImpact);
+            return;
         }
-        else if (NowHP > 0)
+        
+        NowHP -= damage;
+        if (NowHP > 0)
+        {
             StartCoroutine(Do_Hit_Effect());
-        else if(NowHP <= 0)
+            ShakeCamera(data);
+        }
+        else if (NowHP <= 0)
+        {
             TransitionState(PlayerStateType.Death);
+            ShakeCamera(data);
+        }
     }
     
     private IEnumerator Do_Hit_Effect()
@@ -90,6 +110,12 @@ public class Player : MonoBehaviour
         SpriteCompo.material = HitMat;
         yield return new WaitForSeconds(0.1f);
         SpriteCompo.material = NormalMat;
+    }
+
+    private void ShakeCamera(EnermyDataSO data){
+        impulseSource.m_DefaultVelocity = data.CameraShakePower;
+        impulseSource.m_ImpulseDefinition.m_ImpulseDuration = data.CameraShakeDuration;
+        impulseSource.GenerateImpulse();
     }
 
     public void OnDeathEventInvoke(){

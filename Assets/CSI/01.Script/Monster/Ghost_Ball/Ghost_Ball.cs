@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ghost_Ball : MonoBehaviour, IPoolable
 {
     [SerializeField] private string _poolName;
-    public float Damage;
+    public EnermyDataSO DataSo;
     
     private Rigidbody2D rigidbody2D;
 
@@ -39,7 +39,7 @@ public class Ghost_Ball : MonoBehaviour, IPoolable
     {
         if (other.transform.CompareTag("Player"))
         {
-            other.GetComponent<Player>().Damage(Damage);
+            other.GetComponent<Player>().Damage(DataSo,DataSo.AttackPower);
             PoolManager.Instance.Push(this);
         }
     }

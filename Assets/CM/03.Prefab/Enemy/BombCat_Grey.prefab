@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1351953478812631603}
   - component: {fileID: 8793342953506998571}
   - component: {fileID: 3595319428821992813}
+  - component: {fileID: 2288705711780277753}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -142,6 +143,20 @@ MonoBehaviour:
     m_Bits: 128
   _bombName: Bomb2
   _explosionPositon: {fileID: 1743833257131130077}
+--- !u!114 &2288705711780277753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186922012351776010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9599c3997d67c42b7e2c1472287b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakePower: {x: 0.1, y: 0.15}
+  _duration: 0.3
 --- !u!1 &8010028377810979966
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +169,7 @@ GameObject:
   - component: {fileID: 5746883397435287226}
   - component: {fileID: 5564986431921946300}
   - component: {fileID: 1825625147729953856}
+  - component: {fileID: 5417962327187424130}
   m_Layer: 8
   m_Name: BombCat_Grey
   m_TagString: Untagged
@@ -194,8 +210,10 @@ MonoBehaviour:
   currentState: 0
   DataSo: {fileID: 11400000, guid: 63fac9336f891984288ebc7111563cfa, type: 2}
   CombitTimer: 0
+  CoolTimeMaxTimer: 0
+  CoolTimeNowTimer: 0
   sprite: {fileID: 0}
-  NowHp: 0
+  CoolDowning: 0
   SpawnRange: 5
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
   AttackRange: 0
@@ -272,6 +290,59 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.68465704, y: 0.55935335}
   m_EdgeRadius: 0
+--- !u!114 &5417962327187424130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010028377810979966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1 &8906889722317590026
 GameObject:
   m_ObjectHideFlags: 0

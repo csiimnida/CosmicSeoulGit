@@ -17,10 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DY/Scene/EyeTree.unity
     guid: 0aecf6fca38614a4d96cd4c7d07861d9
-  - enabled: 0
+  - enabled: 1
     path: Assets/JH/Scene/JHGame.unity
     guid: f0259c9c9bed577408188af99053a489
   - enabled: 1
     path: Assets/CM/00.Scenes/CM.unity
     guid: 763898cafdc6d914a97ee00ada5b84c6
+  - enabled: 1
+    path: Assets/JH/Scene/JHDead.unity
+    guid: aa71df87595e1a4478f36ebedefbe6c2
   m_configObjects: {}

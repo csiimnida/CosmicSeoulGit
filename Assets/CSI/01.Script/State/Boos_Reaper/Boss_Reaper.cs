@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Boss_Reaper : Enemy
 {
     [field:SerializeField] public Vector2 Attack1Size{ get;private set;}
     public Transform attack1Pos;
-
-    protected void Awake(){
+    
+    protected void Awake()
+    {
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();

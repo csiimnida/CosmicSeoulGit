@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b54f668273c4e054d8bff66b54a19ff9, type: 3}
-  m_Name: Ghost_Ball
+  m_Name: Reaper_Ball
   m_EditorClassIdentifier: 
-  poolName: Ghost_Ball
-  prefab: {fileID: 3746254747577863793, guid: 3d6e355f15e3dcd4d9edd6615f510ea3, type: 3}
-  count: 3
+  poolName: Reaper_Ball
+  prefab: {fileID: 8935612759867481481, guid: b07fd5f3b9ffdfc4ab8a6644364928c7, type: 3}
+  count: 5

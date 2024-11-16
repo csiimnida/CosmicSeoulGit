@@ -23,11 +23,11 @@ public class Boss_ReaperAttackchacker : MonoBehaviour
 
     public void Spawn()
     {
-        EyeBall eye = PoolManager.Instance.Pop("Eye") as EyeBall;
-        eye.transform.rotation = _target.parent.rotation;
-        eye.transform.position = _target.position;
-        eye.enermyData = _target.parent.GetComponent<Enemy>().DataSo;
-        eye.Rotate();
+        Reaper_Ball ball = PoolManager.Instance.Pop("Reaper_Ball") as Reaper_Ball;
+        ball.transform.rotation = _target.rotation;
+        ball.transform.position = _target.position;
+        ball.enermyData = _target.parent.GetComponent<Enemy>().DataSo;
+        ball.Rotate();
     }
 
 

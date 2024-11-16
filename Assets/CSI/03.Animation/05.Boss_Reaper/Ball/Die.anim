@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Spawn
+  m_Name: Die
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,21 +21,17 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: ada18ce99f269204491f31d78d6ca97b, type: 3}
+      value: {fileID: 21300000, guid: 26cd1e1c5f6fa4c429fffa7edbc2a246, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: cc5772d25843c594aab53600ffff0e58, type: 3}
+      value: {fileID: 21300000, guid: 6dca094bb18d0594abc65b744ded008a, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: 57a78601810b57e4ea40febea6aee50a, type: 3}
+      value: {fileID: 21300000, guid: a697f70a313faf74883038982bc69e8a, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: 47330bd486852ca4c9e46e91045a23a7, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: ae4e282e588e5da4887cb732b5f37d31, type: 3}
-    - time: 0.5
-      value: {fileID: 21300000, guid: 67da42b917d248f4e9bcf20349e46650, type: 3}
-    - time: 0.6666667
-      value: {fileID: 21300000, guid: ce52359212557b149924d840a73cc2f1, type: 3}
-    - time: 0.75
-      value: {fileID: 21300000, guid: e01da3461831d71488cd948d6aae1d3b, type: 3}
-    - time: 0.8333333
-      value: {fileID: 21300000, guid: 45e7e06f19c0bb54388ee7f9556e64a9, type: 3}
+      value: {fileID: 21300000, guid: 1ec4fae19d0319f48bd7196a958b377e, type: 3}
+    - time: 0.41666666
+      value: {fileID: 0}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -58,20 +54,18 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: ada18ce99f269204491f31d78d6ca97b, type: 3}
-    - {fileID: 21300000, guid: cc5772d25843c594aab53600ffff0e58, type: 3}
-    - {fileID: 21300000, guid: 57a78601810b57e4ea40febea6aee50a, type: 3}
-    - {fileID: 21300000, guid: ae4e282e588e5da4887cb732b5f37d31, type: 3}
-    - {fileID: 21300000, guid: 67da42b917d248f4e9bcf20349e46650, type: 3}
-    - {fileID: 21300000, guid: ce52359212557b149924d840a73cc2f1, type: 3}
-    - {fileID: 21300000, guid: e01da3461831d71488cd948d6aae1d3b, type: 3}
-    - {fileID: 21300000, guid: 45e7e06f19c0bb54388ee7f9556e64a9, type: 3}
+    - {fileID: 21300000, guid: 26cd1e1c5f6fa4c429fffa7edbc2a246, type: 3}
+    - {fileID: 21300000, guid: 6dca094bb18d0594abc65b744ded008a, type: 3}
+    - {fileID: 21300000, guid: a697f70a313faf74883038982bc69e8a, type: 3}
+    - {fileID: 21300000, guid: 47330bd486852ca4c9e46e91045a23a7, type: 3}
+    - {fileID: 21300000, guid: 1ec4fae19d0319f48bd7196a958b377e, type: 3}
+    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.9166666
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -91,8 +85,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.5
-    functionName: Spawn
+  - time: 0.41666666
+    functionName: Push
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

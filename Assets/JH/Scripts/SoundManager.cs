@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
-public class SoundManager : MonoBehaviour
+public class SoundManager : MonoSingleton<SoundManager>
 {
     
     [SerializeField] private AudioSource bgmSource;
@@ -15,17 +15,12 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        
-
         foreach (SoundSO item in Sounds.SoundSOs)
         {
             print(item.SoundName);
             _dictionary.Add(item.SoundName, item);
         }
         PlaySound("StartBGM");
-
-
     }
     void OnEnable()
     {

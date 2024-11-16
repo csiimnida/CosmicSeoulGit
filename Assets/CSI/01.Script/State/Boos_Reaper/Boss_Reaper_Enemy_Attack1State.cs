@@ -23,6 +23,7 @@ public class Boss_Reaper_Enemy_Attack1State : EnermyState
             _emermy.nextState = EnemyStateType.Attack1;
             _emermy.CoolDowning = true;
             _emermy.CoolTimeNowTimer = 0;
+            Debug.Log("Idle : 이동");
             _emermy.TransitionState(EnemyStateType.Idle);
             return;
         }
@@ -38,12 +39,16 @@ public class Boss_Reaper_Enemy_Attack1State : EnermyState
                     return;
                 }
             }
+            
+            _emermy.nextState = EnemyStateType.Spawn;
             _emermy.TransitionState(EnemyStateType.Spawn);
         }
         else if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")) 
                  && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") 
                  && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
+            
+            _emermy.nextState = EnemyStateType.Attack1;
             _emermy.TransitionState(EnemyStateType.Attack1);
         }
     }

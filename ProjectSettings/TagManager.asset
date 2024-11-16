@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Overlay
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Player
   - Enemy
   - Projectile
-  - 
+  - Ball
   - 
   - 
   - 
@@ -55,4 +56,7 @@ TagManager:
     locked: 0
   - name: Effect
     uniqueID: 569683363
+    locked: 0
+  - name: Ball
+    uniqueID: 1746868253
     locked: 0

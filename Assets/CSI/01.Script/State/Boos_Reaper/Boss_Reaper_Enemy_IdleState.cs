@@ -15,7 +15,8 @@ public class Boss_Reaper_Enemy_IdleState : EnermyState
         _emermy.RbCompo.velocity = Vector2.zero;
     }
 
-    public override void UpdateState(){
+    public override void UpdateState()
+    {
 
         if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,
                 _player))
@@ -23,7 +24,18 @@ public class Boss_Reaper_Enemy_IdleState : EnermyState
             if (!_emermy.CoolDowning)
             {
                 _emermy.TransitionState(_emermy.nextState);
+                return;
             }
+        }
+        if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,
+                _player))//완전히 나갔을때
+        {
+            _emermy.CoolDowning = false;
+            _emermy.CoolTimeNowTimer = 0;
+            _emermy.nextState = EnemyStateType.Idle;
+            _emermy.TransitionState(EnemyStateType.Idle);
+            return;
+
         }
         if(!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,_player))
         {
@@ -32,31 +44,24 @@ public class Boss_Reaper_Enemy_IdleState : EnermyState
                 _emermy.TransitionState(EnemyStateType.Spawn);
                 _emermy.CoolDowning = false;
                 _emermy.CoolTimeNowTimer = 0;
+                return;
+
             }
         }
         if(!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,_player))
         {
-            if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,_player))
+            if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.SpawnRange,_player))
             {
                 if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,
-                        _player))
+                        _player)) //완전히 나갔을때
                 {
-                    
+                    _emermy.TransitionState(EnemyStateType.Move);
+                    _emermy.CoolDowning = false;
+                    _emermy.CoolTimeNowTimer = 0;
                     return;
                 }
-                _emermy.TransitionState(EnemyStateType.Move);
-                _emermy.CoolDowning = false;
-                _emermy.CoolTimeNowTimer = 0;
             }
         }
 
-        if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,
-                _player))//완전히 나갔을때
-        {
-            _emermy.CoolDowning = false;
-            _emermy.CoolTimeNowTimer = 0;
-            _emermy.nextState = EnemyStateType.Idle;
-            _emermy.TransitionState(EnemyStateType.Idle);
-        }
     }
 }

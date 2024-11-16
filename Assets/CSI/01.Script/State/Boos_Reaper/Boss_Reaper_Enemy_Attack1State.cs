@@ -23,7 +23,6 @@ public class Boss_Reaper_Enemy_Attack1State : EnermyState
             _emermy.nextState = EnemyStateType.Attack1;
             _emermy.CoolDowning = true;
             _emermy.CoolTimeNowTimer = 0;
-            Debug.Log("Idle : 이동");
             _emermy.TransitionState(EnemyStateType.Idle);
             return;
         }

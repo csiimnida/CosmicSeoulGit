@@ -51,10 +51,7 @@ public class SoundManager : MonoBehaviour
             PlaySound("IngameBGM");
 
         }
-        else if(scene.name=="JHDead")
-        {
-            PlaySound("IngameDeadBGM");
-        }
+        
 
 
 

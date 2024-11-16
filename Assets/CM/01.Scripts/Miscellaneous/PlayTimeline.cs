@@ -8,13 +8,16 @@ public class PlayTimeline : MonoBehaviour
 {
     private PlayableDirector _playableDirector;
     private bool check = false;
+    private Player _player;
+    [SerializeField] private Transform _checker;
 
     private void Awake(){
         _playableDirector = GetComponent<PlayableDirector>();
+        _player = GameManager.Instance.Player;
     }
 
-    private void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("Player") && check == false)
+    private void Update(){
+        if (_checker.position.x <= _player.transform.position.x && check == false)
         {
             _playableDirector.Play();
             check = true;

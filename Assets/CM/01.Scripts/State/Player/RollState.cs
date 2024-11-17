@@ -15,10 +15,6 @@ public class RollState : PlayerState{
         _player.RbCompo.AddForce(
             new Vector2(_player.transform.localScale.x * _player.PlayerData.RollPower, 0),
             ForceMode2D.Impulse);
-        curGravityScale = _player.RbCompo.gravityScale;
-        _player.RbCompo.gravityScale = 0;
-        
-        _player.ColCompo.isTrigger = true;
     }
 
     public override void UpdateState(){
@@ -26,13 +22,11 @@ public class RollState : PlayerState{
             _player.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             _player.TransitionState(PlayerStateType.Idle);
-            _player.ColCompo.isTrigger = false;
         }
     }
 
     protected override void ExtiState(){
         _player.PlayerData.CanRool = false;
         _player.PlayerData.CurrentRoolTime = 0;
-        _player.RbCompo.gravityScale = curGravityScale;
     }
 }

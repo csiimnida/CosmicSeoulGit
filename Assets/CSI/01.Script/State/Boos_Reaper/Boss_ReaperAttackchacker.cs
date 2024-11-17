@@ -5,7 +5,6 @@ public class Boss_ReaperAttackchacker : MonoBehaviour
     private Boss_Reaper _reaper;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private Transform _target;
-
     private void Start(){
         _reaper = GetComponentInParent<Boss_Reaper>();
     }

@@ -9,6 +9,8 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
 
     private Rigidbody2D rigidbody2D;
     private Animator _animator;
+    public float speed = 2;
+
 
     private void Awake()
     {
@@ -28,7 +30,7 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
 
     public void Rotate()
     {
-        rigidbody2D.velocity = ((Mathf.Approximately(transform.eulerAngles.y, 180)) ? Vector2.right : Vector2.left) * 2;
+        rigidbody2D.velocity = ((Mathf.Approximately(transform.eulerAngles.y, 180)) ? Vector2.right : Vector2.left) * speed;
 
     }
 

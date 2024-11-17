@@ -10,6 +10,8 @@ public class RollState : PlayerState{
 
     protected override void EnterState(){
         _player.AnimCompo.PlayAnimaiton(AnimationType.Roll);
+        curGravityScale = _player.RbCompo.gravityScale;
+        _player.RbCompo.gravityScale = 0f;
         if(_player.InputCompo.InputVector.x != 0)
             _player.transform.localScale = new Vector3(_player.InputCompo.InputVector.x,_player.transform.localScale.y,_player.transform.localScale.z);
         _player.RbCompo.AddForce(
@@ -26,6 +28,7 @@ public class RollState : PlayerState{
     }
 
     protected override void ExtiState(){
+        _player.RbCompo.gravityScale = curGravityScale;
         _player.PlayerData.CanRool = false;
         _player.PlayerData.CurrentRoolTime = 0;
     }

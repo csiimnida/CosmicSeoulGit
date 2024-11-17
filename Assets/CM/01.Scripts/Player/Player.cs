@@ -87,10 +87,10 @@ public class Player : MonoBehaviour
         
         if (currentState == PlayerStateType.Block)
         {
-            NowHP += damage;
             TransitionState(PlayerStateType.BlockImpact);
             return;
         }
+        if(currentState == PlayerStateType.Roll) return;
         
         NowHP -= damage;
         if (NowHP > 0)

@@ -19,14 +19,15 @@ public class JumpState : PlayerState
 
     public override void UpdateState()
     {
+        _player.RbCompo.velocity = new Vector2(_player.InputCompo.InputVector.x * _player.PlayerData.MoveSpeed, _player.RbCompo.velocity.y);
         if (_player.RbCompo.velocity.y < 0)
         {
             _player.TransitionState(PlayerStateType.Fall);
         }
     }
 
-    protected override void HandleMovement(Vector2 vector)
-    {
-        _player.RbCompo.velocity = new Vector2(_player.InputCompo.InputVector.x * _player.PlayerData.MoveSpeed, _player.RbCompo.velocity.y);
-    }
+    // protected override void HandleMovement(Vector2 vector)
+    // {
+    //     _player.RbCompo.velocity = new Vector2(_player.InputCompo.InputVector.x * _player.PlayerData.MoveSpeed, _player.RbCompo.velocity.y);
+    // }
 }

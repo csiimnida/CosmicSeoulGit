@@ -11,16 +11,7 @@ public class HPUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (healthSprites == null || healthSprites.Count != 10)
-        {
-            Debug.LogError("Health sprites must contain exactly 10 sprites (10% increments)!");
-            return;
-        }
-        if (playerData == null)
-        {
-            Debug.LogError("PlayerData is not assigned!");
-            return;
-        }
+        
         UpdateHealthUI();
     }
 
@@ -31,10 +22,16 @@ public class HPUI : MonoBehaviour
     }
     private void UpdateHealthUI()
     {
-        //int spriteIndex = Mathf.Clamp((int)((float)_player / playerData.maxHealth * 10) - 1, 0, 9);
-        if (healthImage != null)
+        int spriteIndex = Mathf.Clamp((int)((float)_player.NowHP / playerData.Hp * 10) - 1, 0, 9);
+        if (healthImage != null&&_player.NowHP!=0)
+        {
+            healthImage.sprite = healthSprites[spriteIndex];
+            
+        }
+        else if (_player.NowHP <= 0)
         {
             
         }
+        
     }
 }

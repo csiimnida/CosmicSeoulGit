@@ -15,7 +15,7 @@ MonoBehaviour:
   Damage: 10
   Skill1Multiple: 4
   Skill2Multiple: 1.5
-  Hp: 10000
+  Hp: 100
   SwordAttackTime: 1
   MoveSpeed: 6
   JumpPower: 12

@@ -2460,6 +2460,7 @@ GameObject:
   - component: {fileID: 404673976}
   - component: {fileID: 404673978}
   - component: {fileID: 404673977}
+  - component: {fileID: 404673979}
   m_Layer: 5
   m_Name: HPUI
   m_TagString: Untagged
@@ -2524,6 +2525,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404673975}
   m_CullTransparentMesh: 1
+--- !u!114 &404673979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404673975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5454ac4f89322e743a81b7b3ce2ce0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 0c8801ef83854cd43b0f3e4608194dca, type: 2}
+  _player: {fileID: 1841799456}
+  healthImage: {fileID: 404673977}
+  healthSprites:
+  - {fileID: -1689822122113949007, guid: 0274268c4365ba84b891ceb0e5f67e42, type: 3}
+  - {fileID: -573047776339491133, guid: 0274268c4365ba84b891ceb0e5f67e42, type: 3}
+  - {fileID: 1939318425737151869, guid: 0274268c4365ba84b891ceb0e5f67e42, type: 3}
+  - {fileID: 7193546223500312553, guid: 0274268c4365ba84b891ceb0e5f67e42, type: 3}
+  - {fileID: 3087869156836407304, guid: 0274268c4365ba84b891ceb0e5f67e42, type: 3}
+  - {fileID: -6239982260899999526, guid: 0274268c4365ba84b891ceb0e5f67e42, type: 3}
+  - {fileID: 2004449843563374668, guid: 0274268c4365ba84b891ceb0e5f67e42, type: 3}
+  - {fileID: 2975394357955012869, guid: 0274268c4365ba84b891ceb0e5f67e42, type: 3}
+  - {fileID: -4482617345796921810, guid: 0274268c4365ba84b891ceb0e5f67e42, type: 3}
+  - {fileID: -3613079757616724629, guid: 02fc0bb7349bce348a647d3319af5bbc, type: 3}
 --- !u!1001 &413720252
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ public class Boss_Reaper_Enemy_IdleState : EnermyState
         {
             if (!_emermy.CoolDowning)
             {
+                Debug.Log($"{_emermy.nextState}으로 이동");
                 _emermy.TransitionState(_emermy.nextState);
                 return;
             }
@@ -41,6 +42,10 @@ public class Boss_Reaper_Enemy_IdleState : EnermyState
         {
             if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.SpawnRange,_player))
             {
+                if (_emermy.CoolDowning)
+                {
+                    return;
+                }
                 _emermy.TransitionState(EnemyStateType.Spawn);
                 _emermy.CoolDowning = false;
                 _emermy.CoolTimeNowTimer = 0;

@@ -404,13 +404,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 1618058925}
   _profile: {fileID: 11400000, guid: a5777d67d52e7c9468cf4720909b2cb5, type: 2}
-  _restartbutton: {fileID: 0}
-  _mainbutton: {fileID: 0}
-  _exitbutton: {fileID: 0}
-  _texts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &1197577253
 GameObject:
   m_ObjectHideFlags: 0

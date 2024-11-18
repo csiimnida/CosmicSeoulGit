@@ -20,19 +20,19 @@ MonoBehaviour:
   MoveSpeed: 6
   JumpPower: 12
   RollPower: 5
-  RollCooltime: 5
+  RollCooltime: 2
   BlockCooltime: 5
   Skill1Cooltime: 6
   Skill2Cooltime: 4
   BlockingTime: 0.35
   currentTime: 0.3525935
   AttackForwardDistance: 2
-  CurrentRoolTime: 5.625869
-  CurrentBlockTime: 806.735
-  CurrentSkill1Time: 513.5296
-  CurrentSkill2Time: 458.55063
+  CurrentRoolTime: 2.966957
+  CurrentBlockTime: 855.89526
+  CurrentSkill1Time: 33.88955
+  CurrentSkill2Time: 32.677074
   IsGround: 0
-  CanRool: 1
+  CanRool: 0
   CanBlock: 1
   CanSkill1: 1
   CanSkill2: 1

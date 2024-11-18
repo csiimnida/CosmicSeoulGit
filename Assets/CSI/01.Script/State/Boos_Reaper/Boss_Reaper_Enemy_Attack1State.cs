@@ -25,6 +25,7 @@ public class Boss_Reaper_Enemy_Attack1State : EnermyState
             _emermy.CoolTimeNowTimer = 0;
             _emermy.TransitionState(EnemyStateType.Idle);
             return;
+            
         }
         if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")) 
             && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") 

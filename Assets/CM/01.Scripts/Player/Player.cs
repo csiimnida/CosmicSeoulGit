@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     
     private CinemachineImpulseSource impulseSource;
 
-    private float NowHP;
+    public float NowHP { get; private set; }
 
     private Material NormalMat;
     [SerializeField] private Material HitMat;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -9,6 +10,8 @@ public class Boss_Reaper : Enemy
     [field:SerializeField] public Vector2 Attack1Size{ get;private set;}
     public Transform attack1Pos;
     
+    private bool _2page;
+    public AnimatorController _2pageAnim;
     protected void Awake()
     {
         AnimCompo = GetComponentInChildren<AnimationChange>();
@@ -31,8 +34,9 @@ public class Boss_Reaper : Enemy
             }
             catch (Exception e)
             {
-                Debug.Log($"{stateType.ToString()}를 찾을수 없습니다");
+                //Debug.Log($"{stateType.ToString()}를 찾을수 없습니다");
             }
+
         }
         TransitionState(EnemyStateType.Idle);
     }
@@ -44,6 +48,11 @@ public class Boss_Reaper : Enemy
     protected override void Damage_call(float damage){
         NowHp -= damage;
         StartCoroutine(Do_Hit_Effect());
+        if (NowHp / MaxHp <= 0.5f && !_2page)
+        {
+            _2page = true;
+            AnimCompo.Animator.runtimeAnimatorController = _2pageAnim;
+        }
         if (NowHp <= 0)
         {
             print("죽음");

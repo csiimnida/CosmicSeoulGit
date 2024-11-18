@@ -70,10 +70,8 @@ public class Enemy : MonoBehaviour
         StateEnum[currentState].UpdateState();
     }
 
-    private void FixedUpdate()
-    {
-        StateEnum[currentState].FixedUpdateState();
-    }
+    private void FixedUpdate() => StateEnum[currentState].FixedUpdateState();
+    
 
     
 

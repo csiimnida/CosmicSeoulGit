@@ -25,6 +25,7 @@ public class Boss_ReaperAttackchacker : MonoBehaviour
         Reaper_Ball ball = PoolManager.Instance.Pop("Reaper_Ball") as Reaper_Ball;
         ball.transform.rotation = _target.rotation;
         ball.transform.position = _target.position;
+        ball.speed = 10f;
         ball.enermyData = _target.parent.GetComponent<Enemy>().DataSo;
         ball.Rotate();
     }

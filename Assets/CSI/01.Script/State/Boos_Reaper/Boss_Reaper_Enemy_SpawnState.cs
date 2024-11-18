@@ -32,8 +32,8 @@ public class Boss_Reaper_Enemy_SpawnState : EnermyState
             _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             _emermy.nextState = EnemyStateType.Spawn;
-            _emermy.CoolDowning = true;
             _emermy.CoolTimeNowTimer = 0;
+            _emermy.CoolDowning = true;
             _emermy.TransitionState(EnemyStateType.Idle);
             return;
         }

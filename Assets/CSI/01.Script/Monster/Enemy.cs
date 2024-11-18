@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
             Combit = false;
         }
 
-        if (CoolTimeNowTimer < 10 + CoolTimeMaxTimer && CoolDowning)
+        if (CoolTimeNowTimer < 2 + CoolTimeMaxTimer && CoolDowning)
         {
             if (CoolTimeNowTimer >= CoolTimeMaxTimer)
             {

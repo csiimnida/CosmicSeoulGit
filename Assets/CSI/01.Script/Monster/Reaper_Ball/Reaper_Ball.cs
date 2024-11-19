@@ -28,7 +28,7 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
         _animator.Play("Move");
     }
 
-    public void Rotate()
+    public void SetVelocity()
     {
         rigidbody2D.velocity = ((Mathf.Approximately(transform.eulerAngles.y, 180)) ? Vector2.right : Vector2.left) * speed;
 

@@ -29,6 +29,10 @@ public class Enemy : MonoBehaviour
     protected Material NomallMaterial;
     public Material HitMaterial;
     
+    
+    public Animator SpawnAnimator;
+
+    
 
     protected virtual void Awake(){
 

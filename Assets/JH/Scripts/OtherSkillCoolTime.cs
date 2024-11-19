@@ -15,9 +15,9 @@ public class OtherSkillCoolTime : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         _block.fillAmount = playerData.CurrentBlockTime/playerData.BlockCooltime;
-        _roll.fillAmount = playerData.CurrentRoolTime/playerData.RollCooltime;
+        _roll.fillAmount = playerData.CurrentRoolTime/playerData.RollCooltime-0.15f;
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class AwakeSO : ScriptableObject
 {
     public Sprite sprites;
- public int Attack;
+    public List<ParticleSystem> particleSystems;
+    public int Attack;
     public int Defende;
     public int AttackAirSpeed;
     public int MoveSpeed;
@@ -14,6 +15,7 @@ public class AwakeSO : ScriptableObject
     public int Skill_2Cooltime;
     public int RollCl;
     public int BlockCl;
-
+    public string Text;
+public string Name;
 
 }

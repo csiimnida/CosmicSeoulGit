@@ -12,11 +12,12 @@ public class SinCosMove : MonoBehaviour
     private float time;
 
     void Update()
-    {time += Time.deltaTime * speed;
+    {
+        time += Time.deltaTime * speed;
         float x = size * Mathf.Sin(time);
         float y = size * Mathf.Sin(time) * Mathf.Cos(time);
         _rect.anchoredPosition = new Vector2(x, y);
-        _rect.rotation = Quaternion.Euler(0,180, Mathf.Cos(time*-angleRotate));
+        _rect.rotation = Quaternion.Euler(0, _rect.localRotation.y, Mathf.Cos(time * -angleRotate));
     }
 }
    

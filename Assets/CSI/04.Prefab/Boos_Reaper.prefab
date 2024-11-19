@@ -61,6 +61,7 @@ MonoBehaviour:
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
   <Attack1Size>k__BackingField: {x: 7.84, y: 9.07}
   attack1Pos: {fileID: 6834068720950327862}
+  _2pageAnim: {fileID: 9100000, guid: adc055505d8120040828430037e275f7, type: 2}
 --- !u!50 &6540853374154819051
 Rigidbody2D:
   serializedVersion: 4

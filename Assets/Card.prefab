@@ -183,6 +183,9 @@ MonoBehaviour:
   _rect: {fileID: 2129817873439670624}
   isFront: 0
   _canvas: {fileID: 7240070885566542536}
+  _typingManager: {fileID: 0}
+  _textList: []
+  index: 0
   _currentVectorScale: {x: 0, y: 0, z: 0}
   _CardDataSO: {fileID: 11400000, guid: dec277a0179d2c4429db511015093afe, type: 2}
   _Image: {fileID: 6654777029798618073}
@@ -201,6 +204,8 @@ MonoBehaviour:
   _rect: {fileID: 2129817873439670624}
   isFront: 0
   _canvas: {fileID: 7240070885566542536}
+  _typingManager: {fileID: 0}
+  _textList: []
 --- !u!1 &984657823820656597
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +775,9 @@ MonoBehaviour:
   _rect: {fileID: 6741448041638079607}
   isFront: 0
   _canvas: {fileID: 6564035643013746391}
+  _typingManager: {fileID: 0}
+  _textList: []
+  index: 0
   _currentVectorScale: {x: 0, y: 0, z: 0}
   _CardDataSO: {fileID: 11400000, guid: dec277a0179d2c4429db511015093afe, type: 2}
   _Image: {fileID: 8162549266070068612}
@@ -788,6 +796,8 @@ MonoBehaviour:
   _rect: {fileID: 6741448041638079607}
   isFront: 0
   _canvas: {fileID: 6564035643013746391}
+  _typingManager: {fileID: 0}
+  _textList: []
 --- !u!1 &5682891897064649499
 GameObject:
   m_ObjectHideFlags: 0
@@ -6433,6 +6443,9 @@ MonoBehaviour:
   _rect: {fileID: 7565962463518846380}
   isFront: 0
   _canvas: {fileID: 2367727017534772540}
+  _typingManager: {fileID: 0}
+  _textList: []
+  index: 0
   _currentVectorScale: {x: 0, y: 0, z: 0}
   _CardDataSO: {fileID: 11400000, guid: dec277a0179d2c4429db511015093afe, type: 2}
   _Image: {fileID: 1751619114846263653}
@@ -6451,6 +6464,8 @@ MonoBehaviour:
   _rect: {fileID: 7565962463518846380}
   isFront: 0
   _canvas: {fileID: 2367727017534772540}
+  _typingManager: {fileID: 0}
+  _textList: []
 --- !u!1 &8191127780422543467
 GameObject:
   m_ObjectHideFlags: 0

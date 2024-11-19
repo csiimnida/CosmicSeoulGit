@@ -6439,7 +6439,7 @@ GameObject:
   - component: {fileID: 643525219}
   - component: {fileID: 643525222}
   - component: {fileID: 643525221}
-  - component: {fileID: 643525220}
+  - component: {fileID: 643525223}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -6471,34 +6471,6 @@ RectTransform:
   m_AnchoredPosition: {x: -8, y: 181.2956}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &643525220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 643525218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec697420033477428afb0985f98badb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _awake:
-  - {fileID: 11400000, guid: ef1aabfecdb92cc428ba16d529dc547c, type: 2}
-  - {fileID: 11400000, guid: a3b0f635bbbd0b943b49b10c680d3d36, type: 2}
-  - {fileID: 11400000, guid: 3ddfef00d52bd2b4b8a780dbfbcc6368, type: 2}
-  - {fileID: 11400000, guid: 4f073d1646a160f4b952e839196a1517, type: 2}
-  - {fileID: 11400000, guid: de5c2739c2338fb49a8de6d998e71f55, type: 2}
-  - {fileID: 11400000, guid: 88071ea00f7034040a27c1cfb053a992, type: 2}
-  - {fileID: 11400000, guid: 5a247bc2afb8bc04480f61f3d0fbe4ae, type: 2}
-  - {fileID: 11400000, guid: d1c851d37ea0a1543ab90c9d74346540, type: 2}
-  - {fileID: 11400000, guid: 35cf47dc38201d94985fcad739a05b16, type: 2}
-  _text: {fileID: 1044196097}
-  _Attacktext: {fileID: 724642313}
-  _Healthtext: {fileID: 82253279}
-  _AttackSpdtext: {fileID: 301407854}
-  _WalkSpdtext: {fileID: 2105347204}
-  rand: 0
 --- !u!114 &643525221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6537,6 +6509,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643525218}
   m_CullTransparentMesh: 1
+--- !u!114 &643525223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643525218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60743319e7e4ca24cadb291d2b069883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _awake:
+  - {fileID: 11400000, guid: ef1aabfecdb92cc428ba16d529dc547c, type: 2}
+  - {fileID: 11400000, guid: 9e6223c4b86c7e14b853c08b1e30318c, type: 2}
+  - {fileID: 11400000, guid: 3ddfef00d52bd2b4b8a780dbfbcc6368, type: 2}
+  - {fileID: 11400000, guid: 4f073d1646a160f4b952e839196a1517, type: 2}
+  - {fileID: 11400000, guid: de5c2739c2338fb49a8de6d998e71f55, type: 2}
+  - {fileID: 11400000, guid: 88071ea00f7034040a27c1cfb053a992, type: 2}
+  - {fileID: 11400000, guid: 5a247bc2afb8bc04480f61f3d0fbe4ae, type: 2}
+  - {fileID: 11400000, guid: d1c851d37ea0a1543ab90c9d74346540, type: 2}
+  - {fileID: 11400000, guid: 35cf47dc38201d94985fcad739a05b16, type: 2}
+  _text: {fileID: 1044196097}
+  _Attacktext: {fileID: 724642313}
+  _Healthtext: {fileID: 82253279}
+  _AttackSpdtext: {fileID: 301407854}
+  _WalkSpdtext: {fileID: 2105347204}
+  rand: 0
 --- !u!1001 &647052141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7007,7 +7007,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1c851d37ea0a1543ab90c9d74346540, type: 2}
   - {fileID: 11400000, guid: 35cf47dc38201d94985fcad739a05b16, type: 2}
   Text: {fileID: 947838797}
-  _awake: {fileID: 643525220}
+  _awake: {fileID: 643525223}
 --- !u!1 &880907819
 GameObject:
   m_ObjectHideFlags: 0
@@ -7328,7 +7328,7 @@ MonoBehaviour:
   _textList: []
   index: 0
   _currentVectorScale: {x: 0, y: 0, z: 0}
-  _CardDataSO: {fileID: 11400000, guid: dec277a0179d2c4429db511015093afe, type: 2}
+  _CardDataSO: {fileID: 11400000, guid: b8f7d6ffb1572644c826952f45df7a98, type: 2}
   _Image: {fileID: 1151608985}
 --- !u!114 &1017532643
 MonoBehaviour:
@@ -7409,7 +7409,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1c851d37ea0a1543ab90c9d74346540, type: 2}
   - {fileID: 11400000, guid: 35cf47dc38201d94985fcad739a05b16, type: 2}
   Text: {fileID: 430967696}
-  _awake: {fileID: 1764045602}
+  _awake: {fileID: 1764045605}
 --- !u!1 &1021212633
 GameObject:
   m_ObjectHideFlags: 0
@@ -7904,7 +7904,7 @@ GameObject:
   - component: {fileID: 1764045601}
   - component: {fileID: 1764045604}
   - component: {fileID: 1764045603}
-  - component: {fileID: 1764045602}
+  - component: {fileID: 1764045605}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -7936,34 +7936,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 180}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1764045602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764045600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec697420033477428afb0985f98badb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _awake:
-  - {fileID: 11400000, guid: ef1aabfecdb92cc428ba16d529dc547c, type: 2}
-  - {fileID: 11400000, guid: a3b0f635bbbd0b943b49b10c680d3d36, type: 2}
-  - {fileID: 11400000, guid: 3ddfef00d52bd2b4b8a780dbfbcc6368, type: 2}
-  - {fileID: 11400000, guid: 4f073d1646a160f4b952e839196a1517, type: 2}
-  - {fileID: 11400000, guid: de5c2739c2338fb49a8de6d998e71f55, type: 2}
-  - {fileID: 11400000, guid: 88071ea00f7034040a27c1cfb053a992, type: 2}
-  - {fileID: 11400000, guid: 5a247bc2afb8bc04480f61f3d0fbe4ae, type: 2}
-  - {fileID: 11400000, guid: d1c851d37ea0a1543ab90c9d74346540, type: 2}
-  - {fileID: 11400000, guid: 35cf47dc38201d94985fcad739a05b16, type: 2}
-  _text: {fileID: 169406168}
-  _Attacktext: {fileID: 588446663}
-  _Healthtext: {fileID: 263952310}
-  _AttackSpdtext: {fileID: 934559202}
-  _WalkSpdtext: {fileID: 83208901}
-  rand: 0
 --- !u!114 &1764045603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8002,6 +7974,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764045600}
   m_CullTransparentMesh: 1
+--- !u!114 &1764045605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764045600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60743319e7e4ca24cadb291d2b069883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _awake:
+  - {fileID: 11400000, guid: ef1aabfecdb92cc428ba16d529dc547c, type: 2}
+  - {fileID: 11400000, guid: 9e6223c4b86c7e14b853c08b1e30318c, type: 2}
+  - {fileID: 11400000, guid: 3ddfef00d52bd2b4b8a780dbfbcc6368, type: 2}
+  - {fileID: 11400000, guid: 4f073d1646a160f4b952e839196a1517, type: 2}
+  - {fileID: 11400000, guid: de5c2739c2338fb49a8de6d998e71f55, type: 2}
+  - {fileID: 11400000, guid: 88071ea00f7034040a27c1cfb053a992, type: 2}
+  - {fileID: 11400000, guid: 5a247bc2afb8bc04480f61f3d0fbe4ae, type: 2}
+  - {fileID: 11400000, guid: d1c851d37ea0a1543ab90c9d74346540, type: 2}
+  - {fileID: 11400000, guid: 35cf47dc38201d94985fcad739a05b16, type: 2}
+  _text: {fileID: 169406168}
+  _Attacktext: {fileID: 588446663}
+  _Healthtext: {fileID: 263952310}
+  _AttackSpdtext: {fileID: 934559202}
+  _WalkSpdtext: {fileID: 83208901}
+  rand: 0
 --- !u!1 &1778344487
 GameObject:
   m_ObjectHideFlags: 0
@@ -8378,12 +8378,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1914375995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec697420033477428afb0985f98badb, type: 3}
+  m_Script: {fileID: 11500000, guid: 60743319e7e4ca24cadb291d2b069883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _awake:
   - {fileID: 11400000, guid: ef1aabfecdb92cc428ba16d529dc547c, type: 2}
-  - {fileID: 11400000, guid: a3b0f635bbbd0b943b49b10c680d3d36, type: 2}
+  - {fileID: 11400000, guid: 9e6223c4b86c7e14b853c08b1e30318c, type: 2}
   - {fileID: 11400000, guid: 3ddfef00d52bd2b4b8a780dbfbcc6368, type: 2}
   - {fileID: 11400000, guid: 4f073d1646a160f4b952e839196a1517, type: 2}
   - {fileID: 11400000, guid: de5c2739c2338fb49a8de6d998e71f55, type: 2}
@@ -8538,7 +8538,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1c851d37ea0a1543ab90c9d74346540, type: 2}
   - {fileID: 11400000, guid: 35cf47dc38201d94985fcad739a05b16, type: 2}
   Text: {fileID: 1778344489}
-  _awake: {fileID: 1914375999}
+  _awake: {fileID: 0}
 --- !u!1 &2105347202
 GameObject:
   m_ObjectHideFlags: 0

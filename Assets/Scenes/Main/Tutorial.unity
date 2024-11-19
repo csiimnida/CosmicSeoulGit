@@ -4846,7 +4846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BloodBoss1Page: {fileID: 0}
   BloodBoss2PagePrefab: {fileID: 554891849520134237, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
-  BloodParticle: {fileID: 0}
+  BloodEffect: {fileID: 0}
   waitTime: 3
 --- !u!1 &988138928
 GameObject:

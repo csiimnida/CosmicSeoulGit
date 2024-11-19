@@ -7,7 +7,8 @@ public class HPUI : MonoBehaviour
     public PlayerDataSO playerData;
     public Player _player;
     public Image healthImage;
-    public List<Sprite> healthSprites; 
+    public List<Sprite> healthSprites;
+    public Sprite DeadheartSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +23,16 @@ public class HPUI : MonoBehaviour
     }
     private void UpdateHealthUI()
     {
-        int spriteIndex = Mathf.Clamp((int)((float)_player.NowHP / playerData.Hp * 10) - 1, 0, 9);
-        if (healthImage != null&&_player.NowHP!=0)
+        float healthPercentage = (float)_player.NowHP / playerData.Hp;
+        int spriteIndex = Mathf.Clamp(Mathf.CeilToInt(healthPercentage * 10) - 1, 0, 9);
+        if (_player.NowHP <= 0)
+        {
+            healthImage.sprite = DeadheartSprite;
+
+        }
+        else if (healthImage != null&&_player.NowHP!=0)
         {
             healthImage.sprite = healthSprites[spriteIndex];
-            
-        }
-        else if (_player.NowHP <= 0)
-        {
             
         }
         

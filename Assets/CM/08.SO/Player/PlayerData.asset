@@ -19,7 +19,7 @@ MonoBehaviour:
   SwordAttackTime: 1
   MoveSpeed: 6
   JumpPower: 12
-  RollPower: 5
+  RollPower: 1
   RollCooltime: 2
   BlockCooltime: 5
   Skill1Cooltime: 6
@@ -27,13 +27,13 @@ MonoBehaviour:
   BlockingTime: 0.35
   currentTime: 0.3525935
   AttackForwardDistance: 2
-  CurrentRoolTime: 2.966957
-  CurrentBlockTime: 855.89526
-  CurrentSkill1Time: 33.88955
-  CurrentSkill2Time: 32.677074
+  CurrentRoolTime: 0.74999386
+  CurrentBlockTime: 863.32983
+  CurrentSkill1Time: 41.32507
+  CurrentSkill2Time: 40.112595
   IsGround: 0
   CanRool: 0
   CanBlock: 1
   CanSkill1: 1
   CanSkill2: 1
-  IsFlip: 0
+  IsFlip: 1

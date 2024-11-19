@@ -13,6 +13,9 @@ public class PlayTimeline : MonoBehaviour
 
     private void Awake(){
         _playableDirector = GetComponent<PlayableDirector>();
+    }
+
+    private void Start(){
         _player = GameManager.Instance.Player;
     }
 

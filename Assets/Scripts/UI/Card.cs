@@ -5,13 +5,18 @@ using UnityEngine.EventSystems;
 using DG.Tweening;
 using UnityEngine.UI;
 public class Card : CardEventCheacker
-{   
+{/// <summary>
+/// s e x
+/// </summary>
+    public int index = 0;
     public Vector3 _currentVectorScale;
    public CardDataSO _CardDataSO;
     public Image _Image;
+
+   
     private void Start()
     { _currentVectorScale = _rect.localScale;
-        _rect.DORotate(new Vector3(0, -180f, 0), 0.5f, RotateMode.Fast);BackSprite();
+        _rect.DORotate(new Vector3(0, 0f, 0), 0.5f, RotateMode.Fast).OnComplete(() => _rect.DOKill()); BackSprite();
         _Image = _Image.gameObject.GetComponent<Image>();  
       foreach (Transform t in _rect.transform)
         { t.gameObject.SetActive(false);}}
@@ -32,7 +37,7 @@ public class Card : CardEventCheacker
 public void BackSprite()
     {_Image.sprite = _CardDataSO._Backsprite;}
  public void FrontSprite()
-    { _Image.sprite = _CardDataSO._Frontsprite; }
+    { _Image.sprite = _CardDataSO._Frontsprite; Camera.main.DOShakePosition(0.5f, 1f, 5, 30f); }
 }
 
 

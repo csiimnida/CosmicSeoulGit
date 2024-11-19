@@ -95,6 +95,7 @@ public class Player : MonoBehaviour
         NowHP -= damage;
         if (NowHP > 0)
         {
+            SoundManager.Instance.PlaySound("Hurt");
             StartCoroutine(Do_Hit_Effect());
             ShakeCamera(data);
         }

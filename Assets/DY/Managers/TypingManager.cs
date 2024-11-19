@@ -1,24 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class TypingManager : MonoBehaviour
 {
     public List<AwakeSO> _awakeSO;
-    public Text Text;
+    public TextMeshProUGUI Text;
     [SerializeField] private AwakeCard _awake;
 
 
 
     public void _Typing()
     {
-        StartCoroutine(_typing());
-  
+        Text.DOText(_awakeSO[_awake.rand].Text,0.5f);
+        //StartCoroutine(_typing());
+
     }
 
     public void _TypingStop()
     {
-        StopCoroutine(_typing());
+        Text.text = "";
+        //StopCoroutine(_typing());
     }
 
     IEnumerator _typing()

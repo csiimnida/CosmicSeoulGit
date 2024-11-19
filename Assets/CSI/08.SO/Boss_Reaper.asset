@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss_Reaper
   m_EditorClassIdentifier: 
   Size: {x: 1.5, y: 1.5}
-  AttackPower: 20
+  AttackPower: 0
   MaxHp: 184
   AttackSpeed: 0.37
   MoveSpeed: 3.7

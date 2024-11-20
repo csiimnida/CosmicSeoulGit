@@ -33,6 +33,10 @@ public class Enemy : MonoBehaviour
 
     public UnityEvent Dead;
     
+    
+    public Animator SpawnAnimator;
+
+    
 
     protected virtual void Awake(){
 

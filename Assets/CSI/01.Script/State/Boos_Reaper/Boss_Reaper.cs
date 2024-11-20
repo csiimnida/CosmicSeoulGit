@@ -9,7 +9,6 @@ public class Boss_Reaper : Enemy
 {
     [field:SerializeField] public Vector2 Attack1Size{ get;private set;}
     public Transform attack1Pos;
-    
     private bool _2page;
     public AnimatorController _2pageAnim;
     protected void Awake()

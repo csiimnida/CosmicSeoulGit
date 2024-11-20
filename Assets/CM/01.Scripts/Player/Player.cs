@@ -66,6 +66,8 @@ public class Player : MonoBehaviour
         PlayerData.IsFlip = false;
         NormalMat = SpriteCompo.material;
     }
+    
+    
 
     public void TransitionState(PlayerStateType newState){
         StateEnum[currentState].Exit();
@@ -124,6 +126,7 @@ public class Player : MonoBehaviour
     }
 
     private void OnDestroy(){
+        InputCompo.OnMoveEvent -= RotCompo.FaceDirection;
         StateEnum[currentState].Exit();
     }
 

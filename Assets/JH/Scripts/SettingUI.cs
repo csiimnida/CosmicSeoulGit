@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class SettingUI : MonoBehaviour
-{
+{   
+    [SerializeField] private SoundManager soundManager;
+
     private GameObject SetUI;
     private void Awake()
     {
@@ -31,8 +33,13 @@ public class SettingUI : MonoBehaviour
     }
     public void DestroyUI()
     {
-        SetUI.SetActive(false);
-        Time.timeScale = 1;
+        
+        
+            SetUI.SetActive(false);
+            soundManager.PlaySound("Bt_Click");
+            Time.timeScale = 1;
+        
+        
 
     }
 }

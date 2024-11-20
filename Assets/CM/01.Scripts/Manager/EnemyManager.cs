@@ -29,7 +29,7 @@ public class EnemyManager : MonoBehaviour{
     private IEnumerator CreateBloodBoss2Page(){
         Instantiate(BloodEffect, BloodBoss1Page.position, Quaternion.identity);
         yield return new WaitForSeconds(waitTime);
-        Instantiate(BloodBoss2PagePrefab, new Vector2(BloodBoss1Page.position.x, BloodBoss1Page.position.y - 1f), Quaternion.identity);
+        BloodBoss2PagePrefab.transform.position = new Vector2(BloodBoss1Page.position.x, BloodBoss1Page.position.y - 0.5f);
         Destroy(BloodBoss1Page.gameObject);
         Destroy(BloodEffect);
     }

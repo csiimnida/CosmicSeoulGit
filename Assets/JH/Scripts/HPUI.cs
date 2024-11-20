@@ -5,14 +5,14 @@ using UnityEngine.UI;
 public class HPUI : MonoBehaviour
 {
     public PlayerDataSO playerData;
-    public Player _player;
+    private Player _player;
     public Image healthImage;
     public List<Sprite> healthSprites;
     public Sprite DeadheartSprite;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _player = GameManager.Instance.Player;
         UpdateHealthUI();
     }
 

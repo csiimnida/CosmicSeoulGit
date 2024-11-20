@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BloodHand
   m_EditorClassIdentifier: 
   Size: {x: 1, y: 1}
-  AttackPower: 20
-  MaxHp: 50
+  AttackPower: 10
+  MaxHp: 1000000
   AttackSpeed: 1.5
   MoveSpeed: 10
   Perception_range: 0

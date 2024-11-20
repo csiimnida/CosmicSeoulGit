@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SO/Enermy/Enermy_Data")]
-public class EnermyDataSO : ScriptableObject
-{
+public class EnermyDataSO : ScriptableObject{
+    public int ExpValue;
     
     /// <summary>
     /// 적의 크기를 나타냅니다.

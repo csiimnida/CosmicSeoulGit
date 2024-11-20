@@ -27,13 +27,14 @@ MonoBehaviour:
   BlockingTime: 0.35
   currentTime: 0.3525935
   AttackForwardDistance: 2
-  CurrentRoolTime: 2.1817696
-  CurrentBlockTime: 941.45074
-  CurrentSkill1Time: 119.44536
-  CurrentSkill2Time: 118.23282
+  CurrentRoolTime: 3.4012728
+  CurrentBlockTime: 979.4118
+  CurrentSkill1Time: 8.614882
+  CurrentSkill2Time: 29.719398
   IsGround: 0
   CanRool: 1
   CanBlock: 1
   CanSkill1: 1
   CanSkill2: 1
   IsFlip: 0
+  Exp: 0

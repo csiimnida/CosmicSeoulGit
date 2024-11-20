@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class BloodWorm : Enemy
 {
@@ -20,6 +21,7 @@ public class BloodWorm : Enemy
 
         MaxHp = DataSo.MaxHp;
         NowHp = MaxHp;
+        
         
         foreach (EnemyStateType stateType in Enum.GetValues(typeof(EnemyStateType)))
         {

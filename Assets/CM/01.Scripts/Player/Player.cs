@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class Player : MonoBehaviour
     
     public event Action OnDeath;
 
+    private int Exp = 0;
+    public UnityEvent<int> OnTakeExp;
 
     private void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
@@ -113,6 +116,15 @@ public class Player : MonoBehaviour
         SpriteCompo.material = HitMat;
         yield return new WaitForSeconds(0.1f);
         SpriteCompo.material = NormalMat;
+    }
+
+    public void GetExp(EnermyDataSO data){
+        Exp += data.ExpValue;
+        OnTakeExp?.Invoke(Exp);
+    }
+
+    public void ResetExp(){
+        Exp = 0;
     }
 
     private void ShakeCamera(EnermyDataSO data){

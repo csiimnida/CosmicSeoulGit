@@ -17,6 +17,15 @@ public class Boss_Reaper_Enemy_Attack1State : EnermyState
 
     public override void UpdateState()
     {
+        if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")) 
+                 &&Physics2D.OverlapCircle(_emermy.transform.position, _emermy.SpawnRange,LayerMask.GetMask("Player")) 
+                 && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") 
+                 && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        {
+            
+            _emermy.nextState = EnemyStateType.Spawn;
+            _emermy.TransitionState(EnemyStateType.Spawn);
+        }
         if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") &&
             _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
@@ -42,6 +51,7 @@ public class Boss_Reaper_Enemy_Attack1State : EnermyState
             
             _emermy.nextState = EnemyStateType.Spawn;
             _emermy.TransitionState(EnemyStateType.Spawn);
+            return;
         }
         else if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")) 
                  && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") 

@@ -342,7 +342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4665944034546445550, guid: 74a0944bbf62c5d498bc548a95795215, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 466.51
+      value: -11.71
       objectReference: {fileID: 0}
     - target: {fileID: 4665944034546445550, guid: 74a0944bbf62c5d498bc548a95795215, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5306,7 +5306,7 @@ PrefabInstance:
     - target: {fileID: 6691872644535349908, guid: 88857a20dc9dbca4dbe288adc56ea83e, type: 3}
       propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1776061399}
     - target: {fileID: 6691872644535349908, guid: 88857a20dc9dbca4dbe288adc56ea83e, type: 3}
       propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7378,7 +7378,7 @@ Transform:
   m_GameObject: {fileID: 1200990128}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 468.66, y: -3.46, z: -10}
+  m_LocalPosition: {x: -9.559999, y: -3.46, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8479,7 +8479,7 @@ Transform:
   m_GameObject: {fileID: 1303476062}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 456.71146, y: -0.13718009, z: -10}
+  m_LocalPosition: {x: -2.929696, y: -0.4165101, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12240,6 +12240,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96db154c64137424abc20899240ad454, type: 3}
+--- !u!114 &1776061399 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 771395569092858327, guid: 96db154c64137424abc20899240ad454, type: 3}
+  m_PrefabInstance: {fileID: 1776061398}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb05377f510e1a478636d0ce217442e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1788179328
 GameObject:
   m_ObjectHideFlags: 3

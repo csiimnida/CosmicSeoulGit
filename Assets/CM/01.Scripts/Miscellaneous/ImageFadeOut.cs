@@ -12,7 +12,7 @@ public class ImageFadeOut : MonoBehaviour
 
     private void Awake(){
         _blackImage = GetComponent<Image>();
-        _blackImage.color = new Color(0f, 0f, 0f, 1f);
+        _blackImage.color = new Color(0f, 0f, 0f, 2f);
     }
 
     private void Start(){

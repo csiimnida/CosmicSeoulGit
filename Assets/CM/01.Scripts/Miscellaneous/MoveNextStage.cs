@@ -30,7 +30,7 @@ public class MoveNextStage : MonoBehaviour
     }
 
     private IEnumerator FadeIn(){
-        _blackPanel.DOFade(1f, _fadeDuration);
+        _blackPanel.DOFade(2f, _fadeDuration);
         yield return new WaitForSeconds(_fadeDuration + 0.5f);
         SceneManager.LoadScene(_nextSceneName);
     }

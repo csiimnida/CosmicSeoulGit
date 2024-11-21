@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class Save : MonoSingleton<Save>
 {
-    
 
-    public PlayerDataSO _playerDataSo;
-    public Player _player;
+    private PlayerDataSO _playerDataSo;
+    private Player _player;
     private StartSeting _startSeting;
+    private CheckLevelUp _checkLevelUp;
     private class StartSeting
     {
         public float Damage;
@@ -30,6 +30,7 @@ public class Save : MonoSingleton<Save>
     private void Start()
     {
         _player = GameManager.Instance.Player;
+        _checkLevelUp = _player.GetComponent<CheckLevelUp>();
         _playerDataSo = _player.PlayerData;
         _startSeting = new StartSeting(_playerDataSo);
     }
@@ -55,6 +56,7 @@ public class Save : MonoSingleton<Save>
         data.RollPower  = _playerDataSo.RollPower;
         data.Health = _playerDataSo.Hp;
         data.Attack_Speed = _playerDataSo.SwordAttackTime;
+        data.MaxExp = _player.MaxExp;
         data.Exp = _player.Exp;
         data._screen_name = SceneManager.GetActiveScene().name;//SceneManager.GetActiveScene().name;
         EasyToJson.ToJson<Datas>(data,"SaveData",false);
@@ -64,8 +66,8 @@ public class Save : MonoSingleton<Save>
     public void NewGame()
     {
         Datas data = new Datas();
-        data._screen_name = "처음 씬 이름";//SceneManager.GetActiveScene().name;
         EasyToJson.ToJson<Datas>(data,"SaveData",false);
+        LoadData();
     }
 
     public void LoadButtn()
@@ -90,6 +92,7 @@ public class Save : MonoSingleton<Save>
         _playerDataSo.RollPower = saveData.RollPower;
         _playerDataSo.Hp = saveData.Health;
         _playerDataSo.SwordAttackTime = saveData.Attack_Speed;
+        _checkLevelUp.ChangeMaxExp(saveData.MaxExp);
         _player.Exp = saveData.Exp;
         
     }

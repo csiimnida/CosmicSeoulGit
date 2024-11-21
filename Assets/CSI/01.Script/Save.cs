@@ -2,7 +2,7 @@ using EasySave.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Save : MonoBehaviour
+public class Save : MonoSingleton<Save>
 {
     
 
@@ -61,6 +61,13 @@ public class Save : MonoBehaviour
         
     }
 
+    public void NewGame()
+    {
+        Datas data = new Datas();
+        data._screen_name = "처음 씬 이름";//SceneManager.GetActiveScene().name;
+        EasyToJson.ToJson<Datas>(data,"SaveData",false);
+    }
+
     public void LoadButtn()
     {
         LoadData();
@@ -71,9 +78,8 @@ public class Save : MonoBehaviour
         Datas _saveData;
         _saveData = EasyToJson.FromJson<Datas>("SaveData");
         print("불러오기 성공");
-        SetPlayerStat(_saveData);
         SceneManager.LoadScene(_saveData._screen_name);
-        print(Application.dataPath);
+        SetPlayerStat(_saveData);
 
     }
 

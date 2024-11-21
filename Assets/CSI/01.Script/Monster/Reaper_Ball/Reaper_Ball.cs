@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,10 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
     private Rigidbody2D rigidbody2D;
     private Animator _animator;
     public float speed = 2;
+    
+    private bool _isDead = false;
+
+    private float _curGravityScale;
 
 
     private void Awake()
@@ -18,6 +23,9 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
         _animator = GetComponent<Animator>();
     }
 
+    private void Start(){
+        _curGravityScale = rigidbody2D.gravityScale;
+    }
 
 
     public string PoolName => _poolName;
@@ -28,10 +36,9 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
         _animator.Play("Move");
     }
 
-    public void SetVelocity()
-    {
-        rigidbody2D.velocity = ((Mathf.Approximately(transform.eulerAngles.y, 180)) ? Vector2.right : Vector2.left) * speed;
-
+    private void FixedUpdate(){
+        if(_isDead == false)
+            rigidbody2D.velocity = transform.right.normalized * -speed;
     }
 
     public void Push()
@@ -45,6 +52,21 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
         {
             other.GetComponent<Player>().Damage(enermyData, enermyData.AttackPower);
             _animator.Play("Die");
+            _isDead = true;
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.gravityScale = 0;
         }
+        else if (other.transform.CompareTag("Ground"))
+        {
+            _animator.Play("Die");
+            _isDead = true;
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.gravityScale = 0;
+        }
+    }
+
+    private void OnDisable(){
+        _isDead = false;
+        rigidbody2D.gravityScale = _curGravityScale;
     }
 }

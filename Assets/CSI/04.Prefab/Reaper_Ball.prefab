@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolName: Reaper_Ball
   enermyData: {fileID: 0}
+  speed: 2
 --- !u!50 &5750236523069323044
 Rigidbody2D:
   serializedVersion: 4
@@ -149,7 +150,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!70 &2914319965917606252
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -182,6 +183,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.44, y: 0}
-  m_Size: {x: 2.15, y: 1.17}
+  m_Offset: {x: 0.20965388, y: 0.000000034611965}
+  m_Size: {x: 1.6893122, y: 1.1700021}
   m_Direction: 1

@@ -662,17 +662,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225965206}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.05}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 11577888}
-  m_Father: {fileID: 1743444853}
+  m_Father: {fileID: 1558327251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 719.86, y: -441}
+  m_AnchoredPosition: {x: 0, y: -141}
   m_SizeDelta: {x: 310, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &225965208
@@ -1371,6 +1371,7 @@ GameObject:
   - component: {fileID: 512959687}
   - component: {fileID: 512959686}
   - component: {fileID: 512959685}
+  - component: {fileID: 512959688}
   m_Layer: 5
   m_Name: CreditButton
   m_TagString: Untagged
@@ -1492,6 +1493,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512959683}
   m_CullTransparentMesh: 1
+--- !u!95 &512959688
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512959683}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &516887095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1600,7 @@ GameObject:
   - component: {fileID: 677845894}
   - component: {fileID: 677845896}
   - component: {fileID: 677845895}
+  - component: {fileID: 677845897}
   m_Layer: 5
   m_Name: GameTitle
   m_TagString: Untagged
@@ -1642,6 +1665,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677845893}
   m_CullTransparentMesh: 1
+--- !u!95 &677845897
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677845893}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &688006279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1915,17 +1959,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770590317}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.05}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1804021280}
-  m_Father: {fileID: 1743444853}
+  m_Father: {fileID: 1558327251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 719.86, y: -300}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 310, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &770590319
@@ -2115,17 +2159,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834591778}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.05}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 688006280}
-  m_Father: {fileID: 1743444853}
+  m_Father: {fileID: 1558327251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 719.86, y: -159}
+  m_AnchoredPosition: {x: 0, y: 141}
   m_SizeDelta: {x: 310, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &834591780
@@ -3841,6 +3885,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1558327250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1558327251}
+  - component: {fileID: 1558327252}
+  m_Layer: 5
+  m_Name: Bt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1558327251
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558327250}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 834591779}
+  - {fileID: 770590318}
+  - {fileID: 225965207}
+  m_Father: {fileID: 1743444853}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 719.86, y: -300}
+  m_SizeDelta: {x: 310, y: 394}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1558327252
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558327250}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1631276234
 GameObject:
   m_ObjectHideFlags: 0
@@ -4242,9 +4346,7 @@ RectTransform:
   m_Children:
   - {fileID: 817270864}
   - {fileID: 677845894}
-  - {fileID: 834591779}
-  - {fileID: 770590318}
-  - {fileID: 225965207}
+  - {fileID: 1558327251}
   - {fileID: 1224845641}
   - {fileID: 512959684}
   m_Father: {fileID: 0}
@@ -4604,6 +4706,12 @@ PlayableDirector:
     value: {fileID: 2018399243}
   - key: {fileID: -6370557985673366644, guid: ed4cbcccc4f26e040a9ec6142e93bed3, type: 2}
     value: {fileID: 456803335}
+  - key: {fileID: -5163160649569353982, guid: ed4cbcccc4f26e040a9ec6142e93bed3, type: 2}
+    value: {fileID: 677845897}
+  - key: {fileID: -3025598413583037752, guid: ed4cbcccc4f26e040a9ec6142e93bed3, type: 2}
+    value: {fileID: 1558327252}
+  - key: {fileID: -8167692599892210618, guid: ed4cbcccc4f26e040a9ec6142e93bed3, type: 2}
+    value: {fileID: 512959688}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1850658230

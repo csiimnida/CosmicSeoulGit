@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
     public event Action OnDeath;
 
     public int Exp = 0;
+    public int MaxExp = 100;
+
     public UnityEvent<int> OnTakeExp;
 
     private void Awake(){

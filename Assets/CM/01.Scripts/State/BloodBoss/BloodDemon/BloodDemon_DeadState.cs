@@ -11,6 +11,7 @@ public class BloodDemon_DeadState : EnermyState
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Death);
         _emermy.ColCompo.enabled = false;
         _emermy.RbCompo.bodyType = RigidbodyType2D.Static;
+        _emermy.player.GetHp();
         EnemyManager.Instance.Start2Page();
     }
 }

@@ -123,6 +123,10 @@ public class Player : MonoBehaviour
         OnTakeExp?.Invoke(Exp);
     }
 
+    public void GetHp(){
+        NowHP += PlayerData.Hp * 0.05f;
+    }
+
     public void ResetExp(){
         Exp = 0;
     }

@@ -57,10 +57,13 @@ MonoBehaviour:
   CoolTimeNowTimer: 0
   sprite: {fileID: 0}
   CoolDowning: 0
-  SpawnRange: 12.1
+  SpawnRange: 13.9
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
+  Dead:
+    m_PersistentCalls:
+      m_Calls: []
   SpawnAnimator: {fileID: 340798776793386298}
-  <Attack1Size>k__BackingField: {x: 7.84, y: 9.07}
+  <Attack1Size>k__BackingField: {x: 4.36, y: 7.23}
   attack1Pos: {fileID: 6834068720950327862}
   _2pageAnim: {fileID: 9100000, guid: adc055505d8120040828430037e275f7, type: 2}
 --- !u!50 &6540853374154819051
@@ -434,13 +437,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6062483426605584248}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.07171454, w: 0.9974252}
-  m_LocalPosition: {x: 0.3500016, y: -5.77, z: 0}
+  m_LocalRotation: {x: -0.13052624, y: 0.9914449, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: -5.0799994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3257435291406874388}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.225}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -15}
 --- !u!1 &6754092495131371722
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,13 +468,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6754092495131371722}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.24, y: -5.12, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: -5.0799994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3257435291406874388}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &7184412539022729446
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,10 +530,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8692182005518340586}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.087051705, w: 0.99620384}
-  m_LocalPosition: {x: 0.77, y: -4.26, z: 0}
+  m_LocalRotation: {x: 0.13052616, y: 0.9914449, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: -5.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3257435291406874388}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.988}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 15}

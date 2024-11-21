@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/PlayerData")]
 public class PlayerDataSO : ScriptableObject
 {
+    [Header("Datas클래스 수정도 같이 해야함")]
     [Header("Float")]
     public float Damage = 10f;
     public float Skill1Multiple = 2.5f;

@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     
     public event Action OnDeath;
 
-    public int Exp{ get; private set; } = 0;
+    public int Exp = 0;
     public UnityEvent<int> OnTakeExp;
 
     private void Awake(){

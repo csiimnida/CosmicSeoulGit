@@ -7,6 +7,7 @@ public class Save : MonoBehaviour
     
 
     public PlayerDataSO _playerDataSo;
+    public Player _player;
     private StartSeting _startSeting;
     private class StartSeting
     {
@@ -28,7 +29,8 @@ public class Save : MonoBehaviour
     
     private void Start()
     {
-        _playerDataSo = GameManager.Instance.Player.PlayerData;
+        _player = GameManager.Instance.Player;
+        _playerDataSo = _player.PlayerData;
         _startSeting = new StartSeting(_playerDataSo);
     }
 
@@ -48,6 +50,12 @@ public class Save : MonoBehaviour
     private void TrySave()
     {
         Datas data = new Datas();
+        data.Damage = _playerDataSo.Damage;
+        data.MoveSpeed = _playerDataSo.MoveSpeed;
+        data.RollPower  = _playerDataSo.RollPower;
+        data.Health = _playerDataSo.Hp;
+        data.Attack_Speed = _playerDataSo.SwordAttackTime;
+        data.Exp = _player.Exp;
         data._screen_name = SceneManager.GetActiveScene().name;//SceneManager.GetActiveScene().name;
         EasyToJson.ToJson<Datas>(data,"SaveData",false);
         
@@ -76,6 +84,8 @@ public class Save : MonoBehaviour
         _playerDataSo.RollPower = saveData.RollPower;
         _playerDataSo.Hp = saveData.Health;
         _playerDataSo.SwordAttackTime = saveData.Attack_Speed;
+        _player.Exp = saveData.Exp;
+        
     }
 
 

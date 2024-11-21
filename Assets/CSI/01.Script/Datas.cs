@@ -6,4 +6,5 @@ public class Datas
     public float Attack_Speed;
     public float MoveSpeed;
     public float RollPower;
+    public int Exp;
 }

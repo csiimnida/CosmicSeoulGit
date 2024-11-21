@@ -30,7 +30,6 @@ public class Boss_ReaperAttackchacker : MonoBehaviour
         ball.transform.position = _target.position;
         ball.speed = 10f;
         ball.enermyData = _target.parent.GetComponent<Enemy>().DataSo;
-        ball.SetVelocity();
     }
 
     public void SpawnDown()
@@ -42,8 +41,6 @@ public class Boss_ReaperAttackchacker : MonoBehaviour
             ball.transform.rotation = _down_Spawn_poss[i].rotation;
             ball.speed = 5f;
             ball.enermyData = _target.parent.GetComponent<Enemy>().DataSo;
-            ball.SetVelocity();
-
         }
     }
 

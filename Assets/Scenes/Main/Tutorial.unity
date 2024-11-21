@@ -9644,10 +9644,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5136895890224244472, guid: 96db154c64137424abc20899240ad454, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7151826422141680604, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: m_Name
       value: BlackImage
@@ -9662,6 +9658,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 64445953}
+  - {fileID: 5595904779435857347}
   - {fileID: 1630620196}
   - {fileID: 1017229527}
   - {fileID: 523180344}
@@ -9672,5 +9669,4 @@ SceneRoots:
   - {fileID: 1557768456}
   - {fileID: 1282943763}
   - {fileID: 132009725}
-  - {fileID: 5595904779435857347}
   - {fileID: 76014534}

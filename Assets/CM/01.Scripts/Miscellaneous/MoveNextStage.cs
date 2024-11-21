@@ -13,6 +13,7 @@ public class MoveNextStage : MonoBehaviour
     [SerializeField] private string _nextSceneName;
     
     private bool _isClear;
+    private bool _isCollision = false;
 
     private void Start(){
         _isClear = SceneManager.GetActiveScene().name == "Tutorial" ? true : false;
@@ -20,17 +21,18 @@ public class MoveNextStage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.CompareTag("Player"))
-            if(_isClear)
+            if(_isClear && !_isCollision)
                 MoveNextStageMethod();
                 
     }
 
     private void MoveNextStageMethod(){
+        _isCollision = true;
         StartCoroutine(FadeIn());
     }
 
     private IEnumerator FadeIn(){
-        _blackPanel.DOFade(1f, _fadeDuration);
+        _blackPanel.DOFade(2f, _fadeDuration);
         yield return new WaitForSeconds(_fadeDuration + 0.5f);
         SceneManager.LoadScene(_nextSceneName);
     }

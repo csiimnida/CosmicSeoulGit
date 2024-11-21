@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     
     public event Action OnDeath;
 
-    private int Exp = 0;
+    public int Exp{ get; private set; } = 0;
     public UnityEvent<int> OnTakeExp;
 
     private void Awake(){
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
         OnTakeExp?.Invoke(Exp);
     }
 
-    public void GetHp(){
+    public void GetHpUp(){
         NowHP += PlayerData.Hp * 0.05f;
     }
 

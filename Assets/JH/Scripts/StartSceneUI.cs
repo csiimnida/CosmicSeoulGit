@@ -27,7 +27,7 @@ public class StartSceneUI : MonoBehaviour
 
     private void Awake()
     {
-        SetCreditUI = transform.GetChild(5).gameObject; 
+        SetCreditUI = transform.GetChild(4).gameObject; 
 
     }
 

@@ -53,7 +53,7 @@ public class Boss_Reaper : Enemy
         {
             _2page = true;
             AnimCompo.Animator.runtimeAnimatorController = _2pageAnim;
-            TransitionState(EnemyStateType.Idle);
+            TransitionState(EnemyStateType.Move);
         }
         if (NowHp <= 0)
         {

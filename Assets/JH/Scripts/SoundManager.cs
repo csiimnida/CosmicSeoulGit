@@ -17,7 +17,6 @@ public class SoundManager : MonoSingleton<SoundManager>
     {
         foreach (SoundSO item in Sounds.SoundSOs)
         {
-            print(item.SoundName);
             _dictionary.Add(item.SoundName, item);
         }
         PlaySound("StartBGM");
@@ -47,11 +46,6 @@ public class SoundManager : MonoSingleton<SoundManager>
 
         }
         
-
-
-
-
-
 
     }
     public void PlaySound(string soundName)

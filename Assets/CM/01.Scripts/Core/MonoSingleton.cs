@@ -22,7 +22,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
                 else
                     IsDestroyed = false;
 
-                DontDestroyOnLoad(_instance.gameObject);
+                DontDestroyOnLoad(_instance.transform.root.gameObject);
                 print("부셔지지 않아");
 
             }

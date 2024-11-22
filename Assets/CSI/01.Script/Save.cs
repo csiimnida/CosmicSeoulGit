@@ -66,7 +66,7 @@ public class Save : MonoSingleton<Save>
     public void NewGame()
     {
         Datas data = new Datas();
-        EasyToJson.ToJson<Datas>(data,"SaveData",false);
+        EasyToJson.ToJson<Datas>(data,"SaveData",true);
         LoadData();
     }
 

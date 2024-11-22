@@ -17,17 +17,7 @@ public class Boss_Reaper_Enemy_IdleState : EnermyState
 
     public override void UpdateState()
     {
-
-        if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,
-                _player))
-        {
-            if (!_emermy.CoolDowning)
-            {
-                Debug.Log($"{_emermy.nextState}으로 이동");
-                _emermy.TransitionState(_emermy.nextState);
-                return;
-            }
-        }
+        
         if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,
                 _player))//완전히 나갔을때
         {
@@ -58,7 +48,7 @@ public class Boss_Reaper_Enemy_IdleState : EnermyState
             if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.SpawnRange,_player))
             {
                 if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,
-                        _player)) //완전히 나갔을때
+                        _player)) //Move 범위
                 {
                     _emermy.TransitionState(EnemyStateType.Move);
                     _emermy.CoolDowning = false;

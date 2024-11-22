@@ -8,7 +8,9 @@ using UnityEngine.Rendering.PostProcessing;
 public class Boss_Reaper : Enemy
 {
     [field:SerializeField] public Vector2 Attack1Size{ get;private set;}
+    [field:SerializeField] public Vector2 TelleportAttackSize{ get;private set;}
     public Transform attack1Pos;
+    public Transform telleportAttackPos;
     private bool _2page;
     public AnimatorController _2pageAnim;
     protected void Awake()
@@ -51,6 +53,7 @@ public class Boss_Reaper : Enemy
         {
             _2page = true;
             AnimCompo.Animator.runtimeAnimatorController = _2pageAnim;
+            TransitionState(EnemyStateType.Idle);
         }
         if (NowHp <= 0)
         {
@@ -77,6 +80,8 @@ public class Boss_Reaper : Enemy
         Gizmos.DrawWireSphere(transform.position,SpawnRange);//Spawn 범위
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(attack1Pos.position, Attack1Size);// 어택1 범위
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireCube(telleportAttackPos.position, TelleportAttackSize);// 어택2 범위
 
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6540853374154819051}
   - component: {fileID: 6888725427694428285}
   m_Layer: 8
-  m_Name: Boos_Reaper
+  m_Name: Boss_Reaper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,6 +34,7 @@ Transform:
   m_Children:
   - {fileID: 5086884590486114483}
   - {fileID: 6834068720950327862}
+  - {fileID: 8436103711963868387}
   - {fileID: 6419862581864789407}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64,7 +65,9 @@ MonoBehaviour:
       m_Calls: []
   SpawnAnimator: {fileID: 340798776793386298}
   <Attack1Size>k__BackingField: {x: 4.36, y: 7.23}
+  <TelleportAttackSize>k__BackingField: {x: 6.73, y: 8.48}
   attack1Pos: {fileID: 6834068720950327862}
+  telleportAttackPos: {fileID: 8436103711963868387}
   _2pageAnim: {fileID: 9100000, guid: adc055505d8120040828430037e275f7, type: 2}
 --- !u!50 &6540853374154819051
 Rigidbody2D:
@@ -128,6 +131,37 @@ CapsuleCollider2D:
   m_Offset: {x: -0.15412903, y: -0.36990905}
   m_Size: {x: 2.2878952, y: 5.685518}
   m_Direction: 0
+--- !u!1 &3908884713886945947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8436103711963868387}
+  m_Layer: 0
+  m_Name: TelleportAttackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8436103711963868387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908884713886945947}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.98, y: 0.91, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8556717319762243975}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4388678890353685720
 GameObject:
   m_ObjectHideFlags: 0

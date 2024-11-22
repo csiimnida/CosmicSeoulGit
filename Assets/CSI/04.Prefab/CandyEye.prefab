@@ -257,6 +257,10 @@ MonoBehaviour:
   CoolDowning: 0
   SpawnRange: 5
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
+  Dead:
+    m_PersistentCalls:
+      m_Calls: []
+  SpawnAnimator: {fileID: 0}
 --- !u!1 &8040559882396164270
 GameObject:
   m_ObjectHideFlags: 0

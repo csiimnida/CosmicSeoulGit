@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AttackStart
+  m_Name: TelleportStart
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -22,15 +22,15 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 21300000, guid: ffadc24d2ff8cea4d97def3c9ab91cf3, type: 3}
-    - time: 0.083333336
-      value: {fileID: 21300000, guid: 549459c8f769f944099a50bc0a0f97c9, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: a67cacb35c5493641b230900bc525c5d, type: 3}
+      value: {fileID: 21300000, guid: 549459c8f769f944099a50bc0a0f97c9, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: 275514d794cbb5244ac1774b6ff585c5, type: 3}
+      value: {fileID: 21300000, guid: a67cacb35c5493641b230900bc525c5d, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: 37453da4a7540f846bcbd65dbca0a326, type: 3}
+      value: {fileID: 21300000, guid: 275514d794cbb5244ac1774b6ff585c5, type: 3}
     - time: 0.41666666
+      value: {fileID: 21300000, guid: 37453da4a7540f846bcbd65dbca0a326, type: 3}
+    - time: 0.5
       value: {fileID: 21300000, guid: 379f3fcdc62e9f341995d9327c9c54d4, type: 3}
     attribute: m_Sprite
     path: 
@@ -65,7 +65,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.5833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -26,7 +26,7 @@ public class Boss_Reaper_Enemy_SpawnState : EnermyState
             && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName(Up?"Spawn":"SpawnDown")
             && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
-            _emermy.nextState = EnemyStateType.Attack1;
+            _emermy.nextState = EnemyStateType.Idle;
             _emermy.CoolTimeNowTimer = 0;
             _emermy.TransitionState(EnemyStateType.Attack1);
             return;
@@ -60,7 +60,7 @@ public class Boss_Reaper_Enemy_SpawnState : EnermyState
                  && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName(Up?"Spawn":"SpawnDown") 
                  && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
-            _emermy.nextState = EnemyStateType.Attack1;
+            _emermy.nextState = EnemyStateType.Idle;
             _emermy.CoolTimeNowTimer = 0;
             _emermy.TransitionState(EnemyStateType.Attack1);
         }

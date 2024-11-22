@@ -31,10 +31,6 @@ public class DinoAttackManager : MonoBehaviour
             if (player != null && !player.ColCompo.isTrigger)
             {
                 player.Damage(_dino.DataSo,_dino.DataSo.AttackPower);
-                if (_dino.transform.position.x - _dino.player.transform.position.x >= -0 && _dino.transform.position.x - _dino.player.transform.position.x <= 0)  return;
-
-                float positionX = _dino.transform.position.x - _dino.player.transform.position.x > 0 ? -8 : 8;
-                player.transform.position = new Vector2((_dino.transform.position.x + positionX), player.transform.position.y);
             }
         }
     }

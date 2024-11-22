@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,11 +16,20 @@ public class StartSceneUI : MonoBehaviour
     [SerializeField] private Button activatePanelButton;
     [SerializeField] private Button deactivatePanelButton; 
     [SerializeField] private Button quitGameButton;
+    [SerializeField] private Button OnCreditButton;
+    [SerializeField] private Image CreditPanel;
+    
+    private GameObject SetCreditUI;
 
     
     [SerializeField] private SoundManager soundManager;
-    
 
+
+    private void Awake()
+    {
+        SetCreditUI = transform.GetChild(4).gameObject; 
+
+    }
 
     void Start()
     {
@@ -28,12 +38,15 @@ public class StartSceneUI : MonoBehaviour
         goToSceneButton.onClick.AddListener(PlayButtonClickSound);
         activatePanelButton.onClick.AddListener(ActivatePanel);
         activatePanelButton.onClick.AddListener(PlayButtonClickSound);
-        deactivatePanelButton.onClick.AddListener(DeactivatePanel); 
-        deactivatePanelButton.onClick.AddListener(PlayButtonClickSound); 
+        //deactivatePanelButton.onClick.AddListener(DeactivatePanel); 
+        //deactivatePanelButton.onClick.AddListener(PlayButtonClickSound); 
         //quitGameButton.onClick.AddListener(QuitGame);
         quitGameButton.onClick.AddListener(PlayButtonClickSound);
 
-        
+        if (CreditPanel != null)
+        {
+            CreditPanel.gameObject.SetActive(false);
+        }
         if (panel != null)
             panel.SetActive(false);
     }
@@ -61,17 +74,7 @@ public class StartSceneUI : MonoBehaviour
         }
     }
 
-    private void DeactivatePanel()
-    {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("�г��� �������� �ʾҽ��ϴ�.");
-        }
-    }
+    
 
     private void QuitGame()
     {
@@ -80,6 +83,26 @@ public class StartSceneUI : MonoBehaviour
     
     private void PlayButtonClickSound()
     {
+        soundManager.PlaySound("Bt_Click");
+        
+    }
+    public void DestroyUI()
+    {
+        
+        OnCreditButton.gameObject.SetActive(true);
+        SetCreditUI.SetActive(false);
+        soundManager.PlaySound("Bt_Click");
+        Time.timeScale = 1;
+        
+        
+
+    }
+
+    public void OnCreditUI()
+    {
+        OnCreditButton.gameObject.SetActive(false);
+
+        SetCreditUI.SetActive(true);
         soundManager.PlaySound("Bt_Click");
         
     }

@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Boss_Reaper_Enemy_SpawnState : EnermyState
 {
+    private bool Up;
     public Boss_Reaper_Enemy_SpawnState(Enemy enemy) : base(enemy)
     {
     }
     protected override void EnterState()
     {
         _emermy.RbCompo.velocity = Vector2.zero;
-        _emermy.AnimCompo.PlayAnimaiton(AnimationType.Spawn);
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
+        Up = Random.Range(0, 2) == 0;
+        _emermy.SpawnAnimator.Play(Up?"Up":"Down");
+        _emermy.AnimCompo.PlayAnimaiton(Up?AnimationType.Spawn:AnimationType.SpawnDown);
+
     }
 
     public override void UpdateState()
@@ -19,7 +23,7 @@ public class Boss_Reaper_Enemy_SpawnState : EnermyState
 
         if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,
                 LayerMask.GetMask("Player"))
-            && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Spawn")
+            && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName(Up?"Spawn":"SpawnDown")
             && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             _emermy.nextState = EnemyStateType.Attack1;
@@ -28,7 +32,7 @@ public class Boss_Reaper_Enemy_SpawnState : EnermyState
             return;
 
         }
-        if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Spawn") &&
+        if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName(Up?"Spawn":"SpawnDown") &&
             _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             _emermy.nextState = EnemyStateType.Spawn;
@@ -38,7 +42,7 @@ public class Boss_Reaper_Enemy_SpawnState : EnermyState
             return;
         }
         if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.SpawnRange,LayerMask.GetMask("Player")) 
-            && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Spawn") 
+            && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName(Up?"Spawn":"SpawnDown") 
             && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             if (_emermy.Combit)
@@ -53,7 +57,7 @@ public class Boss_Reaper_Enemy_SpawnState : EnermyState
             _emermy.TransitionState(EnemyStateType.Move);
         }
         else if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")) 
-                 && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Spawn") 
+                 && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName(Up?"Spawn":"SpawnDown") 
                  && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             _emermy.nextState = EnemyStateType.Attack1;

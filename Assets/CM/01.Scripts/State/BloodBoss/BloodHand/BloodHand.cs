@@ -76,4 +76,8 @@ public class BloodHand : Enemy
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(attack1Pos.position, Attack1Size);// 어택1 범위
     }
+
+    public void HandlerDead(){
+        TransitionState(EnemyStateType.Dead);
+    }
 }

@@ -1,14 +1,14 @@
 using EasySave.Json;
 using UnityEngine;
-using System;
 using UnityEngine.SceneManagement;
 
-public class Save : MonoBehaviour
+public class Save : MonoSingleton<Save>
 {
-    
 
-    public PlayerDataSO _playerDataSo;
+    private PlayerDataSO _playerDataSo;
+    private Player _player;
     private StartSeting _startSeting;
+    private CheckLevelUp _checkLevelUp;
     private class StartSeting
     {
         public float Damage;
@@ -29,7 +29,9 @@ public class Save : MonoBehaviour
     
     private void Start()
     {
-        _playerDataSo = GameManager.Instance.Player.PlayerData;
+        _player = GameManager.Instance.Player;
+        _checkLevelUp = _player.GetComponent<CheckLevelUp>();
+        _playerDataSo = _player.PlayerData;
         _startSeting = new StartSeting(_playerDataSo);
     }
 
@@ -49,12 +51,23 @@ public class Save : MonoBehaviour
     private void TrySave()
     {
         Datas data = new Datas();
-        data._saveNum = 1;
-        data._playerPowerRare.heavy_weight.Count = 3;
-        data._playerPowerNomal.rapid_movement.Count = 5;
+        data.Damage = _playerDataSo.Damage;
+        data.MoveSpeed = _playerDataSo.MoveSpeed;
+        data.RollPower  = _playerDataSo.RollPower;
+        data.Health = _playerDataSo.Hp;
+        data.Attack_Speed = _playerDataSo.SwordAttackTime;
+        data.MaxExp = _player.MaxExp;
+        data.Exp = _player.Exp;
         data._screen_name = SceneManager.GetActiveScene().name;//SceneManager.GetActiveScene().name;
-        EasyToJson.ToJson<Datas>(data,"SaveData",true);
+        EasyToJson.ToJson<Datas>(data,"SaveData",false);
         
+    }
+
+    public void NewGame()
+    {
+        Datas data = new Datas();
+        EasyToJson.ToJson<Datas>(data,"SaveData",true);
+        LoadData();
     }
 
     public void LoadButtn()
@@ -67,56 +80,24 @@ public class Save : MonoBehaviour
         Datas _saveData;
         _saveData = EasyToJson.FromJson<Datas>("SaveData");
         print("불러오기 성공");
-        PlayerStat(_saveData);
         SceneManager.LoadScene(_saveData._screen_name);
-        print(Application.dataPath);
+        SetPlayerStat(_saveData);
 
     }
-    
-    public void PlayerStat(Datas _saveData)
+
+    private void SetPlayerStat(Datas saveData)
     {
-        SetNomal(_saveData);
-        SetRara(_saveData);
-        SetUnique(_saveData);
+        _playerDataSo.Damage = saveData.Damage;
+        _playerDataSo.MoveSpeed = saveData.MoveSpeed;
+        _playerDataSo.RollPower = saveData.RollPower;
+        _playerDataSo.Hp = saveData.Health;
+        _playerDataSo.SwordAttackTime = saveData.Attack_Speed;
+        _checkLevelUp.ChangeMaxExp(saveData.MaxExp);
+        _player.Exp = saveData.Exp;
+        
     }
 
-    private void SetUnique(Datas _saveData)
-    {
-        SetStat(_saveData._playerPowerUnique.Warrior_Protection);
-        SetStat(_saveData._playerPowerUnique.sharpshooter);
-    }
-    private void SetRara(Datas _saveData)
-    {
-        SetStat(_saveData._playerPowerRare.Berserker);
-        SetStat(_saveData._playerPowerRare.absolute_defense);
-        SetStat(_saveData._playerPowerRare.heavy_weight);
-        SetStat(_saveData._playerPowerRare.speed_ster);
-    }
-    private void SetNomal(Datas _saveData)
-    {
-        SetStat(_saveData._playerPowerNomal.strong_strength);
-        SetStat(_saveData._playerPowerNomal.full_of_vitality);
-        SetStat(_saveData._playerPowerNomal.rapid_movement);
-        SetStat(_saveData._playerPowerNomal.nimble_legs);
-    }
 
-    private void SetStat(Stats stat)
-    {
-        if(stat.Count == 0) return;
-        print($"{stat}가 {stat.Count}개 적용");
-        for (int i = 0; i < stat.Count; i++)
-        {
-            _playerDataSo.Damage += getpursent(_startSeting.Damage,stat.Attack_Power);
-            _playerDataSo.Hp += getpursent(_startSeting.Hp, stat.Health);
-            _playerDataSo.SwordAttackTime -= getpursent(_startSeting.Attack_Speed, stat.Attack_Speed);
-            _playerDataSo.MoveSpeed += getpursent(_startSeting.MoveSpeed, stat.Move_Speed);
-        }
-    }
-    private float getpursent(float StartSetting,float persent)
-    {
-        return StartSetting * persent/ 100;
-    }
-    
     /*현재 스테이지 및 맵에 배치된 남아있는 적들
 현재 위치
 플레이어 현재 체력

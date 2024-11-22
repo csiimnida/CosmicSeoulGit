@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
   m_Name: BloodDemon
   m_EditorClassIdentifier: 
+  ExpValue: 0
   Size: {x: 1, y: 1}
   AttackPower: 30
   MaxHp: 1
   AttackSpeed: 2
   MoveSpeed: 10
-  Perception_range: 14.54
+  Perception_range: 27.9
   Attack_range: 3.61
-  CameraShakePower: {x: 0.6, y: 0.8}
+  CameraShakePower: {x: 0.3, y: 0.7}
   CameraShakeDuration: 0.4
   Anchor_Enermy: 0

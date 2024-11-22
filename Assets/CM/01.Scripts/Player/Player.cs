@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -23,13 +24,17 @@ public class Player : MonoBehaviour
     
     private CinemachineImpulseSource impulseSource;
 
-    private float NowHP;
+    public float NowHP { get; private set; }
 
     private Material NormalMat;
     [SerializeField] private Material HitMat;
     
     public event Action OnDeath;
 
+    public int Exp = 0;
+    public int MaxExp = 100;
+
+    public UnityEvent<int> OnTakeExp;
 
     private void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
@@ -66,6 +71,8 @@ public class Player : MonoBehaviour
         PlayerData.IsFlip = false;
         NormalMat = SpriteCompo.material;
     }
+    
+    
 
     public void TransitionState(PlayerStateType newState){
         StateEnum[currentState].Exit();
@@ -87,14 +94,15 @@ public class Player : MonoBehaviour
         
         if (currentState == PlayerStateType.Block)
         {
-            NowHP += damage;
             TransitionState(PlayerStateType.BlockImpact);
             return;
         }
+        if(currentState == PlayerStateType.Roll) return;
         
         NowHP -= damage;
         if (NowHP > 0)
         {
+            SoundManager.Instance.PlaySound("Hurt");
             StartCoroutine(Do_Hit_Effect());
             ShakeCamera(data);
         }
@@ -112,6 +120,19 @@ public class Player : MonoBehaviour
         SpriteCompo.material = NormalMat;
     }
 
+    public void GetExp(EnermyDataSO data){
+        Exp += data.ExpValue;
+        OnTakeExp?.Invoke(Exp);
+    }
+
+    public void GetHpUp(){
+        NowHP += PlayerData.Hp * 0.05f;
+    }
+
+    public void ResetExp(){
+        Exp = 0;
+    }
+
     private void ShakeCamera(EnermyDataSO data){
         impulseSource.m_DefaultVelocity = data.CameraShakePower;
         impulseSource.m_ImpulseDefinition.m_ImpulseDuration = data.CameraShakeDuration;
@@ -123,6 +144,7 @@ public class Player : MonoBehaviour
     }
 
     private void OnDestroy(){
+        InputCompo.OnMoveEvent -= RotCompo.FaceDirection;
         StateEnum[currentState].Exit();
     }
 

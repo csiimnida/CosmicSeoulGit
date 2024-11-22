@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -251,8 +251,11 @@ MonoBehaviour:
   currentState: 0
   DataSo: {fileID: 11400000, guid: 4ea3ca07ec6d69c4da486beaca764f16, type: 2}
   CombitTimer: 0
+  CoolTimeMaxTimer: 0
+  CoolTimeNowTimer: 0
   sprite: {fileID: 0}
-  NowHp: 0
+  CoolDowning: 0
+  SpawnRange: 5
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
 --- !u!1 &8040559882396164270
 GameObject:

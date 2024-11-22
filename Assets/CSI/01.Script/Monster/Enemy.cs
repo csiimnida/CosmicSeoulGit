@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 public class Enemy : MonoBehaviour
 {
     public Player player;
@@ -28,12 +30,19 @@ public class Enemy : MonoBehaviour
 
     protected Material NomallMaterial;
     public Material HitMaterial;
+
+    public UnityEvent Dead;
+    
+    
+    public Animator SpawnAnimator;
+
     
 
     protected virtual void Awake(){
 
     }
 
+    
     protected virtual void Start(){
         player = GameManager.Instance.Player;
         CoolTimeMaxTimer = DataSo.AttackSpeed;
@@ -56,7 +65,7 @@ public class Enemy : MonoBehaviour
             Combit = false;
         }
 
-        if (CoolTimeNowTimer < 10 + CoolTimeMaxTimer && CoolDowning)
+        if (CoolTimeNowTimer < 2 + CoolTimeMaxTimer && CoolDowning)
         {
             if (CoolTimeNowTimer >= CoolTimeMaxTimer)
             {
@@ -70,15 +79,17 @@ public class Enemy : MonoBehaviour
         StateEnum[currentState].UpdateState();
     }
 
-    private void FixedUpdate()
-    {
-        StateEnum[currentState].FixedUpdateState();
-    }
+    private void FixedUpdate() => StateEnum[currentState].FixedUpdateState();
+    
 
     
 
     protected virtual void Damage_call(float damage){
         
+    }
+
+    public void DeadEventInvokeMethod(){
+        Dead.Invoke();
     }
 
     public void Damage(float damage) => Damage_call(damage);

@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Overlay
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - Player
   - Enemy
   - Projectile
-  - 
+  - Ball
   - 
   - 
   - 
@@ -38,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1160176939
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -47,6 +52,12 @@ TagManager:
   - name: Player
     uniqueID: 4271680357
     locked: 0
+  - name: Ball
+    uniqueID: 1746868253
+    locked: 0
   - name: Effect
     uniqueID: 569683363
+    locked: 0
+  - name: Frontground
+    uniqueID: 2468879015
     locked: 0

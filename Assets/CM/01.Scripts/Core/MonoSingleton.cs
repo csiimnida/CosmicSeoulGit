@@ -14,7 +14,6 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
             if (_instance == null)
             {
-                print("생성 완");
                 _instance = GameObject.FindAnyObjectByType<T>();
 
                 if (_instance == null)
@@ -23,10 +22,8 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
                     IsDestroyed = false;
 
                 DontDestroyOnLoad(_instance.transform.root.gameObject);
-                print("부셔지지 않아");
 
             }
-            print("전환");
             return _instance;
         }
     }

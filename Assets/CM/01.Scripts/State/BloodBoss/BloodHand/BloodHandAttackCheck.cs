@@ -18,7 +18,7 @@ public class BloodHandAttackCheck : MonoBehaviour
         {
             Player player = collider.GetComponent<Player>();
             if(player != null && !player.ColCompo.isTrigger)
-                player.Damage(_bloodHand.DataSo,_bloodHand.DataSo.AttackPower);
+                player.Damage(_bloodHand);
         }
     }
 }

@@ -18,7 +18,7 @@ public class BlueSlimeAttackCheck : MonoBehaviour
         {
             Player player = collider.GetComponent<Player>();
             if(player != null && !player.ColCompo.isTrigger)
-                player.Damage(_blueSlime.DataSo,_blueSlime.DataSo.AttackPower);
+                player.Damage(_blueSlime);
         }
     }
 }

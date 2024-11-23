@@ -18,7 +18,7 @@ public class SkullWolfAttackCheck : MonoBehaviour
         {
             Player player = collider.GetComponent<Player>();
             if(player != null && !player.ColCompo.isTrigger)
-                player.Damage(_skullWolf.DataSo,_skullWolf.DataSo.AttackPower);
+                player.Damage(_skullWolf);
         }
     }
 }

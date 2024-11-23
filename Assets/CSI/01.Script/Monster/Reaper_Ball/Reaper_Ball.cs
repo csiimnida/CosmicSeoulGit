@@ -16,6 +16,8 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
 
     private float _curGravityScale;
 
+    public bool _isSeeRight;
+
 
     private void Awake()
     {
@@ -50,7 +52,7 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
     {
         if (other.transform.CompareTag("Player"))
         {
-            other.GetComponent<Player>().Damage(enermyData, enermyData.AttackPower);
+            other.GetComponent<Player>().Damage(this);
             _animator.Play("Die");
             _isDead = true;
             rigidbody2D.velocity = Vector2.zero;

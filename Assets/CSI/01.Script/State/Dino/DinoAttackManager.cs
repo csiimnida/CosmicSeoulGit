@@ -18,7 +18,7 @@ public class DinoAttackManager : MonoBehaviour
         {
             Player player = collider.GetComponent<Player>();
             if(player != null && !player.ColCompo.isTrigger)
-                player.Damage(_dino.DataSo, _dino.DataSo.AttackPower);
+                player.Damage(_dino);
         }
     }
     public void Attack2Checker(){
@@ -30,7 +30,7 @@ public class DinoAttackManager : MonoBehaviour
             Player player = collider.GetComponent<Player>();
             if (player != null && !player.ColCompo.isTrigger)
             {
-                player.Damage(_dino.DataSo,_dino.DataSo.AttackPower);
+                player.Damage(_dino);
             }
         }
     }

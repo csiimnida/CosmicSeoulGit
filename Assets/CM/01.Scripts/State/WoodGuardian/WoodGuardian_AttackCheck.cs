@@ -18,7 +18,7 @@ public class WoodGuardian_AttackCheck : MonoBehaviour{
         {
             Player player = collider.GetComponent<Player>();
             if(player != null && !player.ColCompo.isTrigger)
-                player.Damage(_woodGuardian.DataSo,_woodGuardian.DataSo.AttackPower);
+                player.Damage(_woodGuardian);
         }
     }
 
@@ -29,7 +29,7 @@ public class WoodGuardian_AttackCheck : MonoBehaviour{
         {
             Player player = collider.GetComponent<Player>();
             if(player != null && !player.ColCompo.isTrigger)
-                player.Damage(_woodGuardian.DataSo,_woodGuardian.DataSo.AttackPower);
+                player.Damage(_woodGuardian);
         }
     }
 }

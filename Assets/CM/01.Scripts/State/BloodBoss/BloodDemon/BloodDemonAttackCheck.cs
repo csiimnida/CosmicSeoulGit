@@ -18,7 +18,7 @@ public class BloodDemonAttackCheck : MonoBehaviour
         {
             Player player = collider.GetComponent<Player>();
             if(player != null && !player.ColCompo.isTrigger)
-                player.Damage(_bloodDemon.DataSo,_bloodDemon.DataSo.AttackPower);
+                player.Damage(_bloodDemon);
         }
     }
 
@@ -31,7 +31,7 @@ public class BloodDemonAttackCheck : MonoBehaviour
             Player player = collider.GetComponent<Player>();
             if (player != null && !player.ColCompo.isTrigger)
             {
-                player.Damage(_bloodDemon.DataSo,_bloodDemon.DataSo.AttackPower);
+                player.Damage(_bloodDemon);
                 if (_bloodDemon.transform.position.x - _bloodDemon.player.transform.position.x >= -2 && _bloodDemon.transform.position.x - _bloodDemon.player.transform.position.x <= 2)  return;
                 
                 float positionX = _bloodDemon.transform.position.x - _bloodDemon.player.transform.position.x > 0 ? -2 : 2;

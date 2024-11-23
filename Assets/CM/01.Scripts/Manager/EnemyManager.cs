@@ -30,16 +30,17 @@ public class EnemyManager : MonoBehaviour{
 
 
     private IEnumerator CreateBloodBoss2Page(){
-        BloodEffect1.transform.position = new Vector2(BloodBoss1Page.position.x - 2f, BloodBoss1Page.position.y - 1.5f);
-        BloodEffect2.transform.position = new Vector2(BloodBoss1Page.position.x, BloodBoss1Page.position.y - 1.5f);
-        BloodEffect3.transform.position = new Vector2(BloodBoss1Page.position.x + 2f, BloodBoss1Page.position.y - 1.5f);
-        BloodEffect.transform.position = new Vector2(BloodBoss1Page.position.x, BloodBoss1Page.position.y -1.5f);
+        yield return new WaitForSeconds(1f);
+        BloodEffect1.transform.position = new Vector2(BloodBoss1Page.position.x - 2f, BloodBoss1Page.position.y - 2.2f);
+        BloodEffect2.transform.position = new Vector2(BloodBoss1Page.position.x, BloodBoss1Page.position.y - 2.2f);
+        BloodEffect3.transform.position = new Vector2(BloodBoss1Page.position.x + 2f, BloodBoss1Page.position.y - 2.2f);
+        BloodEffect.transform.position = new Vector2(BloodBoss1Page.position.x, BloodBoss1Page.position.y - 1.7f);
         BloodEffect1.Play();
         BloodEffect2.Play();
         BloodEffect3.Play();
         yield return new WaitForSeconds(2f);
         BloodEffect.Play();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         BloodBoss2PagePrefab.transform.position = new Vector2(BloodBoss1Page.position.x, BloodBoss1Page.position.y - 0.9f);
         Destroy(BloodBoss1Page.gameObject);
     }

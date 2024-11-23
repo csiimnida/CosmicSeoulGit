@@ -23,10 +23,11 @@ public class Boss_Reaper_Enemy_Attack1State : EnermyState
                  && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             
-            _emermy.nextState = EnemyStateType.Spawn;
+            _emermy.nextState = EnemyStateType.Idle;
             _emermy.TransitionState(EnemyStateType.Spawn);
         }
-        if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") &&
+        if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player"))&&
+                _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") &&
             _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             _emermy.nextState = EnemyStateType.Attack1;
@@ -49,17 +50,9 @@ public class Boss_Reaper_Enemy_Attack1State : EnermyState
                 }
             }
             
-            _emermy.nextState = EnemyStateType.Spawn;
-            _emermy.TransitionState(EnemyStateType.Spawn);
+            _emermy.nextState = EnemyStateType.Idle;
+            _emermy.TransitionState(EnemyStateType.Move);
             return;
-        }
-        else if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")) 
-                 && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") 
-                 && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
-        {
-            
-            _emermy.nextState = EnemyStateType.Attack1;
-            _emermy.TransitionState(EnemyStateType.Attack1);
         }
     }
 }

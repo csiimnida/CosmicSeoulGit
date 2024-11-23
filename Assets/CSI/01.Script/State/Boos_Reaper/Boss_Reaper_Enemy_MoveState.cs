@@ -14,6 +14,8 @@ public class Boss_Reaper_Enemy_MoveState : EnermyState
 
     public override void UpdateState()
     {
+        if(Input.GetKeyDown(KeyCode.S))
+            _emermy.TransitionState(EnemyStateType.Teleport);
         float positionX = (_emermy.player.transform.position- _emermy.transform.position).normalized.x;
         _emermy.RbCompo.velocity = (new Vector2((positionX)*_emermy.DataSo.MoveSpeed,0));
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
@@ -27,14 +29,14 @@ public class Boss_Reaper_Enemy_MoveState : EnermyState
             }
             _emermy.TransitionState(_emermy.nextState);
         }
-        /*if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")))
+        if (Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")))
         {
             if (_emermy.nextState == EnemyStateType.Idle)
             {
                 _emermy.nextState = EnemyStateType.Attack1;
             }
             _emermy.TransitionState(_emermy.nextState);
-        }*/
+        }
         if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Perception_range,LayerMask.GetMask("Player")) && !_emermy.Combit)
         {
             _emermy.TransitionState(EnemyStateType.Idle);

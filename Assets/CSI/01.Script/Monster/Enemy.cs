@@ -106,5 +106,7 @@ public enum EnemyStateType
     Dead,
     Spawn,
     Teleport,
+    TeleportStart,
+    TeleportEnd,
     Empty
 }

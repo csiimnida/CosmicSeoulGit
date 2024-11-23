@@ -43,5 +43,15 @@ public class Boss_ReaperAttackchacker : MonoBehaviour
             ball.enermyData = _target.parent.GetComponent<Enemy>().DataSo;
         }
     }
+    public void TelleportAttackChecker(){
+        Collider2D[] colliders =
+            Physics2D.OverlapBoxAll(_reaper.telleportAttackPos.position, _reaper.TelleportAttackSize, _layerMask);
+        foreach (var collider in colliders)
+        {
+            Player player = collider.GetComponent<Player>();
+            if(player != null && !player.ColCompo.isTrigger)
+                player.Damage(_reaper.DataSo, _reaper.DataSo.AttackPower);
+        }
+    }
 
 }

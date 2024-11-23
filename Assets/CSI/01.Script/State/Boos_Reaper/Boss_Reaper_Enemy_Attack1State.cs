@@ -8,8 +8,24 @@ public class Boss_Reaper_Enemy_Attack1State : EnermyState
     {
     }
 
+    private float Persent = 20;
+    private float Timer;
     protected override void EnterState()
     {
+        if (_emermy._now2Page)
+        {
+            if (Random.Range(0, 100) <= Persent && Timer >= 3)
+            {
+                Persent = 20;
+                Timer = 0;
+                _emermy.TransitionState(EnemyStateType.Teleport);
+                return;
+            }
+            else
+            {
+                Persent++;
+            }
+        }
         _emermy.RbCompo.velocity = Vector2.zero;
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Attack1);
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
@@ -18,6 +34,7 @@ public class Boss_Reaper_Enemy_Attack1State : EnermyState
 
     public override void UpdateState()
     {
+        Timer += Time.deltaTime;
         if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")) 
                  &&Physics2D.OverlapCircle(_emermy.transform.position, _emermy.SpawnRange,LayerMask.GetMask("Player")) 
                  && _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1") 

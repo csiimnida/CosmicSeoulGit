@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     private Material NormalMat;
     [SerializeField] private Material HitMat;
     
-    public event Action OnDeath;
+    public UnityEvent OnDeath;
 
     public int Exp = 0;
     public int MaxExp = 100;
@@ -128,6 +128,7 @@ public class Player : MonoBehaviour
         {
             TransitionState(PlayerStateType.Death);
             ShakeCamera(enermyDataSo);
+            OnDeath?.Invoke();
         }
     }
     

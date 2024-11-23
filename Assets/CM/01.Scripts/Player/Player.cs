@@ -70,6 +70,8 @@ public class Player : MonoBehaviour
         InputCompo.OnMoveEvent += RotCompo.FaceDirection;
         PlayerData.IsFlip = false;
         NormalMat = SpriteCompo.material;
+        
+        DontDestroyOnLoad(gameObject);
     }
     
     

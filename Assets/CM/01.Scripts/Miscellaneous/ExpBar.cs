@@ -14,13 +14,11 @@ public class ExpBar : MonoBehaviour
 
     public void ExpBarValueChange(int exp){
         _slider.value = exp;
-        Debug.Log("값채인지");
     }
 
     public void ExpBarMaxValueChange(int maxExp){
         _slider.maxValue = maxExp;
         _slider.value = 0;
-        Debug.Log("맥스값 증가");
     }
     
 }

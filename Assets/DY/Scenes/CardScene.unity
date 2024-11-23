@@ -4995,6 +4995,7 @@ MonoBehaviour:
   duration: 0.5
   range: 50
   Sprite: {fileID: 11400000, guid: b8f7d6ffb1572644c826952f45df7a98, type: 2}
+  RandomCardSO: {fileID: 11400000, guid: a58c39c5d6b839b4db61821bf3d31901, type: 2}
 --- !u!4 &341442558
 Transform:
   m_ObjectHideFlags: 0

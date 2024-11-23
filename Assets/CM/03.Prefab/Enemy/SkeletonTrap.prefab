@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -823508542, guid: 577924e21250e5c4fbb20c10199cf8ad, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -263,10 +263,18 @@ MonoBehaviour:
   currentState: 6
   DataSo: {fileID: 11400000, guid: 97566f831c2c5304dba6c239658f0a7d, type: 2}
   CombitTimer: 0
+  CoolTimeMaxTimer: 0
+  CoolTimeNowTimer: 0
   sprite: {fileID: 0}
-  NowHp: 0
+  CoolDowning: 0
   SpawnRange: 6.13
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
+  Dead:
+    m_PersistentCalls:
+      m_Calls: []
+  _isSeeRight: 0
+  SpawnAnimator: {fileID: 0}
+  Now2Page: 0
   <Attack1Size>k__BackingField: {x: 2, y: 2.7}
   attack1Pos: {fileID: 7169653398851497059}
 --- !u!1 &7975734862833254810

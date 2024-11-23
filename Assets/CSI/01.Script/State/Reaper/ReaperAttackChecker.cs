@@ -18,7 +18,7 @@ public class ReaperAttackChecker : MonoBehaviour
         {
             Player player = collider.GetComponent<Player>();
             if(player != null && !player.ColCompo.isTrigger)
-                player.Damage(_reaper.DataSo, _reaper.DataSo.AttackPower);
+                player.Damage(_reaper);
         }
     }
 }

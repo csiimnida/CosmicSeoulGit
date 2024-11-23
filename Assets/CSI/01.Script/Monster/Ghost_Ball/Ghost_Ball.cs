@@ -5,9 +5,10 @@ using UnityEngine;
 public class Ghost_Ball : MonoBehaviour, IPoolable
 {
     [SerializeField] private string _poolName;
-    public EnermyDataSO DataSo;
+    public EnermyDataSO enermyData;
     
     private Rigidbody2D rigidbody2D;
+    public bool _isSeeRight;
 
     private void Awake()
     {
@@ -39,7 +40,7 @@ public class Ghost_Ball : MonoBehaviour, IPoolable
     {
         if (other.transform.CompareTag("Player"))
         {
-            other.GetComponent<Player>().Damage(DataSo,DataSo.AttackPower);
+            other.GetComponent<Player>().Damage(this);
             PoolManager.Instance.Push(this);
         }
     }

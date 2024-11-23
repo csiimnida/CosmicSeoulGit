@@ -10,6 +10,8 @@ public class BloodWorm_Attack2State : EnermyState
     protected override void EnterState(){
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Attack2);
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
+        _emermy._isSeeRight = _emermy.transform.position.x > _emermy.player.transform.position.x;
+
     }
 
     public override void UpdateState(){

@@ -91,27 +91,113 @@ public class Player : MonoBehaviour
     {
         StateEnum[currentState].FixedUpdateState();
     }
-    
-    public void Damage(EnermyDataSO data, float damage){
-        
+
+    public void Damage(Enemy enemy)
+    {
         if (currentState == PlayerStateType.Block)
         {
+            if (enemy._isSeeRight)
+            {
+                
+            }
             TransitionState(PlayerStateType.BlockImpact);
             return;
         }
         if(currentState == PlayerStateType.Roll) return;
         
-        NowHP -= damage;
+        NowHP -= enemy.DataSo.AttackPower;
         if (NowHP > 0)
         {
             SoundManager.Instance.PlaySound("Hurt");
             StartCoroutine(Do_Hit_Effect());
-            ShakeCamera(data);
+            ShakeCamera(enemy.DataSo);
         }
         else if (NowHP <= 0)
         {
             TransitionState(PlayerStateType.Death);
-            ShakeCamera(data);
+            ShakeCamera(enemy.DataSo);
+        }
+    }
+
+    public void Damage(EyeBall script)
+    { 
+        
+        if (currentState == PlayerStateType.Block)
+        {
+            if (script._isSeeRight)
+            {
+                
+            }
+            TransitionState(PlayerStateType.BlockImpact);
+            return;
+        }
+        if(currentState == PlayerStateType.Roll) return;
+        
+        NowHP -= script.enermyData.AttackPower;
+        if (NowHP > 0)
+        {
+            SoundManager.Instance.PlaySound("Hurt");
+            StartCoroutine(Do_Hit_Effect());
+            ShakeCamera(script.enermyData);
+        }
+        else if (NowHP <= 0)
+        {
+            TransitionState(PlayerStateType.Death);
+            ShakeCamera(script.enermyData);
+        }
+    }
+    public void Damage(Ghost_Ball script)
+    { 
+        
+        if (currentState == PlayerStateType.Block)
+        {
+            if (script._isSeeRight)
+            {
+                
+            }
+            TransitionState(PlayerStateType.BlockImpact);
+            return;
+        }
+        if(currentState == PlayerStateType.Roll) return;
+        
+        NowHP -= script.enermyData.AttackPower;
+        if (NowHP > 0)
+        {
+            SoundManager.Instance.PlaySound("Hurt");
+            StartCoroutine(Do_Hit_Effect());
+            ShakeCamera(script.enermyData);
+        }
+        else if (NowHP <= 0)
+        {
+            TransitionState(PlayerStateType.Death);
+            ShakeCamera(script.enermyData);
+        }
+    }
+    public void Damage(Reaper_Ball script)
+    { 
+        
+        if (currentState == PlayerStateType.Block)
+        {
+            if (script._isSeeRight)
+            {
+                
+            }
+            TransitionState(PlayerStateType.BlockImpact);
+            return;
+        }
+        if(currentState == PlayerStateType.Roll) return;
+        
+        NowHP -= script.enermyData.AttackPower;
+        if (NowHP > 0)
+        {
+            SoundManager.Instance.PlaySound("Hurt");
+            StartCoroutine(Do_Hit_Effect());
+            ShakeCamera(script.enermyData);
+        }
+        else if (NowHP <= 0)
+        {
+            TransitionState(PlayerStateType.Death);
+            ShakeCamera(script.enermyData);
         }
     }
     

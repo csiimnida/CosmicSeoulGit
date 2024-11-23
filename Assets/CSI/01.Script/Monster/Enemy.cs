@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
     public Material HitMaterial;
 
     public UnityEvent Dead;
-    
+    public bool _isSeeRight;
     
     public Animator SpawnAnimator;
 

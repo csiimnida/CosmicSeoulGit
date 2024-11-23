@@ -25,20 +25,8 @@ public class Boss_Reaper_Enemy_TeleportState : EnermyState
     protected override void EnterState()
     {
         TelleportWait.MaxTime = 1;
-        float rand = Random.Range(1,100);
-        if (rand >= patsent)
-        {
-            patsent = 20;
-            _emermy.AnimCompo.PlayAnimaiton(AnimationType.TelleportStart);
-            Debug.Log($"{patsent}% 성공");
-        }
-        else
-        {
-            patsent++;
-            Debug.Log($"{patsent}% 실패");
-            _emermy.nextState = EnemyStateType.Move;
-            _emermy.TransitionState(EnemyStateType.Move);
-        }
+        _emermy.AnimCompo.PlayAnimaiton(AnimationType.TelleportStart);
+
     }
 
     public override void UpdateState()

@@ -16,6 +16,8 @@ public class Soul_Ghost_EnemyAttack1State : EnermyState
 
     public override void UpdateState()
     {
+        _emermy.RbCompo.velocity = Vector2.zero;
+
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
         _emermy._isSeeRight = _emermy.transform.position.x > _emermy.player.transform.position.x;
 

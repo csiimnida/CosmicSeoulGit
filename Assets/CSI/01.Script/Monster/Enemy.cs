@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     public bool _isSeeRight;
     
     public Animator SpawnAnimator;
-    public bool Now2Page;
+    public bool _now2Page;
 
     
 

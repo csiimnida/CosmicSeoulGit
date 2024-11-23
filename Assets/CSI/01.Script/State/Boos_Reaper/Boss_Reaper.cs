@@ -11,7 +11,6 @@ public class Boss_Reaper : Enemy
     [field:SerializeField] public Vector2 TelleportAttackSize{ get;private set;}
     public Transform attack1Pos;
     public Transform telleportAttackPos;
-    private bool _2page;
     public AnimatorController _2pageAnim;
     protected void Awake()
     {
@@ -49,9 +48,9 @@ public class Boss_Reaper : Enemy
     protected override void Damage_call(float damage){
         NowHp -= damage;
         StartCoroutine(Do_Hit_Effect());
-        if (NowHp / MaxHp <= 0.5f && !_2page)
+        if (NowHp / MaxHp <= 0.5f && !_now2Page)
         {
-            _2page = true;
+            _now2Page = true;
             AnimCompo.Animator.runtimeAnimatorController = _2pageAnim;
             TransitionState(EnemyStateType.Move);
         }

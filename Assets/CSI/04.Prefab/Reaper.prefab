@@ -164,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 4290510626243955430}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.85, y: 0, z: 0}
+  m_LocalPosition: {x: 0.429, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -228,8 +228,14 @@ MonoBehaviour:
   CoolDowning: 0
   SpawnRange: 5
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
+  Dead:
+    m_PersistentCalls:
+      m_Calls: []
+  _isSeeRight: 0
+  SpawnAnimator: {fileID: 0}
+  Now2Page: 0
   AttackCenter: {fileID: 2902643368291506579}
-  AttackSize: {x: 3.18, y: 6.26}
+  AttackSize: {x: 3.45, y: 6.26}
 --- !u!70 &4788823619844974524
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

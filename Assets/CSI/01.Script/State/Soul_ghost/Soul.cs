@@ -20,9 +20,6 @@ public class Soul : Enemy
 
         MaxHp = DataSo.MaxHp;
         NowHp = MaxHp;
-        
-        
-        
         foreach (EnemyStateType stateType in Enum.GetValues(typeof(EnemyStateType)))
         {
             try

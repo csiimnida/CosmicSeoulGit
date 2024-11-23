@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c79b9a48ca6e66a45b87f70b8afde78a, type: 3}
-  m_Name: TestPoolList
+  m_Name: PoolItemsList
   m_EditorClassIdentifier: 
   list:
   - {fileID: 11400000, guid: df0f1052aeb41bf409fd839124bc6a6d, type: 2}
@@ -19,3 +19,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8c829443d7e0aa54293e38d05ee8aa62, type: 2}
   - {fileID: 11400000, guid: fc326e9dc0157ff4cbe6bbe07eeed6ab, type: 2}
   - {fileID: 11400000, guid: e81d503a976199b41adf4a875ab9f93f, type: 2}
+  - {fileID: 11400000, guid: b85b05c4beeedcb4fbd20dbcdc147c75, type: 2}
+  - {fileID: 11400000, guid: 83b84545572398142beb04e85d871154, type: 2}

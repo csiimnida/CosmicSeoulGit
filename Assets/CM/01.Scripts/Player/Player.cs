@@ -103,12 +103,17 @@ public class Player : MonoBehaviour
     {
         if (currentState == PlayerStateType.Block)
         {
-            if (isSeeRight)
+            if (!isSeeRight && PlayerData.IsFlip)
             {
-                
+                TransitionState(PlayerStateType.BlockImpact);
+                return;
             }
-            TransitionState(PlayerStateType.BlockImpact);
-            return;
+
+            if (isSeeRight && !PlayerData.IsFlip)
+            {
+                TransitionState(PlayerStateType.BlockImpact);
+                return;
+            }
         }
         if(currentState == PlayerStateType.Roll) return;
         

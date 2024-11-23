@@ -17,6 +17,7 @@ public class Candy_Eye_EnermyMoveState : EnermyState
         float positionX = (_emermy.player.transform.position- _emermy.transform.position).normalized.x;
         _emermy.RbCompo.velocity = (new Vector2((positionX)*_emermy.DataSo.MoveSpeed,0));
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
+        _emermy._isSeeRight = _emermy.transform.position.x > _emermy.player.transform.position.x;
         
         
         

@@ -12,6 +12,7 @@ public class Boss_Reaper_Enemy_SpawnState : EnermyState
     {
         _emermy.RbCompo.velocity = Vector2.zero;
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
+        _emermy._isSeeRight = _emermy.transform.position.x > _emermy.player.transform.position.x;
         Up = Random.Range(0, 2) == 0;
         _emermy.SpawnAnimator.Play(Up?"Up":"Down");
         _emermy.AnimCompo.PlayAnimaiton(Up?AnimationType.Spawn:AnimationType.SpawnDown);

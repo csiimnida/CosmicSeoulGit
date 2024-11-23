@@ -9,6 +9,7 @@ public class BombCat_MoveState : EnermyState
     
     protected override void EnterState(){
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Move);
+        SoundManager.Instance.PlaySound("Cat");
     }
 
     public override void UpdateState()

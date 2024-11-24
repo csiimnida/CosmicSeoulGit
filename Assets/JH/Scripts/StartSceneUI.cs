@@ -20,6 +20,7 @@ public class StartSceneUI : MonoBehaviour
     [SerializeField] private Image CreditPanel;
     
     private GameObject SetCreditUI;
+    public GameObject LoadingScreen;
 
     
     [SerializeField] private SoundManager soundManager;
@@ -28,6 +29,7 @@ public class StartSceneUI : MonoBehaviour
     private void Awake()
     {
         SetCreditUI = transform.GetChild(4).gameObject; 
+        
 
     }
 
@@ -53,14 +55,9 @@ public class StartSceneUI : MonoBehaviour
 
     private void GoToTargetScene()
     {
-        if (!string.IsNullOrEmpty(targetSceneName))
-        {
-            SceneManager.LoadScene(targetSceneName);
-        }
-        else
-        {
-            Debug.LogWarning("이동할 씬 이름이 설정되지 않았습니다.");
-        }
+        LoadingScreen.SetActive(true);
+        
+        
     }
 
     private void ActivatePanel()

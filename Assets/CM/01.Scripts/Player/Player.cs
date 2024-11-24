@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
         PlayerData.IsFlip = false;
         NormalMat = SpriteCompo.material;
         
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
     
     

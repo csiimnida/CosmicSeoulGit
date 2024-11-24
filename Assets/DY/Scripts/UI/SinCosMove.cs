@@ -15,8 +15,8 @@ public class SinCosMove : MonoBehaviour
     private void Awake()
     {
         _rect = GetComponent<RectTransform>();
-        speed = Random.Range(1, 8);
-        angleRotate = Random.Range(1, 3);   
+        speed = Random.Range(-2, 2);
+        angleRotate = Random.Range(-2, 2);   
     }
 
     void Update()

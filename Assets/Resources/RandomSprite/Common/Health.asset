@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad4338ef27964042926a86e4cbafdba, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: fbb33dcb8350ea34ab25fc038021dc97, type: 3}
+  Name: "\uB118\uCE58\uB294 \uD65C\uB825"
+  Attack: 0
+  speed: 0
+  AttackSpeed: 0
+  Health: 10
+  Text: "\uB2F9\uC2E0\uC758 \uBAB8\uC740 \uC5D0\uB108\uC9C0\uAC00 \uB118\uCCD0\uD750\uB985\uB2C8\uB2E4."

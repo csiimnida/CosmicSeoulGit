@@ -71,6 +71,9 @@ public class AnimationChange : MonoBehaviour
             case AnimationType.SpawnDown:
                 Play("SpawnDown");
                 break;
+            case AnimationType.ChangePage:
+                Play("ChangePage");
+                break;
             default:
                 break;
         }
@@ -115,5 +118,6 @@ public enum AnimationType
     Spawn,
     SpawnDown,
     TelleportStart,
+    ChangePage,
     TelleportEnd
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -37,6 +38,8 @@ public class Enemy : MonoBehaviour
     public Animator SpawnAnimator;
     public bool _now2Page;
 
+
+    public AnimatorController _2pageAnim;
     
 
     protected virtual void Awake(){
@@ -107,6 +110,7 @@ public enum EnemyStateType
     Dead,
     Spawn,
     Teleport,
+    ChangePage,
     TeleportStart,
     TeleportEnd,
     Empty

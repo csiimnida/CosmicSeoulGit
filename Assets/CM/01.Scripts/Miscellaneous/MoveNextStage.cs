@@ -6,12 +6,11 @@ using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class MoveNextStage : MonoBehaviour
-{
+public class MoveNextStage : MonoBehaviour{
     [SerializeField] private Image _blackPanel;
     [SerializeField] private float _fadeDuration;
     [SerializeField] private string _nextSceneName;
-    
+
     private bool _isClear;
     private bool _isCollision = false;
 
@@ -19,11 +18,10 @@ public class MoveNextStage : MonoBehaviour
         _isClear = SceneManager.GetActiveScene().name == "Tutorial" ? true : false;
     }
 
-    private void OnCollisionEnter2D(Collision2D other){
-        if(other.gameObject.CompareTag("Player"))
-            if(_isClear && !_isCollision)
+    private void OnTriggerEnter2D(Collider2D other){
+        if (other.gameObject.CompareTag("Player"))
+            if (_isClear && !_isCollision)
                 MoveNextStageMethod();
-                
     }
 
     private void MoveNextStageMethod(){

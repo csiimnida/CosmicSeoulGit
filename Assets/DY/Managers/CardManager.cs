@@ -64,8 +64,14 @@ public class CardManager : MonoSingleton<CardManager>
 
     public void GameobjectGet(GameObject obj,bool flag)
     {
+        if (Obiion == null)
+        {
+            Debug.LogError("아흣안돼 거기는 아무것도 없다구~!");
+            return;
+        }
          obj.gameObject.SetActive(flag);
         Obiion = obj;
+
     }
 
     public void RandomSprite()

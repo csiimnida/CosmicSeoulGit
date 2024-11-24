@@ -15,3 +15,4 @@ MonoBehaviour:
   SoundName: Walking
   SoundType: SFX
   AudioClip: {fileID: 8300000, guid: 876025eeb78082d4f8ffdaad1c480bd8, type: 3}
+  SoundProportion: 100

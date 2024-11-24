@@ -90,6 +90,7 @@ public class SoundManager : MonoSingleton<SoundManager>
             AudioSource audioSource = sfxObject.AddComponent<AudioSource>();
             audioSource.clip = clip;
             audioSource.outputAudioMixerGroup = groups[0];
+            audioSource.volume = SoundData.SoundProportion * 0.01f;
             audioSource.Play();
 
             Destroy(sfxObject, clip.length); 

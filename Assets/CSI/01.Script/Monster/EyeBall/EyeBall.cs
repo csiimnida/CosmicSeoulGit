@@ -34,13 +34,13 @@ public class EyeBall : MonoBehaviour, IPoolable
     public void Rotate()
     {
         rigidbody2D.velocity = ((Mathf.Approximately(transform.eulerAngles.y, 180)) ? Vector2.left : Vector2.right) * 2;
-
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.CompareTag("Player"))
         {
+            if (other.GetComponent<Player>().currentState == PlayerStateType.Roll) return;
             other.GetComponent<Player>().Damage(this);
             PoolManager.Instance.Push(this);
         }

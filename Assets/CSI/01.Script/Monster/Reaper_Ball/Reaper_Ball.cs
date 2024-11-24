@@ -62,7 +62,6 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
         }
         else if (other.transform.CompareTag("Ground"))
         {
-            if (other.GetComponent<Player>().currentState == PlayerStateType.Roll) return;
             
             _animator.Play("Die");
             _isDead = true;

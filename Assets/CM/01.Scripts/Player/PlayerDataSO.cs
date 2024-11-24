@@ -15,7 +15,6 @@ public class PlayerDataSO : ScriptableObject
     public float MoveSpeed = 1f;
     public float JumpPower = 4f;
     public float RollPower = 5f;
-
     public float RollCooltime = 5f;
     public float BlockCooltime = 5f;
     public float Skill1Cooltime = 6f;

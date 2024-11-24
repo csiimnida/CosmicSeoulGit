@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public GroundChecker GroundChecker {get ; private set;}
 
     private Dictionary<PlayerStateType, PlayerState> StateEnum = new Dictionary<PlayerStateType, PlayerState>();
-    private PlayerStateType currentState;
+    public PlayerStateType currentState{ get; private set; }
     
     private CinemachineImpulseSource impulseSource;
 

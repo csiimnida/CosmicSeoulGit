@@ -35,18 +35,6 @@ public class Save : MonoSingleton<Save>
         _startSeting = new StartSeting(_playerDataSo);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            TrySave();
-        }
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            LoadData();
-        }
-    }
     
     private void TrySave()
     {
@@ -77,6 +65,7 @@ public class Save : MonoSingleton<Save>
 
     private void LoadData()
     {
+        if(!EasyToJson.IsExistJson("SaveData")) return;
         Datas _saveData;
         _saveData = EasyToJson.FromJson<Datas>("SaveData");
         print("불러오기 성공");

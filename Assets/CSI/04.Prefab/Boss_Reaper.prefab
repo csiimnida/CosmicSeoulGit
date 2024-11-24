@@ -63,7 +63,9 @@ MonoBehaviour:
   Dead:
     m_PersistentCalls:
       m_Calls: []
+  _isSeeRight: 0
   SpawnAnimator: {fileID: 340798776793386298}
+  _now2Page: 0
   <Attack1Size>k__BackingField: {x: 4.36, y: 7.23}
   <TelleportAttackSize>k__BackingField: {x: 6.73, y: 8.48}
   attack1Pos: {fileID: 6834068720950327862}

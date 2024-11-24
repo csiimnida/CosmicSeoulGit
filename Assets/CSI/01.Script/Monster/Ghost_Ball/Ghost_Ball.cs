@@ -40,6 +40,7 @@ public class Ghost_Ball : MonoBehaviour, IPoolable
     {
         if (other.transform.CompareTag("Player"))
         {
+            if (other.GetComponent<Player>().currentState == PlayerStateType.Roll) return;
             other.GetComponent<Player>().Damage(this);
             PoolManager.Instance.Push(this);
         }

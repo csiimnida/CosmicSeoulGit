@@ -13,7 +13,7 @@ public class DeadUI : MonoBehaviour{
     private Tonemapping _tonemapping;
 
 
-    private void Awake(){
+    private void OnEnable(){
         _camera = Camera.main;
         _volume = _camera.GetComponent<Volume>();
 
@@ -23,7 +23,7 @@ public class DeadUI : MonoBehaviour{
             _bloom.intensity.value = 0f; // 기본 강도
             _bloom.scatter.value = 0.5f; // 기본 스캐터링
             _bloom.tint.value = new Color(1, 1, 1); // 기본 색상 (흰색)
-            _volume.enabled = false;
+            //_volume.enabled = false;
         }
         else
         {
@@ -36,7 +36,7 @@ public class DeadUI : MonoBehaviour{
             _vignette.center.value = new Vector2(0.5f, 0.5f); // 화면 중심
             _vignette.intensity.value = 0f; // 기본 강도
             _vignette.smoothness.value = 0.5f; // 기본 부드러움
-            _volume.enabled = false;
+            //_volume.enabled = false;
         }
         else
         {
@@ -57,6 +57,8 @@ public class DeadUI : MonoBehaviour{
 
     public void DeadEffectStart(){
         
+        _camera = Camera.main;
+        _volume = _camera.GetComponent<Volume>();
         StartCoroutine(ApplyVignetteEffectOverTime());
         StartCoroutine(ApplyBloomEffectOverTime());
         _tonemapping.mode.value = TonemappingMode.ACES;

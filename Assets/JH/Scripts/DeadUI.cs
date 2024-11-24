@@ -142,5 +142,45 @@ public class DeadUI : MonoBehaviour{
         _vignette.center.value = targetCenter;
         _vignette.intensity.value = targetIntensity;
         _vignette.smoothness.value = targetSmoothness;
+
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(ReviveEffect());
+
+    }
+    private IEnumerator ReviveEffect()
+    {
+        float duration = 3f; // 서서히 변화하는 데 걸리는 시간(초)
+        float elapsedTime = 0f;
+
+        // 초기값
+        
+        float startIntensity = _bloom.intensity.value;
+        
+
+        // 목표값
+        
+        float targetIntensity = 100000;
+        
+
+        // Volume 활성화
+        _volume.enabled = true;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration; // 0~1로 보간
+
+            // Lerp를 사용해 서서히 값 변경
+            
+            _bloom.intensity.value = Mathf.Lerp(startIntensity, targetIntensity, t);
+            
+
+            yield return null; // 다음 프레임까지 대기
+        }
+
+        // 마지막 목표값 보장
+        
+        _bloom.intensity.value = targetIntensity;
+       
     }
 }

@@ -69,6 +69,8 @@ public class Boss_Reaper : Enemy
         yield return new WaitForSeconds(0.1f);
         sprite.material = NomallMaterial;
     }
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;

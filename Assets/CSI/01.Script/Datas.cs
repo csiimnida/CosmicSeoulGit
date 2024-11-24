@@ -1,6 +1,6 @@
 public class Datas
 {
-    public string _screen_name = "JHStart";
+    public string _screen_name = "FirstStage";
     public float Damage = 10;
     public float Health = 100;
     public float Attack_Speed = 1;

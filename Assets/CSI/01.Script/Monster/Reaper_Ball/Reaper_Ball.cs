@@ -52,6 +52,8 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
     {
         if (other.transform.CompareTag("Player"))
         {
+            if (other.GetComponent<Player>().currentState == PlayerStateType.Roll) return;
+            
             other.GetComponent<Player>().Damage(this);
             _animator.Play("Die");
             _isDead = true;
@@ -60,6 +62,8 @@ public class Reaper_Ball : MonoBehaviour, IPoolable
         }
         else if (other.transform.CompareTag("Ground"))
         {
+            if (other.GetComponent<Player>().currentState == PlayerStateType.Roll) return;
+            
             _animator.Play("Die");
             _isDead = true;
             rigidbody2D.velocity = Vector2.zero;

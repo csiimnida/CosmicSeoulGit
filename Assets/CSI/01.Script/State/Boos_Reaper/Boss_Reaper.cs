@@ -52,6 +52,7 @@ public class Boss_Reaper : Enemy
         StartCoroutine(Do_Hit_Effect());
         if (NowHp / MaxHp <= 0.5f && !_now2Page)
         {
+            CoolDowning = false;
             _now2Page = true;
             TransitionState(EnemyStateType.ChangePage);
             ChangePage?.Invoke();

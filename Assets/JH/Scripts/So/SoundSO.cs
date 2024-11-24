@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -13,10 +11,11 @@ public class SoundSO : ScriptableObject
 
     public AudioClip AudioClip;
 
+    [Range(0,100)] public float SoundProportion;
+
     public enum SoundTypes
     {
         BGM,
-        SFX,
-        
+        SFX
     }
 }

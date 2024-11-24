@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     private Material NormalMat;
     [SerializeField] private Material HitMat;
     
-    public event Action OnDeath;
+    public UnityEvent OnDeath;
 
     public int Exp = 0;
     public int MaxExp = 100;
@@ -103,12 +103,17 @@ public class Player : MonoBehaviour
     {
         if (currentState == PlayerStateType.Block)
         {
-            if (isSeeRight)
+            if (!isSeeRight && PlayerData.IsFlip)
             {
-                
+                TransitionState(PlayerStateType.BlockImpact);
+                return;
             }
-            TransitionState(PlayerStateType.BlockImpact);
-            return;
+
+            if (isSeeRight && !PlayerData.IsFlip)
+            {
+                TransitionState(PlayerStateType.BlockImpact);
+                return;
+            }
         }
         if(currentState == PlayerStateType.Roll) return;
         
@@ -123,6 +128,7 @@ public class Player : MonoBehaviour
         {
             TransitionState(PlayerStateType.Death);
             ShakeCamera(enermyDataSo);
+            OnDeath?.Invoke();
         }
     }
     

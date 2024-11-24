@@ -1,14 +1,11 @@
 using System.Collections;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.UI;
-public class DeadUI : MonoBehaviour
-{
-    [SerializeField] private Camera _camera;
+
+public class DeadUI : MonoBehaviour{
+    private Camera _camera;
     [SerializeField] private VolumeProfile _profile;
     private Volume _volume;
     private Bloom _bloom;
@@ -16,8 +13,8 @@ public class DeadUI : MonoBehaviour
     private Tonemapping _tonemapping;
 
 
-    private void Awake()
-    {
+    private void Awake(){
+        _camera = Camera.main;
         _volume = _camera.GetComponent<Volume>();
 
         if (_profile.TryGet(out _bloom))
@@ -27,7 +24,6 @@ public class DeadUI : MonoBehaviour
             _bloom.scatter.value = 0.5f; // 기본 스캐터링
             _bloom.tint.value = new Color(1, 1, 1); // 기본 색상 (흰색)
             _volume.enabled = false;
-            
         }
         else
         {
@@ -46,6 +42,7 @@ public class DeadUI : MonoBehaviour
         {
             Debug.LogWarning("VolumeProfile에 Vignette 효과가 없습니다.");
         }
+
         if (_profile.TryGet(out _tonemapping))
         {
             _tonemapping.mode.value = TonemappingMode.None;
@@ -54,21 +51,18 @@ public class DeadUI : MonoBehaviour
         {
             Debug.LogWarning("VolumeProfile에 Tonemapping 효과가 없습니다.");
         }
+        
+        DontDestroyOnLoad(gameObject);
     }
 
-    private void Update()
-    {
-        if (Keyboard.current.jKey.wasPressedThisFrame && _bloom != null)
-        {
-            StartCoroutine(ApplyVignetteEffectOverTime());
-            StartCoroutine(ApplyBloomEffectOverTime());
-            _tonemapping.mode.value = TonemappingMode.ACES;
-            
-        }
+    public void DeadEffectStart(){
+        
+        StartCoroutine(ApplyVignetteEffectOverTime());
+        StartCoroutine(ApplyBloomEffectOverTime());
+        _tonemapping.mode.value = TonemappingMode.ACES;
     }
 
-    private IEnumerator ApplyBloomEffectOverTime()
-    {
+    private IEnumerator ApplyBloomEffectOverTime(){
         float duration = 1f; // 서서히 변화하는 데 걸리는 시간(초)
         float elapsedTime = 0f;
 
@@ -106,11 +100,9 @@ public class DeadUI : MonoBehaviour
         _bloom.intensity.value = targetIntensity;
         _bloom.scatter.value = targetScatter;
         _bloom.tint.value = targetTint;
-        
-
     }
-    private IEnumerator ApplyVignetteEffectOverTime()
-    {
+
+    private IEnumerator ApplyVignetteEffectOverTime(){
         float duration = 1.2f; // 서서히 변화하는 데 걸리는 시간(초)
         float elapsedTime = 0f;
 
@@ -148,10 +140,5 @@ public class DeadUI : MonoBehaviour
         _vignette.center.value = targetCenter;
         _vignette.intensity.value = targetIntensity;
         _vignette.smoothness.value = targetSmoothness;
-        
-       
-        
     }
-
-   
 }

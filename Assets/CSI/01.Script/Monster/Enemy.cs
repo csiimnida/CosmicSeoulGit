@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
@@ -26,8 +26,8 @@ public class Enemy : MonoBehaviour
     public SpriteRenderer sprite;
     public bool CoolDowning;
 
-    protected float NowHp;
-    protected float MaxHp;
+    public float NowHp;
+    public float MaxHp;
     public float SpawnRange = 5f;
 
     protected Material NomallMaterial;
@@ -41,7 +41,10 @@ public class Enemy : MonoBehaviour
 
 
     public AnimatorController _2pageAnim;
-    public Transform BloodRequiemEffect;
+    public Transform BloodBloodRequiemEffect;
+
+    public float ReqamTimer;
+    public float ReqamTimerMax = 60;
     
 
     protected virtual void Awake(){

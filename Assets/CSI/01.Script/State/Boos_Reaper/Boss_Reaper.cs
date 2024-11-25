@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
 using UnityEngine.Rendering.PostProcessing;
+using Random = UnityEngine.Random;
 
 public class Boss_Reaper : Enemy
 {
@@ -70,6 +71,21 @@ public class Boss_Reaper : Enemy
             return;
         }
     }
+    
+
+    private void LateUpdate()
+    {
+        ReqamTimer += Time.deltaTime;
+        if (_now2Page && ReqamTimer>=ReqamTimerMax)
+        {
+            ReqamTimer = 0;
+            if (Random.Range(0, 100) <= 30)
+            {
+                TransitionState(EnemyStateType.BloodRequiem);
+            }
+        }
+    }
+
     private IEnumerator Do_Hit_Effect()
     {
         sprite.material = HitMaterial;

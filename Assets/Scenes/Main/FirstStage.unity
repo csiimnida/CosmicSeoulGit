@@ -12997,6 +12997,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 633256333809534154, guid: 96db154c64137424abc20899240ad454, type: 3}
+      propertyPath: _backgroundBgm
+      value: 
+      objectReference: {fileID: 155833935}
     - target: {fileID: 771395569092858327, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: _backgroundBgm
       value: 

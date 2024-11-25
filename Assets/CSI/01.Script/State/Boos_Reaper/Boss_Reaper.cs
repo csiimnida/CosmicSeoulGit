@@ -14,9 +14,9 @@ public class Boss_Reaper : Enemy
     [field:SerializeField] public Vector2 TelleportAttackSize{ get;private set;}
     public Transform attack1Pos;
     public Transform telleportAttackPos;
+    public PlayableDirector playbackState;
     public UnityEvent ChangePage;
     
-    public Playable playbackState;
     protected void Awake()
     {
         AnimCompo = GetComponentInChildren<AnimationChange>();

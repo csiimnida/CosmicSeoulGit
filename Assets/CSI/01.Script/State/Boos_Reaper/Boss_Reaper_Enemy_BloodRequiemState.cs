@@ -15,23 +15,23 @@ public class Boss_Reaper_Enemy_BloodRequiemState : EnermyState
     {
         Started = false;
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.BloodRequiem);
-        _emermy.BloodBloodRequiemEffect.gameObject.SetActive(true);
+        _emermy.BloodRequiemEffect.gameObject.SetActive(true);
         _emermy.SpawnAnimator.gameObject.SetActive(false);
         nowHp = _emermy.NowHp;
         _emermy.NowHp += _emermy.MaxHp * 5 / 100;
         if (_emermy._isSeeRight)
         {
-            _emermy.BloodBloodRequiemEffect.DOMoveZ(+50, 0.1f);
+            _emermy.BloodRequiemEffect.DOMoveZ(+50, 0.1f);
 
         }
         else
         {
-            _emermy.BloodBloodRequiemEffect.DOMoveZ(-50, 0.1f);
+            _emermy.BloodRequiemEffect.DOMoveZ(-50, 0.1f);
 
         }
-        _emermy.BloodBloodRequiemEffect.localScale = Vector3.zero;
-        _emermy.BloodBloodRequiemEffect.DOMoveY(-3.5f, 8f);
-        _emermy.BloodBloodRequiemEffect.DOScale(1.5f, 10f).OnComplete(() =>
+        _emermy.BloodRequiemEffect.localScale = Vector3.zero;
+        _emermy.BloodRequiemEffect.DOMoveY(-3.5f, 8f);
+        _emermy.BloodRequiemEffect.DOScale(1.5f, 10f).OnComplete(() =>
         {
             Started = true;
             StartEfect();
@@ -54,19 +54,19 @@ public class Boss_Reaper_Enemy_BloodRequiemState : EnermyState
     private void StartEfect()
     {
         _emermy.SpawnAnimator.gameObject.SetActive(true);        
-        _emermy.BloodBloodRequiemEffect.DOScale(0f, 0.2f).OnComplete(() =>
+        _emermy.BloodRequiemEffect.DOScale(0f, 0.2f).OnComplete(() =>
         {
-            _emermy.BloodBloodRequiemEffect.DOScale(0f, 0.3f).OnComplete(() =>
+            _emermy.BloodRequiemEffect.DOScale(0f, 0.3f).OnComplete(() =>
             {
-                _emermy.BloodBloodRequiemEffect.DOMoveY(-40, 0.3f);
+                _emermy.BloodRequiemEffect.DOMoveY(-40, 0.3f);
                 
 
-                _emermy.BloodBloodRequiemEffect.DOScale(10f, 0.5f).OnComplete(() =>
+                _emermy.BloodRequiemEffect.DOScale(10f, 0.5f).OnComplete(() =>
                 {
                     _emermy.player.Damage(_emermy);
-                    _emermy.BloodBloodRequiemEffect.DOScale(10f, 0.5f).OnComplete(() => 
+                    _emermy.BloodRequiemEffect.DOScale(10f, 0.5f).OnComplete(() => 
                     { 
-                        _emermy.BloodBloodRequiemEffect.gameObject.SetActive(false);
+                        _emermy.BloodRequiemEffect.gameObject.SetActive(false);
                         _emermy.SpawnAnimator.gameObject.SetActive(false);
                         _emermy.TransitionState(EnemyStateType.Move);
                     });

@@ -152,7 +152,7 @@ MonoBehaviour:
   SpawnAnimator: {fileID: 340798776793386298}
   _now2Page: 0
   _2pageAnim: {fileID: 9100000, guid: adc055505d8120040828430037e275f7, type: 2}
-  BloodBloodRequiemEffect: {fileID: 7286139083817304948}
+  BloodRequiemEffect: {fileID: 7286139083817304948}
   ReqamTimer: 0
   ReqamTimerMax: 60
   <Attack1Size>k__BackingField: {x: 4.36, y: 7.23}

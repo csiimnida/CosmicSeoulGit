@@ -22,19 +22,29 @@ public class CardManager : MonoSingleton<CardManager>
    [SerializeField] PlayerDataSO _playerDataSO = null;
     GameObject Obiion;
     int spriteRand = 0;
+   [SerializeField] Camera cam;
     private void Awake()
     {_well = new List<GameObject>(2);
         _cheack = new CardCheacker[3];
         child= transform.GetChild(0);
         for (int i = 0; i <= 2; i++)
         { _well.Add(Instantiate(_CardPrefab, transform));
+            DontDestroyOnLoad(_well[i].gameObject);
             _well[i].transform.GetChild(0).gameObject.AddComponent<CardCheacker>();
             _cheack[i] = _well[i].transform.GetChild(0).GetComponent<CardCheacker>();
             _cheack[i]._OnClick += RandomSprite;
             _well[i].GetComponent<Canvas>().worldCamera = Camera.main;
             _well[i] = _well[i].transform.GetChild(0).gameObject;
         }
-        StartCardPolling();
+       
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            StartCardPolling();
+        }
     }
     public void StartCardPolling()
     { for (int i = 0; i < 3; i++)

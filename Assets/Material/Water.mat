@@ -51,13 +51,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Power: -1.25
+    - _Power: -1.43
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Scale: 32.64
-    - _Speed: 10.3
-    - _Speed_1: 0.01
+    - _Speed: 13.45
+    - _Speed_1: 0.15
     m_Colors:
-    - _Color: {r: 0.408805, g: 0, b: 0.03131274, a: 0}
+    - _Color: {r: 0.13836467, g: 0, b: 0.010643477, a: 0}
   m_BuildTextureStacks: []
-  m_AllowLocking: 1

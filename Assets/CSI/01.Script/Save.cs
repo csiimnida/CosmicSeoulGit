@@ -35,8 +35,21 @@ public class Save : MonoSingleton<Save>
         _startSeting = new StartSeting(_playerDataSo);
     }
 
-    
-    private void TrySave()
+    public void TrySave(string NextScreenName)
+    {
+        Datas data = new Datas();
+        data.Damage = _playerDataSo.Damage;
+        data.MoveSpeed = _playerDataSo.MoveSpeed;
+        data.RollPower  = _playerDataSo.RollPower;
+        data.Health = _playerDataSo.Hp;
+        data.Attack_Speed = _playerDataSo.SwordAttackTime;
+        data.MaxExp = _player.MaxExp;
+        data.Exp = _player.Exp;
+        data._screen_name = NextScreenName;
+        EasyToJson.ToJson<Datas>(data,"SaveData",false);
+        
+    }
+    public void TrySave()
     {
         Datas data = new Datas();
         data.Damage = _playerDataSo.Damage;

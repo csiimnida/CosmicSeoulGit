@@ -16,10 +16,21 @@ public class PlayTimeline : MonoBehaviour
     }
 
     private void Start(){
-        _player = GameManager.Instance.Player;
     }
 
     private void Update(){
+        if (!_player)
+        {
+            try
+            {
+                _player = GameManager.Instance.Player;
+            }
+            finally
+            {
+            }
+            
+            return;
+        }
         if (_checker.position.x <= _player.transform.position.x && check == false)
         {
             _playableDirector.Play();

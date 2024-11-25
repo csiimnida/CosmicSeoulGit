@@ -14,6 +14,17 @@ public class PoolManager : MonoSingleton<PoolManager>
         {
             CreatePool(so);
         }
+        
+    }
+
+    public void PushAll(){
+        foreach (Transform VARIABLE in transform)
+        {
+            if (VARIABLE.gameObject.activeSelf)
+            {
+                Push(VARIABLE.GetComponent<IPoolable>());
+            }
+        }
     }
 
     private void CreatePool(PoolItemSO so)

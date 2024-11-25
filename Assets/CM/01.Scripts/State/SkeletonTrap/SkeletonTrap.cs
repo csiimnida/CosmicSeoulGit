@@ -30,7 +30,6 @@ public class SkeletonTrap : Enemy
             }
             catch (Exception e)
             {
-                Debug.Log($"{stateType.ToString()}를 찾을수 없습니다");
             }
         }
         TransitionState(EnemyStateType.Empty);
@@ -45,6 +44,14 @@ public class SkeletonTrap : Enemy
     protected override void Damage_call(float damage){
         NowHp -= damage;
         StartCoroutine(Do_Hit_Effect());
+        if (!Combit)
+        {
+            Combit = true;
+            if(currentState == EnemyStateType.Attack1)
+                TransitionState(EnemyStateType.Attack1);
+            else
+                TransitionState(EnemyStateType.Move);
+        }
         if (NowHp <= 0)
         {
             print("죽음");

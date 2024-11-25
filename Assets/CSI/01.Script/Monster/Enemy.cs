@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class Enemy : MonoBehaviour
 
 
     public AnimatorController _2pageAnim;
-    public Transform BloodBloodRequiemEffect;
+    public Transform BloodRequiemEffect;
     
 
     protected virtual void Awake(){

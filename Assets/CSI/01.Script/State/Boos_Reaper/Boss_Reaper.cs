@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Playables;
 using UnityEngine.Rendering.PostProcessing;
 
 public class Boss_Reaper : Enemy
@@ -13,6 +14,8 @@ public class Boss_Reaper : Enemy
     public Transform attack1Pos;
     public Transform telleportAttackPos;
     public UnityEvent ChangePage;
+    
+    public Playable playbackState;
     protected void Awake()
     {
         AnimCompo = GetComponentInChildren<AnimationChange>();
@@ -54,6 +57,7 @@ public class Boss_Reaper : Enemy
         {
             CoolDowning = false;
             _now2Page = true;
+            playbackState.Play();
             TransitionState(EnemyStateType.ChangePage);
             ChangePage?.Invoke();
         }
@@ -72,7 +76,10 @@ public class Boss_Reaper : Enemy
         yield return new WaitForSeconds(0.1f);
         sprite.material = NomallMaterial;
     }
-
+    public void DoneChangeBackGround()
+    {
+        TransitionState(EnemyStateType.Move);
+    }
 
     private void OnDrawGizmos()
     {

@@ -204,7 +204,7 @@ public class DeadUI : MonoBehaviour{
 
             yield return null; // 다음 프레임까지 대기
         }
-
+        Destroy(GameManager.Instance.Player.gameObject);
         Save.Instance.LoadButtn();
 
         // 마지막 목표값 보장

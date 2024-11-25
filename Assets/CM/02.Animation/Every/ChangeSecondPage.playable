@@ -380,7 +380,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 10.066667
+    m_StopTime: 10.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -489,4 +489,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 10.25
+    functionName: DoneChangeBackGround
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 0bf9a28e1a3c7244cbaada0544c7fdd9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

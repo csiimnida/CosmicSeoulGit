@@ -11,7 +11,7 @@ public class Boss_Reaper_Enemy_BloodRequiemState : EnermyState
     protected override void EnterState()
     {
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.BloodRequiem);
-        _emermy.BloodBloodRequiemEffect.gameObject.SetActive(true);
+        _emermy.BloodRequiemEffect.gameObject.SetActive(true);
         _emermy.SpawnAnimator.enabled = false;
         
 
@@ -30,7 +30,7 @@ public class Boss_Reaper_Enemy_BloodRequiemState : EnermyState
     protected override void ExtiState()
     {
         _emermy.SpawnAnimator.enabled = true;        
-        _emermy.BloodBloodRequiemEffect.gameObject.SetActive(false);
+        _emermy.BloodRequiemEffect.gameObject.SetActive(false);
 
     }
 }

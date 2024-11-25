@@ -15,7 +15,6 @@ public class GameManager : MonoSingleton<GameManager>{
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1){
-        if (arg0.name == "Tutorial") return;
         _playerPostionSetting = GameObject.Find("PlayerSpawnPostion"); 
 
         Transform a;
@@ -25,15 +24,18 @@ public class GameManager : MonoSingleton<GameManager>{
     }
 
     private void Awake(){
-        if (SceneManager.GetActiveScene().name == "Tutorial") return;
         try
         {
-            _playerPostionSetting = GameObject.Find("PlayerSpawnPostion").GetComponent<GameObject>(); 
+            _playerPostionSetting = GameObject.Find("PlayerSpawnPostion"); 
         }
         catch (Exception e)
         {
             Debug.Log(e);
         }
         Player = Instantiate(playerPrefab, _playerPostionSetting.transform.position, Quaternion.identity).GetComponent<Player>();
+        if (SceneManager.GetActiveScene().name == "JHStart")
+        {
+            Player.transform.Find("PlayerUI").gameObject.SetActive(false);
+        }
     }
 }

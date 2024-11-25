@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
 
 
     public AnimatorController _2pageAnim;
+    public Transform BloodBloodRequiemEffect;
     
 
     protected virtual void Awake(){
@@ -113,5 +114,6 @@ public enum EnemyStateType
     ChangePage,
     TeleportStart,
     TeleportEnd,
+    BloodRequiem,
     Empty
 }

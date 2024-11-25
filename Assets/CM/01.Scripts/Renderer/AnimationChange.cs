@@ -74,6 +74,9 @@ public class AnimationChange : MonoBehaviour
             case AnimationType.ChangePage:
                 Play("ChangePage");
                 break;
+            case AnimationType.BloodRequiem:
+                Play("BloodRequiem");
+                break;
             default:
                 break;
         }
@@ -118,6 +121,7 @@ public enum AnimationType
     Spawn,
     SpawnDown,
     TelleportStart,
+    BloodRequiem,
     ChangePage,
     TelleportEnd
 }

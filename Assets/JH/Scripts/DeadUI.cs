@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,12 +13,11 @@ public class DeadUI : MonoBehaviour{
     private Vignette _vignette;
     private Tonemapping _tonemapping;
     private ColorAdjustments _colorAdjustments;
+    private Player _player;
 
-
-    private void OnEnable(){
-        _camera = Camera.main;
-        _volume = _camera.GetComponent<Volume>();
-
+    private void Awake(){
+        Debug.Log(_player);
+        
         if (_profile.TryGet(out _bloom))
         {
             _bloom.threshold.value = 1f; // 기본 임계값
@@ -52,7 +52,7 @@ public class DeadUI : MonoBehaviour{
         {
             Debug.LogWarning("VolumeProfile에 Tonemapping 효과가 없습니다.");
         }
-        
+
         if (_profile.TryGet(out _colorAdjustments))
         {
             _colorAdjustments.postExposure.value = 0f;
@@ -61,17 +61,35 @@ public class DeadUI : MonoBehaviour{
         {
             Debug.LogWarning("VolumeProfile에 Tonemapping 효과가 없습니다.");
         }
+
         
+    }
+
+    private void Start(){
         DontDestroyOnLoad(gameObject);
+        /*_player = GameManager.Instance.Player;
+        _player.OnDeath += DeadEffectStart;*/
     }
 
     public void DeadEffectStart(){
-        
         _camera = Camera.main;
         _volume = _camera.GetComponent<Volume>();
         StartCoroutine(ApplyVignetteEffectOverTime());
         StartCoroutine(ApplyBloomEffectOverTime());
         _tonemapping.mode.value = TonemappingMode.ACES;
+    }
+
+    private void Update(){
+        if (_player == null)
+        {
+            try
+            {
+                _player = GameManager.Instance.Player;
+                _player.OnDeath += DeadEffectStart;
+            }
+            finally{}
+            
+        }
     }
 
     private IEnumerator ApplyBloomEffectOverTime(){
@@ -155,22 +173,21 @@ public class DeadUI : MonoBehaviour{
 
         yield return new WaitForSeconds(2f);
         StartCoroutine(ReviveEffect());
-
     }
-    private IEnumerator ReviveEffect()
-    {
+
+    private IEnumerator ReviveEffect(){
         float duration = 3f; // 서서히 변화하는 데 걸리는 시간(초)
         float elapsedTime = 0f;
 
         // 초기값
-        
+
         float startPostExposure = _colorAdjustments.postExposure.value;
-        
+
 
         // 목표값
 
         float targetPostExposure = -10f;
-        
+
 
         // Volume 활성화
         _volume.enabled = true;
@@ -181,17 +198,17 @@ public class DeadUI : MonoBehaviour{
             float t = elapsedTime / duration; // 0~1로 보간
 
             // Lerp를 사용해 서서히 값 변경
-            
-            _colorAdjustments.postExposure.value = Mathf.Lerp(startPostExposure,targetPostExposure, t);
-            
+
+            _colorAdjustments.postExposure.value = Mathf.Lerp(startPostExposure, targetPostExposure, t);
+
 
             yield return null; // 다음 프레임까지 대기
         }
+
         Save.Instance.LoadButtn();
 
         // 마지막 목표값 보장
-        
+
         _colorAdjustments.postExposure.value = targetPostExposure;
-       
     }
 }

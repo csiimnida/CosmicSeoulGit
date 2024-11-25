@@ -11,6 +11,7 @@ public class DeadUI : MonoBehaviour{
     private Bloom _bloom;
     private Vignette _vignette;
     private Tonemapping _tonemapping;
+    private ColorAdjustments _colorAdjustments;
 
 
     private void OnEnable(){
@@ -46,6 +47,15 @@ public class DeadUI : MonoBehaviour{
         if (_profile.TryGet(out _tonemapping))
         {
             _tonemapping.mode.value = TonemappingMode.None;
+        }
+        else
+        {
+            Debug.LogWarning("VolumeProfile에 Tonemapping 효과가 없습니다.");
+        }
+        
+        if (_profile.TryGet(out _colorAdjustments))
+        {
+            _colorAdjustments.postExposure.value = 0f;
         }
         else
         {
@@ -154,12 +164,12 @@ public class DeadUI : MonoBehaviour{
 
         // 초기값
         
-        float startIntensity = _bloom.intensity.value;
+        float startPostExposure = _colorAdjustments.postExposure.value;
         
 
         // 목표값
-        
-        float targetIntensity = 100000;
+
+        float targetPostExposure = -10f;
         
 
         // Volume 활성화
@@ -172,15 +182,16 @@ public class DeadUI : MonoBehaviour{
 
             // Lerp를 사용해 서서히 값 변경
             
-            _bloom.intensity.value = Mathf.Lerp(startIntensity, targetIntensity, t);
+            _colorAdjustments.postExposure.value = Mathf.Lerp(startPostExposure,targetPostExposure, t);
             
 
             yield return null; // 다음 프레임까지 대기
         }
+        Save.Instance.LoadButtn();
 
         // 마지막 목표값 보장
         
-        _bloom.intensity.value = targetIntensity;
+        _colorAdjustments.postExposure.value = targetPostExposure;
        
     }
 }

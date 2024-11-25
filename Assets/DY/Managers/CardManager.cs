@@ -10,58 +10,81 @@ using Random = UnityEngine.Random;
 using UnityEngine.InputSystem.HID;
 public class CardManager : MonoSingleton<CardManager>
 {
-    string[] var;
+    string[] var = null;
     [SerializeField] private List<GameObject> _well = null;
     [SerializeField] private GameObject _CardPrefab = null;
     private Transform child = null;
     public float duration = 0.2f;
-    public float range = 10f;
     [SerializeField] private CardSO Sprite = null;
     [SerializeField] private AwakeSO[] RandomCardSO = null;
-   public CardCheacker[] _cheack = null;
-   [SerializeField] PlayerDataSO _playerDataSO = null;
+    public CardCheacker[] _cheack = null;
+    [SerializeField] PlayerDataSO _playerDataSO = null;
     GameObject Obiion;
     int spriteRand = 0;
-   [SerializeField] Camera cam;
+    [SerializeField] private Transform EndTarget;
+    [SerializeField] private Transform Target;
+    private Player _player;
+    private CheckLevelUp _checkLevelUp;
+    private int a = 0;
+ 
     private void Awake()
-    {_well = new List<GameObject>(2);
+    {
+        _well = new List<GameObject>(2);
         _cheack = new CardCheacker[3];
         child= transform.GetChild(0);
-        for (int i = 0; i <= 2; i++)
-        { _well.Add(Instantiate(_CardPrefab, transform));
-            DontDestroyOnLoad(_well[i].gameObject);
-            _well[i].transform.GetChild(0).gameObject.AddComponent<CardCheacker>();
-            _cheack[i] = _well[i].transform.GetChild(0).GetComponent<CardCheacker>();
-            _cheack[i]._OnClick += RandomSprite;
-            _well[i].GetComponent<Canvas>().worldCamera = Camera.main;
-            _well[i] = _well[i].transform.GetChild(0).gameObject;
-        }
-        StartCardPolling();
+     
     }
 
+    private void Start()
+    {
+        _player = GameManager.Instance.Player;
+        _checkLevelUp = _player.GetComponentInChildren<CheckLevelUp>();
+        _checkLevelUp.OnLevelUp.AddListener(StartCardPolling);
 
-    public void StartCardPolling()
-    { for (int i = 0; i < 3; i++)
-            _well[i].transform.DOMove(new Vector3(_well[i].transform.position.x * i * range, child.transform.position.y, _well[i].transform.position.z), duration);
-        _well[1].transform.DOMove(new Vector3(_well[1].transform.position.x * 1 * -100, child.transform.position.y, _well[1].transform.position.z), duration);
-        BackSpriteFOr();
+    }
+
+    public void StartCardPolling(int a)
+    {
+        _well = new List<GameObject>(2);
+        _cheack = new CardCheacker[3];
+        for (int i = 0; i <= 2; i++)
+        {
+            _well.Add(Instantiate(_CardPrefab, transform));
+         
+            _cheack[i] = _well[i].transform.GetChild(0).GetComponent<CardCheacker>();
+            _cheack[i]._OnClick += RandomSprite;
+            _well[i].GetComponentInParent<Canvas>().worldCamera = Camera.main;
+            _well[i] = _well[i].transform.GetChild(0).gameObject;
+        }
+        _well[1].transform.DOMove(new Vector3((Target.position.x * 0) * 55f, Target.position.y, Target.position.z), duration);
+        _well[2].transform.DOMove(new Vector3((Target.position.x * 1) * -55f, Target.position.y, Target.position.z), duration);
+        _well[0].transform.DOMove(new Vector3((Target.position.x * 1) * 55f, Target.position.y, Target.position.z), duration);
+       BackSpriteFOr();
     }
 
     public void EndCardPolling()
     { // 어 여기가 끝났을때
+      
         for (int i = 0; i < 3; i++)
-            _well[i].transform.DOMove(new Vector3(_well[i].transform.position.x * i * range, child.transform.position.y - 100, _well[i].transform.position.z), duration);
-        _well[1].transform.DOMove(new Vector3(_well[1].transform.position.x * 1 * -100, child.transform.position.y, _well[1].transform.position.z), duration);
-        BackSpriteFOr();
-        var = null;
+            _well[i].transform.DOMove(new Vector3(EndTarget.position.x, EndTarget.position.y - 75, EndTarget.position.z), duration).OnComplete(() =>
+            {
+                for (int i = 0; i < 3; i++)
+                    Destroy(_well[i].transform.parent.gameObject);
+                _well = null;
+                _cheack = null;
+                _cheack[i]._OnClick -= RandomSprite;
+            });
+     
+ 
+      
+       
     }
     public void BackSpriteFOr()
     {for (int i = 0; i < 3; i++)
         {_well[i].transform.DOScaleX(0.18f, duration);
             _well[i].transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
-            _well[i].GetComponent<Image>().sprite = Sprite.BackSprite;
-            _well[i].transform.GetChild(1).gameObject.SetActive(false);
-
+            _well[i].transform.GetChild(0).GetComponent<Image>().sprite = Sprite.BackSprite;
+            _well[i].transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         }   
     }
     public void FrontSprite<T>(T target) where T : Component
@@ -89,8 +112,9 @@ public class CardManager : MonoSingleton<CardManager>
     }
 
     public void RandomSprite()
-    { int stage = 0;
-          if (stage == 0)
+    { 
+        int stage = 0;
+        if (stage == 0)
             Stage0();
         if (stage == 1)
             Stage1();
@@ -125,6 +149,7 @@ public class CardManager : MonoSingleton<CardManager>
     }
     private void EnterChange<T>(T t)
     {
+        
         RandomCardSO = Resources.LoadAll<AwakeSO>($"RandomSprite/{t}");
         spriteRand = Random.Range(0, RandomCardSO.Length);
         child.GetChild(0).GetComponent<Image>().sprite = RandomCardSO[spriteRand].sprite;

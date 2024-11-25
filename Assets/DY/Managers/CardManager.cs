@@ -36,16 +36,10 @@ public class CardManager : MonoSingleton<CardManager>
             _well[i].GetComponent<Canvas>().worldCamera = Camera.main;
             _well[i] = _well[i].transform.GetChild(0).gameObject;
         }
-       
+        StartCardPolling();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            StartCardPolling();
-        }
-    }
+
     public void StartCardPolling()
     { for (int i = 0; i < 3; i++)
             _well[i].transform.DOMove(new Vector3(_well[i].transform.position.x * i * range, child.transform.position.y, _well[i].transform.position.z), duration);
@@ -84,12 +78,12 @@ public class CardManager : MonoSingleton<CardManager>
 
     public void GameobjectGet(GameObject obj,bool flag)
     {
-        if (Obiion == null)
+        if (obj == null)
         {
             Debug.LogError("이거는 아무것도 없습니다.");
             return;
         }
-         obj.gameObject.SetActive(flag);
+        obj.gameObject.SetActive(flag);
         Obiion = obj;
 
     }

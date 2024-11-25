@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         CombitTimer += Time.deltaTime;
-        if (CombitTimer >= 10)////////////////////////////CombitTimer 수정 요함
+        if (CombitTimer >= 20)////////////////////////////CombitTimer 수정 요함
         {
             Combit = false;
         }

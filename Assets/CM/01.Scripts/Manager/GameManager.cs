@@ -15,6 +15,8 @@ public class GameManager : MonoSingleton<GameManager>{
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1){
+        PoolManager.Instance.PushAll();
+
         _playerPostionSetting = GameObject.Find("PlayerSpawnPostion"); 
 
         Transform a;
@@ -33,7 +35,7 @@ public class GameManager : MonoSingleton<GameManager>{
             Debug.Log(e);
         }
         Player = Instantiate(playerPrefab, _playerPostionSetting.transform.position, Quaternion.identity).GetComponent<Player>();
-        if (SceneManager.GetActiveScene().name == "JHStart")
+        if (SceneManager.GetActiveScene().name == "StartScene")
         {
             Player.transform.Find("PlayerUI").gameObject.SetActive(false);
         }

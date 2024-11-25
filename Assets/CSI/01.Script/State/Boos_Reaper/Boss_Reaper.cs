@@ -75,14 +75,21 @@ public class Boss_Reaper : Enemy
 
     private void LateUpdate()
     {
-        ReqamTimer += Time.deltaTime;
-        if (_now2Page && ReqamTimer>=ReqamTimerMax)
+
+        if (_now2Page)
         {
-            ReqamTimer = 0;
-            if (Random.Range(0, 100) <= 30)
+            ReqamTimer += Time.deltaTime;
+
+            if (ReqamTimer >= ReqamTimerMax)
             {
-                TransitionState(EnemyStateType.BloodRequiem);
+                ReqamTimer = 0;
+                if (Random.Range(0, 100) <= 30)
+                {
+                    TransitionState(EnemyStateType.BloodRequiem);
+                }
             }
+
+            
         }
     }
 

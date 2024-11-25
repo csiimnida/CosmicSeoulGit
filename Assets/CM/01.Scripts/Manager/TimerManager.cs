@@ -5,9 +5,24 @@ using UnityEngine;
 
 public class TimerManager : MonoSingleton<TimerManager>{
     [SerializeField] private Player _player;
-    
-    
+
+
+
     private void Update(){
+        if (_player == null)
+        {
+            try
+            {
+                _player = GameManager.Instance.Player;
+
+            }
+            finally
+            {
+                
+                
+            }
+            return;
+        }
         _player.PlayerData.CurrentRoolTime += Time.deltaTime;
         _player.PlayerData.CurrentBlockTime += Time.deltaTime;
         _player.PlayerData.CurrentSkill1Time += Time.deltaTime;

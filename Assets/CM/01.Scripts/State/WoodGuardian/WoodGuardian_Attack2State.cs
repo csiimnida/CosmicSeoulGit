@@ -16,7 +16,18 @@ public class WoodGuardian_Attack2State : EnermyState
     }
 
     public override void UpdateState(){
-        
+        if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")))
+        {
+            if (_emermy.Combit)
+            {
+                if (_emermy.player.GetComponent<Player>().GetHP() <= 0)
+                {
+                    _emermy.TransitionState(EnemyStateType.Idle);
+                    return;
+                }
+            }
+            _emermy.TransitionState(EnemyStateType.Move);
+        }
         if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2") &&
             _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {

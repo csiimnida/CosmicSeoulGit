@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
@@ -25,8 +26,8 @@ public class Enemy : MonoBehaviour
     public SpriteRenderer sprite;
     public bool CoolDowning;
 
-    protected float NowHp;
-    protected float MaxHp;
+    public float NowHp;
+    public float MaxHp;
     public float SpawnRange = 5f;
 
     protected Material NomallMaterial;
@@ -41,6 +42,9 @@ public class Enemy : MonoBehaviour
 
     public AnimatorController _2pageAnim;
     public Transform BloodBloodRequiemEffect;
+
+    public float ReqamTimer;
+    public float ReqamTimerMax = 60;
     
 
     protected virtual void Awake(){
@@ -65,7 +69,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         CombitTimer += Time.deltaTime;
-        if (CombitTimer >= 10)////////////////////////////CombitTimer 수정 요함
+        if (CombitTimer >= 20)////////////////////////////CombitTimer 수정 요함
         {
             Combit = false;
         }

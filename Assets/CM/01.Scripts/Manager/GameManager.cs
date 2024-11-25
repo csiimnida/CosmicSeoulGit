@@ -1,26 +1,43 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoSingleton<GameManager>
-{
-    
+public class GameManager : MonoSingleton<GameManager>{
     public Player Player;
-    public void ResetPlayer()
-    {
-        
+    private GameObject _playerPostionSetting;
+    public Transform playerPrefab;
+
+    public void ResetPlayer(){
     }
 
-    private void Awake()
-    {
-        //if(GameObject.find)
-        Player = GameObject.Find("Player").GetComponent<Player>();
-        print("AWAKE");
+    private void Start(){
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void OnEnable()
-    {
-        print("이이이");
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1){
+        PoolManager.Instance.PushAll();
+
+        _playerPostionSetting = GameObject.Find("PlayerSpawnPostion"); 
+
+        Transform a;
+        a = Instantiate(playerPrefab, _playerPostionSetting.transform.position, Quaternion.identity);
+        a.parent = null;
+        Player = a.GetComponent<Player>();
     }
 
+    private void Awake(){
+        try
+        {
+            _playerPostionSetting = GameObject.Find("PlayerSpawnPostion"); 
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+        }
+        Player = Instantiate(playerPrefab, _playerPostionSetting.transform.position, Quaternion.identity).GetComponent<Player>();
+        if (SceneManager.GetActiveScene().name == "StartScene")
+        {
+            Player.transform.Find("PlayerUI").gameObject.SetActive(false);
+        }
+    }
 }

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExpValue: 18
   Size: {x: 1, y: 1}
-  AttackPower: 15
+  AttackPower: 12
   MaxHp: 1
   AttackSpeed: 3
-  MoveSpeed: 5
+  MoveSpeed: 4
   Perception_range: 8.85
   Attack_range: 0.5
   CameraShakePower: {x: 0.16, y: 1}

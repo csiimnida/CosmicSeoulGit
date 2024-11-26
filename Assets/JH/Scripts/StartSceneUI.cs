@@ -73,7 +73,7 @@ public class StartSceneUI : MonoBehaviour
 
     
 
-    private void QuitGame()
+    public void QuitGame()
     {
         Application.Quit(); 
     }

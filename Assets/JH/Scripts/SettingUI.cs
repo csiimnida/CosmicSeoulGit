@@ -46,12 +46,6 @@ public class SettingUI : MonoBehaviour
 
     public void ReturnMainMenu()
     {
-        Time.timeScale = 1;
-        Destroy(transform.parent.gameObject);
-        if (GameObject.Find("Player"))
-        {
-            Destroy(GameObject.Find("Player"));
-        }
-        SceneManager.LoadScene("StartScene");
+       Application.Quit(); 
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyManager : MonoBehaviour{
     
@@ -14,6 +15,7 @@ public class EnemyManager : MonoBehaviour{
     [SerializeField] ParticleSystem BloodEffect2;
     [SerializeField] ParticleSystem BloodEffect3;
     [SerializeField] private float waitTime = 3f;
+    public UnityEvent OnDeadEvent;
 
     private void Awake(){
         if(Instance == null)
@@ -41,6 +43,7 @@ public class EnemyManager : MonoBehaviour{
         yield return new WaitForSeconds(2f);
         BloodEffect.Play();
         yield return new WaitForSeconds(1f);
+        OnDeadEvent?.Invoke();
         BloodBoss2PagePrefab.transform.position = new Vector2(BloodBoss1Page.position.x, BloodBoss1Page.position.y - 0.9f);
         Destroy(BloodBoss1Page.gameObject);
     }

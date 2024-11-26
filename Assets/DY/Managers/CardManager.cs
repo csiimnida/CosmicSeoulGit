@@ -68,7 +68,12 @@ public GameObject[] volumes;
         }
         _well[1].transform.DOMove(new Vector3((Target.position.x * 0) *0.5f, Target.position.y, Target.position.z), duration);
         _well[2].transform.DOMove(new Vector3((Target.position.x * 1) * -0.5f, Target.position.y, Target.position.z), duration);
-        _well[0].transform.DOMove(new Vector3((Target.position.x * 1) * 0.5f, Target.position.y, Target.position.z), duration);
+        _well[0].transform.DOMove(new Vector3((Target.position.x * 1) * 0.5f, Target.position.y, Target.position.z), duration).OnComplete(
+            () =>
+            {
+               
+
+            });
        BackSpriteFOr();
         volumes[0].GetComponent<Volume>().enabled = true;
     }
@@ -85,7 +90,6 @@ public GameObject[] volumes;
                 _cheack = null;
                 _cheack[i]._OnClick -= RandomSprite;
             });
-
 
         volumes[0].GetComponent<Volume>().enabled = false;
 
@@ -172,18 +176,18 @@ public GameObject[] volumes;
         var = new string[]
         {
             RandomCardSO[spriteRand].Name,
-            "공격력:" + _playerDataSO.Damage + RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage +"%",
-            "체력:" +_playerDataSO.Hp + RandomCardSO[spriteRand].Health/ 100 * _playerDataSO.Hp + "%",
-            "공격 속도:" +_playerDataSO.SwordAttackTime + RandomCardSO[spriteRand].AttackSpeed/100 * _playerDataSO.SwordAttackTime + "%",
-            "이동 속도:" +_playerDataSO.MoveSpeed + RandomCardSO[spriteRand].speed/100*_playerDataSO.MoveSpeed + "%"
+            "공격력:" + RandomCardSO[spriteRand].Attack  +"%",
+            "체력:" +RandomCardSO[spriteRand].Health + "%",
+            "공격 속도:" + RandomCardSO[spriteRand].AttackSpeed + "%",
+            "이동 속도:" + RandomCardSO[spriteRand].speed + "%"
         };
         for (int i = 0; i < var.Length; i++)
         { 
             child.GetChild(0).GetChild(i).GetComponent<TextMeshProUGUI>().text = var[i];
-            _playerDataSO.Damage = RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage;
-            _playerDataSO.Hp = RandomCardSO[spriteRand].Health / 100 * _playerDataSO.Hp;
-            _playerDataSO.SwordAttackTime = RandomCardSO[spriteRand].AttackSpeed/ 100 * _playerDataSO.SwordAttackTime;
-            _playerDataSO.MoveSpeed = RandomCardSO[spriteRand].speed / 100 * _playerDataSO.MoveSpeed;
+            _playerDataSO.Damage += RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage;
+            _playerDataSO.Hp += RandomCardSO[spriteRand].Health / 100 * _playerDataSO.Hp;
+            _playerDataSO.SwordAttackTime += RandomCardSO[spriteRand].AttackSpeed/ 100 * _playerDataSO.SwordAttackTime;
+            _playerDataSO.MoveSpeed += RandomCardSO[spriteRand].speed / 100 * _playerDataSO.MoveSpeed;
           
         }
        

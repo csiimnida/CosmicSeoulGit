@@ -15,3 +15,4 @@ MonoBehaviour:
   SoundName: QSkill
   SoundType: SFX
   AudioClip: {fileID: 8300000, guid: 72cf25c3b9447cf49b1fd3406ef968af, type: 3}
+  SoundProportion: 100

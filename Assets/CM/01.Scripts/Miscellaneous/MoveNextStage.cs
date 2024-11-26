@@ -56,6 +56,11 @@ public class MoveNextStage : MonoBehaviour{
     private IEnumerator SoundDown(){
         for (int i = 0; i < 100; i++)
         {
+            if (AudioListener.volume < 0)
+            {
+                AudioListener.volume = 0;
+                break;
+            }
             AudioListener.volume -= 0.01f;
             yield return new WaitForSeconds(0.02f);
         }

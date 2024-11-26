@@ -108,7 +108,7 @@ public GameObject[] volumes;
      
     }
     private void ChildChange(float end,bool flag,Sprite sprite)
-    {child.DOScaleX(end, duration).OnComplete(()=> child.DOPause());
+    {child.DOScaleX(end, duration);
         child.GetChild(0).gameObject.SetActive(flag);
         child.GetComponent<Image>().sprite = sprite;
         
@@ -171,7 +171,8 @@ public GameObject[] volumes;
     {
         
         RandomCardSO = Resources.LoadAll<AwakeSO>($"RandomSprite/{t}");
-        spriteRand = Random.Range(0, RandomCardSO.Length);
+        spriteRand = Random.Range(0, RandomCardSO.Length-1);
+        Debug.Log(spriteRand);
         child.GetChild(0).GetComponent<Image>().sprite = RandomCardSO[spriteRand].sprite;
         var = new string[]
         {

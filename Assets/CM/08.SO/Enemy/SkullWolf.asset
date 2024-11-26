@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
   m_Name: SkullWolf
   m_EditorClassIdentifier: 
-  ExpValue: 20
+  ExpValue: 100
   Size: {x: 1, y: 1}
   AttackPower: 3
   MaxHp: 50

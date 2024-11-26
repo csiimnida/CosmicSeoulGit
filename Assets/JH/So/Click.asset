@@ -15,3 +15,4 @@ MonoBehaviour:
   SoundName: Bt_Click
   SoundType: SFX
   AudioClip: {fileID: 8300000, guid: 8a316257d56e96540b0f4bc8d1fa022a, type: 3}
+  SoundProportion: 100

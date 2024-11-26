@@ -15,3 +15,4 @@ MonoBehaviour:
   SoundName: Hurt
   SoundType: SFX
   AudioClip: {fileID: 8300000, guid: 4f176b2308056bb4f92854ff82fbc09f, type: 3}
+  SoundProportion: 100

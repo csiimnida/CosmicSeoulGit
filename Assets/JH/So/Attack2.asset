@@ -15,3 +15,4 @@ MonoBehaviour:
   SoundName: Attack2
   SoundType: SFX
   AudioClip: {fileID: 8300000, guid: 62c7b1b3da810d5419b8656da1ddc560, type: 3}
+  SoundProportion: 100

@@ -15,3 +15,4 @@ MonoBehaviour:
   SoundName: Cat
   SoundType: SFX
   AudioClip: {fileID: 8300000, guid: d69b491f0a2a2704192ca8e2775c924f, type: 3}
+  SoundProportion: 100

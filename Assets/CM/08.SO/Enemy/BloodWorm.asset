@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExpValue: 0
   Size: {x: 1, y: 1}
-  AttackPower: 22
+  AttackPower: 14
   MaxHp: 400
   AttackSpeed: 4
   MoveSpeed: 10

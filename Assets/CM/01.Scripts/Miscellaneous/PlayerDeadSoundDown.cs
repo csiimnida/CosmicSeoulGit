@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDeadSoundDown : MonoBehaviour
@@ -8,7 +7,7 @@ public class PlayerDeadSoundDown : MonoBehaviour
 
     private Player player;
 
-    private void Start(){
+    private void OnEnable(){
         player = GameManager.Instance.Player;
         player.OnDeath += PlayerDeadSoundDownMethod;
     }
@@ -23,5 +22,9 @@ public class PlayerDeadSoundDown : MonoBehaviour
             AudioListener.volume -= 0.01f;
             yield return new WaitForSeconds(0.05f);
         }
+    }
+
+    private void OnDestroy(){
+        player.OnDeath -= PlayerDeadSoundDownMethod;
     }
 }

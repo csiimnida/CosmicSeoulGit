@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class SettingUI : MonoBehaviour
 {   
     [SerializeField] private SoundManager soundManager;
-
+    [SerializeField] private GameObject MainMenuButton;
     private GameObject SetUI;
     private void Awake()
     {
         SetUI = transform.GetChild(0).gameObject;
-        DontDestroyOnLoad(gameObject);
+        MainMenuButton.SetActive(false);
     }
     private void Update()
     {
@@ -41,5 +42,16 @@ public class SettingUI : MonoBehaviour
         
         
 
+    }
+
+    public void ReturnMainMenu()
+    {
+        Time.timeScale = 1;
+        Destroy(transform.parent.gameObject);
+        if (GameObject.Find("Player"))
+        {
+            Destroy(GameObject.Find("Player"));
+        }
+        SceneManager.LoadScene("StartScene");
     }
 }

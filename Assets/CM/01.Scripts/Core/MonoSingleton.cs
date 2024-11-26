@@ -21,7 +21,6 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
                 else
                     IsDestroyed = false;
 
-                DontDestroyOnLoad(_instance.transform.root.gameObject);
 
             }
             return _instance;

@@ -108,7 +108,7 @@ public GameObject[] volumes;
      
     }
     private void ChildChange(float end,bool flag,Sprite sprite)
-    {child.DOScaleX(end, duration).OnComplete(()=> child.DOPause());
+    {child.DOScaleX(end, duration);
         child.GetChild(0).gameObject.SetActive(flag);
         child.GetComponent<Image>().sprite = sprite;
         
@@ -171,7 +171,8 @@ public GameObject[] volumes;
     {
         
         RandomCardSO = Resources.LoadAll<AwakeSO>($"RandomSprite/{t}");
-        spriteRand = Random.Range(0, RandomCardSO.Length);
+        spriteRand = Random.Range(0, RandomCardSO.Length-1);
+        Debug.Log(spriteRand);
         child.GetChild(0).GetComponent<Image>().sprite = RandomCardSO[spriteRand].sprite;
         var = new string[]
         {
@@ -184,10 +185,7 @@ public GameObject[] volumes;
         for (int i = 0; i < var.Length; i++)
         { 
             child.GetChild(0).GetChild(i).GetComponent<TextMeshProUGUI>().text = var[i];
-            _playerDataSO.Damage += RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage;
-            _playerDataSO.Hp += RandomCardSO[spriteRand].Health / 100 * _playerDataSO.Hp;
-            _playerDataSO.SwordAttackTime += RandomCardSO[spriteRand].AttackSpeed/ 100 * _playerDataSO.SwordAttackTime;
-            _playerDataSO.MoveSpeed += RandomCardSO[spriteRand].speed / 100 * _playerDataSO.MoveSpeed;
+            
           
         }
        
@@ -208,5 +206,13 @@ public GameObject[] volumes;
         Obiion.GetComponent<TextMeshProUGUI>().DOText(text, 1f);
     }
 
+    public void Enter()
+    {
+        _playerDataSO.Damage += _playerDataSO.Damage*RandomCardSO[spriteRand].Attack / 100;
+        _playerDataSO.Hp += _playerDataSO.Hp*RandomCardSO[spriteRand].Health / 100;
+        _playerDataSO.SwordAttackTime += _playerDataSO.SwordAttackTime*RandomCardSO[spriteRand].AttackSpeed/ 100;
+        _playerDataSO.MoveSpeed += _playerDataSO.MoveSpeed*RandomCardSO[spriteRand].speed / 100;
+        
+    }
  
 }

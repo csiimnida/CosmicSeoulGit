@@ -10,7 +10,7 @@ public class BloodDemon_Attack2State : EnermyState
         _emermy.RbCompo.velocity = Vector2.zero;
         _emermy.AnimCompo.PlayAnimaiton(AnimationType.Attack2);
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
-        _emermy._isSeeRight = _emermy.transform.position.x > _emermy.player.transform.position.x;
+        _emermy.isSeeRight = _emermy.transform.position.x > _emermy.player.transform.position.x;
 
     }
 

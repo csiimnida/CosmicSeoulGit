@@ -17,7 +17,7 @@ public class Soul_Ghost_EnemyAvoidState : EnermyState
         float positionX = ( _emermy.transform.position - _emermy.player.transform.position).normalized.x;
         _emermy.RbCompo.velocity = (new Vector2((positionX)*_emermy.DataSo.MoveSpeed,0));
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 0 : 180,Vector3.up);
-        _emermy._isSeeRight = _emermy.transform.position.x > _emermy.player.transform.position.x;
+        _emermy.isSeeRight = _emermy.transform.position.x > _emermy.player.transform.position.x;
 
         CheckTimer();
     }

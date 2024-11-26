@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8793342953506998571}
   - component: {fileID: 3595319428821992813}
   - component: {fileID: 2288705711780277753}
+  - component: {fileID: 5829132358186418342}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -157,6 +158,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shakePower: {x: 0.1, y: 0.15}
   _duration: 0.3
+--- !u!114 &5829132358186418342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186922012351776010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ac607933e774b4684d911883cab713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8010028377810979966
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,8 +227,20 @@ MonoBehaviour:
   CoolTimeNowTimer: 0
   sprite: {fileID: 0}
   CoolDowning: 0
+  NowHp: 0
+  MaxHp: 0
   SpawnRange: 5
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
+  Dead:
+    m_PersistentCalls:
+      m_Calls: []
+  isSeeRight: 0
+  SpawnAnimator: {fileID: 0}
+  _now2Page: 0
+  _2pageAnim: {fileID: 0}
+  BloodRequiemEffect: {fileID: 0}
+  ReqamTimer: 0
+  ReqamTimerMax: 60
   AttackRange: 0
   explotionRange: 2.14
 --- !u!50 &5564986431921946300

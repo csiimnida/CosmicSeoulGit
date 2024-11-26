@@ -169,7 +169,7 @@ public GameObject[] volumes;
     }
     private void EnterChange<T>(T t)
     {
-        
+        Debug.Log("어 들어와짐");
         RandomCardSO = Resources.LoadAll<AwakeSO>($"RandomSprite/{t}");
         spriteRand = Random.Range(0, RandomCardSO.Length-1);
         Debug.Log(spriteRand);

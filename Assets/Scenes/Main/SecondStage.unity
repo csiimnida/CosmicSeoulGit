@@ -5261,6 +5261,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 106237451327565209, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: stage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 106237451327565209, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
       propertyPath: volumes.Array.data[0]
       value: 
       objectReference: {fileID: 964119044}

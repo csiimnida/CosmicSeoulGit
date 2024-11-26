@@ -71,7 +71,7 @@ public GameObject[] volumes;
         _well[0].transform.DOMove(new Vector3((Target.position.x * 1) * 0.5f, Target.position.y, Target.position.z), duration).OnComplete(
             () =>
             {
-                Time.timeScale = 0;
+               
 
             });
        BackSpriteFOr();
@@ -91,7 +91,6 @@ public GameObject[] volumes;
                 _cheack[i]._OnClick -= RandomSprite;
             });
 
-        Time.timeScale = 1;
         volumes[0].GetComponent<Volume>().enabled = false;
 
     }
@@ -185,10 +184,10 @@ public GameObject[] volumes;
         for (int i = 0; i < var.Length; i++)
         { 
             child.GetChild(0).GetChild(i).GetComponent<TextMeshProUGUI>().text = var[i];
-            _playerDataSO.Damage = RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage;
-            _playerDataSO.Hp = RandomCardSO[spriteRand].Health / 100 * _playerDataSO.Hp;
-            _playerDataSO.SwordAttackTime = RandomCardSO[spriteRand].AttackSpeed/ 100 * _playerDataSO.SwordAttackTime;
-            _playerDataSO.MoveSpeed = RandomCardSO[spriteRand].speed / 100 * _playerDataSO.MoveSpeed;
+            _playerDataSO.Damage += RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage;
+            _playerDataSO.Hp += RandomCardSO[spriteRand].Health / 100 * _playerDataSO.Hp;
+            _playerDataSO.SwordAttackTime += RandomCardSO[spriteRand].AttackSpeed/ 100 * _playerDataSO.SwordAttackTime;
+            _playerDataSO.MoveSpeed += RandomCardSO[spriteRand].speed / 100 * _playerDataSO.MoveSpeed;
           
         }
        

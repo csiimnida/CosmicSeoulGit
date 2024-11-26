@@ -42,9 +42,7 @@ public GameObject[] volumes;
 
     private void Start()
     {
-        _player = GameManager.Instance.Player;
-        _checkLevelUp = _player.GetComponentInChildren<CheckLevelUp>();
-        _checkLevelUp.OnLevelUp.AddListener(StartCardPolling);
+        
         for (int i = 0; i <= 1; i++)
         {
             volumes[i].GetComponent<Volume>().enabled = false;
@@ -52,6 +50,25 @@ public GameObject[] volumes;
         
         volumes[0].SetActive(true);
         volumes[1].SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (_player == null)
+        {
+            try
+            {
+                _player = GameManager.Instance.Player;
+                _checkLevelUp = _player.GetComponentInChildren<CheckLevelUp>();
+                _checkLevelUp.OnLevelUp.AddListener(StartCardPolling);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
+        }
     }
 
     public void StartCardPolling(int a)

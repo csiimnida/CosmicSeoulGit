@@ -23,6 +23,11 @@ public class ImageFadeOut : MonoBehaviour
     private IEnumerator SoundVolumeUp(){
         for (int i = 0; i < 100; i++)
         {
+            if (AudioListener.volume > 1)
+            {
+                AudioListener.volume = 1;
+                break;
+            }
             AudioListener.volume += 0.01f;
             yield return new WaitForSeconds(0.02f);
         }

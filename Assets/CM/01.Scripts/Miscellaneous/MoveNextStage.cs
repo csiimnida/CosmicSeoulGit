@@ -11,7 +11,6 @@ public class MoveNextStage : MonoBehaviour{
     [SerializeField] private float _fadeDuration;
     [SerializeField] private string _nextSceneName;
 
-    [SerializeField] public AudioSource _backgroundBgm;
     private BoxCollider2D _boxCollider;
 
     private bool _isClear;
@@ -57,7 +56,12 @@ public class MoveNextStage : MonoBehaviour{
     private IEnumerator SoundDown(){
         for (int i = 0; i < 100; i++)
         {
-            _backgroundBgm.volume -= 0.01f;
+            if (AudioListener.volume < 0)
+            {
+                AudioListener.volume = 0;
+                break;
+            }
+            AudioListener.volume -= 0.01f;
             yield return new WaitForSeconds(0.02f);
         }
         yield return new WaitForSeconds(_fadeDuration + 0.5f);

@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
     public int Exp = 0;
     public int MaxExp = 100;
 
+    public Transform Panal;
+
     public UnityEvent<int> OnTakeExp;
 
     private void Awake(){

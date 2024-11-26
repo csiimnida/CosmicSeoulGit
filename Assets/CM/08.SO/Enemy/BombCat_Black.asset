@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
   m_Name: BombCat_Black
   m_EditorClassIdentifier: 
+  ExpValue: 30
   Size: {x: 1, y: 1}
-  AttackPower: 50
+  AttackPower: 30
   MaxHp: 1
   AttackSpeed: 3
-  MoveSpeed: 3
+  MoveSpeed: 6
   Perception_range: 8.85
   Attack_range: 0.5
   CameraShakePower: {x: 0.2, y: 1.2}

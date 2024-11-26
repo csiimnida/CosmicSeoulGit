@@ -184,10 +184,7 @@ public GameObject[] volumes;
         for (int i = 0; i < var.Length; i++)
         { 
             child.GetChild(0).GetChild(i).GetComponent<TextMeshProUGUI>().text = var[i];
-            _playerDataSO.Damage += RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage;
-            _playerDataSO.Hp += RandomCardSO[spriteRand].Health / 100 * _playerDataSO.Hp;
-            _playerDataSO.SwordAttackTime += RandomCardSO[spriteRand].AttackSpeed/ 100 * _playerDataSO.SwordAttackTime;
-            _playerDataSO.MoveSpeed += RandomCardSO[spriteRand].speed / 100 * _playerDataSO.MoveSpeed;
+            
           
         }
        
@@ -208,5 +205,13 @@ public GameObject[] volumes;
         Obiion.GetComponent<TextMeshProUGUI>().DOText(text, 1f);
     }
 
+    public void Enter()
+    {
+        _playerDataSO.Damage += _playerDataSO.Damage*RandomCardSO[spriteRand].Attack / 100;
+        _playerDataSO.Hp += _playerDataSO.Hp*RandomCardSO[spriteRand].Health / 100;
+        _playerDataSO.SwordAttackTime += _playerDataSO.SwordAttackTime*RandomCardSO[spriteRand].AttackSpeed/ 100;
+        _playerDataSO.MoveSpeed += _playerDataSO.MoveSpeed*RandomCardSO[spriteRand].speed / 100;
+        
+    }
  
 }

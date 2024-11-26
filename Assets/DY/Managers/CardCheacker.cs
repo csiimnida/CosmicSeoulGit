@@ -8,7 +8,7 @@ using UnityEngine.Rendering;
 public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHandler , IPointerExitHandler
 {
     private int  count = 0;
-    private bool hasPointerEntered = false; // ÇÃ·¡±× º¯¼ö
+    private bool hasPointerEntered = false; // ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private bool hasPointer = false;
     private Vector2 currentSize = Vector2.zero;
     private RectTransform rect = null;
@@ -22,7 +22,7 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-       Debug.Log("³ª¿Ô´Ù");
+       Debug.Log("ï¿½ï¿½ï¿½Ô´ï¿½");
         if (!hasPointer)
         { hasPointer = true;
           scaleTween?.Kill();
@@ -44,10 +44,13 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
         
             if (isFront)
             { CardManager.Instance.EndCardPolling();
-            }// ÇÃ·¡±× ¼³Á¤
+               CardManager.Instance.Enter();
+               isFront = false;
+               
+            }// ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         isFront = true;
         CardManager.Instance.FrontSprite(this.gameObject.GetComponent<CardCheacker>());
-            _OnClick?.Invoke();
+        _OnClick?.Invoke();
             
           
        

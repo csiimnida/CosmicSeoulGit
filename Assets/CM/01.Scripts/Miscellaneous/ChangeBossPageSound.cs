@@ -21,6 +21,8 @@ public class ChangeBossPageSound : MonoBehaviour
             _secondPageSound.volume += 0.01f;
             yield return new WaitForSeconds(0.02f);
         }
+        _firstPageSound.volume = 0f;
+        _secondPageSound.volume = 1f;
         yield return new WaitForSeconds(_fadeDuration + 0.5f);
     }
 }

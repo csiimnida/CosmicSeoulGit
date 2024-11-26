@@ -117,6 +117,7 @@ MonoBehaviour:
   _playerDataSO: {fileID: 11400000, guid: 0c8801ef83854cd43b0f3e4608194dca, type: 2}
   EndTarget: {fileID: 8575375145777019740}
   Target: {fileID: 7933449231743199860}
+  stage: 0
   volumes:
   - {fileID: 0}
   - {fileID: 0}

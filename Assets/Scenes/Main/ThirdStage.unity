@@ -33515,14 +33515,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_Reaper
       objectReference: {fileID: 0}
-    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
-      propertyPath: playbackState
-      value: 
-      objectReference: {fileID: 809850716}
-    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
-      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1661151394}
     - target: {fileID: 8556717319762243975, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
       propertyPath: m_LocalPosition.x
       value: 446.3
@@ -47337,17 +47329,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96db154c64137424abc20899240ad454, type: 3}
---- !u!114 &1661151394 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 771395569092858327, guid: 96db154c64137424abc20899240ad454, type: 3}
-  m_PrefabInstance: {fileID: 1661151393}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fb05377f510e1a478636d0ce217442e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1662233145
 GameObject:
   m_ObjectHideFlags: 0

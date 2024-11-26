@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
   m_Name: WoodGuardian
   m_EditorClassIdentifier: 
+  ExpValue: 30
   Size: {x: 1, y: 1}
-  AttackPower: 30
+  AttackPower: 16
   MaxHp: 150
-  AttackSpeed: 2.5
-  MoveSpeed: 7
+  AttackSpeed: 2.2
+  MoveSpeed: 6.5
   Perception_range: 11
   Attack_range: 2.2
   CameraShakePower: {x: 0.5, y: 0.8}

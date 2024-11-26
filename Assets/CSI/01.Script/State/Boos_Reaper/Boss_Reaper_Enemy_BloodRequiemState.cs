@@ -20,7 +20,7 @@ public class Boss_Reaper_Enemy_BloodRequiemState : EnermyState
         _emermy.SpawnAnimator.gameObject.SetActive(false);
         nowHp = _emermy.NowHp;
         _emermy.NowHp += _emermy.MaxHp * 5 / 100;
-        if (_emermy._isSeeRight)
+        if (_emermy.isSeeRight)
         {
             _emermy.BloodRequiemEffect.DOMoveZ(+50, 0.1f);
 

@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
         StateEnum[currentState].FixedUpdateState();
     }
 
-    public void Damage(Enemy enemy) => SumDamage(enemy._isSeeRight, enemy.DataSo.AttackPower, enemy.DataSo);
+    public void Damage(Enemy enemy) => SumDamage(enemy.isSeeRight, enemy.DataSo.AttackPower, enemy.DataSo);
 
     public void Damage(EyeBall script) => SumDamage(script._isSeeRight, script.enermyData.AttackPower, script.enermyData);
     public void Damage(Ghost_Ball script) => SumDamage(script._isSeeRight, script.enermyData.AttackPower, script.enermyData);

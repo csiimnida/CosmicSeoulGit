@@ -60,7 +60,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.66, y: -3.27, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5284640895487488265}
@@ -160,8 +160,20 @@ MonoBehaviour:
   CoolTimeNowTimer: 0
   sprite: {fileID: 0}
   CoolDowning: 0
+  NowHp: 0
+  MaxHp: 0
   SpawnRange: 5
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
+  Dead:
+    m_PersistentCalls:
+      m_Calls: []
+  _isSeeRight: 0
+  SpawnAnimator: {fileID: 0}
+  _now2Page: 0
+  _2pageAnim: {fileID: 0}
+  BloodRequiemEffect: {fileID: 0}
+  ReqamTimer: 0
+  ReqamTimerMax: 60
   <Attack1Size>k__BackingField: {x: 7, y: 5}
   <Attack2Size>k__BackingField: {x: 7, y: 4}
   attack1Pos: {fileID: 5492029008479732707}

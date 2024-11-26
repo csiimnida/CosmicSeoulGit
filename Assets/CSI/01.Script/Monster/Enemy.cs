@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace CSI._01.Script.Monster{
     public class Enemy : MonoBehaviour
@@ -32,10 +33,11 @@ namespace CSI._01.Script.Monster{
         public Material HitMaterial;
 
         public UnityEvent Dead;
-        public bool _isSeeRight;
+        public bool isSeeRight;
     
         public Animator SpawnAnimator;
         public bool _now2Page;
+
 
 
         public RuntimeAnimatorController _2pageAnim;
@@ -64,8 +66,7 @@ namespace CSI._01.Script.Monster{
             StateEnum[currentState].Enter();
         }
 
-        private void Update()
-        {
+        private void Update(){
             CombitTimer += Time.deltaTime;
             if (CombitTimer >= 20)////////////////////////////CombitTimer 수정 요함
             {

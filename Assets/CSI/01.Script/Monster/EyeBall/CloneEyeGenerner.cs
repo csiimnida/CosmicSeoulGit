@@ -14,7 +14,7 @@ public class CloneEyeGenerner : MonoBehaviour
         EyeBall eye = PoolManager.Instance.Pop("Eye") as EyeBall;
         eye.transform.rotation = target.parent.rotation;
         eye.transform.position = target.position;
-        eye._isSeeRight = _candyEye._isSeeRight;
+        eye._isSeeRight = _candyEye.isSeeRight;
         eye.enermyData = target.parent.GetComponent<Enemy>().DataSo;
         eye.Rotate();
     }

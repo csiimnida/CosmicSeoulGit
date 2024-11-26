@@ -159,6 +159,12 @@ public class Player : MonoBehaviour
         Exp = 0;
     }
 
+    private void OnDisable()
+    {
+        Destroy(CardManager.Instance.gameObject);
+
+    }
+
     private void ShakeCamera(EnermyDataSO data){
         impulseSource.m_DefaultVelocity = data.CameraShakePower;
         impulseSource.m_ImpulseDefinition.m_ImpulseDuration = data.CameraShakeDuration;

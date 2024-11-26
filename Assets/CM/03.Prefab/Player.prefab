@@ -618,6 +618,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _shakePower: {x: 0.4, y: 0.4}
+  _shakeDuration: 0.2
 --- !u!114 &8345441692742200898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,6 +639,8 @@ MonoBehaviour:
   Attack1Transform: {fileID: 7398679533924749695}
   Attack2Transform: {fileID: 226077152213161098}
   Skill1Transform: {fileID: 2753339450712463596}
+  _shakePower: {x: 0.2, y: 0.2}
+  _shakeDuration: 0.4
 --- !u!114 &1033564136372030717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,6 +799,14 @@ PrefabInstance:
     - target: {fileID: 3727868165683378342, guid: 0b2719120d636364cbe64574049d26c5, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856402067113888488, guid: 0b2719120d636364cbe64574049d26c5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856402067113888488, guid: 0b2719120d636364cbe64574049d26c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6203364105779242601, guid: 0b2719120d636364cbe64574049d26c5, type: 3}
       propertyPath: m_FillAmount

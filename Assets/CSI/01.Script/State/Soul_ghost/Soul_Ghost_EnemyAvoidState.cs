@@ -1,4 +1,5 @@
 using System.Collections;
+using CSI._01.Script.Monster;
 using UnityEngine;
 using DG.Tweening;
 public class Soul_Ghost_EnemyAvoidState : EnermyState

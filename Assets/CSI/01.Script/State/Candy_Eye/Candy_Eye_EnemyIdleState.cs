@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal;
+using CSI._01.Script.Monster;
 using UnityEngine;
 
 public class Candy_Eye_EnermyIdleState : EnermyState

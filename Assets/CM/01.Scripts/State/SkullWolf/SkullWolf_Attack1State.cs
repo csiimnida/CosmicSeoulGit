@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using CSI._01.Script.Monster;
 using UnityEngine;
 
 public class SkullWolf_Attack1State : EnermyState

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
   m_Name: TutorialWoodGuardian
   m_EditorClassIdentifier: 
+  ExpValue: 0
   Size: {x: 1, y: 1}
-  AttackPower: 50
-  MaxHp: 10000
+  AttackPower: 10
+  MaxHp: 30
   AttackSpeed: 2.5
   MoveSpeed: 4
   Perception_range: 10.46

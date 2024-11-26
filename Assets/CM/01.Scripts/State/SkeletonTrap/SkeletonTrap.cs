@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using CSI._01.Script.Monster;
 
 public class SkeletonTrap : Enemy
 {
@@ -9,7 +10,7 @@ public class SkeletonTrap : Enemy
 
     public Transform attack1Pos;
 
-    protected void Awake(){
+    protected override void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
@@ -30,6 +31,7 @@ public class SkeletonTrap : Enemy
             }
             catch (Exception e)
             {
+                // ignored
             }
         }
         TransitionState(EnemyStateType.Empty);

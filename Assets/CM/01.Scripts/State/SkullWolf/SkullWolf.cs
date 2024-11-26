@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System;
+using CSI._01.Script.Monster;
 
 public class SkullWolf : Enemy
 {
@@ -8,7 +9,7 @@ public class SkullWolf : Enemy
 
     public Transform attack1Pos;
 
-    protected void Awake(){
+    protected override void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
@@ -29,6 +30,7 @@ public class SkullWolf : Enemy
             }
             catch (Exception e)
             {
+                // ignored
             }
         }
         TransitionState(EnemyStateType.Idle);

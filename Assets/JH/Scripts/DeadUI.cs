@@ -24,8 +24,7 @@ public class DeadUI : MonoSingleton<DeadUI>
     private void Start()
     {
         _camera1 = Camera.main;
-        _profile = CardManager.Instance.volumes[1].GetComponent<Volume>().profile;
-        StartSet();
+        
 
     }
 
@@ -76,7 +75,6 @@ public class DeadUI : MonoSingleton<DeadUI>
         }
     }
     public void DeadEffectStart(){
-        print("DDD");
         _camera = Camera.main;
         StartCoroutine(ApplyVignetteEffectOverTime());
         StartCoroutine(ApplyBloomEffectOverTime());
@@ -90,6 +88,8 @@ public class DeadUI : MonoSingleton<DeadUI>
             {
                 _player = GameManager.Instance.Player;
                 print("구독");
+                _profile = CardManager.Instance.volumes[1].GetComponent<Volume>().profile;
+                StartSet();
                 _player.OnDeath += DeadEffectStart;
             }
             finally{}

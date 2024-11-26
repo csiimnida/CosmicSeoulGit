@@ -9,6 +9,7 @@ public class Save : MonoSingleton<Save>
     private Player _player;
     private StartSeting _startSeting;
     private CheckLevelUp _checkLevelUp;
+    [SerializeField] private GameObject _settingsPanel;
     private class StartSeting
     {
         public float Damage;
@@ -84,6 +85,7 @@ public class Save : MonoSingleton<Save>
         print("불러오기 성공");
         SceneManager.LoadScene(_saveData._screen_name);
         SetPlayerStat(_saveData);
+        _settingsPanel.SetActive(true);
 
     }
 

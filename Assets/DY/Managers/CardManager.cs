@@ -10,6 +10,7 @@ using System.IO;
 using Random = UnityEngine.Random;
 using UnityEngine.InputSystem.HID;
 using UnityEngine.Rendering;
+using System.Text.RegularExpressions;
 public class CardManager : MonoSingleton<CardManager>
 {
 
@@ -170,18 +171,16 @@ public GameObject[] volumes;
     private void EnterChange<T>(T t)
     {RandomCardSO = Resources.LoadAll<AwakeSO>($"RandomSprite/{t}");
         Debug.Log(RandomCardSO.Length);
-        spriterand = Random.Range(0, RandomCardSO.Length+1);
-        if (spriterand >= 4)
-           spriterand = Random.Range(0, RandomCardSO.Length);
+        spriterand = Random.Range(0, RandomCardSO.Length);
         child.GetChild(0).GetComponent<Image>().sprite = RandomCardSO[spriterand].sprite;
        
         var = new string[]
         {
             RandomCardSO[spriterand].Name,
             "공격력:" + RandomCardSO[spriterand].Attack  +"%",
-            "체력:" +RandomCardSO[spriterand].Health + "%",
+            "이동 속도:" + RandomCardSO[spriterand].speed + "%",
             "공격 속도:" + RandomCardSO[spriterand].AttackSpeed + "%",
-            "이동 속도:" + RandomCardSO[spriterand].speed + "%"
+             "체력:" +RandomCardSO[spriterand].Health + "%",
         };
         for (int i = 0; i < var.Length; i++)
         { 
@@ -209,10 +208,10 @@ public GameObject[] volumes;
 
     public void Enter()
     {
-        _playerDataSO.Damage += _playerDataSO.Damage*RandomCardSO[spriterand].Attack / 100;
-        _playerDataSO.Hp += _playerDataSO.Hp*RandomCardSO[spriterand].Health / 100;
-        _playerDataSO.SwordAttackTime += _playerDataSO.SwordAttackTime*RandomCardSO[spriterand].AttackSpeed/ 100;
-        _playerDataSO.MoveSpeed += _playerDataSO.MoveSpeed*RandomCardSO[spriterand].speed / 100;
+        _playerDataSO.Damage += _playerDataSO.Damage*float.Parse(Regex.Match(child.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;
+        _playerDataSO.Hp += _playerDataSO.Hp*float.Parse(Regex.Match(child.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;
+        _playerDataSO.SwordAttackTime += _playerDataSO.SwordAttackTime*float.Parse(Regex.Match(child.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;
+        _playerDataSO.MoveSpeed += _playerDataSO.MoveSpeed*float.Parse(Regex.Match(child.GetChild(0).GetChild(4).GetComponent<TextMeshProUGUI>().text, @"\d+").Value) / 100;
         
     }
  

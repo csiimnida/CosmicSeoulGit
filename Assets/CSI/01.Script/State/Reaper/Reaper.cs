@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CSI._01.Script.Monster;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class Reaper : Enemy
 
     public Transform AttackCenter;
     public Vector2 AttackSize;
-    protected void Awake(){
+    protected override void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
@@ -33,6 +34,7 @@ public class Reaper : Enemy
             }
             catch (Exception e)
             {
+                // ignored
             }
         }
         TransitionState(EnemyStateType.Idle);

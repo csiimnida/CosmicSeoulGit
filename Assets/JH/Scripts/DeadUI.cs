@@ -5,19 +5,31 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class DeadUI : MonoBehaviour{
+public class DeadUI : MonoSingleton<DeadUI>
+{
     private Camera _camera;
     [SerializeField] private VolumeProfile _profile;
-    private Volume _volume;
+    private GameObject _volume;
     private Bloom _bloom;
     private Vignette _vignette;
     private Tonemapping _tonemapping;
     private ColorAdjustments _colorAdjustments;
     private Player _player;
+    public bool isDead = false;
+    private Camera _camera1;
 
     private void Awake(){
-        Debug.Log(_player);
+    }
+
+    private void Start()
+    {
+        _camera1 = Camera.main;
         
+
+    }
+
+    private void StartSet()
+    {
         if (_profile.TryGet(out _bloom))
         {
             _bloom.threshold.value = 1f; // 기본 임계값
@@ -59,32 +71,25 @@ public class DeadUI : MonoBehaviour{
         }
         else
         {
-            Debug.LogWarning("VolumeProfile에 Tonemapping 효과가 없습니다.");
+            Debug.LogWarning("VolumeProfile에 _colorAdjustments 효과가 없습니다.");
         }
-
-        
     }
-
-    private void Start(){
-        DontDestroyOnLoad(gameObject);
-        /*_player = GameManager.Instance.Player;
-        _player.OnDeath += DeadEffectStart;*/
-    }
-
     public void DeadEffectStart(){
         _camera = Camera.main;
-        _volume = _camera.GetComponent<Volume>();
         StartCoroutine(ApplyVignetteEffectOverTime());
         StartCoroutine(ApplyBloomEffectOverTime());
         _tonemapping.mode.value = TonemappingMode.ACES;
     }
 
     private void Update(){
-        if (_player == null)
+        if (!_player)
         {
             try
             {
                 _player = GameManager.Instance.Player;
+                print("구독");
+                _profile = CardManager.Instance.volumes[1].GetComponent<Volume>().profile;
+                StartSet();
                 _player.OnDeath += DeadEffectStart;
             }
             finally{}
@@ -109,7 +114,6 @@ public class DeadUI : MonoBehaviour{
         Color targetTint = new Color(119 / 255f, 0, 0);
 
         // Volume 활성화
-        _volume.enabled = true;
 
         while (elapsedTime < duration)
         {
@@ -149,7 +153,6 @@ public class DeadUI : MonoBehaviour{
         float targetSmoothness = 1f; // 목표 부드러움
 
         // Volume 활성화
-        _volume.enabled = true;
 
         while (elapsedTime < duration)
         {
@@ -190,7 +193,6 @@ public class DeadUI : MonoBehaviour{
 
 
         // Volume 활성화
-        _volume.enabled = true;
 
         while (elapsedTime < duration)
         {

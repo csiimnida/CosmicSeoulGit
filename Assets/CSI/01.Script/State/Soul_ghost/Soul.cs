@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CSI._01.Script.Monster;
 using UnityEngine;
 using DG.Tweening;
 
@@ -10,7 +11,7 @@ public class Soul : Enemy
     
     private bool FirstAttack;
 
-    protected void Awake(){
+    protected override void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
@@ -31,6 +32,7 @@ public class Soul : Enemy
             }
             catch (Exception e)
             {
+                //ignored
             }
         }
         TransitionState(EnemyStateType.Idle);

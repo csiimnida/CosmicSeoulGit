@@ -1,5 +1,6 @@
 using System.Collections;
 using System;
+using CSI._01.Script.Monster;
 using UnityEngine;
 
 public class BloodDemon : Enemy
@@ -10,7 +11,7 @@ public class BloodDemon : Enemy
     public Transform Attack1Pos;
     public Transform Attack2Pos;
 
-    protected void Awake(){
+    protected override void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
@@ -31,6 +32,7 @@ public class BloodDemon : Enemy
             }
             catch (Exception e)
             {
+                // ignored
             }
         }
         TransitionState(EnemyStateType.Idle);

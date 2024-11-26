@@ -1,3 +1,4 @@
+using CSI._01.Script.Monster;
 using UnityEngine;
 
 public class CloneEyeGenerner : MonoBehaviour

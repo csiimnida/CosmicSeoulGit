@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using CSI._01.Script.Monster;
 using UnityEngine;
 
 public class BombCat_IdleState : EnermyState

@@ -5,30 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/DY/Scenes/CardScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/JH/Scene/JHStart.unity
-    guid: 7a8fc98e3976daa408fc821946f01fbe
+    path: Assets/Scenes/Main/StartScene.unity
+    guid: c0f560c45f659a34fb7a3d90d534bd12
   - enabled: 1
-    path: Assets/CM/00.Scenes/CM.unity
-    guid: 763898cafdc6d914a97ee00ada5b84c6
-  - enabled: 1
-    path: Assets/DY/Scene/EyeTree.unity
-    guid: 0aecf6fca38614a4d96cd4c7d07861d9
-  - enabled: 1
-    path: Assets/JH/Scene/JHGame.unity
-    guid: f0259c9c9bed577408188af99053a489
-  - enabled: 1
-    path: Assets/CM/00.Scenes/CM.unity
-    guid: 763898cafdc6d914a97ee00ada5b84c6
-  - enabled: 0
-    path: Assets/JH/Scene/JHDead.unity
-    guid: aa71df87595e1a4478f36ebedefbe6c2
-  - enabled: 1
-    path: Assets/Scenes/Main/Tutorial.unity
-    guid: 0ad92e07758cb1c4bac758c0b2d6d698
+    path: Assets/Scenes/Main/Ending.unity
+    guid: 4722c8c6e77b2694b9f5fc1778acc438
   - enabled: 1
     path: Assets/Scenes/Main/FirstStage.unity
     guid: f65d800d15638f144b4eb1ea21da4cae
@@ -38,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main/ThirdStage.unity
     guid: df4cf3953e5b60541906dc724d1b203b
+  - enabled: 1
+    path: Assets/Scenes/Main/Tutorial.unity
+    guid: 0ad92e07758cb1c4bac758c0b2d6d698
   m_configObjects: {}

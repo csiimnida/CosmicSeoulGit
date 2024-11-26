@@ -6,10 +6,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using System.IO;
 using Random = UnityEngine.Random;
 using UnityEngine.InputSystem.HID;
+using UnityEngine.Rendering;
 public class CardManager : MonoSingleton<CardManager>
 {
+
     string[] var = null;
     [SerializeField] private List<GameObject> _well = null;
     [SerializeField] private GameObject _CardPrefab = null;
@@ -26,7 +29,8 @@ public class CardManager : MonoSingleton<CardManager>
     private Player _player;
     private CheckLevelUp _checkLevelUp;
     private int a = 0;
- 
+    public int stage = 0;
+public GameObject[] volumes;
     private void Awake()
     {
         _well = new List<GameObject>(2);
@@ -40,7 +44,13 @@ public class CardManager : MonoSingleton<CardManager>
         _player = GameManager.Instance.Player;
         _checkLevelUp = _player.GetComponentInChildren<CheckLevelUp>();
         _checkLevelUp.OnLevelUp.AddListener(StartCardPolling);
-
+        for (int i = 0; i <= 1; i++)
+        {
+            volumes[i].GetComponent<Volume>().enabled = false;
+        }
+        
+        volumes[0].SetActive(true);
+        volumes[1].SetActive(false);
     }
 
     public void StartCardPolling(int a)
@@ -56,14 +66,15 @@ public class CardManager : MonoSingleton<CardManager>
             _well[i].GetComponentInParent<Canvas>().worldCamera = Camera.main;
             _well[i] = _well[i].transform.GetChild(0).gameObject;
         }
-        _well[1].transform.DOMove(new Vector3((Target.position.x * 0) * 55f, Target.position.y, Target.position.z), duration);
-        _well[2].transform.DOMove(new Vector3((Target.position.x * 1) * -55f, Target.position.y, Target.position.z), duration);
-        _well[0].transform.DOMove(new Vector3((Target.position.x * 1) * 55f, Target.position.y, Target.position.z), duration);
+        _well[1].transform.DOMove(new Vector3((Target.position.x * 0) *0.5f, Target.position.y, Target.position.z), duration);
+        _well[2].transform.DOMove(new Vector3((Target.position.x * 1) * -0.5f, Target.position.y, Target.position.z), duration);
+        _well[0].transform.DOMove(new Vector3((Target.position.x * 1) * 0.5f, Target.position.y, Target.position.z), duration);
        BackSpriteFOr();
+        volumes[0].GetComponent<Volume>().enabled = true;
     }
 
     public void EndCardPolling()
-    { // æÓ ø©±‚∞° ≥°≥µ¿ª∂ß
+    { // ÔøΩÔøΩ ÔøΩÔøΩÔøΩ‚∞° ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
       
         for (int i = 0; i < 3; i++)
             _well[i].transform.DOMove(new Vector3(EndTarget.position.x, EndTarget.position.y - 75, EndTarget.position.z), duration).OnComplete(() =>
@@ -74,10 +85,10 @@ public class CardManager : MonoSingleton<CardManager>
                 _cheack = null;
                 _cheack[i]._OnClick -= RandomSprite;
             });
-     
- 
-      
-       
+
+
+        volumes[0].GetComponent<Volume>().enabled = false;
+
     }
     public void BackSpriteFOr()
     {for (int i = 0; i < 3; i++)
@@ -90,6 +101,7 @@ public class CardManager : MonoSingleton<CardManager>
     public void FrontSprite<T>(T target) where T : Component
     {child = target.transform.GetChild(0);
         ChildChange(-2f,true,Sprite.FrontSprite);
+     
     }
     private void ChildChange(float end,bool flag,Sprite sprite)
     {child.DOScaleX(end, duration).OnComplete(()=> child.DOPause());
@@ -101,19 +113,23 @@ public class CardManager : MonoSingleton<CardManager>
 
     public void GameobjectGet(GameObject obj,bool flag)
     {
-        if (obj == null)
+        try
         {
-            Debug.LogError("¿Ã∞≈¥¬ æ∆π´∞Õµµ æ¯Ω¿¥œ¥Ÿ.");
-            return;
+            obj.gameObject.SetActive(flag);
+            Obiion = obj;
         }
-        obj.gameObject.SetActive(flag);
-        Obiion = obj;
+        catch (NullReferenceException)
+        {
 
+            Debug.LogError("null");
+            return;
+
+        } 
+    
     }
 
     public void RandomSprite()
     { 
-        int stage = 0;
         if (stage == 0)
             Stage0();
         if (stage == 1)
@@ -124,28 +140,28 @@ public class CardManager : MonoSingleton<CardManager>
     private void Stage2()
     { int rand = Random.Range(0, 101);
         if (rand <= 45)
-        EnterChange("Common");
+            EnterChange("Common");
         if (rand > 45 && rand < 85)
          EnterChange("Rare");
         if (rand >= 85)
          EnterChange("Legend");
- }
+    }
     private void Stage1()
     {
         int rand = Random.Range(0, 101);
         if (rand <= 65)
-        EnterChange("Common");
-       if (rand > 65 && rand < 90)
-         EnterChange("Rare");
-       if ( rand >= 90)
-         EnterChange("Legend");    
+            EnterChange("Common");
+        if (rand is > 65 and < 90)
+            EnterChange("Rare");
+        if ( rand >= 90)
+            EnterChange("Legend");    
     }
     public void Stage0()
     {int rand = Random.Range(0, 101);
         if (rand <= 80)
-        EnterChange("Common");
+            EnterChange("Common");
         if (rand > 80)
-        EnterChange("Rare");
+            EnterChange("Rare");
     }
     private void EnterChange<T>(T t)
     {
@@ -156,16 +172,26 @@ public class CardManager : MonoSingleton<CardManager>
         var = new string[]
         {
             RandomCardSO[spriteRand].Name,
-            "∞¯∞›∑¬:" + _playerDataSO.Damage + RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage +"%",
-            "√º∑¬:" +_playerDataSO.Hp + RandomCardSO[spriteRand].Health/ 100 * _playerDataSO.Hp + "%",
-            "∞¯∞›º”µµ:" +_playerDataSO.SwordAttackTime + RandomCardSO[spriteRand].AttackSpeed/100 * _playerDataSO.SwordAttackTime + "%",
-            "¿Ãµøº”µµ:" +_playerDataSO.MoveSpeed + RandomCardSO[spriteRand].speed/100*_playerDataSO.MoveSpeed + "%"
+            "Í≥µÍ≤©Î†•:" + _playerDataSO.Damage + RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage +"%",
+            "Ï≤¥Î†•:" +_playerDataSO.Hp + RandomCardSO[spriteRand].Health/ 100 * _playerDataSO.Hp + "%",
+            "Í≥µÍ≤© ÏÜçÎèÑ:" +_playerDataSO.SwordAttackTime + RandomCardSO[spriteRand].AttackSpeed/100 * _playerDataSO.SwordAttackTime + "%",
+            "Ïù¥Îèô ÏÜçÎèÑ:" +_playerDataSO.MoveSpeed + RandomCardSO[spriteRand].speed/100*_playerDataSO.MoveSpeed + "%"
         };
         for (int i = 0; i < var.Length; i++)
         { 
             child.GetChild(0).GetChild(i).GetComponent<TextMeshProUGUI>().text = var[i];
+            _playerDataSO.Damage = RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage;
+            _playerDataSO.Hp = RandomCardSO[spriteRand].Health / 100 * _playerDataSO.Hp;
+            _playerDataSO.SwordAttackTime = RandomCardSO[spriteRand].AttackSpeed/ 100 * _playerDataSO.SwordAttackTime;
+            _playerDataSO.MoveSpeed = RandomCardSO[spriteRand].speed / 100 * _playerDataSO.MoveSpeed;
+          
         }
-      
+       
+
+        // ÌÖçÏä§Ìä∏ ÌååÏùºÎ°ú Ï†ÄÏû•
+     
+
+        //Debug.Log("Data saved to: " + path);
         Obiion.gameObject.SetActive(true);
         string text = RandomCardSO[spriteRand].Text;
        Ob(text);

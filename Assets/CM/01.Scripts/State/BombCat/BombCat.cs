@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using CSI._01.Script.Monster;
 
 public class BombCat : Enemy{
     [SerializeField] private float AttackRange;
 
     public float explotionRange;
-    protected void Awake(){
+    protected override void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();

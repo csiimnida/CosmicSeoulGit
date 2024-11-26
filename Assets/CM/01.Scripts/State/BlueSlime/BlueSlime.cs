@@ -1,5 +1,6 @@
 using System.Collections;
 using System;
+using CSI._01.Script.Monster;
 using UnityEngine;
 
 public class BlueSlime : Enemy
@@ -8,7 +9,7 @@ public class BlueSlime : Enemy
 
     public Transform attack1Pos;
 
-    protected void Awake(){
+    protected override void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
@@ -29,6 +30,7 @@ public class BlueSlime : Enemy
             }
             catch (Exception e)
             {
+                // ignored
             }
         }
         TransitionState(EnemyStateType.Idle);

@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using CSI._01.Script.Monster;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour
 {
@@ -126,9 +128,14 @@ public class Player : MonoBehaviour
         }
         else if (NowHP <= 0)
         {
+            
+            Debug.Log("호출");
             TransitionState(PlayerStateType.Death);
             ShakeCamera(enermyDataSo);
+            CardManager.Instance.volumes[1].SetActive(true);
+            CardManager.Instance.volumes[0].SetActive(false);
             OnDeath?.Invoke();
+            CardManager.Instance.volumes[1].GetComponent<Volume>().enabled = true;
         }
     }
     

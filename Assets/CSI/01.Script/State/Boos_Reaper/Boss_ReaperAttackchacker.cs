@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CSI._01.Script.Monster;
 using UnityEngine;
 
 public class Boss_ReaperAttackchacker : MonoBehaviour

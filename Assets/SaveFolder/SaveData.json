@@ -1,1 +1,10 @@
-{"_screen_name":"ThirdStage","Damage":10.0,"Health":10000000.0,"Attack_Speed":1.0,"MoveSpeed":6.0,"RollPower":4.0,"Exp":0,"MaxExp":100}
+{
+  "_screen_name":"ThirdStage",
+  "Damage":10.0,
+  "Health":10000000.0,
+  "Attack_Speed":1.0,
+  "MoveSpeed":6.0,
+  "RollPower":4.0,
+  "Exp":0,
+  "MaxExp":100
+}

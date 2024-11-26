@@ -37,6 +37,10 @@ public class MoveNextStage : MonoBehaviour{
                 MoveNextStageMethod();
     }
 
+    public void EndingSceneEnd(){
+        MoveNextStageMethod();
+    }
+
     private void MoveNextStageMethod(){
         _isCollision = true;
         StartCoroutine(FadeIn());

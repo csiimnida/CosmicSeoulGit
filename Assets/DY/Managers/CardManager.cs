@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using System.IO;
 using Random = UnityEngine.Random;
 using UnityEngine.InputSystem.HID;
 using UnityEngine.Rendering;
@@ -28,6 +29,7 @@ public class CardManager : MonoSingleton<CardManager>
     private Player _player;
     private CheckLevelUp _checkLevelUp;
     private int a = 0;
+    public int stage = 0;
 public GameObject[] volumes;
     private void Awake()
     {
@@ -111,19 +113,23 @@ public GameObject[] volumes;
 
     public void GameobjectGet(GameObject obj,bool flag)
     {
-        if (obj == null)
+        try
         {
-            Debug.LogError("�̰Ŵ� �ƹ��͵� �����ϴ�.");
-            return;
+            obj.gameObject.SetActive(flag);
+            Obiion = obj;
         }
-        obj.gameObject.SetActive(flag);
-        Obiion = obj;
+        catch (NullReferenceException)
+        {
 
+            Debug.LogError("null");
+            return;
+
+        } 
+    
     }
 
     public void RandomSprite()
     { 
-        int stage = 0;
         if (stage == 0)
             Stage0();
         if (stage == 1)
@@ -134,28 +140,28 @@ public GameObject[] volumes;
     private void Stage2()
     { int rand = Random.Range(0, 101);
         if (rand <= 45)
-        EnterChange("Common");
+            EnterChange("Common");
         if (rand > 45 && rand < 85)
          EnterChange("Rare");
         if (rand >= 85)
          EnterChange("Legend");
- }
+    }
     private void Stage1()
     {
         int rand = Random.Range(0, 101);
         if (rand <= 65)
-        EnterChange("Common");
-       if (rand > 65 && rand < 90)
-         EnterChange("Rare");
-       if ( rand >= 90)
-         EnterChange("Legend");    
+            EnterChange("Common");
+        if (rand is > 65 and < 90)
+            EnterChange("Rare");
+        if ( rand >= 90)
+            EnterChange("Legend");    
     }
     public void Stage0()
     {int rand = Random.Range(0, 101);
         if (rand <= 80)
-        EnterChange("Common");
+            EnterChange("Common");
         if (rand > 80)
-        EnterChange("Rare");
+            EnterChange("Rare");
     }
     private void EnterChange<T>(T t)
     {
@@ -166,10 +172,10 @@ public GameObject[] volumes;
         var = new string[]
         {
             RandomCardSO[spriteRand].Name,
-            "���ݷ�:" + _playerDataSO.Damage + RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage +"%",
-            "ü��:" +_playerDataSO.Hp + RandomCardSO[spriteRand].Health/ 100 * _playerDataSO.Hp + "%",
-            "���ݼӵ�:" +_playerDataSO.SwordAttackTime + RandomCardSO[spriteRand].AttackSpeed/100 * _playerDataSO.SwordAttackTime + "%",
-            "�̵��ӵ�:" +_playerDataSO.MoveSpeed + RandomCardSO[spriteRand].speed/100*_playerDataSO.MoveSpeed + "%"
+            "공격력:" + _playerDataSO.Damage + RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage +"%",
+            "체력:" +_playerDataSO.Hp + RandomCardSO[spriteRand].Health/ 100 * _playerDataSO.Hp + "%",
+            "공격 속도:" +_playerDataSO.SwordAttackTime + RandomCardSO[spriteRand].AttackSpeed/100 * _playerDataSO.SwordAttackTime + "%",
+            "이동 속도:" +_playerDataSO.MoveSpeed + RandomCardSO[spriteRand].speed/100*_playerDataSO.MoveSpeed + "%"
         };
         for (int i = 0; i < var.Length; i++)
         { 
@@ -178,8 +184,14 @@ public GameObject[] volumes;
             _playerDataSO.Hp = RandomCardSO[spriteRand].Health / 100 * _playerDataSO.Hp;
             _playerDataSO.SwordAttackTime = RandomCardSO[spriteRand].AttackSpeed/ 100 * _playerDataSO.SwordAttackTime;
             _playerDataSO.MoveSpeed = RandomCardSO[spriteRand].speed / 100 * _playerDataSO.MoveSpeed;
+          
         }
-      
+       
+
+        // 텍스트 파일로 저장
+     
+
+        //Debug.Log("Data saved to: " + path);
         Obiion.gameObject.SetActive(true);
         string text = RandomCardSO[spriteRand].Text;
        Ob(text);

@@ -12,12 +12,23 @@ public class MoveNextStage : MonoBehaviour{
     [SerializeField] private string _nextSceneName;
 
     [SerializeField] public AudioSource _backgroundBgm;
+    private BoxCollider2D _boxCollider;
 
     private bool _isClear;
     private bool _isCollision = false;
 
+    private void Awake(){
+        _boxCollider = GetComponent<BoxCollider2D>();
+    }
+
     private void Start(){
         _isClear = SceneManager.GetActiveScene().name == "Tutorial" ? true : false;
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            _boxCollider.isTrigger = true;
+            return;
+        }
+        _boxCollider.isTrigger = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -50,5 +61,6 @@ public class MoveNextStage : MonoBehaviour{
 
     public void ClearStage(){
         _isClear = true;
+        _boxCollider.isTrigger = true;
     }
 }

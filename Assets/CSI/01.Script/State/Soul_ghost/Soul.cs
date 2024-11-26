@@ -51,7 +51,6 @@ public class Soul : Enemy
         }
         NowHp -= damage;
         StartCoroutine(Do_Hit_Effect());
-        CombitTimer = 0;
 
         if (NowHp <= 0)
         {
@@ -61,14 +60,6 @@ public class Soul : Enemy
             Destroy(this);
         }
         if(CoolDowning) return;
-        if (!Combit)
-        {
-            Combit = true;
-            if(currentState == EnemyStateType.Attack1)
-                TransitionState(EnemyStateType.Attack1);
-            else
-                TransitionState(EnemyStateType.Move);
-        }
     }
     private IEnumerator Do_Hit_Effect()
     {

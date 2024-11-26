@@ -6,6 +6,7 @@ using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
 
+using UnityEngine.Serialization;
 public class Enemy : MonoBehaviour
 {
     public Player player;
@@ -41,7 +42,7 @@ public class Enemy : MonoBehaviour
 
 
     public AnimatorController _2pageAnim;
-    public Transform BloodBloodRequiemEffect;
+    public Transform BloodRequiemEffect;
 
     public float ReqamTimer;
     public float ReqamTimerMax = 60;

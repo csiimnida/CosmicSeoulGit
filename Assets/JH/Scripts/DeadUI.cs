@@ -86,9 +86,9 @@ public class DeadUI : MonoSingleton<DeadUI>
         {
             try
             {
-                _player = GameManager.Instance.Player;
                 print("구독");
                 _profile = CardManager.Instance.volumes[1].GetComponent<Volume>().profile;
+                _player = GameManager.Instance.Player;
                 StartSet();
                 _player.OnDeath += DeadEffectStart;
             }
@@ -207,6 +207,8 @@ public class DeadUI : MonoSingleton<DeadUI>
             yield return null; // 다음 프레임까지 대기
         }
         Destroy(GameManager.Instance.Player.gameObject);
+        //Destroy(CardManager.Instance.gameObject);
+
         Save.Instance.LoadButtn();
 
         // 마지막 목표값 보장

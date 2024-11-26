@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class DeadUI : MonoSingleton<DeadUI>
 {
@@ -76,6 +78,7 @@ public class DeadUI : MonoSingleton<DeadUI>
     }
     public void DeadEffectStart(){
         _camera = Camera.main;
+        GameManager.Instance.Player.Panal.GetComponent<Image>().DOFade(1, 1.5f);
         StartCoroutine(ApplyVignetteEffectOverTime());
         StartCoroutine(ApplyBloomEffectOverTime());
         _tonemapping.mode.value = TonemappingMode.ACES;

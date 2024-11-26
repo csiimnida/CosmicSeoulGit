@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHandler , IPointerExitHandler
 {
-    private int count = 0;
+    private int  count = 0;
     private bool hasPointerEntered = false; // 플래그 변수
     private bool hasPointer = false;
     private Vector2 currentSize = Vector2.zero;
@@ -15,6 +15,7 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
     private Tween scaleTween = null;
     public Action _OnClick;
     private bool isClick = false;
+    private bool isFront;
     private void Awake()
     {rect =transform.GetChild(0).GetComponent<RectTransform>();
         currentSize = rect.localScale;
@@ -39,16 +40,17 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
         }
     }
         public void OnPointerDown(PointerEventData eventData)
-    {   if (!hasPointerEntered)
-        { hasPointerEntered = true; // 플래그 설정
-         CardManager.Instance.FrontSprite(this.gameObject.GetComponent<CardCheacker>());
+    {   
+        
+            if (isFront)
+            { CardManager.Instance.EndCardPolling();
+            }// 플래그 설정
+        isFront = true;
+        CardManager.Instance.FrontSprite(this.gameObject.GetComponent<CardCheacker>());
             _OnClick?.Invoke();
-            count++;
-            if (count > 0)
-            {
-               CardManager.Instance.EndCardPolling();
-            }
-
-        }
+            
+          
+       
+        
     }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: b1f356f5d43305f4d870682890d00fc7, type: 3}
   Name: "\uBB34\uB77C\uB9C8\uC0AC"
   Attack: 20
-  speed: -60
+  speed: 30
   AttackSpeed: 30
-  Health: 30
+  Health: -60
   Text: "\uBBF8\uCCD0 \uB0A0\uB6F0\uC5B4 \uBD05\uC2DC\uB2E4."

@@ -8,8 +8,10 @@ using UnityEngine.UI;
 using TMPro;
 using Random = UnityEngine.Random;
 using UnityEngine.InputSystem.HID;
+using UnityEngine.Rendering;
 public class CardManager : MonoSingleton<CardManager>
 {
+
     string[] var = null;
     [SerializeField] private List<GameObject> _well = null;
     [SerializeField] private GameObject _CardPrefab = null;
@@ -26,7 +28,7 @@ public class CardManager : MonoSingleton<CardManager>
     private Player _player;
     private CheckLevelUp _checkLevelUp;
     private int a = 0;
- 
+public GameObject[] volumes;
     private void Awake()
     {
         _well = new List<GameObject>(2);
@@ -40,7 +42,13 @@ public class CardManager : MonoSingleton<CardManager>
         _player = GameManager.Instance.Player;
         _checkLevelUp = _player.GetComponentInChildren<CheckLevelUp>();
         _checkLevelUp.OnLevelUp.AddListener(StartCardPolling);
-
+        for (int i = 0; i <= 1; i++)
+        {
+            volumes[i].GetComponent<Volume>().enabled = false;
+        }
+        
+        volumes[0].SetActive(true);
+        volumes[1].SetActive(false);
     }
 
     public void StartCardPolling(int a)
@@ -56,14 +64,15 @@ public class CardManager : MonoSingleton<CardManager>
             _well[i].GetComponentInParent<Canvas>().worldCamera = Camera.main;
             _well[i] = _well[i].transform.GetChild(0).gameObject;
         }
-        _well[1].transform.DOMove(new Vector3((Target.position.x * 0) * 55f, Target.position.y, Target.position.z), duration);
-        _well[2].transform.DOMove(new Vector3((Target.position.x * 1) * -55f, Target.position.y, Target.position.z), duration);
-        _well[0].transform.DOMove(new Vector3((Target.position.x * 1) * 55f, Target.position.y, Target.position.z), duration);
+        _well[1].transform.DOMove(new Vector3((Target.position.x * 0) *0.5f, Target.position.y, Target.position.z), duration);
+        _well[2].transform.DOMove(new Vector3((Target.position.x * 1) * -0.5f, Target.position.y, Target.position.z), duration);
+        _well[0].transform.DOMove(new Vector3((Target.position.x * 1) * 0.5f, Target.position.y, Target.position.z), duration);
        BackSpriteFOr();
+        volumes[0].GetComponent<Volume>().enabled = true;
     }
 
     public void EndCardPolling()
-    { // ¾î ¿©±â°¡ ³¡³µÀ»¶§
+    { // ï¿½ï¿½ ï¿½ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
       
         for (int i = 0; i < 3; i++)
             _well[i].transform.DOMove(new Vector3(EndTarget.position.x, EndTarget.position.y - 75, EndTarget.position.z), duration).OnComplete(() =>
@@ -74,10 +83,10 @@ public class CardManager : MonoSingleton<CardManager>
                 _cheack = null;
                 _cheack[i]._OnClick -= RandomSprite;
             });
-     
- 
-      
-       
+
+
+        volumes[0].GetComponent<Volume>().enabled = false;
+
     }
     public void BackSpriteFOr()
     {for (int i = 0; i < 3; i++)
@@ -90,6 +99,7 @@ public class CardManager : MonoSingleton<CardManager>
     public void FrontSprite<T>(T target) where T : Component
     {child = target.transform.GetChild(0);
         ChildChange(-2f,true,Sprite.FrontSprite);
+     
     }
     private void ChildChange(float end,bool flag,Sprite sprite)
     {child.DOScaleX(end, duration).OnComplete(()=> child.DOPause());
@@ -103,7 +113,7 @@ public class CardManager : MonoSingleton<CardManager>
     {
         if (obj == null)
         {
-            Debug.LogError("ÀÌ°Å´Â ¾Æ¹«°Íµµ ¾ø½À´Ï´Ù.");
+            Debug.LogError("ï¿½Ì°Å´ï¿½ ï¿½Æ¹ï¿½ï¿½Íµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
         obj.gameObject.SetActive(flag);
@@ -156,14 +166,18 @@ public class CardManager : MonoSingleton<CardManager>
         var = new string[]
         {
             RandomCardSO[spriteRand].Name,
-            "°ø°Ý·Â:" + _playerDataSO.Damage + RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage +"%",
-            "Ã¼·Â:" +_playerDataSO.Hp + RandomCardSO[spriteRand].Health/ 100 * _playerDataSO.Hp + "%",
-            "°ø°Ý¼Óµµ:" +_playerDataSO.SwordAttackTime + RandomCardSO[spriteRand].AttackSpeed/100 * _playerDataSO.SwordAttackTime + "%",
-            "ÀÌµ¿¼Óµµ:" +_playerDataSO.MoveSpeed + RandomCardSO[spriteRand].speed/100*_playerDataSO.MoveSpeed + "%"
+            "ï¿½ï¿½ï¿½Ý·ï¿½:" + _playerDataSO.Damage + RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage +"%",
+            "Ã¼ï¿½ï¿½:" +_playerDataSO.Hp + RandomCardSO[spriteRand].Health/ 100 * _playerDataSO.Hp + "%",
+            "ï¿½ï¿½ï¿½Ý¼Óµï¿½:" +_playerDataSO.SwordAttackTime + RandomCardSO[spriteRand].AttackSpeed/100 * _playerDataSO.SwordAttackTime + "%",
+            "ï¿½Ìµï¿½ï¿½Óµï¿½:" +_playerDataSO.MoveSpeed + RandomCardSO[spriteRand].speed/100*_playerDataSO.MoveSpeed + "%"
         };
         for (int i = 0; i < var.Length; i++)
         { 
             child.GetChild(0).GetChild(i).GetComponent<TextMeshProUGUI>().text = var[i];
+            _playerDataSO.Damage = RandomCardSO[spriteRand].Attack / 100 * _playerDataSO.Damage;
+            _playerDataSO.Hp = RandomCardSO[spriteRand].Health / 100 * _playerDataSO.Hp;
+            _playerDataSO.SwordAttackTime = RandomCardSO[spriteRand].AttackSpeed/ 100 * _playerDataSO.SwordAttackTime;
+            _playerDataSO.MoveSpeed = RandomCardSO[spriteRand].speed / 100 * _playerDataSO.MoveSpeed;
         }
       
         Obiion.gameObject.SetActive(true);

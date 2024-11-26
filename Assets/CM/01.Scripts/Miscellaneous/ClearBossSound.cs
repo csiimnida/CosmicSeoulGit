@@ -19,6 +19,9 @@ public class ClearBossSound : MonoBehaviour
             _bossBGM.volume -= 0.01f;
             yield return new WaitForSeconds(0.02f);
         }
+
+        _backgroundBGM.volume = 1f;
+        _bossBGM.volume = 0f;
         yield return new WaitForSeconds(_fadeDuration + 0.5f);
     }
 }

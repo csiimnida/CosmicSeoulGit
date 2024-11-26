@@ -12,10 +12,6 @@ public class ExpBar : MonoBehaviour
         _slider = GetComponent<Slider>();
     }
 
-    private void OnEnable(){
-        _slider.value = GameManager.Instance.Player.Exp;
-    }
-
     public void ExpBarValueChange(int exp){
         _slider.value = exp;
     }

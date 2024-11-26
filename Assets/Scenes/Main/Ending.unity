@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetPosition: {fileID: 356053299}
-  _moveTime: 90
+  _moveTime: 70
 --- !u!1 &637730781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetPosition: {fileID: 2043890955}
-  _moveTime: 90
+  _moveTime: 70
 --- !u!1 &2043890954
 GameObject:
   m_ObjectHideFlags: 0

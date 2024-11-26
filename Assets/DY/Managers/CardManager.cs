@@ -206,6 +206,7 @@ public GameObject[] volumes;
         Obiion.GetComponent<TextMeshProUGUI>().DOText(text, 1f);
     }
 
+   
     public void Enter()
     {
         _playerDataSO.Damage += _playerDataSO.Damage*float.Parse(Regex.Match(child.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;

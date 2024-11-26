@@ -45,7 +45,7 @@ public class Reaper_EnemyTeleportState : EnermyState
     public override void UpdateState()
     {
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
-        _emermy._isSeeRight = _emermy.transform.position.x > _emermy.player.transform.position.x;
+        _emermy.isSeeRight = _emermy.transform.position.x > _emermy.player.transform.position.x;
         if (TelleportWait.StartTime)
         {
             if (TelleportWait.NowTime >= TelleportWait.MaxTime)

@@ -619,7 +619,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _shakePower: {x: 0.4, y: 0.4}
-  _shakeDuration: 0.2
+  _shakeDuration: 0.1
 --- !u!114 &8345441692742200898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,7 +640,7 @@ MonoBehaviour:
   Attack2Transform: {fileID: 226077152213161098}
   Skill1Transform: {fileID: 2753339450712463596}
   _shakePower: {x: 0.2, y: 0.2}
-  _shakeDuration: 0.4
+  _shakeDuration: 0.25
 --- !u!114 &1033564136372030717
 MonoBehaviour:
   m_ObjectHideFlags: 0

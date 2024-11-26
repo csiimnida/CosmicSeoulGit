@@ -23,7 +23,7 @@ public class CardManager : MonoSingleton<CardManager>
     public CardCheacker[] _cheack = null;
     [SerializeField] PlayerDataSO _playerDataSO = null;
     GameObject Obiion;
-    int spriteRand = 0;
+    int spriterand= 0;
     [SerializeField] private Transform EndTarget;
     [SerializeField] private Transform Target;
     private Player _player;
@@ -168,19 +168,20 @@ public GameObject[] volumes;
             EnterChange("Rare");
     }
     private void EnterChange<T>(T t)
-    {
-        Debug.Log("어 들어와짐");
-        RandomCardSO = Resources.LoadAll<AwakeSO>($"RandomSprite/{t}");
-        spriteRand = Random.Range(0, RandomCardSO.Length-1);
-        Debug.Log(spriteRand);
-        child.GetChild(0).GetComponent<Image>().sprite = RandomCardSO[spriteRand].sprite;
+    {RandomCardSO = Resources.LoadAll<AwakeSO>($"RandomSprite/{t}");
+        Debug.Log(RandomCardSO.Length);
+        spriterand = Random.Range(0, RandomCardSO.Length+1);
+        if (spriterand >= 4)
+           spriterand = Random.Range(0, RandomCardSO.Length);
+        child.GetChild(0).GetComponent<Image>().sprite = RandomCardSO[spriterand].sprite;
+       
         var = new string[]
         {
-            RandomCardSO[spriteRand].Name,
-            "공격력:" + RandomCardSO[spriteRand].Attack  +"%",
-            "체력:" +RandomCardSO[spriteRand].Health + "%",
-            "공격 속도:" + RandomCardSO[spriteRand].AttackSpeed + "%",
-            "이동 속도:" + RandomCardSO[spriteRand].speed + "%"
+            RandomCardSO[spriterand].Name,
+            "공격력:" + RandomCardSO[spriterand].Attack  +"%",
+            "체력:" +RandomCardSO[spriterand].Health + "%",
+            "공격 속도:" + RandomCardSO[spriterand].AttackSpeed + "%",
+            "이동 속도:" + RandomCardSO[spriterand].speed + "%"
         };
         for (int i = 0; i < var.Length; i++)
         { 
@@ -195,7 +196,7 @@ public GameObject[] volumes;
 
         //Debug.Log("Data saved to: " + path);
         Obiion.gameObject.SetActive(true);
-        string text = RandomCardSO[spriteRand].Text;
+        string text = RandomCardSO[spriterand].Text;
        Ob(text);
         
   
@@ -208,10 +209,10 @@ public GameObject[] volumes;
 
     public void Enter()
     {
-        _playerDataSO.Damage += _playerDataSO.Damage*RandomCardSO[spriteRand].Attack / 100;
-        _playerDataSO.Hp += _playerDataSO.Hp*RandomCardSO[spriteRand].Health / 100;
-        _playerDataSO.SwordAttackTime += _playerDataSO.SwordAttackTime*RandomCardSO[spriteRand].AttackSpeed/ 100;
-        _playerDataSO.MoveSpeed += _playerDataSO.MoveSpeed*RandomCardSO[spriteRand].speed / 100;
+        _playerDataSO.Damage += _playerDataSO.Damage*RandomCardSO[spriterand].Attack / 100;
+        _playerDataSO.Hp += _playerDataSO.Hp*RandomCardSO[spriterand].Health / 100;
+        _playerDataSO.SwordAttackTime += _playerDataSO.SwordAttackTime*RandomCardSO[spriterand].AttackSpeed/ 100;
+        _playerDataSO.MoveSpeed += _playerDataSO.MoveSpeed*RandomCardSO[spriterand].speed / 100;
         
     }
  

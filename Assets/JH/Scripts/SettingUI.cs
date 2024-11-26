@@ -36,9 +36,9 @@ public class SettingUI : MonoBehaviour
     {
         
         
-            SetUI.SetActive(false);
-            soundManager.PlaySound("Bt_Click");
-            Time.timeScale = 1;
+        SetUI.SetActive(false);
+        soundManager.PlaySound("Bt_Click");
+        Time.timeScale = 1;
         
         
 

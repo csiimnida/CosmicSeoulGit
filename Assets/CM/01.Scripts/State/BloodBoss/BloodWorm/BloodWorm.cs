@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using CSI._01.Script.Monster;
 using UnityEngine.Events;
 
 public class BloodWorm : Enemy
@@ -12,7 +13,7 @@ public class BloodWorm : Enemy
     public Transform Attack1Pos;
     public Transform Attack2Pos;
 
-    protected void Awake(){
+    protected override void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
@@ -34,6 +35,7 @@ public class BloodWorm : Enemy
             }
             catch (Exception e)
             {
+                // ignored
             }
         }
         TransitionState(EnemyStateType.Idle);

@@ -17,7 +17,7 @@ public class SettingUI : MonoBehaviour
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (SetUI.active)
+            if (SetUI.activeSelf)
             {
                 SetUI.SetActive(false);
                 Time.timeScale = 1; 

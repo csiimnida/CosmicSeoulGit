@@ -1,11 +1,9 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Animations;
+using CSI._01.Script.Monster;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
-using UnityEngine.Rendering.PostProcessing;
 using Random = UnityEngine.Random;
 
 public class Boss_Reaper : Enemy
@@ -17,7 +15,7 @@ public class Boss_Reaper : Enemy
     public PlayableDirector playbackState;
     public UnityEvent ChangePage;
     
-    protected void Awake()
+    protected override void Awake()
     {
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();

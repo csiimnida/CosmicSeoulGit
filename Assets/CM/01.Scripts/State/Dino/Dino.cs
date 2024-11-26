@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using CSI._01.Script.Monster;
 using UnityEngine;
 
 public class Dino : Enemy
@@ -10,7 +11,7 @@ public class Dino : Enemy
     public Transform attack1Pos;
     public Transform attack2Pos;
 
-    protected void Awake(){
+    protected override void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
@@ -31,6 +32,7 @@ public class Dino : Enemy
             }
             catch (Exception e)
             {
+                // ignored
             }
         }
         TransitionState(EnemyStateType.Idle);

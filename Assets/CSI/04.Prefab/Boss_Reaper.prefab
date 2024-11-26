@@ -159,6 +159,7 @@ MonoBehaviour:
   <TelleportAttackSize>k__BackingField: {x: 6.73, y: 8.48}
   attack1Pos: {fileID: 6834068720950327862}
   telleportAttackPos: {fileID: 8436103711963868387}
+  playbackState: {fileID: 0}
   ChangePage:
     m_PersistentCalls:
       m_Calls: []

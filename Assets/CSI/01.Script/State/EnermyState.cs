@@ -1,4 +1,5 @@
 
+using CSI._01.Script.Monster;
 using UnityEngine;
 
 public abstract class EnermyState

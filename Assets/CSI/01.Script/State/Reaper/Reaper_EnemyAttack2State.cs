@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using CSI._01.Script.Monster;
 using UnityEngine;
 
 public class Reaper_EnemyAttack2State : EnermyState

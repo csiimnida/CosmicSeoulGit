@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
-
+using CSI._01.Script.Monster;
 using UnityEngine;
 
 public class CandyEye : Enemy
 {
-    protected void Awake(){
+    protected override void Awake(){
         AnimCompo = GetComponentInChildren<AnimationChange>();
         RbCompo= GetComponent<Rigidbody2D>();
         ColCompo = GetComponent<Collider2D>();
@@ -27,6 +27,7 @@ public class CandyEye : Enemy
             }
             catch (Exception e)
             {
+                // ignored
             }
         }
         TransitionState(EnemyStateType.Idle);

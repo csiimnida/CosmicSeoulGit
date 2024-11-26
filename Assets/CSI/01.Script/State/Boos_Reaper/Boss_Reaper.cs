@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Playables;
 using UnityEngine.Rendering.PostProcessing;
+using Random = UnityEngine.Random;
 
 public class Boss_Reaper : Enemy
 {
@@ -12,7 +14,9 @@ public class Boss_Reaper : Enemy
     [field:SerializeField] public Vector2 TelleportAttackSize{ get;private set;}
     public Transform attack1Pos;
     public Transform telleportAttackPos;
+    public PlayableDirector playbackState;
     public UnityEvent ChangePage;
+    
     protected void Awake()
     {
         AnimCompo = GetComponentInChildren<AnimationChange>();
@@ -54,6 +58,7 @@ public class Boss_Reaper : Enemy
         {
             CoolDowning = false;
             _now2Page = true;
+            playbackState.Play();
             TransitionState(EnemyStateType.ChangePage);
             ChangePage?.Invoke();
         }
@@ -66,13 +71,38 @@ public class Boss_Reaper : Enemy
             return;
         }
     }
+    
+
+    private void LateUpdate()
+    {
+
+        if (_now2Page)
+        {
+            ReqamTimer += Time.deltaTime;
+
+            if (ReqamTimer >= ReqamTimerMax)
+            {
+                ReqamTimer = 0;
+                if (Random.Range(0, 100) <= 30)
+                {
+                    TransitionState(EnemyStateType.BloodRequiem);
+                }
+            }
+
+            
+        }
+    }
+
     private IEnumerator Do_Hit_Effect()
     {
         sprite.material = HitMaterial;
         yield return new WaitForSeconds(0.1f);
         sprite.material = NomallMaterial;
     }
-
+    public void DoneChangeBackGround()
+    {
+        TransitionState(EnemyStateType.Move);
+    }
 
     private void OnDrawGizmos()
     {

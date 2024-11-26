@@ -27,7 +27,6 @@ public class DeathState : PlayerState
 
     protected override void ExtiState(){
         _player.RbCompo.bodyType = RigidbodyType2D.Dynamic;
-        _player.InputCompo.OnMoveEvent += _player.RotCompo.FaceDirection;
         _player.ColCompo.enabled = true;
     }
 }

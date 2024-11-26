@@ -39,16 +39,6 @@ public class CandyEye : Enemy
     protected override void Damage_call(float damage){
         NowHp -= damage;
         StartCoroutine(Do_Hit_Effect());
-        CombitTimer = 0;
-        if (!Combit)
-        {
-            Combit = true;
-            if(currentState == EnemyStateType.Attack1)
-                TransitionState(EnemyStateType.Attack1);
-            else
-                TransitionState(EnemyStateType.Move);
-        }
-
         if (NowHp <= 0)
         {
             print("죽음");

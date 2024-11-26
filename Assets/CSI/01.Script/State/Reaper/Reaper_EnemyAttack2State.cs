@@ -28,18 +28,6 @@ public class Reaper_EnemyAttack2State : EnermyState
             _emermy.TransitionState(EnemyStateType.Idle);
             return;
         }
-        if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")))
-        {
-            if (_emermy.Combit)
-            {
-                if (_emermy.player.GetComponent<Player>().GetHP() <= 0)
-                {
-                    _emermy.TransitionState(EnemyStateType.Idle);
-                    return;
-                }
-            }
-            _emermy.TransitionState(EnemyStateType.Move);
-        }
     }
 
     protected override void ExtiState()

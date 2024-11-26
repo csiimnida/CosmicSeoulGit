@@ -11,13 +11,24 @@ public class MoveNextStage : MonoBehaviour{
     [SerializeField] private float _fadeDuration;
     [SerializeField] private string _nextSceneName;
 
-    [field:SerializeField] public AudioSource BackgroundBgm{ get; private set; }
+    [SerializeField] public AudioSource _backgroundBgm;
+    private BoxCollider2D _boxCollider;
 
     private bool _isClear;
     private bool _isCollision = false;
 
+    private void Awake(){
+        _boxCollider = GetComponent<BoxCollider2D>();
+    }
+
     private void Start(){
         _isClear = SceneManager.GetActiveScene().name == "Tutorial" ? true : false;
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            _boxCollider.isTrigger = true;
+            return;
+        }
+        _boxCollider.isTrigger = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -35,14 +46,14 @@ public class MoveNextStage : MonoBehaviour{
     private IEnumerator FadeIn(){
         _blackPanel.DOFade(2f, _fadeDuration);
         yield return new WaitForSeconds(_fadeDuration + 0.5f);
-        //Save.Instance.TrySave();
+        Save.Instance.TrySave(_nextSceneName);
         SceneManager.LoadScene(_nextSceneName);
     }
 
     private IEnumerator SoundDown(){
         for (int i = 0; i < 100; i++)
         {
-            BackgroundBgm.volume -= 0.01f;
+            _backgroundBgm.volume -= 0.01f;
             yield return new WaitForSeconds(0.02f);
         }
         yield return new WaitForSeconds(_fadeDuration + 0.5f);
@@ -50,5 +61,6 @@ public class MoveNextStage : MonoBehaviour{
 
     public void ClearStage(){
         _isClear = true;
+        _boxCollider.isTrigger = true;
     }
 }

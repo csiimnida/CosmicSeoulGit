@@ -16,7 +16,6 @@ public class WoodGuardian_Attack2State : EnermyState
     }
 
     public override void UpdateState(){
-        
         if (_emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2") &&
             _emermy.AnimCompo.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {

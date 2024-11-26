@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     private Material NormalMat;
     [SerializeField] private Material HitMat;
     
-    public UnityEvent OnDeath;
+    public event Action OnDeath;
 
     public int Exp = 0;
     public int MaxExp = 100;

@@ -18,18 +18,6 @@ public class Candy_Eye_EnermyAttack1State : EnermyState
     {
         _emermy.transform.localRotation = Quaternion.AngleAxis(_emermy.transform.position.x > _emermy.player.transform.position.x ? 180 : 0,Vector3.up);
         _emermy._isSeeRight = _emermy.transform.position.x > _emermy.player.transform.position.x;
-        if (!Physics2D.OverlapCircle(_emermy.transform.position, _emermy.DataSo.Attack_range,LayerMask.GetMask("Player")))
-        {
-            if (_emermy.Combit)
-            {
-                if (_emermy.player.GetComponent<Player>().GetHP() <= 0)
-                {
-                    _emermy.TransitionState(EnemyStateType.Idle);
-                    return;
-                }
-            }
-            _emermy.TransitionState(EnemyStateType.Move);
-        }
     }
 
     protected override void ExtiState()

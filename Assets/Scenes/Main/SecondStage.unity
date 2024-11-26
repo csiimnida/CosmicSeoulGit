@@ -739,7 +739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
       propertyPath: Dead.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
       propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -751,6 +751,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
       propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
@@ -766,6 +770,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 782884111}
     - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1190176430}
+    - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
       propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -775,6 +783,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
       propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
@@ -790,6 +802,10 @@ PrefabInstance:
       value: HandlerDead
       objectReference: {fileID: 0}
     - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ClearBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
       propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MoveNextStage, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -802,6 +818,10 @@ PrefabInstance:
       value: BloodHand, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: ClearBossSound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
       propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -811,6 +831,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
       propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789218790886637334, guid: 0bf3770c9b4ca7c42b5c0cd1ab92d92b, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2923,6 +2947,50 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &252556987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 252556988}
+  - component: {fileID: 252556989}
+  m_Layer: 0
+  m_Name: PlayerDeadSoundDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &252556988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252556987}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2041499900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &252556989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252556987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc7f3763d9ec3a48a2a4e3af489c274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &253133205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3190,7 +3258,7 @@ AudioSource:
   m_GameObject: {fileID: 288925097}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3206402432800362562, guid: cc3f8d6895aeac842a18b3c204bd673e, type: 2}
   m_audioClip: {fileID: 8300000, guid: deabade5ac2f49c47b3df7d649703ec2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
@@ -11945,6 +12013,21 @@ MonoBehaviour:
   BloodEffect2: {fileID: 1820273929}
   BloodEffect3: {fileID: 1718369182}
   waitTime: 3
+  OnDeadEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1811009638}
+        m_TargetAssemblyTypeName: ChangeBossPageSound, Assembly-CSharp
+        m_MethodName: PlayChangePageSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1258874258
 GameObject:
   m_ObjectHideFlags: 0
@@ -17248,6 +17331,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1811009636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1811009637}
+  - component: {fileID: 1811009638}
+  m_Layer: 0
+  m_Name: ChangeBossPage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1811009637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811009636}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2041499900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1811009638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811009636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79370b05d26f05948b68ca94402176e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstPageSound: {fileID: 963928185}
+  _secondPageSound: {fileID: 288925098}
+  _fadeDuration: 3
 --- !u!1 &1814630295
 GameObject:
   m_ObjectHideFlags: 0
@@ -19062,6 +19192,8 @@ Transform:
   - {fileID: 1342365277}
   - {fileID: 1190176431}
   - {fileID: 1236255755}
+  - {fileID: 1811009637}
+  - {fileID: 252556988}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2043039476

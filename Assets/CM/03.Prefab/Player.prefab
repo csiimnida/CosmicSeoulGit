@@ -635,7 +635,7 @@ MonoBehaviour:
   _player: {fileID: 5875467951631713595}
   Attack1Size: {x: 0.99, y: 1.54}
   Attack2Size: {x: 1.7, y: 1.08}
-  Skill1Size: {x: 1.51, y: 1.9}
+  Skill1Size: {x: 2.18, y: 2.08}
   Attack1Transform: {fileID: 7398679533924749695}
   Attack2Transform: {fileID: 226077152213161098}
   Skill1Transform: {fileID: 2753339450712463596}

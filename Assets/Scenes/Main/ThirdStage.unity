@@ -6805,6 +6805,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &256499255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 256499256}
+  - component: {fileID: 256499257}
+  m_Layer: 0
+  m_Name: PlayerDeadSoundDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &256499256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256499255}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1418570608}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &256499257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256499255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc7f3763d9ec3a48a2a4e3af489c274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &256833401
 GameObject:
   m_ObjectHideFlags: 0
@@ -9388,7 +9432,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -11627,6 +11671,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &431757659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 431757660}
+  - component: {fileID: 431757661}
+  m_Layer: 0
+  m_Name: ChangeBossPage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &431757660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431757659}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1418570608}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &431757661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431757659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79370b05d26f05948b68ca94402176e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstPageSound: {fileID: 358907220}
+  _secondPageSound: {fileID: 1693159412}
+  _fadeDuration: 3
 --- !u!1 &435165979
 GameObject:
   m_ObjectHideFlags: 0
@@ -33697,9 +33788,65 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 809850716}
     - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: ChangePage.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
       propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1661151394}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1861198843}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: ChangePage.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ClearBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: ChangePage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 431757661}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: ChangePage.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: ChangePage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayChangePageSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClearBossSound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: ChangePage.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeBossPageSound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: Dead.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203131804950000490, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
+      propertyPath: ChangePage.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8556717319762243975, guid: 676341ee266a9d446a3eff0ee2717662, type: 3}
       propertyPath: m_LocalPosition.x
       value: 446.3
@@ -41334,6 +41481,8 @@ Transform:
   - {fileID: 1693159413}
   - {fileID: 1861198842}
   - {fileID: 32604137}
+  - {fileID: 431757660}
+  - {fileID: 256499256}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1419810991
@@ -48869,12 +49018,12 @@ AudioSource:
   m_GameObject: {fileID: 1693159411}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: deabade5ac2f49c47b3df7d649703ec2, type: 3}
+  OutputAudioMixerGroup: {fileID: 3206402432800362562, guid: cc3f8d6895aeac842a18b3c204bd673e, type: 2}
+  m_audioClip: {fileID: 8300000, guid: fe121245e99288e40a6b9677424e49f5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

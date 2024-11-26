@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
   m_Name: ChildBlueSlime
   m_EditorClassIdentifier: 
-  ExpValue: 10
+  ExpValue: 20
   Size: {x: 1, y: 1}
-  AttackPower: 3
+  AttackPower: 2
   MaxHp: 20
-  AttackSpeed: 0.3
+  AttackSpeed: 3.5
   MoveSpeed: 3.5
   Perception_range: 6.4
   Attack_range: 0.35

@@ -15,9 +15,9 @@ MonoBehaviour:
   ExpValue: 0
   Size: {x: 1.5, y: 1.5}
   AttackPower: 50
-  MaxHp: 184
+  MaxHp: 3000
   AttackSpeed: 0.37
-  MoveSpeed: 3.7
+  MoveSpeed: 3
   Perception_range: 24.7
   Attack_range: 3.19
   CameraShakePower: {x: 0.66, y: 0}

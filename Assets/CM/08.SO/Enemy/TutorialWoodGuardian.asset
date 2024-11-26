@@ -15,7 +15,7 @@ MonoBehaviour:
   ExpValue: 0
   Size: {x: 1, y: 1}
   AttackPower: 20
-  MaxHp: 200
+  MaxHp: 250
   AttackSpeed: 2.5
   MoveSpeed: 4
   Perception_range: 10.46

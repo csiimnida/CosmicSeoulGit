@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: b844d5d56a037eb47989cde000f7c6fd, type: 3}
   Name: "\uBC31\uBC1C\uBC31\uC911"
-  Attack: 10
+  Attack: 50
   speed: -10
   AttackSpeed: 20
-  Health: 0
+  Health: -30
   Text: "\uBA85\uC0AC\uC218\uC758 \uD798\uC774 \uB2F9\uC2E0\uC758 \uC2EC\uC7A5\uC5D0
     \uAC01\uC778\uB41C\uB2E4."

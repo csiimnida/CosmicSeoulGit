@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf22dd638f3e6604fa06e22c35719c0f, type: 3}
-  m_Name: DinoBite
+  m_Name: BloodDemonAttack1
   m_EditorClassIdentifier: 
-  SoundName: DinoBite
+  SoundName: BloodDemonAttack1
   SoundType: SFX
-  AudioClip: {fileID: 8300000, guid: b4e548535c98abe4798c52440b834b37, type: 3}
+  AudioClip: {fileID: 8300000, guid: 7b6350b9fb92abe4ba3b4cea1b4ee552, type: 3}
   SoundProportion: 100

@@ -40,10 +40,10 @@ public class EnemyManager : MonoBehaviour{
         BloodEffect1.Play();
         BloodEffect2.Play();
         BloodEffect3.Play();
+        OnDeadEvent?.Invoke();
         yield return new WaitForSeconds(2f);
         BloodEffect.Play();
         yield return new WaitForSeconds(1f);
-        OnDeadEvent?.Invoke();
         BloodBoss2PagePrefab.transform.position = new Vector2(BloodBoss1Page.position.x, BloodBoss1Page.position.y - 0.9f);
         Destroy(BloodBoss1Page.gameObject);
     }

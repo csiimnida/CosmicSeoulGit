@@ -9429,7 +9429,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3206402432800362562, guid: cc3f8d6895aeac842a18b3c204bd673e, type: 2}
   m_audioClip: {fileID: 8300000, guid: b4b2c3f2adabd6641b826e6ec532d98a, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
   Loop: 1
@@ -47688,7 +47688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4642704468766539991, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -492.42
+      value: -495.6
       objectReference: {fileID: 0}
     - target: {fileID: 5136895890224244472, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: m_RaycastTarget
@@ -49012,7 +49012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1693159412
 AudioSource:
   m_ObjectHideFlags: 0

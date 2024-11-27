@@ -39,7 +39,6 @@ public class MoveNextStage : MonoBehaviour{
     public void EndingSceneEnd(){
         StartCoroutine(FadeInEnding());
         StartCoroutine(SoundDown());
-        Application.Quit();
     }
 
     private void MoveNextStageMethod(){

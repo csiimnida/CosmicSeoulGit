@@ -5,8 +5,8 @@ using UnityEngine;
 public class LoopMove : MonoBehaviour
 {
     Transform _rect;
-    public float speed = 0;
-    public float size = 1.0f;
+    public float speed = 0.00004f;
+    public float size = 0.2f;
     public float angleRotate = 0;
     private float time;
     public bool Play;

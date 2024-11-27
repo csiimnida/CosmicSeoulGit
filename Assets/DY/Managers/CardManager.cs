@@ -98,18 +98,18 @@ public GameObject[] volumes;
             out targetCanvasPosition
         );
         Debug.Log("A");
-
+        Time.timeScale = 0;
         // 기준 위치 (중앙 카드의 위치)
         float baseX = targetCanvasPosition.x;
 
         // 중앙 카드 배치
-        _well[1].GetComponent<RectTransform>().DOAnchorPos(new Vector2(baseX, targetCanvasPosition.y), duration);
+        _well[1].GetComponent<RectTransform>().DOAnchorPos(new Vector2(baseX, targetCanvasPosition.y), duration).SetUpdate(true);
 
         // 오른쪽 카드 배치
-        _well[2].GetComponent<RectTransform>().DOAnchorPos(new Vector2(baseX + fixedOffset, targetCanvasPosition.y), duration);
+        _well[2].GetComponent<RectTransform>().DOAnchorPos(new Vector2(baseX + fixedOffset, targetCanvasPosition.y), duration).SetUpdate(true);
 
         // 왼쪽 카드 배치
-        _well[0].GetComponent<RectTransform>().DOAnchorPos(new Vector2(baseX - fixedOffset, targetCanvasPosition.y), duration).OnComplete(() =>
+        _well[0].GetComponent<RectTransform>().DOAnchorPos(new Vector2(baseX - fixedOffset, targetCanvasPosition.y), duration).SetUpdate(true).OnComplete(() =>
         {
             // 애니메이션 완료 후 수행할 작업
         });
@@ -121,9 +121,9 @@ public GameObject[] volumes;
 
     public void EndCardPolling()
     { // �� ���Ⱑ ��������
-      
+        Time.timeScale = 1;
         for (int i = 0; i < 3; i++)
-            _well[i].transform.DOMove(new Vector3(EndTarget.position.x, EndTarget.position.y - 75, EndTarget.position.z), duration).OnComplete(() =>
+            _well[i].transform.DOMove(new Vector3(EndTarget.position.x, EndTarget.position.y - 75, EndTarget.position.z), duration).SetUpdate(true).OnComplete(() =>
             {
                 for (int i = 0; i < 3; i++)
                     Destroy(_well[i].transform.parent.gameObject);
@@ -137,7 +137,7 @@ public GameObject[] volumes;
     }
     public void BackSpriteFOr()
     {for (int i = 0; i < 3; i++)
-        {_well[i].transform.DOScaleX(0.18f, duration);
+        {_well[i].transform.DOScaleX(0.18f, duration).SetUpdate(true);
             _well[i].transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
             _well[i].transform.GetChild(0).GetComponent<Image>().sprite = Sprite.BackSprite;
             _well[i].transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
@@ -149,7 +149,8 @@ public GameObject[] volumes;
      
     }
     private void ChildChange(float end,bool flag,Sprite sprite)
-    {child.DOScaleX(end, duration);
+    {
+        child.DOScaleX(end, duration).SetUpdate(true);
         child.GetChild(0).gameObject.SetActive(flag);
         child.GetComponent<Image>().sprite = sprite;
         
@@ -243,7 +244,7 @@ public GameObject[] volumes;
 
    private void Ob(string text)
     {
-        Obiion.GetComponent<TextMeshProUGUI>().DOText(text, 1f);
+        Obiion.GetComponent<TextMeshProUGUI>().DOText(text, 1f).SetUpdate(true);
     }
 
    

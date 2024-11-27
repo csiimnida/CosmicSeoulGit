@@ -18233,6 +18233,14 @@ PrefabInstance:
       propertyPath: volumes.Array.data[1]
       value: 
       objectReference: {fileID: 1730112071}
+    - target: {fileID: 2187930798285327375, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: volumes.Array.data[0]
+      value: 
+      objectReference: {fileID: 1882086437}
+    - target: {fileID: 2187930798285327375, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: volumes.Array.data[1]
+      value: 
+      objectReference: {fileID: 1730112071}
     - target: {fileID: 2713079769197259760, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.12

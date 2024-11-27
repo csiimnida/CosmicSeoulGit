@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba613c17ea45e2343b730feaed49fa67, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 1100
   Skill1Multiple: 4
   Skill2Multiple: 2.5
-  Hp: 100
-  SwordAttackTime: 1
-  MoveSpeed: 7
+  Hp: 110
+  SwordAttackTime: 1.1
+  MoveSpeed: 6
   JumpPower: 12
   RollPower: 4
   RollCooltime: 3
@@ -25,15 +25,15 @@ MonoBehaviour:
   Skill1Cooltime: 4.5
   Skill2Cooltime: 6
   BlockingTime: 0.25
-  currentTime: 0.17820576
+  currentTime: 0.25569206
   AttackForwardDistance: 1.25
-  CurrentRoolTime: 5.622903
-  CurrentBlockTime: 69.73146
-  CurrentSkill1Time: 20.327633
-  CurrentSkill2Time: 0
+  CurrentRoolTime: 8.827694
+  CurrentBlockTime: 256.3085
+  CurrentSkill1Time: 59.531216
+  CurrentSkill2Time: 63.218594
   IsGround: 0
   CanRool: 1
   CanBlock: 1
   CanSkill1: 1
-  CanSkill2: 0
+  CanSkill2: 1
   IsFlip: 0

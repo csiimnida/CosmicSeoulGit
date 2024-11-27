@@ -89,7 +89,6 @@ public class DeadUI : MonoSingleton<DeadUI>
         {
             try
             {
-                print("구독");
                 _profile = CardManager.Instance.volumes[1].GetComponent<Volume>().profile;
                 _player = GameManager.Instance.Player;
                 StartSet();

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
   m_Name: Dino
   m_EditorClassIdentifier: 
-  ExpValue: 0
+  ExpValue: 100
   Size: {x: 1, y: 1}
-  AttackPower: 17
-  MaxHp: 800
-  AttackSpeed: 2
+  AttackPower: 18
+  MaxHp: 1200
+  AttackSpeed: 1.9
   MoveSpeed: 8.5
   Perception_range: 23.2
   Attack_range: 5.1

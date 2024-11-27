@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: fbb33dcb8350ea34ab25fc038021dc97, type: 3}
   Name: "\uB118\uCE58\uB294 \uD65C\uB825"
-  Attack: 0
-  speed: 0
+  Attack: 5
+  speed: 5
   AttackSpeed: 0
   Health: 10
   Text: "\uB2F9\uC2E0\uC758 \uBAB8\uC740 \uC5D0\uB108\uC9C0\uAC00 \uB118\uCCD0\uD750\uB985\uB2C8\uB2E4."

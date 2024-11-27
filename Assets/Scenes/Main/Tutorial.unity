@@ -9736,7 +9736,7 @@ PrefabInstance:
       objectReference: {fileID: 2029578539}
     - target: {fileID: 771395569092858327, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: _nextSceneName
-      value: FirstStage
+      value: ThirdStage
       objectReference: {fileID: 0}
     - target: {fileID: 2525435677398073009, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: m_LocalPosition.x

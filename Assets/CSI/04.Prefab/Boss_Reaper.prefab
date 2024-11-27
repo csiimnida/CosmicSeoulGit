@@ -143,7 +143,7 @@ MonoBehaviour:
   CoolDowning: 0
   NowHp: 0
   MaxHp: 0
-  SpawnRange: 13.9
+  SpawnRange: 12
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
   Dead:
     m_PersistentCalls:

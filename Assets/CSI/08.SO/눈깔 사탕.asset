@@ -21,5 +21,5 @@ MonoBehaviour:
   Perception_range: 10
   Attack_range: 5
   CameraShakePower: {x: 0, y: 0}
-  CameraShakeDuration: 0
+  CameraShakeDuration: 0.1
   Anchor_Enermy: 0

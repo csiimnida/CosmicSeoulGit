@@ -2,7 +2,7 @@ using EasySave.Json;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Save : MonoSingleton<Save>
+public class Save : MonoSingleton<Save> 
 {
 
     private PlayerDataSO _playerDataSo;
@@ -36,9 +36,9 @@ public class Save : MonoSingleton<Save>
         _startSeting = new StartSeting(_playerDataSo);
     }
 
-    public void TrySave(string NextScreenName)
+    public void TrySave<T>(T data, string NextScreenName) where T : Datas
     {
-        Datas data = new Datas();
+        
         data.Damage = _playerDataSo.Damage;
         data.MoveSpeed = _playerDataSo.MoveSpeed;
         data.RollPower  = _playerDataSo.RollPower;
@@ -50,9 +50,8 @@ public class Save : MonoSingleton<Save>
         EasyToJson.ToJson<Datas>(data,"SaveData",false);
         
     }
-    public void TrySave()
+    public void TrySave<T>(T data) where T : Datas
     {
-        Datas data = new Datas();
         data.Damage = _playerDataSo.Damage;
         data.MoveSpeed = _playerDataSo.MoveSpeed;
         data.RollPower  = _playerDataSo.RollPower;

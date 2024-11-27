@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _backgroundBGM: {fileID: 1620529952}
   _bossBGM: {fileID: 358907220}
-  _fadeDuration: 3
+  _fadeDuration: 2
 --- !u!1 &35736942
 GameObject:
   m_ObjectHideFlags: 0
@@ -9417,7 +9417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &358907220
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9429,7 +9429,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3206402432800362562, guid: cc3f8d6895aeac842a18b3c204bd673e, type: 2}
   m_audioClip: {fileID: 8300000, guid: b4b2c3f2adabd6641b826e6ec532d98a, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
   Loop: 1
@@ -11717,7 +11717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firstPageSound: {fileID: 358907220}
   _secondPageSound: {fileID: 1693159412}
-  _fadeDuration: 3
+  _fadeDuration: 2
 --- !u!1 &435165979
 GameObject:
   m_ObjectHideFlags: 0
@@ -53915,7 +53915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _backgroundBGM: {fileID: 1620529952}
   _bossBGM: {fileID: 1693159412}
-  _fadeDuration: 3
+  _fadeDuration: 2
 --- !u!1 &1864477090
 GameObject:
   m_ObjectHideFlags: 0

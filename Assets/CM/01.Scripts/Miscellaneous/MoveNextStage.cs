@@ -49,7 +49,8 @@ public class MoveNextStage : MonoBehaviour{
     private IEnumerator FadeIn(){
         _blackPanel.DOFade(2f, _fadeDuration);
         yield return new WaitForSeconds(_fadeDuration + 0.5f);
-        Save.Instance.TrySave(_nextSceneName);
+        Datas d = new Datas();
+        Save.Instance.TrySave<Datas>(d,_nextSceneName);
         SceneManager.LoadScene(_nextSceneName);
     }
 

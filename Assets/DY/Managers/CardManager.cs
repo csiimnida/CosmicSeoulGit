@@ -52,6 +52,7 @@ public GameObject[] volumes;
         volumes[1].SetActive(false);
     }
 
+
     private void Update()
     {
         if (_player == null)
@@ -67,7 +68,6 @@ public GameObject[] volumes;
                 Console.WriteLine(e);
                 throw;
             }
-            
         }
     }
 
@@ -75,24 +75,47 @@ public GameObject[] volumes;
     {
         _well = new List<GameObject>(2);
         _cheack = new CardCheacker[3];
+
+        // 카드 생성 및 초기화
         for (int i = 0; i <= 2; i++)
         {
             _well.Add(Instantiate(_CardPrefab, transform));
-         
             _cheack[i] = _well[i].transform.GetChild(0).GetComponent<CardCheacker>();
             _cheack[i]._OnClick += RandomSprite;
             _well[i].GetComponentInParent<Canvas>().worldCamera = Camera.main;
             _well[i] = _well[i].transform.GetChild(0).gameObject;
         }
-        _well[1].transform.DOMove(new Vector3((Target.position.x * 0) *0.5f, Target.position.y, Target.position.z), duration);
-        _well[2].transform.DOMove(new Vector3((Target.position.x * 1) * -0.5f, Target.position.y, Target.position.z), duration);
-        _well[0].transform.DOMove(new Vector3((Target.position.x * 1) * 0.5f, Target.position.y, Target.position.z), duration).OnComplete(
-            () =>
-            {
-               
 
-            });
-       BackSpriteFOr();
+        float fixedOffset = 500f; // 카드 간의 고정 간격 (UI 기준)
+        Vector2 targetCanvasPosition;
+
+        // 월드 좌표 -> 스크린 좌표 -> 캔버스 로컬 좌표 변환
+        RectTransform canvasRect = _well[1].GetComponentInParent<Canvas>().GetComponent<RectTransform>();
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvasRect,
+            Camera.main.WorldToScreenPoint(Target.position),
+            Camera.main,
+            out targetCanvasPosition
+        );
+        Debug.Log("A");
+
+        // 기준 위치 (중앙 카드의 위치)
+        float baseX = targetCanvasPosition.x;
+
+        // 중앙 카드 배치
+        _well[1].GetComponent<RectTransform>().DOAnchorPos(new Vector2(baseX, targetCanvasPosition.y), duration);
+
+        // 오른쪽 카드 배치
+        _well[2].GetComponent<RectTransform>().DOAnchorPos(new Vector2(baseX + fixedOffset, targetCanvasPosition.y), duration);
+
+        // 왼쪽 카드 배치
+        _well[0].GetComponent<RectTransform>().DOAnchorPos(new Vector2(baseX - fixedOffset, targetCanvasPosition.y), duration).OnComplete(() =>
+        {
+            // 애니메이션 완료 후 수행할 작업
+        });
+
+        // 카드 초기화
+        BackSpriteFOr();
         volumes[0].GetComponent<Volume>().enabled = true;
     }
 

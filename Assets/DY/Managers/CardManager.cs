@@ -24,7 +24,7 @@ public class CardManager : MonoSingleton<CardManager>
     public CardCheacker[] _cheack = null;
     [SerializeField] PlayerDataSO _playerDataSO = null;
     GameObject Obiion;
-    int spriterand= 0;
+   static int spriterand= 0;
     [SerializeField] private Transform EndTarget;
     [SerializeField] private Transform Target;
     private Player _player;
@@ -211,17 +211,18 @@ public GameObject[] volumes;
     }
     private void EnterChange<T>(T t)
     {RandomCardSO = Resources.LoadAll<AwakeSO>($"RandomSprite/{t}");
-        Debug.Log(RandomCardSO.Length);
         spriterand = Random.Range(0, RandomCardSO.Length);
-        child.GetChild(0).GetComponent<Image>().sprite = RandomCardSO[spriterand].sprite;
-       
+        Debug.Log($"Random Index: {spriterand}, Card: {RandomCardSO[spriterand].Name}");
+        var selectedCard = RandomCardSO[spriterand];
+        child.GetChild(0).GetComponent<Image>().sprite = selectedCard.sprite;
+        Debug.Log($"Sprite: {RandomCardSO[spriterand].sprite}, Name: {RandomCardSO[spriterand].Name}");
         var = new string[]
         {
             RandomCardSO[spriterand].Name,
-            "공격력:" + RandomCardSO[spriterand].Attack  +"%",
-            "이동 속도:" + RandomCardSO[spriterand].speed + "%",
-            "공격 속도:" + RandomCardSO[spriterand].AttackSpeed + "%",
-             "체력:" +RandomCardSO[spriterand].Health + "%",
+            "공격력:" + selectedCard.Attack  +"%",
+            "이동 속도:" +selectedCard.speed + "%",
+            "공격 속도:" + selectedCard.AttackSpeed + "%",
+             "체력:" + selectedCard.Health + "%",
         };
         for (int i = 0; i < var.Length; i++)
         { 
@@ -236,7 +237,7 @@ public GameObject[] volumes;
 
         //Debug.Log("Data saved to: " + path);
         Obiion.gameObject.SetActive(true);
-        string text = RandomCardSO[spriterand].Text;
+        string text = selectedCard.Text;
        Ob(text);
         
   

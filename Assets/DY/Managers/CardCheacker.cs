@@ -13,7 +13,7 @@ public class CardData
     public float speed;
     public float AttackSpeed;
     public float Health;
-    public float Text;
+    public string Text;
 }
 public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHandler , IPointerExitHandler
 {
@@ -22,7 +22,6 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
     private bool hasPointer = false;
     private Vector2 currentSize = Vector2.zero;
     private RectTransform rect = null;
-    private Tween scaleTween = null;
     private bool isClick = false;
     [SerializeField] private Sprite frontimage;
     private CardData _data;
@@ -43,8 +42,19 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
         if (!hasPointer)
         { 
             hasPointer = true;
-            scaleTween?.Kill();
-            _tmp.gameObject.SetActive(true);//Text
+            if (isFront)
+            {
+                _tmp.gameObject.SetActive(true);//Text
+                DOTween.Kill(_tmp);
+
+                _tmp.text = "";
+                SetText(_data.Text);
+            }
+            else
+            {
+                _tmp.text = "";
+            }
+            
         }
 
     }
@@ -54,7 +64,8 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
         if (hasPointer)
         { 
             hasPointer = false;
-            scaleTween?.Kill();
+            //DOTween.Kill(_tmp);
+
             _tmp.gameObject.SetActive(false);//Text
             _tmp.text = "";
         }
@@ -144,8 +155,9 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
         _data.speed = card.speed;
         _data.AttackSpeed = card.AttackSpeed;
         _data.Health = card.Health;
+        _data.Text = card.Text;
         
-        SetText(_data.Name);
+        SetText(_data.Text);
         
     }
 

@@ -31,7 +31,7 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
 
     }
 
- public void OnPointerExit(PointerEventData eventData)
+     public void OnPointerExit(PointerEventData eventData)
     {
         if (hasPointer)
         { hasPointer = false;
@@ -39,21 +39,22 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
             CardManager.Instance.GameobjectGet(transform.GetChild(1).gameObject, false);
         }
     }
-        public void OnPointerDown(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {   
         
-            if (isFront)
-            { CardManager.Instance.EndCardPolling();
-               CardManager.Instance.Enter();
-               isFront = false;
-               
-            }// �÷��� ����
-        isFront = true;
+     
+     
         CardManager.Instance.FrontSprite(this.gameObject.GetComponent<CardCheacker>());
         _OnClick?.Invoke();
             
-          
-       
+        if (isFront)
+        { 
+            CardManager.Instance.EndCardPolling();
+            CardManager.Instance.Enter();
+            isFront = false;
+           
+        }// �÷��� ����
+        isFront = true;
         
     }
 }

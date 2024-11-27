@@ -227,7 +227,7 @@ MonoBehaviour:
   InputCompo: {fileID: 11400000, guid: 082ac83584cd1d841a9010f5c48deed1, type: 2}
   PlayerData: {fileID: 11400000, guid: 0c8801ef83854cd43b0f3e4608194dca, type: 2}
   HitMat: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
-  Exp: 0
+  Exp: 90
   MaxExp: 100
   Panal: {fileID: 7286704771737461866}
   OnTakeExp:

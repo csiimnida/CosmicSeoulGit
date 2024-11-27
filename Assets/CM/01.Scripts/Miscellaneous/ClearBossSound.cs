@@ -16,6 +16,7 @@ public class ClearBossSound : MonoBehaviour
     private void SoundSet()
     {
         _bossBGM.DOFade(0f, _fadeDuration).OnComplete(() => {
+            _backgroundBGM.time = 0f;
             _backgroundBGM.DOFade(1f, _fadeDuration);
         });
     }

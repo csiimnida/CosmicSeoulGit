@@ -12,7 +12,7 @@ public class BossRoundSound : MonoBehaviour{
     private void SoundSet()
     {
         _backgroundBGM.DOFade(0f, _fadeDuration).OnComplete(() => {
-            _bossBGM.Play();
+            _bossBGM.time = 0f;
             _bossBGM.DOFade(1f, _fadeDuration);
         });
     }

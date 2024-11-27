@@ -151,10 +151,10 @@ public class CardManager : MonoSingleton<CardManager>
     {
 
         PrintStat();
-        _playerDataSO.Damage += _playerDataSO.Damage*(cardData.Attack/ 100);
+        _playerDataSO.Damage += _playerDataSO.Damage*cardData.Attack/ 100;
         _playerDataSO.Hp += _playerDataSO.Hp*cardData.Health/ 100;
-        _playerDataSO.SwordAttackTime += cardData.AttackSpeed/ 100;
-        _playerDataSO.MoveSpeed += cardData.speed / 100;
+        _playerDataSO.SwordAttackTime += _playerDataSO.SwordAttackTime * cardData.AttackSpeed/ 100;
+        _playerDataSO.MoveSpeed += _playerDataSO.MoveSpeed *cardData.speed / 100;
         PrintStat();
     }
 

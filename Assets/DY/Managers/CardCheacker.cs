@@ -22,7 +22,6 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-       Debug.Log("���Դ�");
         if (!hasPointer)
         { hasPointer = true;
           scaleTween?.Kill();
@@ -50,7 +49,7 @@ public class CardCheacker : MonoBehaviour , IPointerEnterHandler, IPointerDownHa
         if (isFront)
         { 
             CardManager.Instance.EndCardPolling();
-            CardManager.Instance.Enter();
+            CardManager.Instance.Enter(gameObject.GetComponent<CardCheacker>());
             isFront = false;
            
         }// �÷��� ����

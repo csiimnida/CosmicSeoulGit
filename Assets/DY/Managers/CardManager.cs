@@ -249,14 +249,31 @@ public GameObject[] volumes;
     }
 
    
-    public void Enter()
+    public void Enter(CardCheacker cardCheacker)
     {
-        Debug.Log(child.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text);
-        _playerDataSO.Damage += _playerDataSO.Damage*float.Parse(Regex.Match(child.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;
-        _playerDataSO.Hp += _playerDataSO.Hp*float.Parse(Regex.Match(child.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;
-        _playerDataSO.SwordAttackTime += _playerDataSO.SwordAttackTime*float.Parse(Regex.Match(child.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;
-        _playerDataSO.MoveSpeed += _playerDataSO.MoveSpeed*float.Parse(Regex.Match(child.GetChild(0).GetChild(4).GetComponent<TextMeshProUGUI>().text, @"\d+").Value) / 100;
-        
+
+        Transform child = cardCheacker.transform.GetChild(0).GetChild(0);
+        for (int i = 0; i < 5; i++)
+        {
+            
+            Debug.Log(child.GetChild(i).GetComponent<TextMeshProUGUI>().text);
+        }
+
+        PrintStat();
+        _playerDataSO.Damage += _playerDataSO.Damage*float.Parse(Regex.Match(child.GetChild(1).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;
+        _playerDataSO.Hp += _playerDataSO.Hp*float.Parse(Regex.Match(child.GetChild(2).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;
+        _playerDataSO.SwordAttackTime += _playerDataSO.SwordAttackTime*float.Parse(Regex.Match(child.GetChild(3).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;
+        _playerDataSO.MoveSpeed += _playerDataSO.MoveSpeed*float.Parse(Regex.Match(child.GetChild(4).GetComponent<TextMeshProUGUI>().text, @"\d+").Value) / 100;
+        PrintStat();
     }
- 
+
+    private void PrintStat()
+    {
+        Debug.Log(_playerDataSO.Damage);
+        Debug.Log(_playerDataSO.Hp);
+        Debug.Log(_playerDataSO.SwordAttackTime);
+        Debug.Log(_playerDataSO.MoveSpeed);
+        Debug.Log("-------------------------");
+    }
+
 }

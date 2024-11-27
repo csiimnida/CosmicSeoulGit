@@ -160,7 +160,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _isSeeRight: 0
+  isSeeRight: 0
   SpawnAnimator: {fileID: 340798776793386298}
   _now2Page: 0
   _2pageAnim: {fileID: 9100000, guid: adc055505d8120040828430037e275f7, type: 2}
@@ -5121,6 +5121,7 @@ GameObject:
   - component: {fileID: 9000831511329924980}
   - component: {fileID: 5035667886172074259}
   - component: {fileID: 2124266588591353897}
+  - component: {fileID: 5020847088704435347}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -5254,6 +5255,18 @@ MonoBehaviour:
   - {fileID: 8651770838784039257}
   - {fileID: 185019019194319947}
   - {fileID: 5986130531522208437}
+--- !u!114 &5020847088704435347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4388678890353685720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ac607933e774b4684d911883cab713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4461253861384544706
 GameObject:
   m_ObjectHideFlags: 0

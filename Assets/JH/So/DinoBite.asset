@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SoundName: DinoBite
   SoundType: SFX
-  AudioClip: {fileID: 8300000, guid: da5c23f9a6f740149869311c87573045, type: 3}
+  AudioClip: {fileID: 8300000, guid: b4e548535c98abe4798c52440b834b37, type: 3}
   SoundProportion: 100

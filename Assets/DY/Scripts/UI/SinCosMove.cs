@@ -7,9 +7,9 @@ using Random = UnityEngine.Random;
 public class SinCosMove : MonoBehaviour
 {
     RectTransform _rect;
-    float speed = 0;
-    public float size = 100.0f;
-    public float angleRotate = 0;
+    float speed = 0.00004f;
+    public float size = 0.2f;
+    public float angleRotate = 1.15f;
     private float time;
 
     private void Awake()
@@ -21,7 +21,7 @@ public class SinCosMove : MonoBehaviour
 
     void Update()
     {
-        time += Time.deltaTime * speed;
+        time += Time.realtimeSinceStartup * speed;
         float x = size * Mathf.Sin(time);
         float y = size * Mathf.Sin(time) * Mathf.Cos(time);
         _rect.anchoredPosition = new Vector2(x, y);

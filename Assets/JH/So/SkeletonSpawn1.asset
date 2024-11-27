@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf22dd638f3e6604fa06e22c35719c0f, type: 3}
-  m_Name: DinoDie
+  m_Name: SkeletonSpawn1
   m_EditorClassIdentifier: 
-  SoundName: DinoDie
+  SoundName: SkeletonSpawn1
   SoundType: SFX
-  AudioClip: {fileID: 8300000, guid: 2220645a94da17f4188f6b5d01529c80, type: 3}
+  AudioClip: {fileID: 8300000, guid: a3adc2a0a6a9ef44ebc4693e7c445a97, type: 3}
   SoundProportion: 100

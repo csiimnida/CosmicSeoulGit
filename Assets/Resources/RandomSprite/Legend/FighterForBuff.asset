@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: FighterForBuff
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 900ccef0ea0424641ae7a337661f8716, type: 3}
-  Name: "\uC950\uC5B4\uB4E4 \uC790"
-  Attack: 10
-  speed: 10
-  AttackSpeed: 40
-  Health: 10
+  Name: "\uC804\uC0AC\uC758 \uAC00\uD638"
+  Attack: 30
+  speed: 5
+  AttackSpeed: 20
+  Health: 50
   Text: "\uC804\uC0AC\uC758 \uD798\uC774 \uB2F9\uC2E0\uC758 \uC2EC\uC7A5\uC5D0 \uAC01\uC778\uB41C\uB2E4."

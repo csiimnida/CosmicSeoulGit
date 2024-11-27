@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class ChangeBossPageSound : MonoBehaviour
@@ -9,20 +8,14 @@ public class ChangeBossPageSound : MonoBehaviour
     [SerializeField] private float _fadeDuration = 3f;
 
     public void PlayChangePageSound(){
-        StartCoroutine(SoundDown());
+        SoundSet();
     }
 
-    private IEnumerator SoundDown()
+    private void SoundSet()
     {
-        _secondPageSound.gameObject.SetActive(true);
-        for (int i = 0; i < 100; i++)
-        {
-            _firstPageSound.volume -= 0.01f;
-            _secondPageSound.volume += 0.01f;
-            yield return new WaitForSeconds(0.02f);
-        }
-        _firstPageSound.volume = 0f;
-        _secondPageSound.volume = 1f;
-        yield return new WaitForSeconds(_fadeDuration + 0.5f);
+        _firstPageSound.DOFade(0f, _fadeDuration).OnComplete(() => {
+            _secondPageSound.Play();
+            _secondPageSound.DOFade(1f, _fadeDuration);
+        });
     }
 }

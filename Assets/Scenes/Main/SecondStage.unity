@@ -5468,6 +5468,14 @@ PrefabInstance:
       propertyPath: volumes.Array.data[1]
       value: 
       objectReference: {fileID: 1357345253}
+    - target: {fileID: 2187930798285327375, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: volumes.Array.data[0]
+      value: 
+      objectReference: {fileID: 964119044}
+    - target: {fileID: 2187930798285327375, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: volumes.Array.data[1]
+      value: 
+      objectReference: {fileID: 1357345253}
     - target: {fileID: 2713079769197259760, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.12
@@ -5508,6 +5516,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2810085010415481482, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: Camara
+      value: 
+      objectReference: {fileID: 964119044}
+    - target: {fileID: 4349165017147681402, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607201698942754403, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: Camara
+      value: 
+      objectReference: {fileID: 964119044}
     - target: {fileID: 8890392375605659567, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
       propertyPath: m_Name
       value: CardManager
@@ -8976,7 +8996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &963928185
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8988,7 +9008,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3206402432800362562, guid: cc3f8d6895aeac842a18b3c204bd673e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 63d8248a0c18a9b45ade22dd68b25ccf, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
   Loop: 1
@@ -11451,7 +11471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _backgroundBGM: {fileID: 2129356919}
   _bossBGM: {fileID: 288925098}
-  _fadeDuration: 3
+  _fadeDuration: 2
 --- !u!4 &1190176431
 Transform:
   m_ObjectHideFlags: 0
@@ -11674,7 +11694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _backgroundBGM: {fileID: 2129356919}
   _bossBGM: {fileID: 963928185}
-  _fadeDuration: 3
+  _fadeDuration: 2
 --- !u!4 &1236255755
 Transform:
   m_ObjectHideFlags: 0
@@ -17275,7 +17295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firstPageSound: {fileID: 963928185}
   _secondPageSound: {fileID: 288925098}
-  _fadeDuration: 3
+  _fadeDuration: 2
 --- !u!1 &1814630295
 GameObject:
   m_ObjectHideFlags: 0

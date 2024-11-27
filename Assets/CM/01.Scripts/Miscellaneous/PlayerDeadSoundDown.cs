@@ -27,6 +27,7 @@ public class PlayerDeadSoundDown : MonoBehaviour
             }
             AudioListener.volume -= 0.01f;
             yield return new WaitForSeconds(0.05f);
+            Destroy(gameObject);
         }
     }
 

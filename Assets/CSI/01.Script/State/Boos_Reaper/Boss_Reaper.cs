@@ -64,6 +64,7 @@ public class Boss_Reaper : Enemy
         {
             print("죽음");
             TransitionState(EnemyStateType.Dead);
+            Dead?.Invoke();
             sprite.material = NomallMaterial;
             Destroy(this);
             return;

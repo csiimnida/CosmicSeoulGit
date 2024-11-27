@@ -37,7 +37,9 @@ public class MoveNextStage : MonoBehaviour{
     }
 
     public void EndingSceneEnd(){
-        MoveNextStageMethod();
+        StartCoroutine(FadeInEnding());
+        StartCoroutine(SoundDown());
+        Application.Quit();
     }
 
     private void MoveNextStageMethod(){
@@ -52,6 +54,11 @@ public class MoveNextStage : MonoBehaviour{
         Datas d = new Datas();
         Save.Instance.TrySave<Datas>(d,_nextSceneName);
         SceneManager.LoadScene(_nextSceneName);
+    }
+    private IEnumerator FadeInEnding(){
+        _blackPanel.DOFade(2f, _fadeDuration);
+        yield return new WaitForSeconds(_fadeDuration + 0.5f);
+        Application.Quit();
     }
 
     private IEnumerator SoundDown(){

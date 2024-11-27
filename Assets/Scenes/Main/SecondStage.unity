@@ -11134,6 +11134,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4642704468766539991, guid: 96db154c64137424abc20899240ad454, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -485.9
+      objectReference: {fileID: 0}
     - target: {fileID: 7151826422141680604, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: m_Name
       value: BlackImage

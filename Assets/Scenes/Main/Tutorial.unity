@@ -9734,6 +9734,10 @@ PrefabInstance:
       propertyPath: _backgroundBgm
       value: 
       objectReference: {fileID: 2029578539}
+    - target: {fileID: 771395569092858327, guid: 96db154c64137424abc20899240ad454, type: 3}
+      propertyPath: _nextSceneName
+      value: FirstStage
+      objectReference: {fileID: 0}
     - target: {fileID: 2525435677398073009, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960
@@ -9773,6 +9777,10 @@ PrefabInstance:
     - target: {fileID: 2525435677398073009, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642704468766539991, guid: 96db154c64137424abc20899240ad454, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -829.7
       objectReference: {fileID: 0}
     - target: {fileID: 7151826422141680604, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: m_Name

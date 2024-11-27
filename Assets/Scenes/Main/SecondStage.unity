@@ -11094,18 +11094,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 633256333809534154, guid: 96db154c64137424abc20899240ad454, type: 3}
-      propertyPath: _backgroundBgm
-      value: 
-      objectReference: {fileID: 2129356919}
-    - target: {fileID: 771395569092858327, guid: 96db154c64137424abc20899240ad454, type: 3}
-      propertyPath: _backgroundBgm
-      value: 
-      objectReference: {fileID: 2129356919}
-    - target: {fileID: 771395569092858327, guid: 96db154c64137424abc20899240ad454, type: 3}
-      propertyPath: _nextSceneName
-      value: ThirdStage
-      objectReference: {fileID: 0}
     - target: {fileID: 2525435677398073009, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960
@@ -11145,10 +11133,6 @@ PrefabInstance:
     - target: {fileID: 2525435677398073009, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4642704468766539991, guid: 96db154c64137424abc20899240ad454, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -492.36
       objectReference: {fileID: 0}
     - target: {fileID: 7151826422141680604, guid: 96db154c64137424abc20899240ad454, type: 3}
       propertyPath: m_Name

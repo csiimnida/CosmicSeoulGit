@@ -790,6 +790,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4665944034546445550}
     m_Modifications:
+    - target: {fileID: 3856402067113888488, guid: 0b2719120d636364cbe64574049d26c5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856402067113888488, guid: 0b2719120d636364cbe64574049d26c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7636744572584066314, guid: 0b2719120d636364cbe64574049d26c5, type: 3}
       propertyPath: m_Name
       value: PlayerUI

@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e9e7f7b07ef084087cd3713a19a205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fadeIntTime: 3
+  _fadeInTime: 3
 --- !u!1 &2767774013321305031
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ Transform:
   m_GameObject: {fileID: 2767774013321305031}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -829.71, y: -543.7584, z: -0.044141274}
+  m_LocalPosition: {x: -492.36, y: -543.7584, z: -0.044141274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blackPanel: {fileID: 5136895890224244472}
   _fadeDuration: 3
-  _nextSceneName: FirstStage
+  _nextSceneName: ThirdStage
 --- !u!1 &3038073251214963523
 GameObject:
   m_ObjectHideFlags: 0

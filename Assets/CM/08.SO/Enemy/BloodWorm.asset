@@ -15,11 +15,11 @@ MonoBehaviour:
   ExpValue: 0
   Size: {x: 1, y: 1}
   AttackPower: 12
-  MaxHp: 400
+  MaxHp: 500
   AttackSpeed: 3.5
   MoveSpeed: 10
   Perception_range: 33.5
-  Attack_range: 4
+  Attack_range: 4.2
   CameraShakePower: {x: 0.6, y: 0.8}
   CameraShakeDuration: 0.4
   Anchor_Enermy: 0

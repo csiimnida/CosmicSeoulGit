@@ -97,6 +97,7 @@ public GameObject[] volumes;
             Camera.main,
             out targetCanvasPosition
         );
+        Debug.Log("A");
 
         // 기준 위치 (중앙 카드의 위치)
         float baseX = targetCanvasPosition.x;

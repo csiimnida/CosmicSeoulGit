@@ -5468,6 +5468,14 @@ PrefabInstance:
       propertyPath: volumes.Array.data[1]
       value: 
       objectReference: {fileID: 1357345253}
+    - target: {fileID: 2187930798285327375, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: volumes.Array.data[0]
+      value: 
+      objectReference: {fileID: 964119044}
+    - target: {fileID: 2187930798285327375, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: volumes.Array.data[1]
+      value: 
+      objectReference: {fileID: 1357345253}
     - target: {fileID: 2713079769197259760, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.12
@@ -5508,6 +5516,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2810085010415481482, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: Camara
+      value: 
+      objectReference: {fileID: 964119044}
+    - target: {fileID: 4349165017147681402, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607201698942754403, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: Camara
+      value: 
+      objectReference: {fileID: 964119044}
     - target: {fileID: 8890392375605659567, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
       propertyPath: m_Name
       value: CardManager

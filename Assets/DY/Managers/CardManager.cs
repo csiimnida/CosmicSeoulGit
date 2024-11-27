@@ -24,7 +24,7 @@ public class CardManager : MonoSingleton<CardManager>
     public CardCheacker[] _cheack = null;
     [SerializeField] PlayerDataSO _playerDataSO = null;
     GameObject Obiion;
-    int spriterand= 0;
+    static int spriterand= 0;
     [SerializeField] private Transform EndTarget;
     [SerializeField] private Transform Target;
     private Player _player;

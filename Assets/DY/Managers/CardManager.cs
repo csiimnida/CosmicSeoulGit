@@ -184,7 +184,8 @@ public GameObject[] volumes;
             Stage2();
     }
     private void Stage2()
-    { int rand = Random.Range(0, 101);
+    { 
+        int rand = Random.Range(0, 101);
         if (rand <= 45)
             EnterChange("Common");
         if (rand > 45 && rand < 85)
@@ -206,12 +207,12 @@ public GameObject[] volumes;
     {int rand = Random.Range(0, 101);
         if (rand <= 80)
             EnterChange("Common");
+        
         if (rand > 80)
             EnterChange("Rare");
     }
     private void EnterChange<T>(T t)
     {RandomCardSO = Resources.LoadAll<AwakeSO>($"RandomSprite/{t}");
-        Debug.Log(RandomCardSO.Length);
         spriterand = Random.Range(0, RandomCardSO.Length);
         child.GetChild(0).GetComponent<Image>().sprite = RandomCardSO[spriterand].sprite;
        
@@ -250,6 +251,7 @@ public GameObject[] volumes;
    
     public void Enter()
     {
+        Debug.Log(child.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text);
         _playerDataSO.Damage += _playerDataSO.Damage*float.Parse(Regex.Match(child.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;
         _playerDataSO.Hp += _playerDataSO.Hp*float.Parse(Regex.Match(child.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;
         _playerDataSO.SwordAttackTime += _playerDataSO.SwordAttackTime*float.Parse(Regex.Match(child.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>().text, @"\d+").Value)/ 100;

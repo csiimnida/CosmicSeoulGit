@@ -16,7 +16,7 @@ public class CardCrater : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            StartCard();
+            //StartCard();
         }
     }
 

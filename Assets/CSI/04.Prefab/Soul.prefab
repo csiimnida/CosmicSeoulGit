@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7535752406651523742}
   - component: {fileID: 5973575650215986013}
   - component: {fileID: 4946420484085435281}
+  - component: {fileID: 8969658937539112316}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -137,6 +138,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 8436729682861816194}
+--- !u!114 &8969658937539112316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683508847550326550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ac607933e774b4684d911883cab713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6997571565335358506
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,10 +202,24 @@ MonoBehaviour:
   currentState: 0
   DataSo: {fileID: 11400000, guid: 2d75b67dbe7af3a4ab32a67a915e8f55, type: 2}
   CombitTimer: 0
+  CoolTimeMaxTimer: 0
+  CoolTimeNowTimer: 0
   sprite: {fileID: 4406159033261865134}
+  CoolDowning: 0
   NowHp: 0
+  MaxHp: 0
   SpawnRange: 5
   HitMaterial: {fileID: -876546973899608171, guid: 2946ba8d5c6f4c14692c3765103f62a5, type: 3}
+  Dead:
+    m_PersistentCalls:
+      m_Calls: []
+  isSeeRight: 0
+  SpawnAnimator: {fileID: 0}
+  _now2Page: 0
+  _2pageAnim: {fileID: 0}
+  BloodRequiemEffect: {fileID: 0}
+  ReqamTimer: 0
+  ReqamTimerMax: 60
 --- !u!70 &8674920496885769648
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

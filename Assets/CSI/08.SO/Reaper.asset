@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
   m_Name: Reaper
   m_EditorClassIdentifier: 
-  ExpValue: 0
+  ExpValue: 20
   Size: {x: 1.5, y: 1.5}
-  AttackPower: 12
+  AttackPower: 4
   MaxHp: 80
-  AttackSpeed: 1.5
+  AttackSpeed: 3
   MoveSpeed: 2.5
   Perception_range: 15.1
-  Attack_range: 3.11
+  Attack_range: 4
   CameraShakePower: {x: 0, y: 0}
   CameraShakeDuration: 0
   Anchor_Enermy: 0

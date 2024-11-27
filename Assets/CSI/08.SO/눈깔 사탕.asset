@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
   m_Name: "\uB208\uAE54 \uC0AC\uD0D5"
   m_EditorClassIdentifier: 
-  ExpValue: 15
+  ExpValue: 20
   Size: {x: 1.5, y: 1.5}
   AttackPower: 4
-  MaxHp: 55
-  AttackSpeed: 5
+  MaxHp: 60
+  AttackSpeed: 7
   MoveSpeed: 2
   Perception_range: 10
-  Attack_range: 8
+  Attack_range: 9
   CameraShakePower: {x: 0, y: 0}
   CameraShakeDuration: 0.1
   Anchor_Enermy: 0

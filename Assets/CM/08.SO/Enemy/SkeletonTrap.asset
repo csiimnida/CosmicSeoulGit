@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24751de3ec65224781aa85e1cda671e, type: 3}
   m_Name: SkeletonTrap
   m_EditorClassIdentifier: 
-  ExpValue: 40
+  ExpValue: 5
   Size: {x: 1, y: 1}
   AttackPower: 15
   MaxHp: 70

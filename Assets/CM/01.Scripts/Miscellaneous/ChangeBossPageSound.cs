@@ -14,6 +14,7 @@ public class ChangeBossPageSound : MonoBehaviour
     private void SoundSet()
     {
         _firstPageSound.DOFade(0f, _fadeDuration).OnComplete(() => {
+            _secondPageSound.Play();
             _secondPageSound.DOFade(1f, _fadeDuration);
         });
     }

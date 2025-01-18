@@ -5,8 +5,8 @@ public class Pool
 {
     private Stack<IPoolable> _pool;
     private Transform _parentTrm;
-    private IPoolable _poolable; // Ç®¸µÇÏ°í ÀÖ´Â Å¬·¡½º
-    private GameObject _prefab; // ¸¸µé ÇÁ¸®ÆÕ
+    private IPoolable _poolable; // í’€ë§í•˜ê³  ìˆëŠ” í´ë˜ìŠ¤
+    private GameObject _prefab; // ë§Œë“¤ í”„ë¦¬íŒ¹
 
     public Pool(IPoolable poolable, Transform parent, int count)
     {

@@ -94,6 +94,10 @@ public class DeadUI : MonoSingleton<DeadUI>
                 StartSet();
                 _player.OnDeath += DeadEffectStart;
             }
+            catch
+            {
+                
+            }
             finally{}
             
         }

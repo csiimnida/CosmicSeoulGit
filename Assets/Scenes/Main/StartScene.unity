@@ -2064,7 +2064,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1070942522}
   - component: {fileID: 1070942521}
-  - component: {fileID: 1070942520}
   - component: {fileID: 1070942523}
   m_Layer: 0
   m_Name: Main Camera
@@ -2073,14 +2072,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1070942520
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070942519}
-  m_Enabled: 1
 --- !u!20 &1070942521
 Camera:
   m_ObjectHideFlags: 0
@@ -2280,9 +2271,9 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 30
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -2704,6 +2695,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2810085010415481482, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: Camara
+      value: 
+      objectReference: {fileID: 1070942519}
     - target: {fileID: 3443297926037209975, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.12
@@ -2744,6 +2739,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7607201698942754403, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
+      propertyPath: Camara
+      value: 
+      objectReference: {fileID: 1070942519}
     - target: {fileID: 7933449231743199860, guid: 223d7fff76c8c1a42a16c7d1a18bbeae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 112.56
@@ -3612,7 +3611,9 @@ MonoBehaviour:
   OnCreditButton: {fileID: 512959685}
   CreditPanel: {fileID: 1224845642}
   LoadingScreen: {fileID: 1923085023}
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 1886619348}
+  _noContinuetext: {fileID: 1146393448}
+  _Continuetext: {fileID: 1030007595}
 --- !u!1 &1759530716
 GameObject:
   m_ObjectHideFlags: 0
@@ -4085,6 +4086,17 @@ PlayableDirector:
     value: {fileID: 1714488434}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1886619348 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3423991166685407803, guid: 2850151160afe0242902e278bf6d23da, type: 3}
+  m_PrefabInstance: {fileID: 2139761444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5a049b31560094fabb95c0a59e858e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1923085023
 GameObject:
   m_ObjectHideFlags: 0
@@ -4381,10 +4393,6 @@ PrefabInstance:
     - target: {fileID: 3708364918011002204, guid: 2850151160afe0242902e278bf6d23da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8119370973967045049, guid: 2850151160afe0242902e278bf6d23da, type: 3}
-      propertyPath: m_text
-      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 8173119930814361206, guid: 2850151160afe0242902e278bf6d23da, type: 3}
       propertyPath: m_AnchorMax.y

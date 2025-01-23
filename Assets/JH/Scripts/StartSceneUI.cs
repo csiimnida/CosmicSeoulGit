@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,7 +25,7 @@ public class StartSceneUI : MonoBehaviour
 
     
     [SerializeField] private SoundManager soundManager;
-
+    
 
     private void Awake()
     {
@@ -32,19 +33,50 @@ public class StartSceneUI : MonoBehaviour
         
 
     }
-
+    public TextMeshProUGUI _noContinuetext;
+    public TextMeshProUGUI _Continuetext;
     void Start()
     {
        
         goToSceneButton.onClick.AddListener(GoToTargetScene);
-        goToSceneButton.onClick.AddListener(PlayButtonClickSound);
         activatePanelButton.onClick.AddListener(ActivatePanel);
-        activatePanelButton.onClick.AddListener(PlayButtonClickSound);
-        //deactivatePanelButton.onClick.AddListener(DeactivatePanel); 
-        //deactivatePanelButton.onClick.AddListener(PlayButtonClickSound); 
-        //quitGameButton.onClick.AddListener(QuitGame);
         quitGameButton.onClick.AddListener(PlayButtonClickSound);
-
+        LanguageManager.Instance.OnLanguageChanged += (language) =>
+        {
+            print(language);
+            try
+            {
+                if (language == _languageType.Eng)
+                {
+                    goToSceneButton.GetComponentInChildren<TextMeshProUGUI>().text = "Start";
+                    activatePanelButton.GetComponentInChildren<TextMeshProUGUI>().text = "Settings";
+                    quitGameButton.GetComponentInChildren<TextMeshProUGUI>().text = "Quit";
+                
+                }else if (language == _languageType.Ko)
+                {
+                    goToSceneButton.GetComponentInChildren<TextMeshProUGUI>().text = "시작하기";
+                    activatePanelButton.GetComponentInChildren<TextMeshProUGUI>().text = "설정";
+                    quitGameButton.GetComponentInChildren<TextMeshProUGUI>().text = "나가기";
+                
+                }
+            }
+            catch
+            {
+                
+            }
+        };
+        LanguageManager.Instance.OnLanguageChanged += (lan) =>
+        {
+            if (lan == _languageType.Ko)
+            {
+                _noContinuetext.text = "처음부터";
+                _Continuetext.text = "이어하기";
+            }else if (lan == _languageType.Eng)
+            {
+                _noContinuetext.text = "From the beginning.";
+                _Continuetext.text = "Continue";
+            }
+        };
         if (CreditPanel != null)
         {
             CreditPanel.gameObject.SetActive(false);
@@ -55,6 +87,7 @@ public class StartSceneUI : MonoBehaviour
 
     private void GoToTargetScene()
     {
+        PlayButtonClickSound();
         LoadingScreen.SetActive(true);
         
         
@@ -62,6 +95,7 @@ public class StartSceneUI : MonoBehaviour
 
     private void ActivatePanel()
     {
+        PlayButtonClickSound();
         if (panel != null)
         {
             panel.SetActive(true);
